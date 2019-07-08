@@ -1,0 +1,87 @@
+<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp2.1</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Compile Remove="Log\**" />
+    <Compile Remove="wwwroot\images\**" />
+    <Compile Remove="wwwroot\lib\**" />
+    <Compile Remove="wwwroot\sword\**" />
+    <Content Remove="Log\**" />
+    <Content Remove="wwwroot\images\**" />
+    <Content Remove="wwwroot\lib\**" />
+    <Content Remove="wwwroot\sword\**" />
+    <EmbeddedResource Remove="Log\**" />
+    <EmbeddedResource Remove="wwwroot\images\**" />
+    <EmbeddedResource Remove="wwwroot\lib\**" />
+    <EmbeddedResource Remove="wwwroot\sword\**" />
+    <None Remove="Log\**" />
+    <None Remove="wwwroot\images\**" />
+    <None Remove="wwwroot\lib\**" />
+    <None Remove="wwwroot\sword\**" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Compile Remove="ChuShiHua.ashx.cs" />
+    <Compile Remove="Models\ErrorViewModel.cs" />
+    <Compile Remove="QuestionMain.aspx.cs" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Content Remove="Views\accept\index_sbzf.cshtml" />
+    <Content Remove="Views\Home\About.cshtml" />
+    <Content Remove="Views\Home\Contact.cshtml" />
+    <Content Remove="Views\Home\Index.cshtml" />
+    <Content Remove="Views\Home\Privacy.cshtml" />
+    <Content Remove="Views\Shared\Error.cshtml" />
+    <Content Remove="Views\Shared\_CookieConsentPartial.cshtml" />
+    <Content Remove="Views\Shared\_Layout.cshtml" />
+    <Content Remove="Views\Shared\_ValidationScriptsPartial.cshtml" />
+    <Content Remove="Views\VideoManage\VideoManage.cshtml" />
+    <Content Remove="wwwroot\VideoManage\GetVideo.ashx" />
+    <Content Remove="wwwroot\VideoManage\GetVideo.ashx.cs" />
+    <Content Remove="wwwroot\VideoManage\VideoManage.aspx" />
+    <Content Remove="wwwroot\VideoManage\VideoManage.aspx.cs" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Remove="ChuShiHua.ashx" />
+    <None Remove="QuestionMain.aspx" />
+    <None Remove="Views\accept\index_qyxx.html" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.AspNetCore.App" />
+    <PackageReference Include="Microsoft.AspNetCore.Razor.Design" Version="2.1.2" PrivateAssets="All" />
+    <PackageReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Design" Version="2.1.1" />
+    <PackageReference Include="Newtonsoft.Json" Version="12.0.2" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Include="Views\accept\dzsb.cshtml" />
+    <None Include="Views\accept\edit_20101.cshtml" />
+    <None Include="Views\Home\SB025YhssbCtrl_cwgzInitView.cshtml" />
+    <None Include="Views\Home\SB025YhssbCtrl_initView.cshtml" />
+    <None Include="Views\Home\SB151zlbsslCtrl_initBd.cshtml" />
+    <None Include="Views\main\index_bbcx.cshtml" />
+    <None Include="Views\main\index_nssb.cshtml" />
+    <None Include="Views\main\index_sbzf.cshtml" />
+    <None Include="Views\VideoManage\VideoManage.cshtml" />
+    <None Include="Views\wsbs\view_DeclarationInfo.cshtml" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Content Update="appsettings.json">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="wwwroot\web-accept\wssb\common\" />
+  </ItemGroup>
+
+  <ProjectExtensions><VisualStudio><UserProperties appsettings_1json__JSONSchema="" /></VisualStudio></ProjectExtensions>
+
+</Project>

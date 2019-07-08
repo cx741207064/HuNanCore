@@ -1,0 +1,166 @@
+
+
+
+
+
+
+
+
+
+
+<script>
+  var pageSize = 10;     //每页显示条数初始化，修改显示条数，修改这里即可
+  var isLoad=true;
+  $(function(){
+
+    $('#sbzldms').select2({
+      minimumResultsForSearch: Infinity,
+      language: "zhCN"
+    });
+
+    //设置时间控件
+    $('.date-month').datetimepicker({
+      language: 'zh-CN',
+      autoclose: true,
+      startView: 3,
+      minView: 3,
+      format: 'yyyy-mm'
+    });
+    if(isLoad) {
+      InitTable(1);    //Load事件，初始化表格数据，页面索引为0（第一页）
+    }
+    //分页，PageCount是总条目数，这是必选参数，其它参数都是可选
+    /*$("#Pagination").pagination({wbSbSbxxVo.pagination.totalNum},{
+      callback: PageCallback,  //PageCallback() 为翻页调用次函数。
+      prev_text: "« 上一页",
+      next_text: "下一页 »",
+      items_per_page:pageSize,
+      num_edge_entries: 2,       //两侧首尾分页条目数
+      num_display_entries: 6,    //连续分页主体部分分页条目数
+      current_page: 0   //当前页索引
+    });*/
+  });
+  //翻页调用
+  function PageCallback(index, jq) {
+    InitTable(index);
+  }
+</script>
+
+<div class="tax-title">
+  <ul class="nav nav-tabs" role="tablist" style="overflow: hidden;">
+    <li role="presentation" class="active" id="dofcwbb"><a href="#fcwbb" aria-controls="fcwbb" role="tab" data-toggle="tab">申报表查询</a></li>
+    <li role="presentation" id="docwbb"><a href="#cwbb" onclick="toDsPage('cwbbcx')" aria-controls="cwbb" role="tab" data-toggle="tab">财务报表查询</a></li>
+  </ul>
+  
+  <div class="z-dhcd">
+    <a href="javascript:void(0)" target="_blank">
+      <div class="z-ico">
+        <div class="z-ico-img"><span class="glyphicon glyphicon-list-alt color-1"></span></div>
+        <div class="z-ico-txt">操作说明</div>
+      </div>
+    </a>
+    <a href="javascript:void(0)" target="_blank">
+      <div class="z-ico" >
+        <div class="z-ico-img"><span class="glyphicon glyphicon-book"></span></div>
+        <div class="z-ico-txt">办税指南</div>
+      </div>
+    </a>
+
+    <a href="javascript:void(0)" target="_blank">
+      <div class="z-ico">
+        <div class="z-ico-img"><span class="glyphicon glyphicon-question-sign"></span></div>
+        <div class="z-ico-txt">常见问题</div>
+      </div>
+    </a>
+  </div>
+</div>
+<div class="tab-content">
+  <div role="tabpanel" class="tab-pane active" id="fcwbb">
+     <div class="info-nr">
+  <div class="z-dhnr z-mt">
+    <div class="z-select">
+      <div class="z-tw5">税种：</div>
+      <form id="queryForm" action="https://etax.hunan.chinatax.gov.cn/web-accept//wssb/main/index_bbcx.html" method="get">
+        <input type="hidden" id="pageIndex" name="pageIndex"  value="1"/>
+        <input type="hidden" id="pageSize" name="pageSize"  value="10"/>
+        <div class="z-iw5"><select id="sbzldms" name="sbzldms" class="form-control">
+          <option value ="01" selected >增值税</option>
+          <option value ="03" >消费税</option>
+          <option value="04" >企业所得税</option>
+          <option value="06" >储蓄利息所得税</option>
+          <option value="65" >文化事业建设费</option>
+          <option value="77" >废弃基金</option>
+          <option value="dstysb">通用申报</option>
+          <option value="dszys">资源税</option>
+          <option value="dsyys">烟叶税</option>
+          <option value="dsgdzys">耕地占用税</option>
+          <option value="dsfcs">房产税</option>
+          <option value="dscztdsys">城填土地使用税</option>
+          <option value="dstdzzs">土地增值税</option>
+          <option value="dsyhs">印花税</option>
+          <option value="dshjbhs">环境保护税</option>
+          <option value="dsccs">车船税</option>
+          
+          
+          <option value="ds01" >附加税（费）</option>
+          <option value="dsdqde">定期定额</option>
+          <option value="dscjrjybzj">残疾人就业保障金</option>
+        </select></div>
+        <div class="z-tw11">所属日期起：</div>
+        <div class="z-iw3"><input type="text" id="skssqq" name="skssqq" class="form-control date-month" readonly  placeholder="请输入起始日期" value="2018-05"></div>
+        <div class="z-tw11">所属日期止：</div>
+        <div class="z-iw3"><input   type="text" id="skssqz" name="skssqz" class="form-control date-month" readonly  placeholder="请输入截止日期" value="2019-05"></div>
+        <div class="z-sz"><button id="btnBbcx" onclick="bbcx();" type="button" class="btn btn-success">查 询</button></div>
+      </form>
+      <div class="clear"></div>
+    </div>
+    <div class="z-table">
+      <table id="Result" class="table table-striped z-mt">
+        <thead>
+        <tr style="border:0;">
+          <th width="5%">序号</th>
+          <th width="30%">报表名称</th>
+          <th width="15%">所属期起</th>
+          <th width="15%">所属期止</th>
+          <th width="15%">申报日期</th>
+          <th width="12%">应补退税额</th>
+          <th width="8%">操作</th>
+        </tr>
+        </thead>
+        <tbody>
+        
+          
+            <tr><td colspan="7" align="center">该条件下无显示数据</td></tr>
+          
+          
+        
+        </tbody>
+      </table>
+      <!--分页控件div-->
+      
+      
+
+
+
+
+<style type="text/css">
+    .z-yeshu{ height:30px; line-height:30px; wdith:400px; position:absolute; top:15px; left:0;}
+</style>
+<div style=" position:relative;">
+<nav style="float:right;">
+<div class="z-yeshu">总记录数:<span ></span>条 / 每页<span></span>条 共计<span></span>页</div>
+<ul id="page" class="pagination">
+	
+</ul>
+</nav>
+</div>
+
+    </div>
+  </div>
+</div>
+  </div>
+
+  <div role="tabpanel" class="tab-pane active" id="cwbb">
+
+  </div>
+</div>

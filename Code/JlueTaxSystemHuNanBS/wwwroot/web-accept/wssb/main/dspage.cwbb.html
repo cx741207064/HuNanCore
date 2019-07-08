@@ -1,0 +1,45 @@
+<html !DOCTYPE>
+
+<script src="/web-accept//static/js/common/jquery.1.9.1.min.js"></script>
+<script>
+    function postds(url,params) {
+        var temp = document.createElement("form");
+        temp.action = url;
+        temp.method = "post";
+        temp.style.display = "none";
+        for (var x in params) {
+            var opt = document.createElement("input");
+            opt.name = x;
+            opt.value = params[x];
+            temp.appendChild(opt);
+        }
+        document.body.appendChild(temp);
+        temp.submit();
+        return temp;
+    }
+
+    $(function(){
+        if(window.screen){
+            var myw = screen.availWidth;
+            var myh = screen.availHeight;
+            window.moveTo(0, 0);
+            window.resizeTo(myw, myh);
+        }
+        var param = {"ctrl":"DZBSXTKJ022YhmMmDlCtrl_huNLocalTaxWinOpen","sign":"UMQ9e2dOyBWwzTZVQlx8/2jkNkSBJvFxGyTmmuWEE9HJXPXpJFYQrzC+0RK3xANvDruBWTjN27Hb\notNksK2jjmuuPBvaJL1ThmW2py3Mh9o952STQ3dCi2nss5OVYMhKwTVl7UZqL0+Qp0rpN/nCxMoB\nOvd1oU+BcYb3wcINhwY\u003d","functionUrl":"/sword?ctrl\u003dSB151zlbsslCtrl_initView","functionType":"01","sesid":"asasaasawqqewqcdsxdsacdcewdew"};
+        postds('/sword?ctrl=DZBSXTKJ022YhmMmDlCtrl_huNLocalTaxWinOpen',param);
+    })
+</script>
+<html>
+<base target="_self">
+
+    
+    
+    
+    
+    
+    
+
+
+</html>
+
+

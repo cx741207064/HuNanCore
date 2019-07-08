@@ -1,0 +1,151 @@
+﻿@model JlueTaxSystemHuNanBS.Models.YbnsrzzsModel
+
+<div id="cpygxcslmxb" name="cpygxcslmxb_div" style="display: none;">
+
+
+
+
+    <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+    <html xmlns="http://www.w3.org/1999/xhtml">
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <script src="/web-accept//static/js/sbb/m10104/cpygxcslmxbcontrol.js"></script>
+    </head>
+
+    <table class="sbbtable" style="width:0px">
+        <tr>
+            <td><div style="width:20px;"></div></td>
+            <td><div style="width:180px;"></div></td>
+            <td><div style="width:180px;"></div></td>
+            <td><div style="width:180px;"></div></td>
+            <td><div style="width:162px;"></div></td>
+            <td><div style="width:165px;"></div></td>
+            <td><div style="width:180px;"></div></td>
+        </tr>
+        <tr style="height:20px;">
+            <td class=" bg1 br0"></td>
+            <td class=" bg1 br0"></td>
+            <td class=" bg1 br0"></td>
+            <td class=" bg1 br0"></td>
+            <td class=" bg1 br0"></td>
+            <td class=" bg1 br0"></td>
+            <td class=" bg1 br0"></td>
+        </tr>
+        <tr style="height:41px;">
+            <td class=" bg1 br0"></td>
+            <td class=" ft1 fs20 ac vm nw bg1 br0" colspan="6">成品油购销存数量明细表</td>
+        </tr>
+        <tr style="height:22px;">
+            <td class=" bg1 br0"></td>
+            <td class=" ft0 fs12 al vm nw bg1 br0">税款所属时期：</td>
+            <td class=" ft0 fs12 al vm nw bg1 br0" colspan="3">@Model.GDTXDate.skssqq&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;至&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;@Model.GDTXDate.skssqz</td>
+            <td class=" bg1 br0"></td>
+            <td class=" bg1 br0"></td>
+        </tr>
+        <tr style="height:26px;">
+            <td class=" bg1 br0"></td>
+            <td class=" ft0 fs12 al vm nl bg1 br0">纳税人识别号：</td>
+            <td class=" ft0 fs12 al vm nl bg1 br0" colspan="2">@Model.Nsrxx.NSRSBH</td>
+            <td class=" bg1 br0"></td>
+            <td class=" bg1 br0"></td>
+            <td class=" bg1 br0"></td>
+        </tr>
+        <tr style="height:38px;">
+            <td class=" bg1 br0"></td>
+            <td class=" ft0 fs12 al vm nw bg1 br1">纳税人名称：</td>
+            <td class=" ft0 fs12 al vm nl bg1 br1" colspan="2">@Model.Nsrxx.NSRMC</td>
+            <td class=" ft0 fs12 al vm nw bg1 br1">填表日期：</td>
+            <td class=" ft0 fs12 al vm nw bg1 br1" colspan="2" name="common.tbrq">@Model.GDTXDate.tbrq</td>
+        </tr>
+        <tr style="height:32px;">
+            <td class=" bg1 br0"></td>
+            <td class=" ft0 fs12 ac vm nl bg_ne br3" rowspan="2">油量型号</td>
+            <td class=" ft0 fs12 ac vm nl bg_ne br2" rowspan="2">期初库存量</td>
+            <td class=" ft0 fs12 ac vm nl bg_ne br2" rowspan="2">本期购进量</td>
+            <td class=" ft0 fs12 ac vm nl bg_ne br2" colspan="2">本期出库量</td>
+            <td class=" ft0 fs12 ac vm nl bg_ne br2" rowspan="2">期末库存量</td>
+        </tr>
+        <tr style="height:32px;">
+            <td class=" bg1 br0"></td>
+            <td class=" ft0 fs12 ac vm nl bg_ne br2">应税销售量</td>
+            <td class=" ft0 fs12 ac vm nl bg_ne br2">应扣除数量</td>
+        </tr>
+        <tr style="height:32px;">
+            <td class=" bg1 br0"></td>
+            <td class=" ft0 fs12 ac vm nl bg_ne br3">-------</td>
+            <td class=" ft0 fs12 ac vm nl bg_ne br2">1</td>
+            <td class=" ft0 fs12 ac vm nl bg_ne br2">2</td>
+            <td class=" ft0 fs12 ac vm nl bg_ne br2">3</td>
+            <td class=" ft0 fs12 ac vm nl bg_ne br2">4</td>
+            <td class=" ft0 fs12 ac vm nl bg_ne br2">5=1+2-3-4</td>
+        </tr>
+        <tr style="height:32px;">
+            <td class=" bg1 br0"></td>
+            <td class=" ft0 fs12 al vm nl bg0 br3" name="wbsbzzsybnsrcpygxcslmxb.ylxh" index="0" type="list" dn="wbsbzzsybnsrcpygxcslmxb.ylxhmc" divname="wbsbzzsybnsrcpygxcslmxb.ylxh.list" value=''></td>
+            <td class=" ft0 fs12 ar vm nl bg0 br2" name="wbsbzzsybnsrcpygxcslmxb.qckcl" format="l16x4d" index="0" type="input"></td>
+            <td class=" ft0 fs12 ar vm nl bg0 br2" name="wbsbzzsybnsrcpygxcslmxb.bqgjl" format="l16x4d" index="0" type="input"></td>
+            <td class=" ft0 fs12 ar vm nl bg0 br2" name="wbsbzzsybnsrcpygxcslmxb.bqckxsl" format="l16x4d" index="0" type="input"></td>
+            <td class=" ft0 fs12 ar vm nl bg0 br2" name="wbsbzzsybnsrcpygxcslmxb.bqckkcl" format="l16x4d" index="0" type="input"></td>
+            <td class=" ft0 fs12 ar vm nw bg_ne br2" name="wbsbzzsybnsrcpygxcslmxb.qmkcl" format="l16x4d" index="0" type="input" isEditable=false></td>
+        </tr>
+        <tr style="height:32px;">
+            <td class=" bg1 br0"></td>
+            <td class=" ft0 fs12 al vm nl bg0 br3" name="wbsbzzsybnsrcpygxcslmxb.ylxh" index="1" type="list" dn="wbsbzzsybnsrcpygxcslmxb.ylxhmc" divname="wbsbzzsybnsrcpygxcslmxb.ylxh.list" value=''></td>
+            <td class=" ft0 fs12 ar vm nl bg0 br2" name="wbsbzzsybnsrcpygxcslmxb.qckcl" format="l16x4d" index="1" type="input"></td>
+            <td class=" ft0 fs12 ar vm nl bg0 br2" name="wbsbzzsybnsrcpygxcslmxb.bqgjl" format="l16x4d" index="1" type="input"></td>
+            <td class=" ft0 fs12 ar vm nl bg0 br2" name="wbsbzzsybnsrcpygxcslmxb.bqckxsl" format="l16x4d" index="1" type="input"></td>
+            <td class=" ft0 fs12 ar vm nl bg0 br2" name="wbsbzzsybnsrcpygxcslmxb.bqckkcl" format="l16x4d" index="1" type="input"></td>
+            <td class=" ft0 fs12 ar vm nw bg_ne br2" name="wbsbzzsybnsrcpygxcslmxb.qmkcl" format="l16x4d" index="1" type="input" isEditable=false></td>
+        </tr>
+        <tr style="height:32px;">
+            <td class=" bg1 br0"></td>
+            <td class=" ft0 fs12 al vm nl bg0 br3" name="wbsbzzsybnsrcpygxcslmxb.ylxh" index="2" type="list" dn="wbsbzzsybnsrcpygxcslmxb.ylxhmc" divname="wbsbzzsybnsrcpygxcslmxb.ylxh.list" value=''></td>
+            <td class=" ft0 fs12 ar vm nl bg0 br2" name="wbsbzzsybnsrcpygxcslmxb.qckcl" format="l16x4d" index="2" type="input"></td>
+            <td class=" ft0 fs12 ar vm nl bg0 br2" name="wbsbzzsybnsrcpygxcslmxb.bqgjl" format="l16x4d" index="2" type="input"></td>
+            <td class=" ft0 fs12 ar vm nl bg0 br2" name="wbsbzzsybnsrcpygxcslmxb.bqckxsl" format="l16x4d" index="2" type="input"></td>
+            <td class=" ft0 fs12 ar vm nl bg0 br2" name="wbsbzzsybnsrcpygxcslmxb.bqckkcl" format="l16x4d" index="2" type="input"></td>
+            <td class=" ft0 fs12 ar vm nw bg_ne br2" name="wbsbzzsybnsrcpygxcslmxb.qmkcl" format="l16x4d" index="2" type="input" isEditable=false></td>
+        </tr>
+        <tr style="height:32px;">
+            <td class=" bg1 br0"></td>
+            <td class=" ft0 fs12 al vm nl bg0 br3" name="wbsbzzsybnsrcpygxcslmxb.ylxh" index="3" type="list" dn="wbsbzzsybnsrcpygxcslmxb.ylxhmc" divname="wbsbzzsybnsrcpygxcslmxb.ylxh.list" value=''></td>
+            <td class=" ft0 fs12 ar vm nl bg0 br2" name="wbsbzzsybnsrcpygxcslmxb.qckcl" format="l16x4d" index="3" type="input"></td>
+            <td class=" ft0 fs12 ar vm nl bg0 br2" name="wbsbzzsybnsrcpygxcslmxb.bqgjl" format="l16x4d" index="3" type="input"></td>
+            <td class=" ft0 fs12 ar vm nl bg0 br2" name="wbsbzzsybnsrcpygxcslmxb.bqckxsl" format="l16x4d" index="3" type="input"></td>
+            <td class=" ft0 fs12 ar vm nl bg0 br2" name="wbsbzzsybnsrcpygxcslmxb.bqckkcl" format="l16x4d" index="3" type="input"></td>
+            <td class=" ft0 fs12 ar vm nw bg_ne br2" name="wbsbzzsybnsrcpygxcslmxb.qmkcl" format="l16x4d" index="3" type="input" isEditable=false></td>
+        </tr>
+
+        <tr style="height:32px;">
+            <td class='  bg1 br0'><a href='javascript:void(0)' onclick='cpygxcslmxbcontrol.addcpy(this);' class="jiajian"><img src="https://etax.hunan.chinatax.gov.cn/web-accept/static/css/images/jia.png" /></a></td>
+            <td class=" ft0 fs12 al vm nl bg0 br3" name="wbsbzzsybnsrcpygxcslmxb.ylxh" index="4" type="list" dn="wbsbzzsybnsrcpygxcslmxb.ylxhmc" divname="wbsbzzsybnsrcpygxcslmxb.ylxh.list" value=''></td>
+            <td class=" ft0 fs12 ar vm nl bg0 br2" name="wbsbzzsybnsrcpygxcslmxb.qckcl" format="l16x4d" index="4" type="input"></td>
+            <td class=" ft0 fs12 ar vm nl bg0 br2" name="wbsbzzsybnsrcpygxcslmxb.bqgjl" format="l16x4d" index="4" type="input"></td>
+            <td class=" ft0 fs12 ar vm nl bg0 br2" name="wbsbzzsybnsrcpygxcslmxb.bqckxsl" format="l16x4d" index="4" type="input"></td>
+            <td class=" ft0 fs12 ar vm nl bg0 br2" name="wbsbzzsybnsrcpygxcslmxb.bqckkcl" format="l16x4d" index="4" type="input"></td>
+            <td class=" ft0 fs12 ar vm nw bg_ne br2" name="wbsbzzsybnsrcpygxcslmxb.qmkcl" format="l16x4d" index="4" type="input" isEditable=false></td>
+            <td class='  ar vm nw bg1 br0'><a href='javascript:void(0)' onclick='cpygxcslmxbcontrol.addcpy(this);' class="jiajian"><img src="https://etax.hunan.chinatax.gov.cn/web-accept/static/css/images/jia.png" /></a></td>
+        </tr>
+
+        <tr style="height:41px;">
+            <td class=" bg1 br0"></td>
+            <td class=" bg1 br0" colspan="2"></td>
+            <td class=" bg1 br0"></td>
+            <td class=" bg1 br0"></td>
+            <td class=" bg1 br0"></td>
+            <td class=" bg1 br0"></td>
+        </tr>
+        <tr style="height:41px;">
+            <td class=" bg1 br0"></td>
+            <td class=" bg1 br0"></td>
+            <td class=" bg1 br0"></td>
+            <td class=" bg1 br0"></td>
+            <td class=" bg1 br0"></td>
+            <td class=" bg1 br0"></td>
+            <td class=" bg1 br0"></td>
+        </tr>
+    </table>
+    <div id='wbsbzzsybnsrcpygxcslmxb.ylxh.list' style='display: none;'>[{"value":"","text":"\u0026nbsp;"},{"value":"A10","text":"含铅汽油"},{"value":"A20","text":"无铅汽油"},{"value":"A21","text":"90#无铅汽油"},{"value":"A22","text":"93#无铅汽油"},{"value":"A23","text":"97#无铅汽油"},{"value":"A24","text":"98#无铅汽油"},{"value":"A99","text":"其他无铅汽油"},{"value":"B11","text":"10#柴油"},{"value":"B12","text":"5#柴油"},{"value":"B13","text":"0#柴油"},{"value":"B21","text":"-10#柴油"},{"value":"B22","text":"-20#柴油"},{"value":"B23","text":"-35#柴油"},{"value":"B24","text":"-50#柴油"},{"value":"B25","text":"生物柴油"},{"value":"B99","text":"其他柴油"},{"value":"400","text":"石脑油"},{"value":"500","text":"溶剂油"},{"value":"600","text":"润滑油"},{"value":"700","text":"燃料油"},{"value":"800","text":"航空煤油"},{"value":"A25","text":"92#无铅汽油"},{"value":"A26","text":"95#无铅汽油"}]</div>
+</html>
+</div>

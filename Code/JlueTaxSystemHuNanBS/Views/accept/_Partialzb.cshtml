@@ -1,0 +1,568 @@
+﻿@model JlueTaxSystemHuNanBS.Models.YbnsrzzsModel
+
+<div id="zb" name="zb_div" style="display: none;">
+
+
+
+    <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+    <html xmlns="http://www.w3.org/1999/xhtml">
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    </head>
+
+    <table class="sbbtable" style="width:0px">
+        <tr>
+            <td><div style="width:25px;"></div></td>
+            <td><div style="width:23px;"></div></td>
+            <td><div style="width:39px;"></div></td>
+            <td><div style="width:23px;"></div></td>
+            <td><div style="width:16px;"></div></td>
+            <td><div style="width:17px;"></div></td>
+            <td><div style="width:35px;"></div></td>
+            <td><div style="width:18px;"></div></td>
+            <td><div style="width:16px;"></div></td>
+            <td><div style="width:9px;"></div></td>
+            <td><div style="width:21px;"></div></td>
+            <td><div style="width:28px;"></div></td>
+            <td><div style="width:64px;"></div></td>
+            <td><div style="width:16px;"></div></td>
+            <td><div style="width:16px;"></div></td>
+            <td><div style="width:7px;"></div></td>
+            <td><div style="width:26px;"></div></td>
+            <td><div style="width:42px;"></div></td>
+            <td><div style="width:25px;"></div></td>
+            <td><div style="width:17px;"></div></td>
+            <td><div style="width:17px;"></div></td>
+            <td><div style="width:25px;"></div></td>
+            <td><div style="width:35px;"></div></td>
+            <td><div style="width:7px;"></div></td>
+            <td><div style="width:0px;"></div></td>
+            <td><div style="width:21px;"></div></td>
+            <td><div style="width:0px;"></div></td>
+            <td><div style="width:0px;"></div></td>
+            <td><div style="width:0px;"></div></td>
+            <td><div style="width:1px;"></div></td>
+            <td><div style="width:14px;"></div></td>
+            <td><div style="width:21px;"></div></td>
+            <td><div style="width:21px;"></div></td>
+            <td><div style="width:21px;"></div></td>
+            <td><div style="width:26px;"></div></td>
+            <td><div style="width:21px;"></div></td>
+            <td><div style="width:35px;"></div></td>
+            <td><div style="width:64px;"></div></td>
+            <td><div style="width:25px;"></div></td>
+            <td><div style="width:21px;"></div></td>
+            <td><div style="width:37px;"></div></td>
+            <td><div style="width:0px;"></div></td>
+            <td><div style="width:78px;"></div></td>
+        </tr>
+        <tr style="height:18px;">
+            <td class=" bg1 br0"></td>
+            <td class=" bg1 br0"></td>
+        </tr>
+        <tr style="height:31px;">
+            <td class=" bg1 br0" colspan="7"></td>
+            <td class=" bg1 br0" colspan="7"></td>
+            <td class=" ft1 fs21 ac vm nw bg1 br0" colspan="21">增&nbsp;值&nbsp;税&nbsp;纳&nbsp;税&nbsp;申&nbsp;报&nbsp;表</td>
+            <td class=" bg1 br0"></td>
+            <td class=" bg1 br0"></td>
+            <td class=" bg1 br0"></td>
+            <td class=" bg1 br0"></td>
+            <td class=" bg1 br0"></td>
+            <td class=" bg1 br0"></td>
+            <td class=" bg1 br0"></td>
+            <td class=" bg1 br0" rowspan="2"></td>
+        </tr>
+        <tr style="height:52px;">
+            <td class=" bg1 br0"></td>
+            <td class=" bg1 br0"></td>
+            <td class=" bg1 br0"></td>
+            <td class=" bg1 br0"></td>
+            <td class=" bg1 br0"></td>
+            <td class=" bg1 br0"></td>
+            <td class=" bg1 br0"></td>
+            <td class="   ft0 fs12 fbd ac vm nw bg1 br0" colspan="34">（适用于增值税一般纳税人）</td>
+            <td class=" bg1 br0"></td>
+        </tr>
+        <tr style="height:39px;">
+            <td class=" ft0 fs12 al vm nl bg1 br0" colspan="43">&nbsp;&nbsp;&nbsp;&nbsp;根据国家税收法律法规及增值税相关规定制定本表。纳税人不论有无销售额，均应按税务机关核定的纳税期限填写本表，并向当地税务机关申报。																		<br /></td>
+        </tr>
+        <tr style="height:23px;">
+            <td class=" ft0 fs12 al vm nw bg1 br1" colspan="4">税款所属时间：</td>
+            <td class=" ft0 fs12 al vm nw bg1 br1" colspan="6">@Model.GDTXDate.skssqq</td>
+            <td class=" ft0 fs12 al vm nw bg1 br1">至</td>
+            <td class=" ft0 fs12 al vm nw bg1 br1" colspan="6">@Model.GDTXDate.skssqz</td>
+            <td class=" ft0 fs12 ac vm nw bg1 br1" colspan="4">填表日期：</td>
+            <td class=" ft0 fs12 al vm nw bg1 br1" colspan="13" name="common.tbrq">@Model.GDTXDate.tbrq</td>
+            <td class=" bg1 br1"></td>
+            <td class=" ft0 fs12 ar vm nw bg1 br1" colspan="8">金额单位：元至角分</td>
+        </tr>
+        <tr style="height:22px;">
+            <td class=" ft0 fs12 al vm nw bg_ne br3" colspan="4">纳税人识别号</td>
+            <td class=" ft0 fs12 al vm nw bg_ne br2" colspan="20">@Model.Nsrxx.NSRSBH</td>
+            <td class=" ft0 fs12 ar vm nw bg_ne br2" colspan="11">所属行业：</td>
+            <td class=" ft0 fs12 al vm nw bg1 br2" colspan="8">@Model.Nsrxx.GBHY</td>
+        </tr>
+        <tr style="height:74px;">
+            <td class=" ft0 fs12 al vm nw bg_ne br3" colspan="4">纳税人名称</td>
+            <td class=" ft0 fs12 al vm nl bg_ne br1" colspan="7">@Model.Nsrxx.NSRMC</td>
+            <td class=" ft0 fs12 ar vm nw bg_ne br2" colspan="2">（公章）</td>
+            <td class=" ft0 fs12 ac vm nw bg_ne br2" colspan="5">法定代表人姓名</td>
+            <td class=" ft0 fs12 al vm nw bg_ne br2" colspan="3">@Model.Nsrxx.Name</td>
+            <td class=" ft0 fs12 ac vm nw bg_ne br2" colspan="2">注册地址</td>
+            <td class=" ft0 fs12 al vm nl bg_ne br2" colspan="12">@Model.Nsrxx.ZCDZ</td>
+            <td class=" ft0 fs12 ac vm nw bg_ne br2" colspan="4">营业地址</td>
+            <td class=" ft0 fs12 al vm nl bg_ne br2" colspan="4">@Model.Nsrxx.SCJYDZ</td>
+        </tr>
+        <tr style="height:39px;">
+            <td class=" ft0 fs12 al vm nw bg_ne br3" colspan="4">开户银行及帐号</td>
+            <td class=" ft0 fs12 al vm nl bg_ne br2" colspan="12"></td>
+            <td class=" ft0 fs12 ac vm nl bg_ne br2" colspan="5">登记注册类型				<br /></td>
+            <td class=" ft0 fs12 al vm nw bg_ne br2" colspan="16">@Model.Nsrxx.DJZCLX</td>
+            <td class=" ft0 fs12 ac vm nw bg_ne br2" colspan="3">电话号码</td>
+            <td class=" ft0 fs12 al vm nw bg_ne br2" colspan="3">@Model.Nsrxx.LXDH</td>
+        </tr>
+        <tr style="height:18px;">
+            <td class=" ft0 fs12 ac vm nw bg_ne br3" rowspan="2" colspan="13">项&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;目</td>
+            <td class=" ft0 fs12 ac vm nw bg_ne br2" rowspan="2" colspan="5">栏次</td>
+            <td class=" ft0 fs12 ac vm nl bg_ne br2" colspan="17">一般项目														<br /></td>
+            <td class=" ft0 fs12 ac vm nl bg_ne br2" colspan="8">即征即退项目							<br /></td>
+        </tr>
+        <tr style="height:18px;">
+            <td class=" ft0 fs12 ac vm nw bg_ne br2" colspan="7">本月数</td>
+            <td class=" ft0 fs12 ac vm nw bg_ne br2" colspan="10">本年累计</td>
+            <td class=" ft0 fs12 ac vm nw bg_ne br2" colspan="4">本月数</td>
+            <td class=" ft0 fs12 ac vm nw bg_ne br2" colspan="4">本年累计</td>
+        </tr>
+        <tr style="height:23px;">
+            <td class=" ft0 fs12 ac vm nl bg_ne br3" rowspan="10">销<br />售<br />额</td>
+            <td class=" ft0 fs12 al vm nw bg_ne br2" colspan="12">（一）按适用税率征税销售额</td>
+            <td class=" ft0 fs12 al vm nw bg_ne br2" colspan="5">1</td>
+            <td class=" ft0 fs12 ar vm nw bg_ne br2" colspan="7" name="wbsbzzsybnsrzb.ybbys" format="l16x2d" index="0" type="input" isEditable=false>0.00</td>
+            <td class=" ft0 fs12 ar vm nw bg_ne br2" colspan="10" name="wbsbzzsybnsrzb.ybbnlj" format="l16x2d" index="0" type="input" isEditable=false>0.00</td>
+            <td class=" ft0 fs12 ar vm nw bg_ne br2" colspan="4" name="wbsbzzsybnsrzb.jzjtbys" format="l16x2d" index="0" type="input" isEditable=false>0.00</td>
+            <td class=" ft0 fs12 ar vm nw bg_ne br2" colspan="4" name="wbsbzzsybnsrzb.jzjtbnlj" format="l16x2d" index="0" type="input" isEditable=false>0.00</td>
+        </tr>
+        <tr style="height:23px;">
+            <td class=" ft0 fs12 al vm nw bg_ne br2" colspan="12">其中：应税货物销售额</td>
+            <td class=" ft0 fs12 al vm nw bg_ne br2" colspan="5">2</td>
+            <td class=" ft0 fs12 ar vm nw bg0 br2" colspan="7" name="wbsbzzsybnsrzb.ybbys" format="l16x2d" index="1" type="input">0.00</td>
+            <td class=" ft0 fs12 ar vm nw bg_ne br2" colspan="10" name="wbsbzzsybnsrzb.ybbnlj" format="l16x2d" index="1" type="input" isEditable=false>0.00</td>
+            <td class=" ft0 fs12 ar vm nw bg0 br2" colspan="4" name="wbsbzzsybnsrzb.jzjtbys" format="l16x2d" index="1" type="input">0.00</td>
+            <td class=" ft0 fs12 ar vm nw bg_ne br2" colspan="4" name="wbsbzzsybnsrzb.jzjtbnlj" format="l16x2d" index="1" type="input" isEditable=false>0.00</td>
+        </tr>
+        <tr style="height:23px;">
+            <td class=" ft0 fs12 al vm nw bg_ne br2" colspan="12">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;应税劳务销售额</td>
+            <td class=" ft0 fs12 al vm nw bg_ne br2" colspan="5">3</td>
+            <td class=" ft0 fs12 ar vm nw bg0 br2" colspan="7" name="wbsbzzsybnsrzb.ybbys" format="l16x2d" index="2" type="input">0.00</td>
+            <td class=" ft0 fs12 ar vm nw bg_ne br2" colspan="10" name="wbsbzzsybnsrzb.ybbnlj" format="l16x2d" index="2" type="input" isEditable=false>0.00</td>
+            <td class=" ft0 fs12 ar vm nw bg0 br2" colspan="4" name="wbsbzzsybnsrzb.jzjtbys" format="l16x2d" index="2" type="input">0.00</td>
+            <td class=" ft0 fs12 ar vm nw bg_ne br2" colspan="4" name="wbsbzzsybnsrzb.jzjtbnlj" format="l16x2d" index="2" type="input" isEditable=false>0.00</td>
+        </tr>
+        <tr style="height:23px;">
+            <td class=" ft0 fs12 al vm nw bg_ne br2" colspan="12">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;纳税检查调整的销售额</td>
+            <td class=" ft0 fs12 al vm nw bg_ne br2" colspan="5">4</td>
+            <td class=" ft0 fs12 ar vm nw bg_ne br2" colspan="7" name="wbsbzzsybnsrzb.ybbys" format="l16x2d" index="3" type="input" isEditable=false>0.00</td>
+            <td class=" ft0 fs12 ar vm nw bg_ne br2" colspan="10" name="wbsbzzsybnsrzb.ybbnlj" format="l16x2d" index="3" type="input" isEditable=false>0.00</td>
+            <td class=" ft0 fs12 ar vm nw bg0 br2" colspan="4" name="wbsbzzsybnsrzb.jzjtbys" format="l16x2d" index="3" type="input">0.00</td>
+            <td class=" ft0 fs12 ar vm nw bg_ne br2" colspan="4" name="wbsbzzsybnsrzb.jzjtbnlj" format="l16x2d" index="3" type="input" isEditable=false>0.00</td>
+        </tr>
+        <tr style="height:23px;">
+            <td class=" ft0 fs12 al vm nw bg_ne br2" colspan="12">（二）按简易征收办法征税销售额</td>
+            <td class=" ft0 fs12 al vm nw bg_ne br2" colspan="5">5</td>
+            <td class=" ft0 fs12 ar vm nw bg0 br2" colspan="7" name="wbsbzzsybnsrzb.ybbys" format="l16x2d" index="4" type="input">0.00</td>
+            <td class=" ft0 fs12 ar vm nw bg_ne br2" colspan="10" name="wbsbzzsybnsrzb.ybbnlj" format="l16x2d" index="4" type="input" isEditable=false>0.00</td>
+            <td class=" ft0 fs12 ar vm nw bg0 br2" colspan="4" name="wbsbzzsybnsrzb.jzjtbys" format="l16x2d" index="4" type="input">0.00</td>
+            <td class=" ft0 fs12 ar vm nw bg_ne br2" colspan="4" name="wbsbzzsybnsrzb.jzjtbnlj" format="l16x2d" index="4" type="input" isEditable=false>0.00</td>
+        </tr>
+        <tr style="height:23px;">
+            <td class=" ft0 fs12 al vm nw bg_ne br2" colspan="12">其中：纳税检查调整的销售额</td>
+            <td class=" ft0 fs12 al vm nw bg_ne br2" colspan="5">6</td>
+            <td class=" ft0 fs12 ar vm nw bg0 br2" colspan="7" name="wbsbzzsybnsrzb.ybbys" format="l16x2d" index="5" type="input">0.00</td>
+            <td class=" ft0 fs12 ar vm nw bg_ne br2" colspan="10" name="wbsbzzsybnsrzb.ybbnlj" format="l16x2d" index="5" type="input" isEditable=false>0.00</td>
+            <td class=" ft0 fs12 ar vm nw bg0 br2" colspan="4" name="wbsbzzsybnsrzb.jzjtbys" format="l16x2d" index="5" type="input">0.00</td>
+            <td class=" ft0 fs12 ar vm nw bg_ne br2" colspan="4" name="wbsbzzsybnsrzb.jzjtbnlj" format="l16x2d" index="5" type="input" isEditable=false>0.00</td>
+        </tr>
+        <tr style="height:23px;">
+            <td class=" ft0 fs12 al vm nw bg_ne br2" colspan="12">（三）免、抵、退办法出口销售额</td>
+            <td class=" ft0 fs12 al vm nw bg_ne br2" colspan="5">7</td>
+            <td class=" ft0 fs12 ar vm nw bg_ne br2" colspan="7" name="wbsbzzsybnsrzb.ybbys" format="l16x2d" index="6" type="input" isEditable=false>0.00</td>
+            <td class=" ft0 fs12 ar vm nw bg_ne br2" colspan="10" name="wbsbzzsybnsrzb.ybbnlj" format="l16x2d" index="6" type="input" isEditable=false>0.00</td>
+            <td class=" ft0 fs12 ac vm nw bg_ne br2" colspan="4" name="wbsbzzsybnsrzb.jzjtbys" format="l16x2d" index="6" type="input" isEditable=false>——</td>
+            <td class=" ft0 fs12 ac vm nw bg_ne br2" colspan="4" name="wbsbzzsybnsrzb.jzjtbnlj" format="l16x2d" index="6" type="input" isEditable=false>——</td>
+        </tr>
+        <tr style="height:23px;">
+            <td class=" ft0 fs12 al vm nw bg_ne br2" colspan="12">（四）免税销售额</td>
+            <td class=" ft0 fs12 al vm nw bg_ne br2" colspan="5">8</td>
+            <td class=" ft0 fs12 ar vm nw bg_ne br2" colspan="7" name="wbsbzzsybnsrzb.ybbys" format="l16x2d" index="7" type="input" isEditable=false>0.00</td>
+            <td class=" ft0 fs12 ar vm nw bg_ne br2" colspan="10" name="wbsbzzsybnsrzb.ybbnlj" format="l16x2d" index="7" type="input" isEditable=false>0.00</td>
+            <td class=" ft0 fs12 ac vm nw bg_ne br2" colspan="4" name="wbsbzzsybnsrzb.jzjtbys" format="l16x2d" index="7" type="input" isEditable=false>——</td>
+            <td class=" ft0 fs12 ac vm nw bg_ne br2" colspan="4" name="wbsbzzsybnsrzb.jzjtbnlj" format="l16x2d" index="7" type="input" isEditable=false>——</td>
+        </tr>
+        <tr style="height:23px;">
+            <td class=" ft0 fs12 al vm nw bg_ne br2" colspan="12">其中：免税货物销售额</td>
+            <td class=" ft0 fs12 al vm nw bg_ne br2" colspan="5">9</td>
+            <td class=" ft0 fs12 ar vm nw bg0 br2" colspan="7" name="wbsbzzsybnsrzb.ybbys" format="l16x2d" index="8" type="input">0.00</td>
+            <td class=" ft0 fs12 ar vm nw bg_ne br2" colspan="10" name="wbsbzzsybnsrzb.ybbnlj" format="l16x2d" index="8" type="input" isEditable=false>0.00</td>
+            <td class=" ft0 fs12 ac vm nw bg_ne br2" colspan="4" name="wbsbzzsybnsrzb.jzjtbys" format="l16x2d" index="8" type="input" isEditable=false>——</td>
+            <td class=" ft0 fs12 ac vm nw bg_ne br2" colspan="4" name="wbsbzzsybnsrzb.jzjtbnlj" format="l16x2d" index="8" type="input" isEditable=false>——</td>
+        </tr>
+        <tr style="height:23px;">
+            <td class=" ft0 fs12 al vm nw bg_ne br2" colspan="12">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;免税劳务销售额</td>
+            <td class=" ft0 fs12 al vm nw bg_ne br2" colspan="5">10</td>
+            <td class=" ft0 fs12 ar vm nw bg0 br2" colspan="7" name="wbsbzzsybnsrzb.ybbys" format="l16x2d" index="9" type="input">0.00</td>
+            <td class=" ft0 fs12 ar vm nw bg_ne br2" colspan="10" name="wbsbzzsybnsrzb.ybbnlj" format="l16x2d" index="9" type="input" isEditable=false>0.00</td>
+            <td class=" ft0 fs12 ac vm nw bg_ne br2" colspan="4" name="wbsbzzsybnsrzb.jzjtbys" format="l16x2d" index="9" type="input" isEditable=false>——</td>
+            <td class=" ft0 fs12 ac vm nw bg_ne br2" colspan="4" name="wbsbzzsybnsrzb.jzjtbnlj" format="l16x2d" index="9" type="input" isEditable=false>——</td>
+        </tr>
+        <tr style="height:23px;">
+            <td class=" ft0 fs12 ac vm nl bg_ne br3" rowspan="14">税<br />款<br />计<br />算</td>
+            <td class=" ft0 fs12 al vm nw bg_ne br2" colspan="12">销项税额</td>
+            <td class=" ft0 fs12 al vm nw bg_ne br2" colspan="5">11</td>
+            <td class=" ft0 fs12 ar vm nw bg_ne br2" colspan="7" name="wbsbzzsybnsrzb.ybbys" format="l16x2d" index="10" type="input" isEditable=false>0.00</td>
+            <td class=" ft0 fs12 ar vm nw bg_ne br2" colspan="10" name="wbsbzzsybnsrzb.ybbnlj" format="l16x2d" index="10" type="input" isEditable=false>0.00</td>
+            <td class=" ft0 fs12 ar vm nw bg_ne br2" colspan="4" name="wbsbzzsybnsrzb.jzjtbys" format="l16x2d" index="10" type="input" isEditable=false>0.00</td>
+            <td class=" ft0 fs12 ar vm nw bg_ne br2" colspan="4" name="wbsbzzsybnsrzb.jzjtbnlj" format="l16x2d" index="10" type="input" isEditable=false>0.00</td>
+        </tr>
+        <tr style="height:23px;">
+            <td class=" ft0 fs12 al vm nw bg_ne br2" colspan="12">进项税额</td>
+            <td class=" ft0 fs12 al vm nw bg_ne br2" colspan="5">12</td>
+            <td class=" ft0 fs12 ar vm nw bg0 br2" colspan="7" name="wbsbzzsybnsrzb.ybbys" format="l16x2d" index="11" type="input">0.00</td>
+            <td class=" ft0 fs12 ar vm nw bg_ne br2" colspan="10" name="wbsbzzsybnsrzb.ybbnlj" format="l16x2d" index="11" type="input" isEditable=false>0.00</td>
+            <td class=" ft0 fs12 ar vm nw bg0 br2" colspan="4" name="wbsbzzsybnsrzb.jzjtbys" format="l16x2d" index="11" type="input">0.00</td>
+            <td class=" ft0 fs12 ar vm nw bg_ne br2" colspan="4" name="wbsbzzsybnsrzb.jzjtbnlj" format="l16x2d" index="11" type="input" isEditable=false>0.00</td>
+        </tr>
+        <tr style="height:23px;">
+            <td class=" ft0 fs12 al vm nw bg_ne br2" colspan="12">上期留抵税额</td>
+            <td class=" ft0 fs12 al vm nw bg_ne br2" colspan="5">13</td>
+            <td class=" ft0 fs12 ar vm nw bg_ne br2" colspan="7" name="wbsbzzsybnsrzb.ybbys" format="l16x2d" index="12" type="input" isEditable=false>0.00</td>
+            <td class=" ft0 fs12 ar vm nw bg_ne br2" colspan="10" name="wbsbzzsybnsrzb.ybbnlj" format="l16x2d" index="12" type="input" isEditable=false>0.00</td>
+            <td class=" ft0 fs12 ar vm nw bg_ne br2" colspan="4" name="wbsbzzsybnsrzb.jzjtbys" format="l16x2d" index="12" type="input" isEditable=false>0.00</td>
+            <td class=" ft0 fs12 ac vm nw bg_ne br2" colspan="4" name="wbsbzzsybnsrzb.jzjtbnlj" format="l16x2d" index="12" type="input" isEditable=false>——</td>
+        </tr>
+        <tr style="height:23px;">
+            <td class=" ft0 fs12 al vm nw bg_ne br2" colspan="12">进项税额转出</td>
+            <td class=" ft0 fs12 al vm nw bg_ne br2" colspan="5">14</td>
+            <td class=" ft0 fs12 ar vm nw bg0 br2" colspan="7" name="wbsbzzsybnsrzb.ybbys" format="l16x2d" index="13" type="input">0.00</td>
+            <td class=" ft0 fs12 ar vm nw bg_ne br2" colspan="10" name="wbsbzzsybnsrzb.ybbnlj" format="l16x2d" index="13" type="input" isEditable=false>0.00</td>
+            <td class=" ft0 fs12 ar vm nw bg0 br2" colspan="4" name="wbsbzzsybnsrzb.jzjtbys" format="l16x2d" index="13" type="input">0.00</td>
+            <td class=" ft0 fs12 ar vm nw bg_ne br2" colspan="4" name="wbsbzzsybnsrzb.jzjtbnlj" format="l16x2d" index="13" type="input" isEditable=false>0.00</td>
+        </tr>
+        <tr style="height:23px;">
+            <td class=" ft0 fs12 al vm nw bg_ne br2" colspan="12">免、抵、退应退税额</td>
+            <td class=" ft0 fs12 al vm nw bg_ne br2" colspan="5">15</td>
+            <td class=" ft0 fs12 ar vm nw bg0 br2" colspan="7" name="wbsbzzsybnsrzb.ybbys" format="l16x2d" index="14" type="input">0.00</td>
+            <td class=" ft0 fs12 ar vm nw bg_ne br2" colspan="10" name="wbsbzzsybnsrzb.ybbnlj" format="l16x2d" index="14" type="input" isEditable=false>0.00</td>
+            <td class=" ft0 fs12 ac vm nw bg_ne br2" colspan="4" name="wbsbzzsybnsrzb.jzjtbys" format="l16x2d" index="14" type="input" isEditable=false>——</td>
+            <td class=" ft0 fs12 ac vm nw bg_ne br2" colspan="4" name="wbsbzzsybnsrzb.jzjtbnlj" format="l16x2d" index="14" type="input" isEditable=false>——</td>
+        </tr>
+        <tr style="height:23px;">
+            <td class=" ft0 fs12 al vm nw bg_ne br2" colspan="12">按适用税率计算的纳税检查应补缴税额</td>
+            <td class=" ft0 fs12 al vm nw bg_ne br2" colspan="5">16</td>
+            <td class=" ft0 fs12 ar vm nw bg0 br2" colspan="7" name="wbsbzzsybnsrzb.ybbys" format="l16x2d" index="15" type="input">0.00</td>
+            <td class=" ft0 fs12 ar vm nw bg_ne br2" colspan="10" name="wbsbzzsybnsrzb.ybbnlj" format="l16x2d" index="15" type="input" isEditable=false>0.00</td>
+            <td class=" ft0 fs12 ac vm nw bg_ne br2" colspan="4" name="wbsbzzsybnsrzb.jzjtbys" format="l16x2d" index="15" type="input" isEditable=false>——</td>
+            <td class=" ft0 fs12 ac vm nw bg_ne br2" colspan="4" name="wbsbzzsybnsrzb.jzjtbnlj" format="l16x2d" index="15" type="input" isEditable=false>——</td>
+        </tr>
+        <tr style="height:23px;">
+            <td class=" ft0 fs12 al vm nw bg_ne br2" colspan="12">应抵扣税额合计</td>
+            <td class=" ft0 fs12 al vm nl bg_ne br2" colspan="5">17=12+13-14-15+16</td>
+            <td class=" ft0 fs12 ar vm nw bg_ne br2" colspan="7" name="wbsbzzsybnsrzb.ybbys" format="l16x2d" index="16" type="input" isEditable=false>0.00</td>
+            <td class=" ft0 fs12 ac vm nw bg_ne br2" colspan="10" name="wbsbzzsybnsrzb.ybbnlj" format="l16x2d" index="16" type="input" isEditable=false>——</td>
+            <td class=" ft0 fs12 ar vm nw bg_ne br2" colspan="4" name="wbsbzzsybnsrzb.jzjtbys" format="l16x2d" index="16" type="input" isEditable=false>0.00</td>
+            <td class=" ft0 fs12 ac vm nw bg_ne br2" colspan="4" name="wbsbzzsybnsrzb.jzjtbnlj" format="l16x2d" index="16" type="input" isEditable=false>——</td>
+        </tr>
+        <tr style="height:64px;">
+            <td class=" ft0 fs12 al vm nw bg_ne br2" colspan="12">实际抵扣税额</td>
+            <td class=" ft0 fs12 al vm nl bg_ne br2" colspan="5">18（如17<11，则为17，否则为11）</td>
+            <td class=" ft0 fs12 ar vm nw bg_ne br2" colspan="7" name="wbsbzzsybnsrzb.ybbys" format="l16x2d" index="17" type="input" isEditable=false>0.00</td>
+            <td class=" ft0 fs12 ar vm nw bg_ne br2" colspan="10" name="wbsbzzsybnsrzb.ybbnlj" format="l16x2d" index="17" type="input" isEditable=false>0.00</td>
+            <td class=" ft0 fs12 ar vm nw bg_ne br2" colspan="4" name="wbsbzzsybnsrzb.jzjtbys" format="l16x2d" index="17" type="input" isEditable=false>0.00</td>
+            <td class=" ft0 fs12 ar vm nw bg_ne br2" colspan="4" name="wbsbzzsybnsrzb.jzjtbnlj" format="l16x2d" index="17" type="input" isEditable=false>0.00</td>
+        </tr>
+        <tr style="height:23px;">
+            <td class=" ft0 fs12 al vm nw bg_ne br2" colspan="12">应纳税额</td>
+            <td class=" ft0 fs12 al vm nw bg_ne br2" colspan="5">19=11-18</td>
+            <td class=" ft0 fs12 ar vm nw bg_ne br2" colspan="7" name="wbsbzzsybnsrzb.ybbys" format="l16x2d" index="18" type="input" isEditable=false>0.00</td>
+            <td class=" ft0 fs12 ar vm nw bg_ne br2" colspan="10" name="wbsbzzsybnsrzb.ybbnlj" format="l16x2d" index="18" type="input" isEditable=false>0.00</td>
+            <td class=" ft0 fs12 ar vm nw bg_ne br2" colspan="4" name="wbsbzzsybnsrzb.jzjtbys" format="l16x2d" index="18" type="input" isEditable=false>0.00</td>
+            <td class=" ft0 fs12 ar vm nw bg_ne br2" colspan="4" name="wbsbzzsybnsrzb.jzjtbnlj" format="l16x2d" index="18" type="input" isEditable=false>0.00</td>
+        </tr>
+        <tr style="height:23px;">
+            <td class=" ft0 fs12 al vm nw bg_ne br2" colspan="12">期末留抵税额</td>
+            <td class=" ft0 fs12 al vm nw bg_ne br2" colspan="5">20=17-18</td>
+            <td class=" ft0 fs12 ar vm nw bg_ne br2" colspan="7" name="wbsbzzsybnsrzb.ybbys" format="l16x2d" index="19" type="input" isEditable=false>0.00</td>
+            <td class=" ft0 fs12 ar vm nw bg_ne br2" colspan="10" name="wbsbzzsybnsrzb.ybbnlj" format="l16x2d" index="19" type="input" isEditable=false>0.00</td>
+            <td class=" ft0 fs12 ar vm nw bg_ne br2" colspan="4" name="wbsbzzsybnsrzb.jzjtbys" format="l16x2d" index="19" type="input" isEditable=false>0.00</td>
+            <td class=" ft0 fs12 ac vm nw bg_ne br2" colspan="4" name="wbsbzzsybnsrzb.jzjtbnlj" format="l16x2d" index="19" type="input" isEditable=false>——</td>
+        </tr>
+        <tr style="height:23px;">
+            <td class=" ft0 fs12 al vm nw bg_ne br2" colspan="12">简易征收办法计算的应纳税额</td>
+            <td class=" ft0 fs12 al vm nw bg_ne br2" colspan="5">21</td>
+            <td class=" ft0 fs12 ar vm nw bg_ne br2" colspan="7" name="wbsbzzsybnsrzb.ybbys" format="l16x2d" index="20" type="input" isEditable=false>0.00</td>
+            <td class=" ft0 fs12 ar vm nw bg_ne br2" colspan="10" name="wbsbzzsybnsrzb.ybbnlj" format="l16x2d" index="20" type="input" isEditable=false>0.00</td>
+            <td class=" ft0 fs12 ar vm nw bg_ne br2" colspan="4" name="wbsbzzsybnsrzb.jzjtbys" format="l16x2d" index="20" type="input" isEditable=false>0.00</td>
+            <td class=" ft0 fs12 ar vm nw bg_ne br2" colspan="4" name="wbsbzzsybnsrzb.jzjtbnlj" format="l16x2d" index="20" type="input" isEditable=false>0.00</td>
+        </tr>
+        <tr style="height:23px;">
+            <td class=" ft0 fs12 al vm nw bg_ne br2" colspan="12">按简易征收办法计算的纳税检查应补缴税额</td>
+            <td class=" ft0 fs12 al vm nw bg_ne br2" colspan="5">22</td>
+            <td class=" ft0 fs12 ar vm nw bg0 br2" colspan="7" name="wbsbzzsybnsrzb.ybbys" format="l16x2d" index="21" type="input">0.00</td>
+            <td class=" ft0 fs12 ar vm nw bg_ne br2" colspan="10" name="wbsbzzsybnsrzb.ybbnlj" format="l16x2d" index="21" type="input" isEditable=false>0.00</td>
+            <td class=" ft0 fs12 ac vm nw bg_ne br2" colspan="4" name="wbsbzzsybnsrzb.jzjtbys" format="l16x2d" index="21" type="input" isEditable=false>——</td>
+            <td class=" ft0 fs12 ac vm nw bg_ne br2" colspan="4" name="wbsbzzsybnsrzb.jzjtbnlj" format="l16x2d" index="21" type="input" isEditable=false>——</td>
+        </tr>
+        <tr style="height:23px;">
+            <td class=" ft0 fs12 al vm nw bg_ne br2" colspan="12">应纳税额减征额</td>
+            <td class=" ft0 fs12 al vm nw bg_ne br2" colspan="5">23</td>
+            <td class=" ft0 fs12 ar vm nw bg0 br2" colspan="7" name="wbsbzzsybnsrzb.ybbys" format="l16x2d" index="22" type="input">0.00</td>
+            <td class=" ft0 fs12 ar vm nw bg_ne br2" colspan="10" name="wbsbzzsybnsrzb.ybbnlj" format="l16x2d" index="22" type="input" isEditable=false>0.00</td>
+            <td class=" ft0 fs12 ar vm nw bg0 br2" colspan="4" name="wbsbzzsybnsrzb.jzjtbys" format="l16x2d" index="22" type="input">0.00</td>
+            <td class=" ft0 fs12 ar vm nw bg_ne br2" colspan="4" name="wbsbzzsybnsrzb.jzjtbnlj" format="l16x2d" index="22" type="input" isEditable=false>0.00</td>
+        </tr>
+        <tr style="height:23px;">
+            <td class=" ft0 fs12 al vm nw bg_ne br2" colspan="12">应纳税额合计</td>
+            <td class=" ft0 fs12 al vm nw bg_ne br2" colspan="5">24=19+21-23</td>
+            <td class=" ft0 fs12 ar vm nw bg_ne br2" colspan="7" name="wbsbzzsybnsrzb.ybbys" format="l16x2d" index="23" type="input" isEditable=false>0.00</td>
+            <td class=" ft0 fs12 ar vm nw bg_ne br2" colspan="10" name="wbsbzzsybnsrzb.ybbnlj" format="l16x2d" index="23" type="input" isEditable=false>0.00</td>
+            <td class=" ft0 fs12 ar vm nw bg_ne br2" colspan="4" name="wbsbzzsybnsrzb.jzjtbys" format="l16x2d" index="23" type="input" isEditable=false>0.00</td>
+            <td class=" ft0 fs12 ar vm nw bg_ne br2" colspan="4" name="wbsbzzsybnsrzb.jzjtbnlj" format="l16x2d" index="23" type="input" isEditable=false>0.00</td>
+        </tr>
+        <tr style="height:23px;">
+            <td class=" ft0 fs12 ac vm nl bg_ne br3" rowspan="14">税<br />款<br />缴<br />纳</td>
+            <td class=" ft0 fs12 al vm nw bg_ne br2" colspan="12">期初未缴税额（多缴为负数）</td>
+            <td class=" ft0 fs12 al vm nw bg_ne br2" colspan="5">25</td>
+            <td class=" ft0 fs12 ar vm nw bg0 br2" colspan="7" name="wbsbzzsybnsrzb.ybbys" format="l16x2d" index="24" type="input">0.00</td>
+            <td class=" ft0 fs12 ar vm nw bg_ne br2" colspan="10" name="wbsbzzsybnsrzb.ybbnlj" format="l16x2d" index="24" type="input" isEditable=false>0.00</td>
+            <td class=" ft0 fs12 ar vm nw bg0 br2" colspan="4" name="wbsbzzsybnsrzb.jzjtbys" format="l16x2d" index="24" type="input">0.00</td>
+            <td class=" ft0 fs12 ar vm nw bg_ne br2" colspan="4" name="wbsbzzsybnsrzb.jzjtbnlj" format="l16x2d" index="24" type="input" isEditable=false>0.00</td>
+        </tr>
+        <tr style="height:23px;">
+            <td class=" ft0 fs12 al vm nw bg_ne br2" colspan="12">实收出口开具专用缴款书退税额</td>
+            <td class=" ft0 fs12 al vm nw bg_ne br2" colspan="5">26</td>
+            <td class=" ft0 fs12 ac vm nw bg_ne br2" colspan="7" name="wbsbzzsybnsrzb.ybbys" format="l16x2d" index="25" type="input" isEditable=false>——</td>
+            <td class=" ft0 fs12 ac vm nw bg_ne br2" colspan="10" name="wbsbzzsybnsrzb.ybbnlj" format="l16x2d" index="25" type="input" isEditable=false>——</td>
+            <td class=" ft0 fs12 ac vm nw bg_ne br2" colspan="4" name="wbsbzzsybnsrzb.jzjtbys" format="l16x2d" index="25" type="input" isEditable=false>——</td>
+            <td class=" ft0 fs12 ac vm nw bg_ne br2" colspan="4" name="wbsbzzsybnsrzb.jzjtbnlj" format="l16x2d" index="25" type="input" isEditable=false>——</td>
+        </tr>
+        <tr style="height:23px;">
+            <td class=" ft0 fs12 al vm nw bg_ne br2" colspan="12">本期已缴税额</td>
+            <td class=" ft0 fs12 al vm nw bg_ne br2" colspan="5">27=28+29+30+31</td>
+            <td class=" ft0 fs12 ar vm nw bg_ne br2" colspan="7" name="wbsbzzsybnsrzb.ybbys" format="l16x2d" index="26" type="input" isEditable=false>0.00</td>
+            <td class=" ft0 fs12 ar vm nw bg_ne br2" colspan="10" name="wbsbzzsybnsrzb.ybbnlj" format="l16x2d" index="26" type="input" isEditable=false>0.00</td>
+            <td class=" ft0 fs12 ar vm nw bg_ne br2" colspan="4" name="wbsbzzsybnsrzb.jzjtbys" format="l16x2d" index="26" type="input" isEditable=false>0.00</td>
+            <td class=" ft0 fs12 ar vm nw bg_ne br2" colspan="4" name="wbsbzzsybnsrzb.jzjtbnlj" format="l16x2d" index="26" type="input" isEditable=false>0.00</td>
+        </tr>
+        <tr style="height:23px;">
+            <td class=" ft0 fs12 al vm nw bg_ne br2" colspan="12">①分次预缴税额</td>
+            <td class=" ft0 fs12 al vm nw bg_ne br2" colspan="5">28</td>
+            <td class=" ft0 fs12 ar vm nw bg0 br2" colspan="7" name="wbsbzzsybnsrzb.ybbys" format="l16x2d" index="27" type="input">0.00</td>
+            <td class=" ft0 fs12 ac vm nw bg_ne br2" colspan="10" name="wbsbzzsybnsrzb.ybbnlj" format="l16x2d" index="27" type="input" isEditable=false>——</td>
+            <td class=" ft0 fs12 ar vm nw bg0 br2" colspan="4" name="wbsbzzsybnsrzb.jzjtbys" format="l16x2d" index="27" type="input">0.00</td>
+            <td class=" ft0 fs12 ac vm nw bg_ne br2" colspan="4" name="wbsbzzsybnsrzb.jzjtbnlj" format="l16x2d" index="27" type="input" isEditable=false>——</td>
+        </tr>
+        <tr style="height:23px;">
+            <td class=" ft0 fs12 al vm nw bg_ne br2" colspan="12">②出口开具专用缴款书预缴税额</td>
+            <td class=" ft0 fs12 al vm nw bg_ne br2" colspan="5">29</td>
+            <td class=" ft0 fs12 ac vm nw bg_ne br2" colspan="7" name="wbsbzzsybnsrzb.ybbys" format="l16x2d" index="28" type="input" isEditable=false>——</td>
+            <td class=" ft0 fs12 ac vm nw bg_ne br2" colspan="10" name="wbsbzzsybnsrzb.ybbnlj" format="l16x2d" index="28" type="input" isEditable=false>——</td>
+            <td class=" ft0 fs12 ac vm nw bg_ne br2" colspan="4" name="wbsbzzsybnsrzb.jzjtbys" format="l16x2d" index="28" type="input" isEditable=false>——</td>
+            <td class=" ft0 fs12 ac vm nw bg_ne br2" colspan="4" name="wbsbzzsybnsrzb.jzjtbnlj" format="l16x2d" index="28" type="input" isEditable=false>——</td>
+        </tr>
+        <tr style="height:23px;">
+            <td class=" ft0 fs12 al vm nw bg_ne br2" colspan="12">③本期缴纳上期应纳税额</td>
+            <td class=" ft0 fs12 al vm nw bg_ne br2" colspan="5">30</td>
+            <td class=" ft0 fs12 ar vm nw bg0 br2" colspan="7" name="wbsbzzsybnsrzb.ybbys" format="l16x2d" index="29" type="input">0.00</td>
+            <td class=" ft0 fs12 ar vm nw bg_ne br2" colspan="10" name="wbsbzzsybnsrzb.ybbnlj" format="l16x2d" index="29" type="input" isEditable=false>0.00</td>
+            <td class=" ft0 fs12 ar vm nw bg0 br2" colspan="4" name="wbsbzzsybnsrzb.jzjtbys" format="l16x2d" index="29" type="input">0.00</td>
+            <td class=" ft0 fs12 ar vm nw bg_ne br2" colspan="4" name="wbsbzzsybnsrzb.jzjtbnlj" format="l16x2d" index="29" type="input" isEditable=false>0.00</td>
+        </tr>
+        <tr style="height:23px;">
+            <td class=" ft0 fs12 al vm nw bg_ne br2" colspan="12">④本期缴纳欠缴税额</td>
+            <td class=" ft0 fs12 al vm nw bg_ne br2" colspan="5">31</td>
+            <td class=" ft0 fs12 ar vm nw bg0 br2" colspan="7" name="wbsbzzsybnsrzb.ybbys" format="l16x2d" index="30" type="input">0.00</td>
+            <td class=" ft0 fs12 ar vm nw bg_ne br2" colspan="10" name="wbsbzzsybnsrzb.ybbnlj" format="l16x2d" index="30" type="input" isEditable=false>0.00</td>
+            <td class=" ft0 fs12 ar vm nw bg0 br2" colspan="4" name="wbsbzzsybnsrzb.jzjtbys" format="l16x2d" index="30" type="input">0.00</td>
+            <td class=" ft0 fs12 ar vm nw bg_ne br2" colspan="4" name="wbsbzzsybnsrzb.jzjtbnlj" format="l16x2d" index="30" type="input" isEditable=false>0.00</td>
+        </tr>
+        <tr style="height:23px;">
+            <td class=" ft0 fs12 al vm nw bg_ne br2" colspan="12">期末未缴税额（多缴为负数）</td>
+            <td class=" ft0 fs12 al vm nw bg_ne br2" colspan="5">32=24+25+26-27</td>
+            <td class=" ft0 fs12 ar vm nw bg_ne br2" colspan="7" name="wbsbzzsybnsrzb.ybbys" format="l16x2d" index="31" type="input" isEditable=false>0.00</td>
+            <td class=" ft0 fs12 ar vm nw bg_ne br2" colspan="10" name="wbsbzzsybnsrzb.ybbnlj" format="l16x2d" index="31" type="input" isEditable=false>0.00</td>
+            <td class=" ft0 fs12 ar vm nw bg_ne br2" colspan="4" name="wbsbzzsybnsrzb.jzjtbys" format="l16x2d" index="31" type="input" isEditable=false>0.00</td>
+            <td class=" ft0 fs12 ar vm nw bg_ne br2" colspan="4" name="wbsbzzsybnsrzb.jzjtbnlj" format="l16x2d" index="31" type="input" isEditable=false>0.00</td>
+        </tr>
+        <tr style="height:23px;">
+            <td class=" ft0 fs12 al vm nw bg_ne br2" colspan="12">其中：欠缴税额（≥0）</td>
+            <td class=" ft0 fs12 al vm nw bg_ne br2" colspan="5">33=25+26-27</td>
+            <td class=" ft0 fs12 ar vm nw bg_ne br2" colspan="7" name="wbsbzzsybnsrzb.ybbys" format="l16x2d" index="32" type="input" isEditable=false>0.00</td>
+            <td class=" ft0 fs12 ac vm nw bg_ne br2" colspan="10" name="wbsbzzsybnsrzb.ybbnlj" format="l16x2d" index="32" type="input" isEditable=false>——</td>
+            <td class=" ft0 fs12 ar vm nw bg_ne br2" colspan="4" name="wbsbzzsybnsrzb.jzjtbys" format="l16x2d" index="32" type="input" isEditable=false>0.00</td>
+            <td class=" ft0 fs12 ac vm nw bg_ne br2" colspan="4" name="wbsbzzsybnsrzb.jzjtbnlj" format="l16x2d" index="32" type="input" isEditable=false>——</td>
+        </tr>
+        <tr style="height:23px;">
+            <td class=" ft0 fs12 al vm nw bg_ne br2" colspan="12">本期应补(退)税额</td>
+            <td class=" ft0 fs12 al vm nw bg_ne br2" colspan="5">34=24-28-29</td>
+            <td class=" ft0 fs12 ar vm nw bg_ne br2" colspan="7" name="wbsbzzsybnsrzb.ybbys" format="l16x2d" index="33" type="input" isEditable=false>0.00</td>
+            <td class=" ft0 fs12 ac vm nw bg_ne br2" colspan="10" name="wbsbzzsybnsrzb.ybbnlj" format="l16x2d" index="33" type="input" isEditable=false>——</td>
+            <td class=" ft0 fs12 ar vm nw bg_ne br2" colspan="4" name="wbsbzzsybnsrzb.jzjtbys" format="l16x2d" index="33" type="input" isEditable=false>0.00</td>
+            <td class=" ft0 fs12 ac vm nw bg_ne br2" colspan="4" name="wbsbzzsybnsrzb.jzjtbnlj" format="l16x2d" index="33" type="input" isEditable=false>——</td>
+        </tr>
+        <tr style="height:23px;">
+            <td class=" ft0 fs12 al vm nw bg_ne br2" colspan="12">即征即退实际退税额</td>
+            <td class=" ft0 fs12 al vm nw bg_ne br2" colspan="5">35</td>
+            <td class=" ft0 fs12 ac vm nw bg_ne br2" colspan="7" name="wbsbzzsybnsrzb.ybbys" format="l16x2d" index="34" type="input" isEditable=false>——</td>
+            <td class=" ft0 fs12 ac vm nw bg_ne br2" colspan="10" name="wbsbzzsybnsrzb.ybbnlj" format="l16x2d" index="34" type="input" isEditable=false>——</td>
+            <td class=" ft0 fs12 ar vm nw bg0 br2" colspan="4" name="wbsbzzsybnsrzb.jzjtbys" format="l16x2d" index="34" type="input">0.00</td>
+            <td class=" ft0 fs12 ar vm nw bg_ne br2" colspan="4" name="wbsbzzsybnsrzb.jzjtbnlj" format="l16x2d" index="34" type="input" isEditable=false>0.00</td>
+        </tr>
+        <tr style="height:23px;">
+            <td class=" ft0 fs12 al vm nw bg_ne br2" colspan="12">期初未缴查补税额</td>
+            <td class=" ft0 fs12 al vm nw bg_ne br2" colspan="5">36</td>
+            <td class=" ft0 fs12 ar vm nw bg0 br2" colspan="7" name="wbsbzzsybnsrzb.ybbys" format="l16x2d" index="35" type="input">0.00</td>
+            <td class=" ft0 fs12 ar vm nw bg_ne br2" colspan="10" name="wbsbzzsybnsrzb.ybbnlj" format="l16x2d" index="35" type="input" isEditable=false>0.00</td>
+            <td class=" ft0 fs12 ac vm nw bg_ne br2" colspan="4" name="wbsbzzsybnsrzb.jzjtbys" format="l16x2d" index="35" type="input" isEditable=false>——</td>
+            <td class=" ft0 fs12 ac vm nw bg_ne br2" colspan="4" name="wbsbzzsybnsrzb.jzjtbnlj" format="l16x2d" index="35" type="input" isEditable=false>——</td>
+        </tr>
+        <tr style="height:23px;">
+            <td class=" ft0 fs12 al vm nw bg_ne br2" colspan="12">本期入库查补税额</td>
+            <td class=" ft0 fs12 al vm nw bg_ne br2" colspan="5">37</td>
+            <td class=" ft0 fs12 ar vm nw bg0 br2" colspan="7" name="wbsbzzsybnsrzb.ybbys" format="l16x2d" index="36" type="input">0.00</td>
+            <td class=" ft0 fs12 ar vm nw bg_ne br2" colspan="10" name="wbsbzzsybnsrzb.ybbnlj" format="l16x2d" index="36" type="input" isEditable=false>0.00</td>
+            <td class=" ft0 fs12 ac vm nw bg_ne br2" colspan="4" name="wbsbzzsybnsrzb.jzjtbys" format="l16x2d" index="36" type="input" isEditable=false>——</td>
+            <td class=" ft0 fs12 ac vm nw bg_ne br2" colspan="4" name="wbsbzzsybnsrzb.jzjtbnlj" format="l16x2d" index="36" type="input" isEditable=false>——</td>
+        </tr>
+        <tr style="height:23px;">
+            <td class=" ft0 fs12 al vm nw bg_ne br2" colspan="12">期末未缴查补税额</td>
+            <td class=" ft0 fs12 al vm nw bg_ne br2" colspan="5">38=16+22+36-37</td>
+            <td class=" ft0 fs12 ar vm nw bg_ne br2" colspan="7" name="wbsbzzsybnsrzb.ybbys" format="l16x2d" index="37" type="input" isEditable=false>0.00</td>
+            <td class=" ft0 fs12 ar vm nw bg_ne br2" colspan="10" name="wbsbzzsybnsrzb.ybbnlj" format="l16x2d" index="37" type="input" isEditable=false>0.00</td>
+            <td class=" ft0 fs12 ac vm nw bg_ne br2" colspan="4" name="wbsbzzsybnsrzb.jzjtbys" format="l16x2d" index="37" type="input" isEditable=false>——</td>
+            <td class=" ft0 fs12 ac vm nw bg_ne br2" colspan="4" name="wbsbzzsybnsrzb.jzjtbnlj" format="l16x2d" index="37" type="input" isEditable=false>——</td>
+        </tr>
+        <tr style="height:22px;">
+            <td class=" ft0 fs12 ac vm nl bg_ne br3" rowspan="6" colspan="2">授<br />权<br />声<br />明</td>
+            <td class=" ft0 fs12 al vm nw bg_ne br4" colspan="19">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;如果你已委托代理人申报，请填写下列资料：</td>
+            <td class=" ft0 fs12 ac vm nl bg_ne br2" rowspan="6" colspan="2">申<br />报<br />人<br />声<br />明</td>
+            <td class=" bg_ne br4" colspan="20"></td>
+        </tr>
+        <tr style="height:25px;">
+            <td class=" ft0 fs12 al vm nw bg_ne br0" colspan="10">&nbsp;&nbsp;&nbsp;为代理一切税务事宜，现授权</td>
+            <td class=" bg_ne br2" colspan="9"></td>
+            <td class=" ft0 fs12 al vm nl bg_ne br4" colspan="20">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;本纳税申报表是根据国家税收法律法规及相关规定填报<br /></td>
+        </tr>
+        <tr style="height:21px;">
+            <td class=" ft0 fs12 al vm nw bg_ne br0" colspan="2">（地址）</td>
+            <td class=" bg_ne br1" colspan="7"></td>
+            <td class=" ft0 fs12 al vm nw bg_ne br4" colspan="10">为本纳税人的代理申报人，任何与本</td>
+            <td class=" ft0 fs12 al vm nw bg_ne br4" colspan="20">的，我确定它是真实的、可靠的、完整的。	</td>
+        </tr>
+        <tr style="height:22px;">
+            <td class=" ft0 fs12 al vm nw bg_ne br4" colspan="19">申报表有关的往来文件，都可寄予此人。</td>
+            <td class=" bg_ne br4" colspan="20"></td>
+        </tr>
+        <tr style="height:0px;">
+            <td class=" bg_ne br2" colspan="19"></td>
+            <td class=" bg_ne br2" colspan="20"></td>
+        </tr>
+        <tr style="height:27px;">
+            <td class=" ft0 fs12 ar vm nw bg_ne br2" colspan="12">授权人签字：</td>
+            <td class=" bg_ne br2" colspan="7"></td>
+            <td class=" ft0 fs12 ar vm nw bg_ne br2" colspan="16">声明人签字：</td>
+            <td class=" bg_ne br2" colspan="4"></td>
+        </tr>
+        <tr style="height:19px;">
+            <td class=" bg1 br0" colspan="7"></td>
+            <td class=" bg1 br0"></td>
+            <td class=" bg1 br0"></td>
+            <td class=" bg1 br0"></td>
+            <td class=" bg1 br0"></td>
+            <td class=" bg1 br0"></td>
+            <td class=" bg1 br0"></td>
+            <td class=" bg1 br0"></td>
+            <td class=" bg1 br0"></td>
+            <td class=" bg1 br0"></td>
+            <td class=" bg1 br0"></td>
+            <td class=" bg1 br0"></td>
+            <td class=" bg1 br0"></td>
+            <td class=" bg1 br0"></td>
+            <td class=" bg1 br0"></td>
+            <td class=" bg1 br0"></td>
+            <td class=" bg1 br0"></td>
+            <td class=" bg1 br0"></td>
+            <td class=" bg1 br0"></td>
+            <td class=" bg1 br0"></td>
+            <td class=" bg1 br0"></td>
+            <td class=" bg1 br0"></td>
+            <td class=" bg1 br0"></td>
+            <td class=" bg1 br0"></td>
+            <td class=" bg1 br0"></td>
+            <td class=" bg1 br0"></td>
+            <td class=" bg1 br0"></td>
+            <td class=" bg1 br0"></td>
+            <td class=" bg1 br0"></td>
+            <td class=" bg1 br0"></td>
+            <td class=" bg1 br0"></td>
+            <td class=" bg1 br0"></td>
+            <td class=" bg1 br0"></td>
+            <td class=" bg1 br0"></td>
+            <td class=" bg1 br0"></td>
+            <td class=" bg1 br0"></td>
+            <td class=" bg1 br0"></td>
+        </tr>
+        <tr style="height:27px;">
+            <td class=" ft0 fs12 al vm nw bg1 br0" colspan="7">主管税务机关:</td>
+            <td class=" bg1 br0"></td>
+            <td class=" bg1 br0"></td>
+            <td class=" bg1 br0"></td>
+            <td class=" bg1 br0"></td>
+            <td class=" bg1 br0"></td>
+            <td class=" bg1 br0"></td>
+            <td class=" bg1 br0"></td>
+            <td class=" bg1 br0"></td>
+            <td class=" bg1 br0"></td>
+            <td class=" bg1 br0"></td>
+            <td class=" bg1 br0"></td>
+            <td class=" ft0 fs12 al vm nw bg1 br0" colspan="3">接收人：</td>
+            <td class=" bg1 br0" colspan="2"></td>
+            <td class=" bg1 br0"></td>
+            <td class=" bg1 br0"></td>
+            <td class=" bg1 br0"></td>
+            <td class=" bg1 br0"></td>
+            <td class=" bg1 br0"></td>
+            <td class=" bg1 br0"></td>
+            <td class=" bg1 br0"></td>
+            <td class=" bg1 br0"></td>
+            <td class=" bg1 br0"></td>
+            <td class=" ft0 fs12 al vm nw bg1 br0" colspan="11">&nbsp;&nbsp;&nbsp;接收日期：</td>
+        </tr>
+        <tr style="height:35px;">
+            <td class=" bg1 br0" colspan="11"></td>
+            <td class=" bg1 br0" colspan="10"></td>
+            <td class=" bg1 br0"></td>
+            <td class=" bg1 br0"></td>
+            <td class=" bg1 br0"></td>
+            <td class=" bg1 br0"></td>
+            <td class=" bg1 br0"></td>
+            <td class=" bg1 br0"></td>
+            <td class=" bg1 br0"></td>
+            <td class=" bg1 br0"></td>
+            <td class=" bg1 br0"></td>
+            <td class=" bg1 br0"></td>
+            <td class=" bg1 br0"></td>
+            <td class=" bg1 br0"></td>
+            <td class=" bg1 br0"></td>
+            <td class=" bg1 br0"></td>
+            <td class=" bg1 br0"></td>
+            <td class=" bg1 br0"></td>
+            <td class=" bg1 br0"></td>
+            <td class=" bg1 br0"></td>
+            <td class=" bg1 br0"></td>
+            <td class=" bg1 br0"></td>
+            <td class=" bg1 br0"></td>
+            <td class=" bg1 br0"></td>
+        </tr>
+    </table>
+</html>
+</div>

@@ -1,0 +1,1085 @@
+﻿@model JlueTaxSystemHuNanBS.Models.Model
+
+
+<!doctype html>
+<html lang="zh-CN">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="Keywords" content="湖南国税,电子税务局,网上税务局,网上办税厅,掌上办税厅,营改增,互联网+税务,足不出户网上办税,手机办税,银联在线缴税,国地联合网上办税,12366纳税服务平台,一局三厅,电子申报,ABC财税专家,电子发票，网络发票">
+    <meta name="description" content="湖南国税电子税务局是根据国家税务局互联网+税务行动计划要求，全新搭建的网上涉税业务办理和纳税服务网上税务局，满足纳税人足不出户办税服务需要。由艾博克电脑系统有限公司提供技术支持" />
+    <title>国家税务总局湖南省电子税务局</title>
+    <link type="text/css" rel="stylesheet" href="/wsbs/css/bootstrap.css" />
+    <link type="text/css" rel="stylesheet" href="/wsbs/fonts/Font-Awesome/css/font-awesome.min.css" />
+    <link type="text/css" rel="stylesheet" href="/wsbs/css/build.css" />
+    <link type="text/css" rel="stylesheet" href="/wsbs/css/operate.css" />
+    <link rel="stylesheet" type="text/css" href="/wsbs/js/nicevalidator/jquery.validator.css">
+    <link rel="stylesheet" type="text/css" href="/wsbs/js/chosen/chosen.min.css" />
+    <link type="text/css" rel="stylesheet" href="/wsbs/css/jquery-ui-1.10.3.custom.css" />
+    <link type="text/css" rel="stylesheet" href="/wsbs/css/dialog.css" />
+    <link type="text/css" rel="stylesheet" href="/wsbs/js/layer/skin/layer.css" />
+    <link type="text/css" rel="stylesheet" href="/wsbs/css/owl.carousel.css" />
+    <link type="text/css" rel="stylesheet" href="/wsbs/css/date.css">
+    <link type="text/css" rel="stylesheet" href="/wsbs/css/style.css">
+    <link type="text/css" rel="stylesheet" media="print" href="/wsbs/css/print.css" />
+    <link type="text/css" rel="stylesheet" href="/wsbs/css/style-new.css" />
+    <link type="text/css" rel="stylesheet" href="/wsbs/css/iconfont.css" />
+    <script>
+        var _hmt = _hmt || [];
+        try {
+            window.onload = function () {
+                var hm = document.createElement("script");
+                hm.src = "//hm.baidu.com/hm.js?993807a565d1053537ebbe3fe030a5f5";
+                var s = document.getElementsByTagName("script")[0];
+                s.parentNode.insertBefore(hm, s);
+            };
+        } catch (e) {
+
+        }
+
+    </script>
+    <script type="text/javascript" src="/wsbs/js/jquery-1.11.1.min.js"></script>
+    <script type="text/javascript" src="/wsbs/js/superslide.2.1.js"></script>
+    <script type="text/javascript" src="/wsbs/js/jquery.easing.min.js"></script>
+    <script type="text/javascript" src="/wsbs/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="/wsbs/js/scrollable.js"></script>
+    <script type="text/javascript" src="/wsbs/js/jquery.placeholder.js"></script>
+    <script type="text/javascript" src="/wsbs/js/jquery.form.min.js"></script>
+    <script type="text/javascript" src="/wsbs/js/nicevalidator/jquery.validator.js"></script>
+    <script type="text/javascript" src="/wsbs/js/nicevalidator/zh_CN.js"></script>
+    <script type="text/javascript" src="/wsbs/js/jquery.blockUI.js"></script>
+    <script type="text/javascript" src="/wsbs/js/jquery-ui-1.10.3.custom.min.js"></script>
+    <script type="text/javascript" src="/wsbs/js/abc.rest.js"></script>
+    <script type="text/javascript" src="/wsbs/js/My97DatePicker/WdatePicker.js"></script>
+    <base target="_self" />
+    <script type="text/javascript" language="javascript" src="/wsbs/js/chosen/chosen.jquery.js"></script>
+    <script type="text/javascript" language="javascript" src="/wsbs/js/chosen/sel-common.js"></script>
+    <script type="text/javascript" src="/wsbs/js/js.js"></script>
+    <script type="text/javascript" src="/wsbs/js/header.js"></script>
+    <script type="text/javascript" src="/wsbs/js/layer/layer.js"></script>
+    <script type="text/javascript" src="/wsbs/js/common.js"></script>
+    <script type="text/javascript" src="/wsbs/js/store.min.js"></script>
+    <script type="text/javascript" src="/wsbs/js/ajaxfileupload.js"></script>
+    <script type="text/javascript" src="/wsbs/js/jquery.PrintArea.js"></script>
+    <script type="text/javascript" src="/wsbs/js/template.js"></script>
+    <script type="text/javascript" src="/wsbs/js/select.js"></script>
+    <script type="text/javascript" src="/wsbs/js/security.js"></script>
+    <script type="text/javascript" src="/wsbs/js/ajaxPrevent.js"></script>
+    <script type="text/javascript" src="/wsbs/js/sbtx/sbtx.js"></script>
+    <script>
+        jQuery.blockUI.defaults.message = '<img src="/wsbs/images/loading/loading.gif"/>';
+        var ctx = '/wsbs', yyfwDm = '';
+        store.setStoreTimeout(1440);
+    </script>
+
+</head>
+
+<body>
+
+
+
+    <div class="index-top2">
+        <div class="top-center">
+            <a href="/wsbs/toMainIndex.do">
+                <div class="top-logo">
+                    <img src="/wsbs/images/taxlogo.png">
+                    国家税务总局湖南省电子税务局
+                </div>
+            </a>
+            <input type="hidden" id="isCALogin" value="NORMAL_LOGIN">
+            <div class="top-users">
+
+                <div class="top-sousuo">
+                    <input onkeydown="if(event.keyCode==13)searchMenuByEnter(this)" class="form-control" placeholder="请输入要搜索的内容">
+                    <button class="btn btn-primary" onclick="searchMenuClick(this)">搜索</button>
+                </div>
+
+
+
+
+                <div class="top-login-users">
+                    <a href="/wsbs/myInfo/toUserInfo.do" id="infoBtn" title="湖南威信文化传媒有限公司 + 主账户">
+                        <span>
+
+
+
+                            欢迎，@Model.Nsrxx.Name
+
+
+                        </span>
+                    </a>
+                    <span>|</span>
+                    <a href="javascript:void(0);" id="logoutBtn">
+                        <span>退出</span>
+                    </a>
+                </div>
+
+
+
+            </div>
+            <input type="hidden" id="nsrsbh_head" value="91430105MA4L4UB74U">
+        </div>
+    </div>
+    </div>
+    <script type="text/javascript">
+        //	var logintype = '';
+
+        $(document).ready(function () {
+            var k = !0;
+
+            $(".loginmask").css("opacity", 0.8);
+
+            /*
+            if($.browser.version <= 6){
+                $('#reg_setp,.loginmask').height($(document).height());
+            }
+            */
+
+            $(".thirdlogin ul li:odd").css({ marginRight: 0 });
+
+            $(".openlogin").click(function () {
+                //		k&&"0px"!=$("#loginalert").css("top")&& ($("#loginalert").show(),$(".loginmask").fadeIn(500),$("#loginalert").animate({top:200},400,"easeOutQuart"))
+                location.href = ctx + "/user/Signin/loginRedirect.do";
+            });
+
+            $('#openLogin').click(function () {
+                location.href = ctx + "/user/Signin/loginRedirect.do";
+            });
+            $(".loginmask,.closealert").click(function () {
+                k && (k = !1, $("#loginalert").animate({ top: -600 }, 400, "easeOutQuart", function () { $("#loginalert").hide(); k = !0 }), $(".loginmask").fadeOut(500))
+            });
+
+
+            $("#sigup_now,.reg a").click(function () {
+                $("#reg_setp,#setp_quicklogin").show();
+                $("#reg_setp").animate({ left: 0 }, 500, "easeOutQuart")
+            });
+
+            $(".back_setp").click(function () {
+                "block" == $("#setp_quicklogin").css("display") && $("#reg_setp").animate({ left: "100%" }, 500, "easeOutQuart", function () { $("#reg_setp,#setp_quicklogin").hide() })
+            });
+
+            $("a[name=mobile-tax], .qr_box").on("mouseover", function () {
+                $(".qr_box").show();
+            });
+
+            $("a[name=mobile-tax], .qr_box").on("mouseout", function () {
+                $(".qr_box").hide();
+            });
+
+        });
+
+        //查询
+        function queryForm(sendType, reqUrl, targetId, formId, func) {
+
+            var tmp = reqUrl.split("?");
+            if (tmp[1]) {
+                reqUrl += "&timestamp=" + new Date().format("yyyyMMddhhmmssSS");
+            } else {
+                reqUrl += "?timestamp=" + new Date().format("yyyyMMddhhmmssSS");
+            }
+
+            var options = {
+                type: sendType,
+                url: "/wsbs" + reqUrl,
+                success: function (res) {
+                    $.unblockUI();
+                    if (!isEmpty(res.result) && isLogout(res.result.code)) {
+                        //showLogin();
+                        //layerAlert(data.result.msg);
+                        //					layerAlert('您还未登录或登录超时，请重新登录系统！');
+                        //setTimeout("location.href= ctx+ '/login.jsp'",2000);
+                        //					setTimeout("logout('/login.jsp')",2000);
+                        showLogoutMessage();
+                    }
+                    else if (!isEmpty(res.result) && !isSuccess(res.result.code)) {
+                        layerAlert(res.result.msg);
+                    }
+                },
+                error: function (data) {
+                    $.unblockUI();
+                    //				var jsonStr = JSON.stringify(data);
+                    //				alert(jsonStr);
+                    alert("查询失败,请稍后再试！");
+                },
+                target: '#' + targetId
+            }
+            $.blockUI();
+            $('#' + formId).ajaxSubmit(options);
+        }
+
+        /**
+         * 表单提交
+         * 文件表单提交
+         */
+        function ajaxSubmitFileForm(reqUrl, sendData, files, callBackFunc) {
+            $.blockUI();
+            $.ajaxFileUpload({
+                url: "/wsbs" + reqUrl,
+                secureuri: false,
+                async: false,
+                fileElementId: files,
+                dataType: 'json',
+                data: sendData,
+                success: function (res) {
+                    $.unblockUI();
+                    if (!isEmpty(callBackFunc)) {
+                        var jsonStr = JSON.stringify(res);
+                        var callback = callBackFunc + '(' + jsonStr + ')';
+                        eval(callback);
+                        return;
+                    }
+                    if (isSuccess(res.result.code)) {
+                        layerAlert(res.result.msg, true, res.result.code);
+                    } else if (isLogout(res.result.code)) {
+                        showLogoutMessage();
+                    } else if (isFileSizeBig(res.result.code)) {
+                        $("#isFileSizeBig").val("1");
+                        layerAlert(res.result.msg);
+                    } else {
+                        layerAlert(res.result.msg);
+                    }
+                },
+                error: function (res) {
+                    //var jsonStr = JSON.stringify(res);
+                    //alert("jsonStr="+jsonStr);
+                    if (res.responseText == '\n\n\n\n') {	//如果返回的是页面，就是拦截器返回的session超时后跳转到sessioon.jsp的页面，现在ajax下则用js登出
+                        $.unblockUI();
+                        showLogoutMessage();
+                    } else {
+                        $.unblockUI();
+                        layerAlert("操作失败,请稍后再试！");
+                    }
+                    //			if(jsonStr.length>5000){	//如果返回的是页面，就是拦截器返回的session超时后跳转到主页的页面，现在ajax下则用js登出
+                    //				$.unblockUI();
+                    //				showLogoutMessage();
+                    //			}
+
+
+
+                }
+            });
+        }
+
+        /**
+        * 表单提交
+         * 参数：请求参数、formId、回调函数
+         */
+        function ajaxSubmitForm(reqUrl, formId, callBackFunc) {
+            var options = {
+                type: 'POST',
+                dataType: 'json',
+                url: "/wsbs" + reqUrl,
+                success: function (data) {
+                    $.unblockUI();
+                    if (isSuccess(data.result.code)) {
+                        if (isEmpty(callBackFunc)) {
+                            layerAlert(data.result.msg, true, data.result.code);
+                        } else {
+                            var jsonStr = JSON.stringify(data);
+                            var callback = callBackFunc + '(' + jsonStr + ')';
+                            eval(callback);
+                        }
+                    } else {
+                        if (isLogout(data.result.code)) {
+                            showLogoutMessage();
+                        } else {
+                            layerAlert(data.result.msg);
+                        }
+                    }
+                },
+                error: function (res) {
+                    var jsonStr = JSON.stringify(res);
+                    //			alert(jsonStr);
+                    if (jsonStr.indexOf('logoutpage') > -1) {	//如果返回的是页面，就是拦截器返回的session超时后跳转到sessioon.jsp的页面，现在ajax下则用js登出
+                        $.unblockUI();
+                        showLogoutMessage();
+                    } else {
+                        $.unblockUI();
+                        layerAlert("操作失败,请稍后再试！");
+                    }
+                }
+            }
+            $.blockUI();
+            $('#' + formId).ajaxSubmit(options);
+        }
+
+        function ajax_callback(url, data, func) {
+            $.blockUI();
+            $.ajax({
+                type: 'POST',
+                url: "/wsbs" + url,
+                dataType: 'json',
+                data: data,
+                success: function (res) {
+                    $.unblockUI();
+                    var resmsg = '';
+                    if (!isSuccess(res.result.code)) {
+                        if (res.result.code == '241' || res.result.code == '242') {
+                            markError(res.result.yjfpdm);
+                            layerAlert(res.result.msg + ",请点击上一步按钮修改验旧信息！");
+                        } else if (isLogout(res.result.code)) {
+                            showLogoutMessage();
+                        } else {
+                            layerAlert(res.result.msg);
+                        }
+                    } else {
+                        var msg = '';
+                        if (isEmpty(func)) {
+                            layerAlert(res.result.msg, true, res.result.code);
+                        } else {
+                            var jsonStr = JSON.stringify(res);
+                            var callback = func + '(' + jsonStr + ')';
+                            eval(callback);
+                        }
+                    }
+                },
+                error: function (res) {
+                    var jsonStr = JSON.stringify(res);
+                    if (jsonStr.indexOf('logoutpage') > -1) {	//如果返回的是页面，就是拦截器返回的session超时后跳转到sessioon.jsp的页面，现在ajax下则用js登出
+                        $.unblockUI();
+                        showLogoutMessage();
+                    } else {
+                        $.unblockUI();
+                        layerAlert("操作失败,请稍后再试！");
+                    }
+                }
+            });
+        }
+
+        function ajax_bc_callback(url, data) {
+            $.blockUI();
+            $.ajax({
+                type: 'POST',
+                url: "/wsbs" + url,
+                dataType: 'json',
+                data: data,
+                success: function (res) {
+                    $.unblockUI();
+                    var resmsg = '';
+                    if (!isSuccess(res.result.code)) {
+                        if (res.result.code == '241' || res.result.code == '242') {
+                            markError(res.result.yjfpdm);
+                            layerAlert(res.result.msg + ",请点击上一步按钮修改验旧信息！");
+                        } else if (isLogout(res.result.code)) {
+                            showLogoutMessage();
+                        } else {
+                            layerAlert(res.result.msg);
+                        }
+                    } else {
+                        layerAlert(res.result.msg, false, res.result.code);
+                    }
+                },
+                error: function (res) {
+                    var jsonStr = JSON.stringify(res);
+                    if (jsonStr.indexOf('logoutpage') > -1) {	//如果返回的是页面，就是拦截器返回的session超时后跳转到sessioon.jsp的页面，现在ajax下则用js登出
+                        $.unblockUI();
+                        showLogoutMessage();
+                    } else {
+                        $.unblockUI();
+                        layerAlert("操作失败,请稍后再试！");
+                    }
+                }
+            });
+        }
+
+        function openDialog(url, width, height, title, dialogDiv) {
+            $.blockUI();
+            var timestamp = Date.parse(new Date());
+            url += url.indexOf('?') > -1 ? '&timestamp=' + timestamp : '?timestamp=' + timestamp;
+            var link = "/wsbs" + url;
+            var div = isEmpty(dialogDiv) ? "showDialog" : dialogDiv;
+            $('#' + div).children().remove();
+            $.get(link, function (res) {
+                $.unblockUI();
+                if (!isEmpty(res.result) && !isSuccess(res.result.code)) {
+                    if (isLogout(res.result.code)) {
+                        showLogoutMessage();
+                    } else {
+                        layerAlert(res.result.msg);
+                    }
+                } else {
+                    $("#" + div).html(res);
+                    $("#" + div).dialog({
+                        bgiframe: true,
+                        modal: true,
+                        width: width,
+                        height: height,
+                        title: title,
+                        dialogClass: 'alert',
+                        autoOpen: true,
+                        hide: 'slide',
+                        show: 'slide',
+                        resizable: false,
+                        cache: false,
+                        close: function (ev, ui) { }
+                    });
+                }
+            });
+        }
+
+
+        function openDialog_withCloseMethod(url, width, height, title, dialogDiv, afterCloseFun) {
+            $.blockUI();
+            var timestamp = Date.parse(new Date());
+            url += url.indexOf('?') > -1 ? '&timestamp=' + timestamp : '?timestamp=' + timestamp;
+            var link = "/wsbs" + url;
+            var div = isEmpty(dialogDiv) ? "showDialog" : dialogDiv;
+            $('#' + div).children().remove();
+            $.get(link, function (res) {
+                $.unblockUI();
+                if (!isEmpty(res.result) && !isSuccess(res.result.code)) {
+                    if (isLogout(res.result.code)) {
+                        showLogoutMessage();
+                    } else {
+                        layerAlert(res.result.msg);
+                    }
+                } else {
+                    $("#" + div).html(res);
+                    $("#" + div).dialog({
+                        bgiframe: true,
+                        modal: true,
+                        width: width,
+                        height: height,
+                        title: title,
+                        dialogClass: 'alert',
+                        autoOpen: true,
+                        hide: 'slide',
+                        show: 'slide',
+                        resizable: false,
+                        cache: false,
+                        close: function (ev, ui) {
+                            window[afterCloseFun]();
+                        }
+                    });
+                }
+            });
+        }
+
+        function loadList(type, url) {
+            var data = $("#queryForm").serializeJson();
+            loadPic("table_content", true, true);
+            $.ajax({
+                type: type,
+                url: ctx + url,
+                data: data,
+                dataType: 'json',
+                success: function (msg) {
+                    //			msg = JSON.parse(msg);
+                    $("#Qry_Table tbody").empty();
+                    if (msg && msg.list) {
+                        var listHtml = template("xzxkList", msg);
+                        $("#Qry_Table tbody").append(listHtml);
+                    } else {
+                        var listHtml = template("noResultList");
+                        $("#Qry_Table tbody").append(listHtml);
+                    }
+                },
+                error: function (err) {
+                    $.unblockUI();
+                    var jsonStr = JSON.stringify(err);
+                    //alert("jsonStr="+jsonStr);
+                    if (jsonStr.indexOf('logoutpage') > -1) {
+                        //				layerAlert("您还未登录或登录超时，请重新登录系统！");
+                        //				window.top.location.href = ctx + "/login.jsp";
+                        showLogoutMessage();
+                    } else {
+                        layerAlert("查询失败,请稍后再试！");
+                    }
+                }
+            });
+        }
+
+        function htmlDialog(contentId, width, height, _title) {
+            $('#' + contentId).dialog({
+                bgiframe: true,
+                modal: true,
+                width: width,
+                height: height,
+                title: _title,
+                dialogClass: 'alert',
+                autoOpen: true,
+                hide: 'slide',
+                show: 'slide',
+                resizable: false
+            });
+        }
+    </script>
+    <div style=" ">
+
+
+        <link type="text/css" rel="stylesheet" href="/wsbs/css/jquery.multiselect.css" />
+        <script type="text/javascript" src="/wsbs/js/declarationInfoQuery/declarationInfoQuery.js"></script>
+        <script type="text/javascript" src="/wsbs/js/jquery.multiselect.js"></script>
+        <div class="container m20-center p15">
+            <div class="tax-title">
+                <div class="title-name">
+                    申报信息查询
+                </div>
+            </div>
+            <div class=" z-mt">
+                <div class="z-select">
+                    <form id="formSelect">
+                        <div class="z-select">
+                            <div class="z-tw12">税款所属期起：</div>
+                            <div class="z-iw7">
+                                <input type="text" class="form-control" onfocus="WdatePicker();" style="height:30px; background:#fff;" id="skssqq" name="skssqq" readonly="readonly" />
+                            </div>
+                            <div class="z-tw12">税款所属期止：</div>
+                            <div class="z-iw7">
+                                <input type="text" class="form-control" onfocus="WdatePicker();" style="height:30px; background:#fff;" id="skssqz" name="skssqz" readonly="readonly" />
+                            </div>
+                            <div class="z-tw12">申报日期起：</div>
+                            <div class="z-iw7">
+                                <input type="text" class="form-control" onfocus="WdatePicker();" style="height:30px; background:#fff;" id="nssbrqq" name="nssbrqq" readonly="readonly" />
+                            </div>
+                            <div class="z-tw12">申报日期止：</div>
+                            <div class="z-iw7">
+                                <input type="text" class="form-control" onfocus="WdatePicker();" style="height:30px; background:#fff;" id="nssbrqz" name="nssbrqz" readonly="readonly" />
+                            </div>
+                            <div class="clear"></div>
+                            <div class="z-select">
+                                <div class="z-tw12">征收项目：</div>
+                                <span style="width: 1040px;float: left;">
+                                    <select class="form-control" multiple id="zsxm">
+                                        <option value="">请选择</option>
+
+                                        <option value="10101" title="增值税">增值税</option>
+
+                                        <option value="10102" title="消费税">消费税</option>
+
+                                        <option value="10103" title="营业税">营业税</option>
+
+                                        <option value="10104" title="企业所得税">企业所得税</option>
+
+                                        <option value="10105" title="企业所得税退税">企业所得税退税</option>
+
+                                        <option value="10106" title="个人所得税">个人所得税</option>
+
+                                        <option value="10107" title="资源税">资源税</option>
+
+                                        <option value="10109" title="城市维护建设税">城市维护建设税</option>
+
+                                        <option value="10110" title="房产税">房产税</option>
+
+                                        <option value="10111" title="印花税">印花税</option>
+
+                                        <option value="10112" title="城镇土地使用税">城镇土地使用税</option>
+
+                                        <option value="10113" title="土地增值税">土地增值税</option>
+
+                                        <option value="10114" title="车船税">车船税</option>
+
+                                        <option value="10115" title="船舶吨税">船舶吨税</option>
+
+                                        <option value="10116" title="车辆购置税">车辆购置税</option>
+
+                                        <option value="10117" title="关税">关税</option>
+
+                                        <option value="10118" title="耕地占用税">耕地占用税</option>
+
+                                        <option value="10119" title="契税">契税</option>
+
+                                        <option value="10120" title="烟叶税">烟叶税</option>
+
+                                        <option value="10121" title="环境保护税">环境保护税</option>
+
+                                        <option value="10125" title="屠宰税（废止）">屠宰税（废止）</option>
+
+                                        <option value="10199" title="其他税收收入">其他税收收入</option>
+
+                                        <option value="10201" title="企业职工基本养老保险费">企业职工基本养老保险费</option>
+
+                                        <option value="10202" title="失业保险费">失业保险费</option>
+
+                                        <option value="10203" title="基本医疗保险费">基本医疗保险费</option>
+
+                                        <option value="10204" title="工伤保险费">工伤保险费</option>
+
+                                        <option value="10205" title="生育保险费">生育保险费</option>
+
+                                        <option value="10206" title="新型农村合作医疗费">新型农村合作医疗费</option>
+
+                                        <option value="10207" title="城镇居民基本医疗保险费">城镇居民基本医疗保险费</option>
+
+                                        <option value="10210" title="城乡居民基本养老保险费">城乡居民基本养老保险费</option>
+
+                                        <option value="10211" title="机关事业单位基本养老保险费">机关事业单位基本养老保险费</option>
+
+                                        <option value="10212" title="城乡居民基本医疗保险费">城乡居民基本医疗保险费</option>
+
+                                        <option value="10291" title="机关事业单位职业年金">机关事业单位职业年金</option>
+
+                                        <option value="10299" title="其他社会保险费">其他社会保险费</option>
+
+                                        <option value="11005" title="国有资本经营预算转移支付收入">国有资本经营预算转移支付收入</option>
+
+                                        <option value="30102" title="农网还贷资金收入">农网还贷资金收入</option>
+
+                                        <option value="30129" title="国家电影事业发展专项资金收入">国家电影事业发展专项资金收入</option>
+
+                                        <option value="30144" title="城市公用事业附加收入">城市公用事业附加收入</option>
+
+                                        <option value="30146" title="国有土地收益基金收入">国有土地收益基金收入</option>
+
+                                        <option value="30147" title="农业土地开发资金收入">农业土地开发资金收入</option>
+
+                                        <option value="30148" title="国有土地使用权出让收入">国有土地使用权出让收入</option>
+
+                                        <option value="30149" title="大中型水库移民后期扶持基金">大中型水库移民后期扶持基金</option>
+
+                                        <option value="30150" title="跨省际大中型水库库区基金">跨省际大中型水库库区基金</option>
+
+                                        <option value="30152" title="三峡水库库区基金">三峡水库库区基金</option>
+
+                                        <option value="30156" title="城市基础设施配套费收入">城市基础设施配套费收入</option>
+
+                                        <option value="30158" title="国家重大水利工程建设基金收入">国家重大水利工程建设基金收入</option>
+
+                                        <option value="30166" title="核电站乏燃料处理处置基金">核电站乏燃料处理处置基金</option>
+
+                                        <option value="30168" title="可再生能源发展基金">可再生能源发展基金</option>
+
+                                        <option value="30175" title="废弃电器电子产品处理基金收入">废弃电器电子产品处理基金收入</option>
+
+                                        <option value="30176" title="水土保持补偿费收入">水土保持补偿费收入</option>
+
+                                        <option value="30199" title="其他政府性基金收入">其他政府性基金收入</option>
+
+                                        <option value="30201" title="排污费收入">排污费收入</option>
+
+                                        <option value="30202" title="水资源费收入">水资源费收入</option>
+
+                                        <option value="30203" title="教育费附加">教育费附加</option>
+
+                                        <option value="30212" title="场外核应急准备资金">场外核应急准备资金</option>
+
+                                        <option value="30216" title="地方教育附加">地方教育附加</option>
+
+                                        <option value="30217" title="文化事业建设费">文化事业建设费</option>
+
+                                        <option value="30218" title="残疾人就业保障金">残疾人就业保障金</option>
+
+                                        <option value="30221" title="水利建设专项收入">水利建设专项收入</option>
+
+                                        <option value="30224" title="油价调控风险准备金">油价调控风险准备金</option>
+
+                                        <option value="30299" title="其他专项收入">其他专项收入</option>
+
+                                        <option value="30407" title="财政行政事业性收费收入">财政行政事业性收费收入</option>
+
+                                        <option value="30408" title="税务行政事业性收费收入">税务行政事业性收费收入</option>
+
+                                        <option value="30424" title="人防办行政事业性收费收入">人防办行政事业性收费收入</option>
+
+                                        <option value="30427" title="教育行政事业性收费收入">教育行政事业性收费收入</option>
+
+                                        <option value="30432" title="国土资源行政事业性收费收入">国土资源行政事业性收费收入</option>
+
+                                        <option value="30433" title="建设行政事业性收费收入">建设行政事业性收费收入</option>
+
+                                        <option value="30442" title="交通运输行政事业性收费收入">交通运输行政事业性收费收入</option>
+
+                                        <option value="30443" title="工业和信息产业行政事业性收费收入">工业和信息产业行政事业性收费收入</option>
+
+                                        <option value="30444" title="农业行政事业性收费收入">农业行政事业性收费收入</option>
+
+                                        <option value="30446" title="水利行政事业性收费收入">水利行政事业性收费收入</option>
+
+                                        <option value="30499" title="其他行政事业性收费收入">其他行政事业性收费收入</option>
+
+                                        <option value="30501" title="税务部门罚没收入">税务部门罚没收入</option>
+
+                                        <option value="30600" title="国有资本经营收入">国有资本经营收入</option>
+
+                                        <option value="30603" title="产权转让收入">产权转让收入</option>
+
+                                        <option value="30604" title="清算收入">清算收入</option>
+
+                                        <option value="30701" title="海上石油矿区使用费">海上石油矿区使用费</option>
+
+                                        <option value="30702" title="陆上石油矿区使用费">陆上石油矿区使用费</option>
+
+                                        <option value="30703" title="场地使用费收入">场地使用费收入</option>
+
+                                        <option value="30705" title="利息收入">利息收入</option>
+
+                                        <option value="30706" title="非经营性国有资产收入">非经营性国有资产收入</option>
+
+                                        <option value="30710" title="石油特别收益金">石油特别收益金</option>
+
+                                        <option value="30714" title="矿产资源专项收入">矿产资源专项收入</option>
+
+                                        <option value="30720" title="国家留成油上缴收入">国家留成油上缴收入</option>
+
+                                        <option value="30799" title="其他国有资源（产）有偿使用收入">其他国有资源（产）有偿使用收入</option>
+
+                                        <option value="39900" title="其他收入">其他收入</option>
+
+                                        <option value="39907" title="免税商品特许经营费">免税商品特许经营费</option>
+
+                                        <option value="39912" title="差别电价收入">差别电价收入</option>
+
+                                        <option value="39999" title="其他收入">其他收入</option>
+
+                                    </select>
+                                </span>
+                                <input type="hidden" name="zsxmDm" id="zsxmDm">
+                            </div>
+                        </div>
+                        <div class="clear"></div>
+                        <div class="z-select">
+                            <div class="z-tw12">申报状态：</div>
+                            <span class="z-iw450">
+                                <select class="form-control text" id="sbztsel" name="sbztsel" multiple="multiple">
+                                    <option value="1">期内未申报</option>
+                                    <option value="2">逾期未申报</option>
+                                    <option value="3">准期申报</option>
+                                    <option value="4">逾期申报</option>
+                                </select>
+                            </span>
+                            <div>
+                                <input type="hidden" class="form-control" id="sbzt" name="sbzt">
+                            </div>
+                            <div class="z-sz">
+                                <button type="button" id="queryButton" class="btn btn-success">查&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;询</button>
+                            </div>
+                        </div>
+
+                    </form>
+                </div>
+            </div>
+            <div class="clear"></div>
+            <div class="z-table" id="declarationInfoTable">
+                <table class="table table-striped" id="table_query_res">
+                    <thead>
+                        <tr style="border:0;">
+                            <th width="3%"></th>
+                            <th width="12%">征收项目</th>
+                            <th width="12%">征收品目</th>
+                            <th width="9%">申报期限</th>
+                            <th width="9%">所属期起</th>
+                            <th width="9%">所属期止</th>
+                            <th width="9%">申报日期</th>
+                            <th width="10%">应税销售收入</th>
+                            <th width="9%">应纳税额</th>
+                            <th width="9%">应补退税额</th>
+                            <th width="8%" style="text-align: center">申报类型</th>
+
+                        </tr>
+                    </thead>
+
+                </table>
+
+                <div style=" position:relative;">
+                    <nav style="float:right;">
+                        <div class="z-yeshu">总记录数:<span>0</span>条 / 每页<span></span>条 共计<span>0</span>页</div>
+                        <ul id="page" class="pagination"></ul>
+                    </nav>
+                </div>
+
+
+            </div>
+
+
+
+        </div>
+    </div>
+
+
+    </div>
+
+
+    <object classid="clsid:3C474273-7F8B-4690-8C34-855C4528658D" id="CryptCtrl1" border="0" width="14" height="14" style="visibility: hidden"> </object>
+
+    <link type="text/css" rel="stylesheet" href="/wsbs/css/softkey.css" />
+    <script type="text/javascript" src="/wsbs/js/ca/softkeyboard.js"></script>
+    <script type="text/javascript" src="/wsbs/js/footer.js"></script>
+
+    <input type="hidden" id="csmmbz" value="" />
+    <div id="showDialog"></div>
+
+    <!--解决日期选择框在dialog里面双击后失效的BUG-->
+    <div id="forDateShow" style="display:none;" onclick="WdatePicker({isShowClear:true,readOnly:false,maxDate:'%y-%M-%d'});">
+    </div>
+    <div id="popMsgCount" style="display:none;">
+        <a id="xfk" style="font-size:16px;" href="/wsbs/message/publicService/view_message.do?ydbz=N">您有<span id="xfk_haveMsg">0</span>条未读消息</a>
+    </div>
+
+    <div id="popWeiHeyan" style="display:none;">
+    </div>
+
+    <div id="usbPwModal1" style="display:none;">
+        <ul>
+            <li>
+                <div class="z-tw11">检测UKey口令：</div>
+                <div class="z-iw9" id="usbPwInput_div">
+
+                    <input class="form-control" id="usbPwInput" name="usbPwInput" type="password" onkeydown="Calc.password.value=this.value"
+                           onclick="password1=this;showkeyboard();this.readOnly=1;Calc.password.value=''"
+                           onkeypress="if(event.keyCode==13) {submitByUsbPw(); return false;}">
+                    <input type="hidden" id="Save0_submit1">
+                    <input type="hidden" id="usbSubmitMethodName">
+                </div>
+                <div class="clear"></div>
+            </li>
+            <li>
+                <button type="button" class="btn btn-default" onclick="cancelUsbPw();">取&nbsp;&nbsp;&nbsp;&nbsp;消</button>
+                <button id="confirmbtn" type="button" class="btn btn-success f_r" onclick="submitByUsbPw();">确&nbsp;&nbsp;&nbsp;&nbsp;定</button>
+                <div class="clear"></div>
+            </li>
+        </ul>
+    </div>
+
+
+
+    <style>
+        .shadeWhy {
+            width: 100%;
+            height: 100%;
+            overflow-y: hidden;
+            position: fixed;
+            z-index: 100;
+            top: 0;
+            left: 0;
+            background: black;
+            opacity: 0.5;
+        }
+
+        .shade_contentWhy {
+            width: 650px;
+            border-radius: 10px;
+            height: 480px;
+            position: fixed;
+            z-index: 101;
+            top: 50%;
+            left: 50%;
+            margin-top: -240px;
+            margin-left: -325px;
+            background: #FFFFFF;
+        }
+    </style>
+    <div id="weiheyantishi_div" class="shadeWhy" style="display: none">
+    </div>
+    <div id="weiheyantishi_div2" class="shade_contentWhy" style="display: none; width:600px; margin-left:-350px; margin-top:-150px; height:300px;">
+
+
+
+
+        <div class="nav shade_content_div">
+            <div class="col-xs-12 shade_title" style="border-bottom:1px solid #ddd;">
+                <h3 style="margin-top:0px;">实名办税提示</h3>
+            </div>
+            <div class="clear"></div>
+            <div style="margin:5px 10px 0; text-align:left;">&nbsp; &nbsp; &nbsp; &nbsp; 您单位有人员未完成实名认证信息采集或未完成绑定，请完成实名认证信息采集，否则将影响相关办税业务功能操作！</div>
+            <div class="col-xs-12 shade_from" id="weiheyanTable" style="margin-top:10px;">
+
+            </div>
+        </div>
+    </div>
+
+    <script id="weiHeyanTpl" type="text/html">
+        <div class="z-table" style="margin: 0 auto; height:145px; overflow-y: auto;">
+            <table class="table table-striped">
+                <thead>
+                    <tr>
+                        <th width="10%">序号</th>
+                        <th width="35%">姓名</th>
+                        <th width="35%">办税人员类型</th>
+                        <th width="20%">认证状态</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {{each dataList as value i}}
+                    <tr>
+                        <td>{{i+1}}</td>
+                        <td align="left">{{value.xm}}</td>
+                        <td align="left">{{value.gxrlxmc}}</td>
+                        <td align="left">{{value.rzztmc}}</td>
+                    </tr>
+                    {{/each}}
+                </tbody>
+            </table>
+        </div>
+        <div class="col-xs-12" style="margin-top:10px;">
+            <input class="  btn btn-success" style="width:120px;" type="button" onclick="javascript:toHeyanPage();" value="立即实名认证" />
+            <input class="  btn btn-warning" style="width:120px;" type="button" onclick="javascript:closeWeiHeyanPop();" value="关闭" />
+        </div>
+    </script>
+
+
+    <script type="text/javascript" src="/wsbs/js/page.js"></script>
+    <style>
+        /*.ui-dialog.ui-widget.ui-widget-content.ui-corner-all.ui-front.alert.ui-draggable {*/
+        /*position: fixed!important;*/
+        /*top : auto!important;*/
+        /*bottom : 20px!important;*/
+        /*}*/
+        .fixPop {
+            position: fixed;
+        }
+    </style>
+
+
+
+
+    <script>
+
+        var t = "b976620429734b1f131427bff888a620", prevTime = store.get('readmsgtime'), msgCount = store.get('msgcount');
+
+
+        var now = new Date();
+
+
+        if (!isEmpty(t)) {
+            if (msgCount >= 0) {
+                setMsgCount(msgCount);
+            }
+            if (isEmpty(prevTime)) {
+                getMsg();
+            } else {
+                var sub = now.getTime() - prevTime;//Date.parse(new Date(prevTime.replace(/-/g, "/")));
+                if (Math.floor(sub / (60 * 1000)) >= 60) {
+                    getMsg();
+                }
+            }
+
+            //	if(store.get('isCALogin')=='CA'){  //如果是CA登录，则监控UsbKey是否拔出，拔出则退出系统
+            //		timeID = setInterval("btnCheckKey()",3000);
+            //	}
+        }
+
+
+
+        /**
+        *弹出未认证提示框
+         */
+        if (!isEmpty(t) && isEmpty('92965f7ff7dd4226967e878f61106897') && isEmpty($('#yanzheng').attr('id'))) {
+            //	if(store.get("hasPopWeiRenZhengTiShi")!='1'){
+            //		onclick_openWeiHeyanTishi();
+            //		store.set("hasPopWeiRenZhengTiShi","1");
+            //	}
+            //如果cookie里有标记则不弹出提示
+            if (!getCookie("isShowTipHeYan")) {
+                onclick_openWeiHeyanTishi();
+                setCookie("true", "isShowTipHeYan");
+            }
+        }
+
+        function getMsg() {
+            $.ajax({
+                type: 'POST',
+                url: ctx + "/message/publicService/list_message.do",
+                dataType: 'json',
+                data: { ydbz: 'N' },
+                success: function (res) {
+                    if (res.result.success) {
+                        var count = res.result.count;
+                        var now = new Date();
+                        store.set('msgcount', count);
+                        store.set('readmsgtime', now.getTime());
+                        setMsgCount(count);
+                        if (count > 0) {
+                            toPopMsgCount();
+                        }
+
+                    }
+                }
+            })
+        }
+
+        function setMsgCount(count, type) {
+            var isCount = true;
+            if (!isEmpty(type) && ydbz != 'N') {
+                isCount = false;
+            }
+            if (isCount) {
+                $('#haveMsg').text(count);
+                $('#xfk_haveMsg').text(count);
+                $('#wdxx').text(count);
+
+                //		alert(store.get('justNowLogin'));
+
+
+                //		$('#xfk').show();
+
+                if (count == 0 || isEmpty(count)) {
+                    $('#noMsg').show();
+                    $('#haveMsg').hide();
+
+                    //			$('#xfk_noMsg').show();
+                    //			$('#xfk').hide();
+                } else {
+                    $('#noMsg').hide();
+                    $('#haveMsg').show();
+
+                    //			$('#xfk_noMsg').hide();
+                    //			$('#xfk').show();
+
+                }
+            }
+        }
+
+        //$(window).scroll(function () {
+        //	$('.ui-dialog').css('position', "fixed");
+        //});
+
+        function toPopMsgCount() {
+            if (store.get('toPopMsgCount') == "true") {
+                //		$("#popMsgCount").show();
+                $("#popMsgCount").dialog({
+                    bgiframe: true,
+                    modal: false,
+                    width: 200,
+                    height: 150,
+                    title: "阅读提示",
+                    dialogClass: 'alert',
+                    autoOpen: true,
+                    //			hide: 'slide',
+                    show: 'slide',
+                    resizable: false,
+                    cache: false,
+                    position: ["right", "bottom"],
+                    close: function (ev, ui) { },
+                    open: function () {
+                        //				$('.ui-dialog .ui-widget .ui-widget-content .ui-corner-all .ui-front .alert .ui-draggable').css({
+                        //					'position': "fixed",
+                        //					'top' : 'auto',
+                        //					'bottom' : '20px'
+                        //				});
+                        //				alert($(this).parent().attr("id"));
+                        //				$(this).parent().css({
+                        //					'position': "fixed",
+                        //					'top' : 'auto',
+                        //					'bottom' : '20px'
+                        //				});
+                        $(this).parent().addClass('fixPop');
+                    }
+                });
+
+
+                store.set('toPopMsgCount', "false");
+            }
+        }
+
+
+
+//function btnCheckKey()
+//{
+//	CryptCtrl1.CheckKey();
+//	if (CryptCtrl1.ErrCode != 0)
+//	{
+//		clearInterval(timeID);
+//		alert("error "+CryptCtrl1.ErrCode+"  错误信息："+CryptCtrl1.ErrMsg);
+//		logout("/login.jsp");
+//	}
+//}
+    </script>
+    <!--<div class="ico2" id="xfk_haveMsg" style="display:none;">2</div>    有消息记录的时候显示-->
+    <!--<div class="ico2-2" id="xfk_noMsg"></div>    无消息数值的时候显示-->
+
+</body>
+</html>
+

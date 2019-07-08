@@ -1,0 +1,57 @@
+.shut {
+	font-size: 12px;
+}
+.modal-content.bootstrap-dialog.type-danger .modal-header {
+    background-color: #337ab7;
+}
+.modal-content .modal-header {
+    height: 34px;
+    padding-top:6px;
+	
+}
+.bootstrap-dialog-footer-buttons {
+    text-align: center;
+}
+/* .bootstrap-dialog .bootstrap-dialog-title{
+ padding-left:20px; background:url(../img/ts.png) no-repeat left ; font-size:14px; 
+} */
+
+.btn-sm, .btn-group-sm  .btn{ padding:5px 20px;}
+
+.wings-alert-body {padding: 0 60px;}
+.wings-alert-img{float:left; margin:10px 10px 0 35px;}
+/* .wings-alert-message{ background:  url(../img/tsc.png) no-repeat left top;   padding:16px 0 0 80px; } */
+.wings-alert-wrapper {padding-left: 40px;}
+.wings-alert-message{ padding:43px 10px 20px 10px; font-size: 14px; text-align: center; color: #333;}
+.bootstrap-dialog-message {font-size: 12px; color: #333;}
+
+.wings-alert-exception.shut-text p {margin: 0;}
+
+.shut-one, .shut-text {
+	/*text-align: center;*/
+}
+.shut-text .wings-alert-message{font-size: 14px;}
+.shut-text div{font-size: 12px;}
+.BRshut {
+	height: 30px;
+	line-height: 30px;
+	background: #e1e3e6;
+	padding: 0 5px 0 12px;
+	margin-top: 13px;
+}
+
+.txt, .shut-down {
+	display: inline-block;
+	float: right;
+	text-decoration: none;
+	color: #097ce8;
+	margin-left: 10px;
+}
+
+.shut-down {
+	width: 11px;
+	height: 7px;
+	background: url(/wings/core/img/up.png) no-repeat;
+	margin: 6px 7px 8px 10px;
+	cursor: pointer;
+}

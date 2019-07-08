@@ -1,0 +1,202 @@
+.sbbtable {
+    border-collapse: collapse;
+    border-spacing:0;
+    /*position:absolute;*/
+    /*left:2px;*/
+    /*table-layout:fixed;*/
+    /*white-space:nowrap;*/
+}
+.sbbtable th,td {
+    padding: 4px 5px;
+    
+}
+
+.ft0 {
+    font-family:"微软雅黑","黑体", Arial, Helvetica, sans-serif;
+}
+
+.ft1 {
+    font-family:"微软雅黑","黑体", Arial, Helvetica, sans-serif;
+}
+.fbd {
+    font-weight: bold;
+}
+
+.fs10 {
+    font-size:10pt;
+}
+.fs11 {
+    font-size:11pt;
+}
+.fs12 {
+    font-size:12pt;
+}
+.fs13 {
+    font-size:13pt;
+}
+.fs14 {
+    font-size:14pt;
+}
+.fs15 {
+    font-size:15pt;
+}
+.fs16 {
+    font-size:16pt;
+}
+.fs17 {
+    font-size:17pt;
+}
+.fs18 {
+    font-size:18pt;
+}
+.fs19 {
+    font-size:19pt;
+}
+.fs20 {
+    font-size:20pt;
+}
+.fs21 {
+    font-size:20pt;
+}
+.fs22 {
+    font-size:22pt;
+}
+.fs23 {
+    font-size:22pt;
+}
+.fs24 {
+    font-size:22pt;
+}
+.fs25 {
+    font-size:25pt;
+}
+.fs26 {
+    font-size:26pt;
+}
+.fs27 {
+    font-size:27pt;
+}
+.fs28 {
+    font-size:28pt;
+}
+.fs29 {
+    font-size:29pt;
+}
+.fs30 {
+    font-size:30pt;
+}
+.fs31 {
+    font-size:31pt;
+}
+.fs32 {
+    font-size:32pt;
+}
+.fs33 {
+    font-size:33pt;
+}
+.fs34 {
+    font-size:34pt;
+}
+.fs35 {
+    font-size:35pt;
+}
+
+.br0 {
+    border-style:none none none none;
+}
+
+.br1 {
+    border: 1px #ababab;
+    border-style:none none solid none;
+}
+
+.br2 {
+      border: 1px #ababab;
+      border-style:none solid solid none;
+  }
+
+.br3 {
+    border: 1px #ababab;
+    border-style:none solid solid solid;
+}
+
+.br4 {
+    border: 1px #ababab;
+    border-style:none solid none none;
+}
+
+.br5 {
+    border: 1px #ababab;
+    border-style:none solid none solid;
+}
+
+.br6 {
+    border: 1px #ababab;
+    border-style:none none solid solid;
+}
+
+.br7 {
+    border: 1px #ababab;
+    border-style:none none none solid;
+}
+
+.br8 {
+    border: 1px #ababab;
+    border-style:solid solid solid none;
+}
+
+.br9 {
+    border: 1px #ababab;
+    border-style:solid solid solid solid;
+}
+
+.bg0 {
+    background-color:#FFFFFF;
+}
+
+.bg1 {
+    background-color:#FFFFFF;
+}
+
+.bg_ne {
+    background-color: #d8d8d8;
+    /*background-color:#FFFFFF;*/
+}
+
+.bg_err {
+    background-color:#FF0000;
+}
+
+.bg_bt {
+    background-color:#33ffcc;
+}
+
+.al {
+     text-align:left;
+ }
+
+.ac {
+    text-align: center;
+}
+
+.ar {
+    text-align: right;
+}
+
+.vt {
+    vertical-align:top;
+}
+
+.vm {
+    vertical-align:middle;
+}
+
+.vb {
+    vertical-align: bottom;
+}
+
+.nw{
+    white-space:nowrap;
+}
+
+

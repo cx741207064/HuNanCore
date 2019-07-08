@@ -1,0 +1,50 @@
+
+/* CSS Document */
+.btn-toolbar{ margin:0; padding:0; display:inline-block; font-size:12px; color:#fff; }
+.btn-toolbar div{float:left; font-size:12px;cursor: pointer;}
+.glyphicon {position: relative;top:2px; left: -3px;display: inline-block; font-family: 'Glyphicons Halflings'; font-style: normal; font-weight: normal;    line-height: 1; -webkit-font-smoothing: antialiased; padding-left:3px;}
+.default,.unused,.add,.clos,.print,.export,.import,.back,.preview,.inspect,.previousPage,.nextPage,.firstPage,.endPage,.delete,.edit,.find,.save,.refresh{width:auto;padding: 0 10px 1px 25px;margin:5px 2px; height:28px; text-align:center; line-height:27px; -moz-border-radius:3px; -webkit-border-radius:3px; border-radius:3px; background:#f1f6fa;color:#333; border:1px solid #d3e1e4;}
+.default:hover,.add:hover,.clos:hover,.print:hover,.export:hover,.import:hover,.back:hover,.preview:hover,.inspect:hover,.previousPage:hover,.nextPage:hover,.firstPage:hover,.endPage:hover,.delete:hover,.edit:hover,.find:hover,.save:hover,.refresh:hover{ ;/*opacity: 0.8; visibility: visible;*/ }
+.default:hover{background:#2eacd9;color:#fff;}
+.add{background:url("/wings/core/img/add.png") no-repeat 8px center;}
+.add:hover{background:#2eacd9 url("/wings/core/img/add-hover.png") no-repeat 8px center; color:#fff;}
+.clos{background:url("/wings/core/img/clos.png") no-repeat 8px center;}
+.clos:hover{background:#2eacd9 url("/wings/core/img/clos-hover.png") no-repeat 8px center; color:#fff;}
+.print{background:url("/wings/core/img/print.png") no-repeat 8px center;}
+.print:hover{background:#2eacd9 url("/wings/core/img/print-hover.png") no-repeat 8px center; color:#fff;}
+.export{background:url("/wings/core/img/export.png") no-repeat 8px center;}
+.export:hover{background:#2eacd9 url("/wings/core/img/export-hover.png") no-repeat 8px center; color:#fff;}
+.import{background:url("/wings/core/img/import.png") no-repeat 8px center;}
+.import:hover{background:#2eacd9 url("/wings/core/img/import-hover.png") no-repeat 8px center; color:#fff;}
+.back{background:url("/wings/core/img/back.png") no-repeat 8px center;}
+.back:hover{background:#2eacd9 url("/wings/core/img/back-hover.png") no-repeat 8px center; color:#fff;}
+.preview{background:url("/wings/core/img/preview.png") no-repeat 8px center;}
+.preview:hover{background:#2eacd9 url("/wings/core/img/preview-hover.png") no-repeat 8px center; color:#fff;}
+.inspect{background:url("/wings/core/img/inspect.png") no-repeat 8px center;}
+.inspect:hover{background:#2eacd9 url("/wings/core/img/inspect-hover.png") no-repeat 8px center; color:#fff;}
+.previousPage{background:url("/wings/core/img/previousPage.png") no-repeat 8px center;}
+.previousPage:hover{background:#2eacd9 url("/wings/core/img/previousPage-hover.png") no-repeat 8px center; color:#fff;}
+.nextPage{background:url("/wings/core/img/nextPage.png") no-repeat 8px center;}
+.nextPage:hover{background:#2eacd9 url("/wings/core/img/nextPage-hover.png") no-repeat 8px center; color:#fff;}
+.firstPage{background:url("/wings/core/img/firstPage.png") no-repeat 8px center;}
+.firstPage:hover{background:#2eacd9 url("/wings/core/img/firstPage-hover.png") no-repeat 8px center; color:#fff;}
+.endPage{background:url("/wings/core/img/endPage.png") no-repeat 8px center;}
+.endPage:hover{background:#2eacd9 url("/wings/core/img/endPage-hover.png") no-repeat 8px center; color:#fff;}
+.delete{background:url("/wings/core/img/delete.png") no-repeat 8px center;}
+.delete:hover{background:#2eacd9 url("/wings/core/img/delete-hover.png") no-repeat 8px center; color:#fff;}
+.edit{background:url("/wings/core/img/edit.png") no-repeat 8px center;}
+.edit:hover{background:#2eacd9 url("/wings/core/img/edit-hover.png") no-repeat 8px center; color:#fff;}
+.find{background:url("/wings/core/img/find.png") no-repeat 8px center;}
+.find:hover{background:#2eacd9 url("/wings/core/img/find-hover.png") no-repeat 8px center; color:#fff;}
+.save{background:url("/wings/core/img/save.png") no-repeat 8px center;}
+.save:hover{background:#2eacd9 url("/wings/core/img/save-hover.png") no-repeat 8px center; color:#fff;}
+.refresh{background:url("/wings/core/img/refresh.png") no-repeat 8px center;}
+.refresh:hover{background:#2eacd9 url("/wings/core/img/refresh-hover.png") no-repeat 8px center; color:#fff;}
+
+.unused{
+	color:#A8A8A8;
+}
+
+.unused:hover{
+	color:#A8A8A8;
+}

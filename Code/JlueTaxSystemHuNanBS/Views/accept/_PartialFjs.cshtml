@@ -1,0 +1,20 @@
+﻿@model IEnumerable<JlueTaxSystemHuNanBS.Models.FjsData>
+
+@foreach (var item in Model) {
+<tr style="height:29px;">
+    <td class=" bg1 br4"></td>
+    <td class=" ft0 fs12 ac vm nw bg_ne br2" colspan="2" name="wbdssbfjsfjssbb.zsxmdm" index="@item.index" type="list" dn="wbdssbfjsfjssbb.zsxmmc" divname="wbdssbfjsfjssbb.zsxmdm.list" value='@item.zsxmdm' isEditable=false>@item.zsxmmc</td>
+    <td class=" ft0 fs12 ar vm nw bg0 br2" colspan="2" name="wbdssbfjsfjssbb.ybzzs" format="l16x2d" index="@item.index" type="input">@item.ybzzs</td>
+    <td class=" ft0 fs12 ar vm nw bg0 br2" colspan="2" name="wbdssbfjsfjssbb.zzsmdse" format="l16x2d" index="@item.index" type="input">@item.zzsmdse</td>
+    <td class=" ft0 fs12 ar vm nw bg_ne br2" colspan="2" name="wbdssbfjsfjssbb.xfs" format="l16x2d" index="@item.index" type="input" isEditable=false>@item.xfs</td>
+    <td class=" ft0 fs12 ar vm nw bg_ne br2" colspan="2" name="wbdssbfjsfjssbb.yys" format="l16x2d" index="@item.index" type="input" isEditable=false>@item.yys</td>
+    <td class=" ft0 fs12 ar vm nw bg_ne br2" colspan="3" name="wbdssbfjsfjssbb.hj" format="l16x2d" index="@item.index" type="input" isEditable=false>@item.hj</td>
+    <td class=" ft0 fs12 ar vm nw bg_ne br2" colspan="4" name="wbdssbfjsfjssbb.sl1" format="l7x6b" index="@item.index" type="input" isEditable=false>@{var sl = item.sl1 * 100 + "%";}@sl</td>
+    <td class=" ft0 fs12 ar vm nw bg_ne br2" colspan="2" name="wbdssbfjsfjssbb.bqynsfe" format="l16x2d" index="@item.index" type="input" isEditable=false>@item.bqynsfe</td>
+    <td class=" ft0 fs12 ac vm nw bg0 br2" colspan="2" name="wbdssbfjsfjssbb.jmxzdm" index="@item.index" type="list" dn="wbdssbfjsfjssbb.jmxzmc" divname="wbdssbfjsfjssbb.jmxzdm.list" value='@item.jmxzdm'>@item.jmxzmc</td>
+    <td class=" ft0 fs12 ar vm nw bg0 br2" colspan="2" name="wbdssbfjsfjssbb.jme" format="l16x2d" index="@item.index" type="input">@item.jme</td>
+    <td class=" ft0 fs12 ar vm nw bg_ne br2" isEditable=false name="wbdssbfjsfjssbb.phjmse" format="l16x2d" index="@item.index" type="input">@item.phjmse</td>
+    <td class=" ft0 fs12 ar vm nw bg0 br2" colspan="2" name="wbdssbfjsfjssbb.bqyjse" format="l16x2d" index="@item.index" type="input">@item.bqyjse</td>
+    <td class=" ft0 fs12 ar vm nw bg_ne br2" colspan="2" name="wbdssbfjsfjssbb.bqybtse" format="l16x2d" index="@item.index" type="input" isEditable=false>@item.bqybtse</td>
+</tr>
+}

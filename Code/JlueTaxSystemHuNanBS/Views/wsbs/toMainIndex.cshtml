@@ -1,0 +1,1440 @@
+﻿@model JlueTaxSystemHuNanBS.Models.Model
+
+
+
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN"
+"http://www.w3.org/TR/html4/strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>国家税务总局湖南省电子税务局</title>
+    <link rel="stylesheet" href="/wsbs/css/bootstrap.css" />
+    <link rel="stylesheet" href="/wsbs/css/iconfont.css" />
+    <link rel="stylesheet" href="/wsbs/css/style.css" />
+    <link rel="stylesheet" href="/wsbs/css/style-new.css" />
+    <link rel="stylesheet" href="/wsbs/css/build.css" />
+    <link rel="stylesheet" href="/wsbs/fonts/Font-Awesome/css/font-awesome.min.css" />
+    <script type="text/javascript" src="/wsbs/js/jquery-1.11.1.min.js"></script>
+    <script type="text/javascript" src="/wsbs/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="/wsbs/js/jquery.blockUI.js"></script>
+    <script type="text/javascript" src="/wsbs/js/jquery.md5.js"></script>
+    <script type="text/javascript" src="/wsbs/js/layer/layer.js"></script>
+    <script type="text/javascript" src="/wsbs/js/abc.rest.js"></script>
+    <script type="text/javascript" src="/wsbs/js/validatejs/validator.min.js"></script>
+    <script type="text/javascript" src="/wsbs/js/validatejs/validator.extend.js"></script>
+    <script type="text/javascript" src="/wsbs/js/union-index.js"></script>
+    <script type="text/javascript" src="/wsbs/js/store.min.js"></script>
+    <script type="text/javascript" src="/wsbs/js/template.js"></script>
+    <script type="text/javascript" src="/wsbs/js/common.js"></script>
+    <script type="text/javascript" src="/wsbs/js/Base64.js"></script>
+    <script type="text/javascript" src="/wsbs/js/publicService/publicServiceCommon.js"></script>
+    <script type="text/javascript" src="/wsbs/js/gd_authentic.js?ver=20190225174015"></script>
+    <script type="text/javascript" src="/wsbs/js/page.js"></script>
+    <script type="text/javascript" src="/wsbs/js/intro/intro.js"></script>
+    <script type="text/javascript" src="/wsbs/js/backlog/list.js"></script>
+    <script type="text/javascript" src="/wsbs/js/sbtx/sbtx.js"></script>
+    <script type="text/javascript" src="/wsbs/js/My97DatePicker/WdatePicker.js"></script>
+
+    <script type="text/javascript" src="/wsbs/virtual-login.js"></script>
+
+</head>
+	<body>
+		<!--
+        	作者：shuixiang128@163.com
+        	时间：2018-08-12
+        -->
+        <div class="index-top2">
+			<div class="top-center">
+				<a href="/wsbs/toMainIndex.do">
+				<div class="top-logo">
+					<img src="/wsbs/images/taxlogo.png">
+					国家税务总局湖南省电子税务局
+				</div>
+				</a>
+				<div class="top-users">
+					
+						<div class="top-sousuo">
+							<input onkeydown="if(event.keyCode==13)searchMenuByEnter(this)" class="form-control" placeholder="请输入要搜索的内容">
+							<button class="btn btn-primary" onclick="searchMenuClick(this)">搜索</button>
+						</div>
+					
+
+					<div class="top-login-users">
+						
+						<a href="/wsbs/myInfo/toUserInfo.do" title="湖南中航中天科技发展有限公司 + 主账户" target="_blank">
+							<span>
+								
+									
+									
+										欢迎，@Model.Nsrxx.Name
+									
+								
+							</span>
+						</a>
+						<span>|</span>
+						<a href="javascript:void(0);" id="logout_btn">
+							<span>退出</span>
+						</a>
+						
+					</div>
+					
+				</div>
+			</div>
+		</div>
+		<div class="index-main clearfix">
+			<!--左边导航菜单-->
+			
+
+
+<script type="text/javascript" src="/wsbs/js/mainLeftNav.js"></script>
+<style>
+    .c4585eb{
+        color: #4585eb;}
+    .c4585eb:hover{
+        color: #168de9 ;}
+</style>
+<div class="index-left">
+    <div class="left-main">
+    <input type="hidden" name="userToken" id="userToken" value="f30ae44b75f3779a05845f9c171533b8"/>
+    <input type="hidden" name="nsrztDm" id="nsrztDm" value="03"/>
+        <input type="hidden" name="dsnsrztDm" id="dsnsrztDm" value=""/>
+    <ul class="left-caidan">
+        <li><img src="/wsbs/images/icon_changyonggongneng.png"/><span>常用功能</span><a href="javascript:void(0);" onclick="return false;usualFucSet();">设置</a>
+            
+        </li>
+        <div id="usualMenuRegion" style="max-height:315px; overflow-y: auto;">
+            
+        </div>
+    </ul>
+
+    <ul class="left-caidan" id="mainLeftNavTc">
+        <li><img src="/wsbs/images/icon_taocanyewu.png"/><span>套餐业务</span>
+            
+        </li>
+        <li><a href="/wsbs/tcsfw/view_tcsfwLogin" target="_blank" class="nologin c4585eb"><i></i><span>新办纳税人套餐式服务</span></a></li>
+        <li><a id="mainLeftNavTc_ds9" href="javascript:void(0);" target="_blank" class="c4585eb"><i></i><span>房产交易申报</span></a></li>
+        <li><a id="mainLeftNavTc_FU066" href="javascript:void(0);" target="_blank" class="c4585eb"><i></i><span>主、附加税费申报</span></a></li>
+        <li><a id="mainLeftNavTc_FU171" href="javascript:void(0);" target="_blank" class="c4585eb"><i></i><span>清税注销税（费）申报及缴纳套餐业务</span></a>
+        </li>
+    </ul>
+
+    <ul class="left-caidan" id="mainLeftNavTs">
+        <li><img src="/wsbs/images/icon_teseyewu.png"/><span>特色业务</span>
+            
+        </li>
+        <li><a href="/wsbs/static/vooz/vooz3.jsp" target="_blank" class="c4585eb"><i></i><span>银税互动</span></a></li>
+        <li><a id="mainLeftNavTs_FU072" href="javascript:void(0);" target="_blank" class="c4585eb"><i></i><span>大企业数据直报</span></a></li>
+        <li><a id="mainLeftNavTs_FU070" href="javascript:void(0);" target="_blank" class="c4585eb"><i></i><span>重点税源申报</span></a></li>
+    </ul>
+    </div>
+</div>
+
+
+
+<div class="modal fade" id="menuFuncModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+
+                <h4 class="modal-title" id="myModalLabel">添加常用功能
+                    <div class="cygn-sousuo">
+                        <input onkeydown="if(event.keyCode==13)searchCommonMenuClick(this)" id="seachCommonMenuInput" class="form-control" placeholder="请输入要搜索的内容">
+                        <button class="btn btn-primary" onclick="searchCommonMenuClick(this)">搜索</button>
+                    </div>
+                </h4>
+            </div>
+            <div class="modal-body">
+
+                <ul class="cy-content-menu" id="menuFuncContent">
+                </ul>
+                <div>
+                <table id="menuFucSearchContent" class="table table-striped" style="display:none;">
+                    <tr>
+                        <td><a target="blank" href="/wsbspc/ws/taxApplication/view_protocol.do?rsv_idx=FU076">涉税专业服务协议信息采集</a></td>
+                    </tr>
+                </table>
+                </div>
+            </div>
+
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" id="closeMenuFuncBtn" data-dismiss="modal">取消</button>
+                <button type="button" class="btn btn-warning" id="submitMenuFuncBtn" onclick="addMenuFunc();">确认提交</button>
+                <button type="button" class="btn btn-warning" id="returnMenuFuncBtn" style="display: none;" onclick="returnMenuFunc();">返回</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+			<div class="index-right">
+				<input type="hidden" name="moduleId" id="moduleId" value=""/>
+				<input type="hidden" name="roleId" id="roleId" value="R0001"/>
+				<div class="jibenfuwu">
+					<!-- Nav tabs -->
+					  <ul class="nav nav-tabs" role="tablist">
+					    <li role="presentation" class="active" id="myInfo"><a href="#xinxi" aria-controls="xinxi" role="tab" data-toggle="tab">我的信息</a></li>
+					    <li role="presentation" id="doTax"><a href="#banshui" aria-controls="banshui" role="tab" data-toggle="tab">我要办税</a></li>
+					    <li role="presentation" id="doQuery"><a href="#chauxn" aria-controls="chauxn" role="tab" data-toggle="tab">我要查询</a></li>
+					    <li role="presentation" id="connectCenter"><a href="#hudong" aria-controls="hudong" role="tab" data-toggle="tab">互动中心</a></li>
+					    <li role="presentation" id="commonService"><a href="#fuwu" aria-controls="fuwu" role="tab" data-toggle="tab">公众服务</a></li>
+					  </ul>
+
+					  <!-- Tab panes -->
+					  <div class="tab-content">
+					    <div role="tabpanel" class="tab-pane active" id="xinxi">
+					    	<ul class="icon-jbfw clearfix">
+								
+									<li><a><img src="images/icon_img/nsxx.png"/><span>纳税人信息</span></a></li>
+								
+		        				<li><a ><img src="images/icon_img/dzzl.png"/><span>电子资料</span></a></li>
+		        				<li><a href="/wsbs/myInfo/toUserInfo.do?rsv_idx=WDXX02" target="_blank"><img src="images/icon_img/yhgl.png"/><span>用户管理</span></a></li>
+								<li><a ><img src="images/icon_img/nsxx.png"/><span>文书接收</span></a></li>
+		        			</ul>
+					    </div>
+					    <div role="tabpanel" class="tab-pane clearfix" id="banshui">
+					    	
+
+<style>
+    .c4585eb{
+        color: #4585eb;}
+    .c4585eb:hover{
+        color: #168de9 ;}
+</style>
+<ul style="padding: 20px;" class="clearfix">
+<script type="text/javascript">
+    $(function(){
+        $(".tax-title-after").click(function(){
+            $(this).next(".tc_tax").show();
+        })
+        $(".closes").click(function(){
+            $(".tc_tax").hide();
+        })
+    });
+
+</script>
+    <li class="parentsLi">
+        <div class="tax-title-after">
+            <div class="title-name">
+                <img src="/wsbs/images/icon_img/icon-zhxx.png"/>
+                <span>综合信息报告</span>
+            </div>
+        </div>
+        <div class="tc_tax">
+        <div class="tc_zhezhao"></div>
+        <div class="tanchuceng">
+            <div class="tax-title">
+                <div class="title-name">综合信息报告</div>
+            </div>
+            <div class="closes">
+                <img src="/wsbs/images/closes.png">
+            </div>
+            <ul>
+                <li class="clearfix">
+                    <div class="zcd_left"><i></i><span>身份信息报告</span></div>
+                    <div class="zcd_right">
+                        <div class="popover-content clearfix">
+                            <a id="FU086" href="/wsbs/unitTaxpayer/view_unitTaxInfoCheck.do?rsv_idx=FU086" target="_blank" class="c4585eb nologin"><i class="iconfont">&#xe762;</i>单位纳税人登记</a>
+                            
+                            <a id="YD309" href="/wsbs/lsswdj/view_taxtemp.do?rsv_idx=YD309" class="c4585eb nologin" target="_blank"><i class="iconfont">&#xe762;</i>临时税务登记</a>
+                            <a id="FU099" href="javascript:void(0);" target="_blank"><i class="iconfont">&#xe762;</i>扣缴税款登记</a>
+                            <a id="FU012" href="javascript:void(0);" target="_blank"><i class="iconfont">&#xe762;</i>变更登记</a>
+                        </div>
+                    </div>
+                </li>
+                <li class="clearfix">
+                    <div class="zcd_left"><i></i><span>资格信息报告</span></div>
+                    <div class="zcd_right">
+                        <div class="popover-content clearfix">
+                            <a id="FU030" href="javascript:void(0);" target="_blank"><i class="iconfont">&#xe762;</i>增值税一般纳税人登记</a>
+                            <a id="FU122" href="javascript:void(0);" target="_blank"><i class="iconfont">&#xe762;</i>选择按增值税小规模纳税人纳税的情况说明</a>
+                            <a id="FU165" href="javascript:void(0);" target="_blank"><i class="iconfont">&#xe762;</i>货物运输业小规模纳税人异地代开增值税专用发票备案</a>
+                            <a id="FU108" href="javascript:void(0);" target="_blank"><i class="iconfont">&#xe762;</i>出口退（免）税备案管理</a>
+                            <a id="FU109" href="javascript:void(0);" target="_blank"><i class="iconfont">&#xe762;</i>研发机构采购国产设备退税备案管理</a>
+                            <a id="FU110" href="javascript:void(0);" target="_blank"><i class="iconfont">&#xe762;</i>融资租赁企业出口退税备案管理</a>
+                            <a id="FU111" href="javascript:void(0);" target="_blank"><i class="iconfont">&#xe762;</i>退税代理机构备案管理</a>
+                            <a id="FU112" href="javascript:void(0);" target="_blank"><i class="iconfont">&#xe762;</i>退税商店备案</a>
+                            <a id="FU113" href="javascript:void(0);" target="_blank"><i class="iconfont">&#xe762;</i>退税商店备案变更</a>
+                            <a id="FU115" href="javascript:void(0);" target="_blank"><i class="iconfont">&#xe762;</i>出口货物劳务放弃退（免）税权备案</a>
+                            <a id="FU116" href="javascript:void(0);" target="_blank"><i class="iconfont">&#xe762;</i>放弃适用增值税零税率备案</a>
+                            <a id="FU117" href="javascript:void(0);" target="_blank"><i class="iconfont">&#xe762;</i>生产企业委托代办退税备案管理</a>
+                            <a id="FU118" href="javascript:void(0);" target="_blank"><i class="iconfont">&#xe762;</i>外贸综合服务企业代办退税本案管理</a>
+                            <a id="FU119" href="javascript:void(0);" target="_blank"><i class="iconfont">&#xe762;</i>集团公司成员企业备案</a>
+                            <a id="FU120" href="javascript:void(0);" target="_blank"><i class="iconfont">&#xe762;</i>免税品经营企业销售货物退税备案</a>
+                            <a id="FU121" href="javascript:void(0);" target="_blank"><i class="iconfont">&#xe762;</i>边贸代理出口备案</a>
+                            <a id="FU177" href="javascript:void(0);" target="_blank"><i class="iconfont">&#xe762;</i>适用加计抵减政策的声明</a>
+                        </div>
+                    </div>
+                </li>
+                <li class="clearfix">
+                    <div class="zcd_left"><i></i><span>制度信息报告</span></div>
+                    <div class="zcd_right">
+                        <div class="popover-content clearfix">
+                            <a id="FU062" href="javascript:void(0);" target="_blank"><i class="iconfont">&#xe762;</i>存款账户账号报告</a>
+                            <a id="FU022" href="javascript:void(0);" target="_blank"><i class="iconfont">&#xe762;</i>财务会计制度备案</a>
+                        </div>
+                    </div>
+                </li>
+                <li class="clearfix">
+                    <div class="zcd_left"><i></i><span>税源信息报告</span></div>
+                    <div class="zcd_right">
+                        <div class="popover-content clearfix">
+                            <a id="xd1" href="javascript:void(0);" target="_blank"><i class="iconfont">&#xe762;</i>环境保护税税源信息采集</a>
+                            
+                            <a id="xd4" href="javascript:void(0);" target="_blank"><i class="iconfont">&#xe762;</i>建筑业项目报告</a>
+                            <a id="xd5" href="javascript:void(0);" target="_blank"><i class="iconfont">&#xe762;</i>注销建筑业项目报告</a>
+                            <a id="xd6" href="javascript:void(0);" target="_blank"><i class="iconfont">&#xe762;</i>不动产项目报告</a>
+                            <a id="xd7" href="javascript:void(0);" target="_blank"><i class="iconfont">&#xe762;</i>注销不动产项目报告</a>
+                            <a id="xd8" href="javascript:void(0);" target="_blank"><i class="iconfont">&#xe762;</i>土地出（转）让信息采集</a>
+                            <a id="xd9" href="javascript:void(0);" target="_blank"><i class="iconfont">&#xe762;</i>税源申报明细报告</a>
+                            <a id="xd10" href="javascript:void(0);" target="_blank"><i class="iconfont">&#xe762;</i>增量房销售信息采集</a>
+                            <a id="xd11" href="javascript:void(0);" target="_blank"><i class="iconfont">&#xe762;</i>存量房销售信息采集</a>
+                            <a id="FU063" href="javascript:void(0);" target="_blank"><i class="iconfont">&#xe762;</i>跨区域涉税事项报告</a>
+                            <a id="FU097" href="/wsbs/ggcx/publicService/kqysssxby/view_checkkqysssxby.do" class="c4585eb nologin" target="_blank"><i class="iconfont">&#xe762;</i>跨区域涉税事项报验</a>
+                            <a id="FU155" href="javascript:void(0);" target="_blank"><i class="iconfont">&#xe762;</i>跨区域涉税事项信息反馈</a>
+                            
+                            
+                        </div>
+                    </div>
+                </li>
+                <li class="clearfix">
+                    <div class="zcd_left"><i></i><span>状态信息报告</span></div>
+                    <div class="zcd_right">
+                        <div class="popover-content clearfix">
+                            <a id="FU085" href="javascript:void(0);" target="_blank"><i class="iconfont">&#xe762;</i>注销税务登记</a>
+                            <a id="FU137" href="javascript:void(0);" target="_blank"><i class="iconfont">&#xe762;</i>一照一码户清税申报</a>
+                            <a id="FU138" href="javascript:void(0);" target="_blank"><i class="iconfont">&#xe762;</i>两证整合个体工商户清税申报</a>
+                            <a id="FU083" href="javascript:void(0);" target="_blank"><i class="iconfont">&#xe762;</i>停业登记</a>
+                            <a id="FU084" href="javascript:void(0);" target="_blank"><i class="iconfont">&#xe762;</i>复业登记</a>
+                            <a id="FU102" href="javascript:void(0);" target="_blank"><i class="iconfont">&#xe762;</i>合并分立报告</a>
+                            <a id="FU105" href="javascript:void(0);" target="_blank"><i class="iconfont">&#xe762;</i>企业所得税清算报备</a>
+                            <a id="FU126" href="javascript:void(0);" target="_blank"><i class="iconfont">&#xe762;</i>注销扣缴税款登记</a>
+                        </div>
+                    </div>
+                </li>
+                <li class="clearfix">
+                    <div class="zcd_left"><i></i><span>特定涉税信息报告</span></div>
+                    <div class="zcd_right">
+                        <div class="popover-content clearfix">
+                            
+                            <a id="FU129" href="javascript:void(0);" target="_blank"><i class="iconfont">&#xe762;</i>文化事业建设费缴费信息报告</a>
+                            <a id="FU127" href="javascript:void(0);" target="_blank"><i class="iconfont">&#xe762;</i>证件遗失</a>
+                            <a id="x17" href="javascript:void(0);" target="_blank"><i class="iconfont">&#xe762;</i>损毁管理</a>
+                            <a id="FU135" href="javascript:void(0);" target="_blank"><i class="iconfont">&#xe762;</i>发票挂失</a>
+                            <a id="FU141" href="javascript:void(0);" target="_blank"><i class="iconfont">&#xe762;</i>损毁报告</a>
+                            <a id="FU132" href="javascript:void(0);" target="_blank"><i class="iconfont">&#xe762;</i>证件增补发</a>
+                        </div>
+                    </div>
+                </li>
+            </ul>
+        </div>
+    </div>
+    </li>
+
+    <li class="parentsLi">
+        <div class="tax-title-after">
+            <div class="title-name">
+                <img src="/wsbs/images/icon_img/icon-fpsy.png"/>
+                <span>发票使用</span>
+            </div>
+        </div>
+        <div class="tc_tax">
+        <div class="tc_zhezhao"></div>
+        <div class="tanchuceng">
+            <div class="tax-title">
+                <div class="title-name">发票使用</div>
+            </div>
+            <div class="closes">
+                <img src="/wsbs/images/closes.png">
+            </div>
+            <ul>
+                <li class="clearfix">
+                    <div class="zcd_left"><i></i><span>发票票种核定</span></div>
+                    <div class="zcd_right"><a id="FU016" href="javascript:void(0);" target="_blank"><i class="iconfont">&#xe762;</i><span>发票票种核定</span></a></div>
+                </li>
+                <li class="clearfix">
+                    <div class="zcd_left"><i></i><span>发票领用</span></div>
+                    <div class="zcd_right"><a id="FU014" href="javascript:void(0);" target="_blank"><i class="iconfont">&#xe762;</i><span>发票领用</span></a></div>
+                </li>
+                <li class="clearfix">
+                    <div class="zcd_left"><i></i><span>发票代开</span></div>
+                    <div class="zcd_right">
+                        <div class="popover-content clearfix">
+                            <a id="FU015" href="javascript:void(0);" target="_blank"><i class="iconfont">&#xe762;</i>增值税专用发票</a>
+                            
+                            <a id="zrr" href="/wsbs/zrrfp/view_invoiceAgentZrr" target="_blank" class="c4585eb nologin"><i class="iconfont">&#xe762;</i>代开增值税普通发票</a>
+                            <a id="FU152" href="javascript:void(0);"  target="_blank"><i class="iconfont">&#xe762;</i>代开发票作废</a>
+                           
+                        </div>
+                    </div>
+                </li>
+                <li class="clearfix">
+                    <div class="zcd_left"><i></i><span>自印发票申请</span></div>
+                    <div class="zcd_right"><a id="FU024" href="javascript:void(0);" target="_blank"><i class="iconfont">&#xe762;</i><span>自印发票申请</span></a></div>
+                </li>
+                <li class="clearfix">
+                    <div class="zcd_left"><i></i><span>发票验旧缴销</span></div>
+                    <div class="zcd_right">
+                        <div class="popover-content clearfix">
+                            <a id="FU013" href="javascript:void(0);" target="_blank"><i class="iconfont">&#xe762;</i>发票验（交）旧</a>
+                            
+                            
+                            <a id="FU130" href="javascript:void(0);" target="_blank"><i class="iconfont">&#xe762;</i>发票缴销</a>
+                        </div>
+                    </div>
+                </li>
+                <li class="clearfix">
+                    <div class="zcd_left"><i></i><span>勾选确认平台</span></div>
+                    <div class="zcd_right"><a id="FU170" href="https://fpdk.hunan.chinatax.gov.cn" target="_blank" class="c4585eb nologin"><i class="iconfont">&#xe762;</i><span>勾选确认平台</span></a></div>
+                </li>
+            </ul>
+        </div>
+    </div>
+    </li>
+
+    <li class="parentsLi">
+        <div class="tax-title-after">
+            <div class="title-name">
+                <img src="/wsbs/images/icon_img/icon-sfsb.png"/>
+                <span>税费申报及缴纳</span>
+            </div>
+        </div>
+        <div class="tc_tax">
+        <div class="tc_zhezhao"></div>
+        <div class="tanchuceng">
+            <div class="tax-title">
+                <div class="title-name">税费申报及缴纳</div>
+            </div>
+            <div class="closes">
+                <img src="/wsbs/images/closes.png">
+            </div>
+            <ul>
+                <li class="clearfix">
+                    <div class="zcd_left"><i></i><span>在线申报</span></div>
+                    <div class="zcd_right"><a id="312" href="javascript:void(0);" target="_blank"><i class="iconfont">&#xe762;</i><span>在线申报</span></a></div>
+                </li>
+                <li class="clearfix"><div class="zcd_left"><i></i><span>主、附加税费申报</span></div>
+                    <div class="zcd_right">
+                        <div class="popover-content clearfix">
+                            <a id="FU154" href="javascript:void(0);" target="_blank"><i class="iconfont">&#xe762;</i>增值税预缴申报</a>
+                            <a id="x26" href="javascript:void(0);" target="_blank"><i class="iconfont">&#xe762;</i>附加税（费）申报</a>
+                            <a id="FU066" href="javascript:void(0);" target="_blank"><i class="iconfont">&#xe762;</i>主、附加税费申报</a>
+                        </div>
+                    </div>
+                </li>
+                <li class="clearfix">
+                    <div class="zcd_left"><i></i><span>企业所得税申报</span></div>
+                    <div class="zcd_right">
+                        <div class="popover-content clearfix">
+                            <a id="dzsb1" href="javascript:void(0);" target="_blank"><i class="iconfont">&#xe762;</i>居民企业所得税申报</a>
+                            
+                            <a id="dzsb4" href="javascript:void(0);" target="_blank"><i class="iconfont">&#xe762;</i>非居民企业所得税申报</a>
+                            
+                            <a id="FU081" href="javascript:void(0);" target="_blank"><i class="iconfont">&#xe762;</i>汇算清缴</a>
+                            <a id="FU145" href="javascript:void(0);" target="_blank"><i class="iconfont">&#xe762;</i>企业所得税汇总纳税总分机构信息备案</a>
+                        </div>
+                    </div>
+                </li>
+                <li class="clearfix">
+                    <div class="zcd_left"><i></i><span>其他申报</span></div>
+                    <div class="zcd_right">
+                        <div class="popover-content clearfix">
+                            <a id="ds1" href="javascript:void(0);" target="_blank"><i class="iconfont">&#xe762;</i>房产税申报</a>
+                            <a id="ds2" href="javascript:void(0);" target="_blank"><i class="iconfont">&#xe762;</i>土地使用税申报</a>
+                            <a id="ds3" href="javascript:void(0);" target="_blank"><i class="iconfont">&#xe762;</i>土地增值税申报</a>
+                            <a id="ds4" href="javascript:void(0);" target="_blank"><i class="iconfont">&#xe762;</i>印花税申报</a>
+                            
+                            <a id="ds5" href="javascript:void(0);" target="_blank" ><i class="iconfont">&#xe762;</i>环境保护税申报A表</a>
+                            <a id="ds51" href="javascript:void(0);" target="_blank" ><i class="iconfont">&#xe762;</i>环境保护税申报B表</a>
+                            <a id="FU064" href="javascript:void(0);" target="_blank"><i class="iconfont">&#xe762;</i>车购税申报</a>
+                            <a href="/wsbs/sb/taxApplication/view_vehiclePur.do" class="c4585eb nologin" target="_blank"><i class="iconfont">&#xe762;</i>车购税申报（自然人）</a>
+                            <a id="ds18" href="javascript:void(0);" target="_blank"><i class="iconfont">&#xe762;</i>资源税申报</a>
+                            <a id="ds19" href="javascript:void(0);" target="_blank"><i class="iconfont">&#xe762;</i>烟叶税申报</a>
+                            <a id="ds20" href="javascript:void(0);" target="_blank"><i class="iconfont">&#xe762;</i>耕地占用税申报</a>
+                            <a id="ds21" href="javascript:void(0);" target="_blank"><i class="iconfont">&#xe762;</i>单位社会保险费日常申报</a>
+                            <a id="ds22" href="javascript:void(0);" target="_blank"><i class="iconfont">&#xe762;</i>残疾人就业保障金申报</a>
+                            <a id="ds7" href="javascript:void(0);" target="_blank"><i class="iconfont">&#xe762;</i>车船税申报</a>
+                            <a id="ds23" href="javascript:void(0);" target="_blank"><i class="iconfont">&#xe762;</i>代收代缴车船税申报</a>
+                            <a id="30604" href="javascript:void(0);" target="_blank"><i class="iconfont">&#xe762;</i>通用代扣代缴</a>
+                            <a id="FU070" href="javascript:void(0);" target="_blank"><i class="iconfont">&#xe762;</i>重点税源申报</a>
+                            <a id="FU072" href="javascript:void(0);" target="_blank"><i class="iconfont">&#xe762;</i>大企业数据直报</a>
+                        </div>
+                    </div>
+                </li>
+                <li class="clearfix">
+                    <div class="zcd_left"><i></i><span>综合申报</span></div>
+                    <div class="zcd_right">
+                        <div class="popover-content clearfix">
+                            <a id="ds8" href="javascript:void(0);" target="_blank"><i class="iconfont">&#xe762;</i>通用申报（税及附征税费）</a>
+                            <a id="ds9" href="javascript:void(0);" target="_blank"><i class="iconfont">&#xe762;</i>房产交易申报</a>
+                            <a id="ds10" href="javascript:void(0);" target="_blank"><i class="iconfont">&#xe762;</i>定期定额申报</a>
+                            <a id="ds11" href="javascript:void(0);" target="_blank"><i class="iconfont">&#xe762;</i>委托代征申报（明细）</a>
+                            <a id="FU167" href="javascript:void(0);" target="_blank"><i class="iconfont">&#xe762;</i>委托代征汇总申报</a>
+                        </div>
+                    </div>
+                </li>
+                <li class="clearfix">
+                    <div class="zcd_left"><i></i><span>逾期申报</span></div>
+                    <div class="zcd_right"><a id="x28" href="javascript:void(0);" target="_blank"><i class="iconfont">&#xe762;</i><span>逾期申报</span></a></div>
+                </li>
+                <li class="clearfix">
+                    <div class="zcd_left"><i></i><span>个人所得税申报</span></div>
+                    <div class="zcd_right">
+                        <div class="popover-content clearfix">
+                           
+                            
+                            
+                            <a id="ds15" onclick="forbiddenTips(this);"><i class="iconfont">&#xe762;</i>个人所得税生产经营所得纳税申报表A表</a>
+                            <a id="ds16" onclick="forbiddenTips(this);"><i class="iconfont">&#xe762;</i>个人所得税生产经营所得纳税申报表B表</a>
+                            <a id="ds17" onclick="forbiddenTips(this);"><i class="iconfont">&#xe762;</i>个人所得税生产经营所得纳税申报表C表</a>
+                        </div>
+                    </div>
+                </li>
+                <li class="clearfix">
+                    <div class="zcd_left"><i></i><span>申报辅助功能</span></div>
+                    <div class="zcd_right">
+                        <div class="popover-content clearfix">
+                            <a id="30601" href="javascript:void(0);" target="_blank"><i class="iconfont">&#xe762;</i>申报表补打</a>
+                            <a id="30602" href="javascript:void(0);" target="_blank"><i class="iconfont">&#xe762;</i>申报更正</a>
+                            <a id="30603" href="javascript:void(0);" target="_blank"><i class="iconfont">&#xe762;</i>申报作废</a>
+                            <a id="30605" href="javascript:void(0);" target="_blank"><i class="iconfont">&#xe762;</i>个税申报作废</a>
+                            
+                            <a id="30611" href="javascript:void(0);" target="_blank"><i class="iconfont">&#xe762;</i>社保费申报作废</a>
+
+                            
+                        </div>
+                    </div>
+                </li>
+                <li class="clearfix">
+                    <div class="zcd_left"><i></i><span>申报辅助信息报告</span></div>
+                    <div class="zcd_right">
+                        <div class="popover-content clearfix">
+                            
+                            <a id="FU147" href="javascript:void(0);" target="_blank"><i class="iconfont">&#xe762;</i>特别纳税调整相关资料</a>
+                            <a id="30803" href="javascript:void(0);" target="_blank"><i class="iconfont">&#xe762;</i>税收统计调查相关资料</a>
+                            
+                            <a id="FU134" href="javascript:void(0);" target="_blank"><i class="iconfont">&#xe762;</i>欠税纳税人处置不动产或者大额资产报告</a>
+                            <a id="FU159" href="javascript:void(0);" target="_blank"><i class="iconfont">&#xe762;</i>境内机构和个人发包工程作业或劳务合同款项支付情况备案</a>
+                            <a id="30807" href="javascript:void(0);" target="_blank"><i class="iconfont">&#xe762;</i>境内机构和个人发包工程作业或劳务项目</a>
+                            <a id="FU139" href="javascript:void(0);" target="_blank"><i class="iconfont">&#xe762;</i>境内机构和个人发包工程作业或劳务合同项目备案</a>
+                            <a id="FU128" href="javascript:void(0);" target="_blank"><i class="iconfont">&#xe762;</i>源泉扣缴企业所得税合同备案</a>
+                        </div>
+                    </div>
+                </li>
+                <li class="clearfix">
+                    <div class="zcd_left"><i></i><span>财务报表报送</span></div>
+                    <div class="zcd_right">
+                        <div class="popover-content clearfix">
+                            <a id="309" href="javascript:void(0);" target="_blank"><i class="iconfont">&#xe762;</i><span>财务报表报送</span></a>
+                            <a id="310" href="javascript:void(0);" target="_blank"><i class="iconfont">&#xe762;</i><span>财务报表数据智能转换</span></a>
+                        </div>
+                    </div>
+                </li>
+                
+                <li class="clearfix">
+                    <div class="zcd_left"><i></i><span>税费缴纳</span></div>
+                    <div class="zcd_right">
+                        <div class="popover-content clearfix">
+                            <a id="FU017" href="javascript:void(0);" target="_blank"><i class="iconfont">&#xe762;</i>三方协议缴税</a>
+                            <a id="FU019" href="javascript:void(0);" target="_blank"><i class="iconfont">&#xe762;</i>在线缴税</a>
+                            <a id="FU021" href="javascript:void(0);" target="_blank"><i class="iconfont">&#xe762;</i>税收缴款凭证</a>
+                            <a id="30609" href="javascript:void(0);" target="_blank"><i class="iconfont">&#xe762;</i>银联快捷缴税、银行端处理</a>
+                            <a id="30610" href="javascript:void(0);" target="_blank"><i class="iconfont">&#xe762;</i>社保费银联快捷缴税、银行端处理</a>
+                            <a id="30613" href="javascript:void(0);" target="_blank"><i class="iconfont">&#xe762;</i>社保费电子缴款凭证打印</a>
+                            <a id="30614" href="javascript:void(0);" target="_blank"><i class="iconfont">&#xe762;</i>电子缴款凭证打印（自然人）</a>
+                            
+                            <a id="30608" href="javascript:void(0);" target="_blank"><i class="iconfont">&#xe762;</i>网上纳税（社保费）</a>
+                            <a id="30612" href="javascript:void(0);" target="_blank"><i class="iconfont">&#xe762;</i>银行端查询缴款凭证补打</a>
+                            
+                        </div>
+                    </div>
+                </li>
+                
+            </ul>
+        </div>
+    </div>
+    </li>
+
+
+    <li class="parentsLi">
+        <div class="tax-title-after">
+            <div class="title-name">
+                <img src="/wsbs/images/icon_img/icon-zmkj.png"/>
+                <span>证明开具</span>
+            </div>
+        </div>
+        <div class="tc_tax">
+        <div class="tc_zhezhao"></div>
+        <div class="tanchuceng">
+            <div class="tax-title">
+                <div class="title-name">证明开具</div>
+            </div>
+            <div class="closes">
+                <img src="/wsbs/images/closes.png">
+            </div>
+            <ul>
+                <li class="clearfix">
+                    <div class="zcd_left"><i></i><span>资源税管理证明</span></div>
+                    <div class="zcd_right"><a id="404" href="javascript:void(0);" target="_blank"><i class="iconfont">&#xe762;</i><span>资源税管理证明</span></a></div>
+                </li>
+                <li class="clearfix">
+                    <div class="zcd_left"><i></i><span>中国税收居民身份证明</span></div>
+                    <div class="zcd_right"><a id="FU131" href="javascript:void(0);" target="_blank"><i class="iconfont">&#xe762;</i><span>中国税收居民身份证明</span></a></div>
+                </li>
+                <li class="clearfix">
+                    <div class="zcd_left"><i></i><span>转开印花税票销售凭证</span></div>
+                    <div class="zcd_right"><a id="406" href="javascript:void(0);" target="_blank"><i class="iconfont">&#xe762;</i><span>转开印花税票销售凭证</span></a></div>
+                </li>
+                <li class="clearfix">
+                    <div class="zcd_left"><i></i><span>非居民企业汇总申报企业所得税证明</span></div>
+                    <div class="zcd_right"><a id="FU136" href="javascript:void(0);" target="_blank"><i class="iconfont">&#xe762;</i><span>非居民企业汇总申报企业所得税证明</span></a></div>
+                </li>
+                <li class="clearfix">
+                    <div class="zcd_left"><i></i><span>开具税收完税（费）证明</span></div>
+                    <div class="zcd_right">
+                        <div class="popover-content clearfix">
+                            <a id="FU080" href="javascript:void(0);" target="_blank"><i class="iconfont">&#xe762;</i><span>开具税收完税（费）证明（文书式）</span></a>
+                            <a id="FU172" href="javascript:void(0);" target="_blank"><i class="iconfont">&#xe762;</i><span>开具税收完税（费）证明（表格式）</span></a>
+                            
+                        </div>
+                    </div>
+                </li>
+                <li class="clearfix">
+                    <div class="zcd_left"><i></i><span>服务贸易等项目对外支付税务备案</span></div>
+                    <div class="zcd_right"><a id="FU124" href="javascript:void(0);" target="_blank"><i class="iconfont">&#xe762;</i><span>服务贸易等项目对外支付税务备案</span></a></div>
+                </li>
+                
+                <li class="clearfix">
+                    <div class="zcd_left"><i></i><span>出口退（免）税相关证明</span></div>
+                    <div class="zcd_right"><a id="FU125" href="javascript:void(0);" target="_blank"><i class="iconfont">&#xe762;</i><span>出口退（免）税相关证明</span></a></div>
+                </li>
+                
+            </ul>
+        </div>
+    </div>
+    </li>
+
+    <li class="parentsLi">
+        <div class="tax-title-after">
+            <div class="title-name">
+                <img src="/wsbs/images/icon_img/icon-swxz.png"/>
+                <span>税务行政许可</span>
+            </div>
+        </div>
+        <div class="tc_tax">
+        <div class="tc_zhezhao"></div>
+        <div class="tanchuceng">
+            <div class="tax-title">
+                <div class="title-name">税务行政许可</div>
+            </div>
+            <div class="closes">
+                <img src="/wsbs/images/closes.png">
+            </div>
+            <ul>
+                <li class="clearfix">
+                    <div class="zcd_left"><i></i><span>企业印制发票审批</span></div>
+                    <div class="zcd_right"><a id="FU042" href="javascript:void(0);" target="_blank"><i class="iconfont">&#xe762;</i><span>企业印制发票审批</span></a></div>
+                </li>
+                <li class="clearfix">
+                    <div class="zcd_left"><i></i><span>延期申报核准</span></div>
+                    <div class="zcd_right"><a id="FU043" href="javascript:void(0);" target="_blank"><i class="iconfont">&#xe762;</i><span>延期申报核准</span></a></div>
+                </li>
+                <li class="clearfix">
+                    <div class="zcd_left"><i></i><span>延期缴纳税款核准</span></div>
+                    <div class="zcd_right"><a id="FU044" href="javascript:void(0);" target="_blank"><i class="iconfont">&#xe762;</i><span>延期缴纳税款核准</span></a></div>
+                </li>
+                <li class="clearfix">
+                    <div class="zcd_left"><i></i><span>变更纳税定额核准</span></div>
+                    <div class="zcd_right"><a id="FU046" href="javascript:void(0);" target="_blank"><i class="iconfont">&#xe762;</i><span>变更纳税定额核准</span></a></div>
+                </li>
+                <li class="clearfix">
+                    <div class="zcd_left"><i></i><span>增值税专票最高开票限额</span></div>
+                    <div class="zcd_right"><a id="FU045" href="javascript:void(0);" target="_blank"><i class="iconfont">&#xe762;</i><span>增值税专票最高开票限额</span></a></div>
+                </li>
+                <li class="clearfix">
+                    <div class="zcd_left"><i></i><span>企业所得税预缴方式核定</span></div>
+                    <div class="zcd_right"><a id="FU047" href="javascript:void(0);" target="_blank"><i class="iconfont">&#xe762;</i><span>企业所得税预缴方式核定</span></a></div>
+                </li>
+                
+                <li class="clearfix">
+                    <div class="zcd_left"><i></i><span>非居民企业汇总缴纳所得税</span></div>
+                    <div class="zcd_right"><a id="FU048" href="javascript:void(0);" target="_blank"><i class="iconfont">&#xe762;</i><span>非居民企业汇总缴纳所得税</span></a></div>
+                </li>
+
+            </ul>
+        </div>
+    </div>
+    </li>
+
+    <li class="parentsLi">
+        <div class="tax-title-after">
+            <div class="title-name">
+                <img src="/wsbs/images/icon_img/icon-ybts.png"/>
+                <span>一般退（抵）税管理</span>
+            </div>
+        </div>
+        <div class="tc_tax">
+        <div class="tc_zhezhao"></div>
+        <div class="tanchuceng">
+            <div class="tax-title">
+                <div class="title-name">一般退（抵）税管理</div>
+            </div>
+            <div class="closes">
+                <img src="/wsbs/images/closes.png">
+            </div>
+            <ul>
+                <li class="clearfix">
+                    <div class="zcd_left"><i></i><span>车船税退抵税</span></div>
+                    <div class="zcd_right"><a id="FU094" href="javascript:void(0);" target="_blank"><i class="iconfont">&#xe762;</i><span>车船税退抵税</span></a></div>
+                </li>
+                <li class="clearfix">
+                    <div class="zcd_left"><i></i><span>一般退（抵）税管理</span></div>
+                    <div class="zcd_right"><a id="FU107" href="javascript:void(0);" target="_blank"><i class="iconfont">&#xe762;</i><span>一般退（抵）税管理</span></a></div>
+                </li>
+                <li class="clearfix">
+                    <div class="zcd_left"><i></i><span>车辆购置税退税</span></div>
+                    <div class="zcd_right"><a id="FU156" href="javascript:void(0);" target="_blank"><i class="iconfont">&#xe762;</i><span>车辆购置税退税</span></a></div>
+                </li>
+                
+                <li class="clearfix">
+                    <div class="zcd_left"><i></i><span>增值税期末留抵税额退税</span></div>
+                    <div class="zcd_right"><a id="FU090" href="javascript:void(0);" target="_blank"><i class="iconfont">&#xe762;</i><span>增值税期末留抵税额退税</span></a></div>
+                </li>
+                <li class="clearfix">
+                    <div class="zcd_left"><i></i><span>石脑油、燃料油消费税退税</span></div>
+                    <div class="zcd_right"><a id="FU142" href="javascript:void(0);" target="_blank"><i class="iconfont">&#xe762;</i><span>石脑油、燃料油消费税退税</span></a></div>
+                </li>
+                <li class="clearfix">
+                    <div class="zcd_left"><i></i><span>不予加收滞纳金申请</span></div>
+                    <div class="zcd_right"><a id="FU169" href="javascript:void(0);" target="_blank"><i class="iconfont">&#xe762;</i><span>不予加收滞纳金申请</span></a></div>
+                </li>
+            </ul>
+        </div>
+    </div>
+    </li>
+
+
+    <li class="parentsLi">
+        <div class="tax-title-after">
+            <div class="title-name">
+                <img src="/wsbs/images/icon_img/icon-zzsdk.png"/>
+                <span>增值税抵扣凭证管理</span>
+            </div>
+        </div>
+        <div class="tc_tax">
+        <div class="tc_zhezhao"></div>
+        <div class="tanchuceng">
+            <div class="tax-title">
+                <div class="title-name">增值税抵扣凭证管理</div>
+            </div>
+            <div class="closes">
+                <img src="/wsbs/images/closes.png">
+            </div>
+            <ul>
+                <li class="clearfix">
+                    <div class="zcd_left"><i></i><span>逾期增值税抵扣凭证抵扣管理</span></div>
+                    <div class="zcd_right"><a id="FU089" href="javascript:void(0);" target="_blank"><i class="iconfont">&#xe762;</i><span>逾期增值税抵扣凭证抵扣管理</span></a></div>
+                </li>
+                <li class="clearfix">
+                    <div class="zcd_left"><i></i><span>未按期申报抵扣增值税扣税凭证抵扣管理</span></div>
+                    <div class="zcd_right"><a id="FU092" href="javascript:void(0);" target="_blank"><i class="iconfont">&#xe762;</i><span>未按期申报抵扣增值税扣税凭证抵扣管理</span></a></div>
+                </li>
+            </ul>
+        </div>
+    </div>
+    </li>
+
+
+
+    <li class="parentsLi">
+        <div class="tax-title-after">
+            <div class="title-name">
+                <img src="/wsbs/images/icon_img/icon-hdgl.png"/>
+                <span>核定管理</span>
+            </div>
+        </div>
+        <div class="tc_tax">
+        <div class="tc_zhezhao"></div>
+        <div class="tanchuceng">
+            <div class="tax-title">
+                <div class="title-name">核定管理</div>
+            </div>
+            <div class="closes">
+                <img src="/wsbs/images/closes.png">
+            </div>
+            <ul>
+                <li class="clearfix">
+                        <div class="zcd_left"><i></i><span>定期定额户申请核定及调整定额</span></div>
+                        <div class="zcd_right"><a id="FU123" href="javascript:void(0);" target="_blank"><i class="iconfont">&#xe762;</i><span>定期定额户申请核定及调整定额</span></a></div>
+                </li>
+                
+                <li class="clearfix">
+                    <div class="zcd_left"><i></i><span>增值税进项税额扣除标准备案</span></div>
+                    <div class="zcd_right"><a id="FU164" href="javascript:void(0);" target="_blank"><i class="iconfont">&#xe762;</i><span>增值税进项税额扣除标准备案</span></a></div>
+                </li>
+            </ul>
+        </div>
+    </div>
+    </li>
+
+
+
+    <li class="parentsLi">
+        <div class="tax-title-after">
+            <div class="title-name">
+                <img src="/wsbs/images/icon_img/icon-nsxy.png"/>
+                <span>纳税信用</span>
+            </div>
+        </div>
+        <div class="tc_tax">
+        <div class="tc_zhezhao"></div>
+        <div class="tanchuceng">
+            <div class="tax-title">
+                <div class="title-name">纳税信用</div>
+            </div>
+            <div class="closes">
+                <img src="/wsbs/images/closes.png">
+            </div>
+            <ul>
+                <li class="clearfix">
+                    <div class="zcd_left"><i></i><span>信用补评</span></div>
+                    <div class="zcd_right"><a id="FU161" href="javascript:void(0);" target="_blank"><i class="iconfont">&#xe762;</i><span>信用补评</span></a></div>
+                </li>
+                <li class="clearfix">
+                    <div class="zcd_left"><i></i><span>信用复评</span></div>
+                    <div class="zcd_right"><a id="FU160" href="javascript:void(0);" target="_blank"><i class="iconfont">&#xe762;</i><span>信用复评</span></a></div>
+                </li>
+            </ul>
+        </div>
+    </div>
+    </li>
+
+    <li class="parentsLi">
+        <div class="tax-title-after">
+            <div class="title-name">
+                <img src="/wsbs/images/icon_img/icon-jckgl.png"/>
+                <span>出口退税管理</span>
+            </div>
+        </div>
+        <div class="tc_tax">
+        <div class="tc_zhezhao"></div>
+        <div class="tanchuceng">
+            <div class="tax-title">
+                <div class="title-name">出口退税管理</div>
+            </div>
+            <div class="closes">
+                <img src="/wsbs/images/closes.png">
+            </div>
+            <ul>
+                <li class="clearfix">
+                    <div class="zcd_left"><i></i><span>出口退税申报数据检查</span></div>
+                    <div class="zcd_right"><a id="FU058" href="javascript:void(0);" target="_blank"><i class="iconfont">&#xe762;</i><span>出口退税申报数据检查</span></a></div>
+                </li>
+                <li class="clearfix">
+                    <div class="zcd_left"><i></i><span>出口免退税管理</span></div>
+                    <div class="zcd_right"><a id="FU098" href="javascript:void(0);" target="_blank"><i class="iconfont">&#xe762;</i><span>出口免退税管理</span></a></div>
+                </li>
+                <li class="clearfix">
+                    <div class="zcd_left"><i></i><span>出口免抵退税管理</span></div>
+                    <div class="zcd_right"><a id="FU104" href="javascript:void(0);" target="_blank"><i class="iconfont">&#xe762;</i><span>出口免抵退税管理</span></a></div>
+                </li>
+            </ul>
+        </div>
+    </div>
+    </li>
+
+
+
+    <li class="parentsLi">
+        <div class="tax-title-after">
+            <div class="title-name">
+                <img src="/wsbs/images/icon_img/icon-sszy.png"/>
+                <span>涉税专业服务机构管理</span>
+            </div>
+        </div>
+        <div class="tc_tax">
+        <div class="tc_zhezhao"></div>
+        <div class="tanchuceng">
+            <div class="tax-title">
+                <div class="title-name">涉税专业服务机构管理</div>
+            </div>
+            <div class="closes">
+                <img src="/wsbs/images/closes.png">
+            </div>
+            <ul>
+                <li class="clearfix">
+                    <div class="zcd_left"><i></i><span>税务师事务所管理</span></div>
+                    <div class="zcd_right">
+                        <div class="popover-content clearfix">
+                            <a id="FU143" href="javascript:void(0);" target="_blank"><i class="iconfont">&#xe762;</i>税务师事务所行政登记</a>
+                            <a id="FU158" href="javascript:void(0);" target="_blank"><i class="iconfont">&#xe762;</i>税务师事务所变更</a>
+                            <a id="FU148" href="javascript:void(0);" target="_blank"><i class="iconfont">&#xe762;</i>税务师事务所终止</a>
+                        </div>
+                    </div>
+                </li>
+                <li class="clearfix"><div class="zcd_left"><i></i><span>其他涉税专业服务机构管理</span></div>
+                    <div class="zcd_right">
+                        <div class="popover-content clearfix">
+                            <a id="FU076" href="javascript:void(0);" target="_blank"><i class="iconfont">&#xe762;</i>涉税专业服务协议信息采集</a>
+                            <a id="FU077" href="javascript:void(0);" target="_blank"><i class="iconfont">&#xe762;</i>涉税专业服务协议信息变更及终止</a>
+                            <a id="FU087" href="javascript:void(0);" target="_blank"><i class="iconfont">&#xe762;</i>涉税专业服务专项报告</a>
+                            <a id="FU071" href="javascript:void(0);" target="_blank"><i class="iconfont">&#xe762;</i>涉税专业服务机构（人员）基本信息采集</a>
+                            <a id="FU073" href="javascript:void(0);" target="_blank"><i class="iconfont">&#xe762;</i>涉税专业服务机构（人员）信息变更</a>
+                            <a id="FU079" href="javascript:void(0);" target="_blank"><i class="iconfont">&#xe762;</i>涉税专业服务年度报告</a>
+                        </div>
+                    </div>
+                </li>
+            </ul>
+        </div>
+    </div>
+    </li>
+
+    <li class="parentsLi">
+        <div class="tax-title-after">
+            <div class="title-name">
+                <img src="/wsbs/images/icon_img/icon-ssjm.png"/>
+                <span>税收减免</span>
+            </div>
+        </div>
+        <div class="tc_tax">
+        <div class="tc_zhezhao"></div>
+        <div class="tanchuceng">
+            <div class="tax-title">
+                <div class="title-name">税收减免</div>
+            </div>
+            <div class="closes">
+                <img src="/wsbs/images/closes.png">
+            </div>
+            <ul>
+                
+                <li class="clearfix">
+                    <div class="zcd_left"><i></i><span>税收减免核准</span></div>
+                    <div class="zcd_right"><a id="FU091" href="javascript:void(0);" target="_blank"><i class="iconfont">&#xe762;</i><span>税收减免核准</span></a></div>
+                </li>
+                <li class="clearfix">
+                    <div class="zcd_left"><i></i><span>税收优惠备案</span></div>
+                    <div class="zcd_right"><a id="FU157" href="javascript:void(0);" target="_blank"><i class="iconfont">&#xe762;</i><span>税收优惠备案</span></a></div>
+                </li>
+            </ul>
+        </div>
+    </div>
+    </li>
+
+    <li class="parentsLi">
+        <div class="tax-title-after">
+            <div class="title-name">
+                <img src="/wsbs/images/icon_img/icon-qtfw.png"/>
+                <span>其他服务事项</span>
+            </div>
+        </div>
+        <div class="tc_tax">
+        <div class="tc_zhezhao"></div>
+        <div class="tanchuceng">
+            <div class="tax-title">
+                <div class="title-name">其他服务事项</div>
+            </div>
+            <div class="closes">
+                <img src="/wsbs/images/closes.png">
+            </div>
+            <ul>
+                <li class="clearfix">
+                    <div class="zcd_left"><i></i><span>实名办税认证</span></div>
+                    <div class="zcd_right"><a id="FU029" href="javascript:void(0);" target="_blank"><i class="iconfont">&#xe762;</i><span>实名办税认证</span></a></div>
+                </li>
+                
+                <li class="clearfix">
+                    <div class="zcd_left"><i></i><span>税务资格备案</span></div>
+                    <div class="zcd_right"><a id="FU031" href="javascript:void(0);" target="_blank"><i class="iconfont">&#xe762;</i><span>税务资格备案</span></a></div>
+                </li>
+                <li class="clearfix">
+                    <div class="zcd_left"><i></i><span>网签三方协议</span></div>
+                    <div class="zcd_right"><a id="FU078" href="javascript:void(0);" target="_blank"><i class="iconfont">&#xe762;</i><span>网签三方协议</span></a></div>
+                </li>
+            </ul>
+        </div>
+    </div>
+    </li>
+
+</ul>
+
+					    </div>
+					    <div role="tabpanel" class="tab-pane" id="chauxn">
+					    	<ul class="icon-jbfw clearfix">
+		        				<li><a id="FU150" href="/wsbs/ggcx/taxSelect/bsjdjjgxxcx/view_bsjdjjgxxcx.do?rsv_idx=FU150" target="_blank" class="zrr"><img src="images/icon_img/bsjd.png"/><span>办税进度及结果信息查询</span></a></li>
+								<li><a id="FU133" href="/wsbs/fp/taxApplication/view_queryFpxx.do?rsv_idx=FU133" target="_blank" class="zrr"><img src="/wsbs/images/icon_img/fplx.png"/><span>发票信息查询</span></a></li>
+		        				<li><a id="FU035" href="/wsbs/sb/taxSelect/declarationInfo/view_DeclarationInfo.do?rsv_idx=FU036" target="_blank"><img src="images/icon_img/sbxx.png"/><span>申报信息查询</span></a></li>
+		        				<li><a id="FU004" href="/wsbs/zxjs/taxSelect/taxInfo/view_TaxInfo.do?rsv_idx=FU004" target="_blank" class="zrr"><img src="images/icon_img/jsxx.png"/><span>缴款信息查询</span></a></li>
+		        				<li><a id="FU103" href="/wsbs/ws/taxSelect/taxOwed/view_taxOwed.do?rsv_idx=FU103" target="_blank"><img src="/wsbs/images/icon_img/qsxx.png"/><span>欠税信息查询</span></a></li>
+		        				<li><a id="FU095" href="/wsbs/ws/taxSelect/benefitInfo/view_benefitInfo.do?rsv_idx=FU095" target="_blank" class="zrr"><img src="images/icon_img/yhxx.png"/><span>优惠信息查询</span></a></li>
+		        				<li><a id="FU096" href="/wsbs/ws/taxSelect/gthdqdexx/view_gthdqdexx.do?rsv_idx=FU096" target="_blank"><img src="images/icon_img/gtgs.png"/><span>个体工商户核定定额信息查询</span></a></li>
+		        				<li><a id="FU100" href="/wsbs/ws/taxSelect/certificateInfo/view_certificateInfo.do?rsv_idx=FU100" target="_blank" class="zrr"><img src="images/icon_img/zmxx.png"/><span>证明信息查询</span></a></li>
+		        				<li><a id="FU140" href="/wsbs/ssjg/taxSelect/view_sszjjgxx.do?rsv_idx=FU140" target="_blank"><img src="images/icon_img/sszj.png"/><span>涉税中介机构信息查询</span></a></li>
+		        				<li><a id="FU114" href="/wsbs/ggcx/taxSelect/xyztInfo/view_xyztcx_list.do?rsv_idx=FU114" target="_blank"><img src="images/icon_img/nsxy.png"/><span>纳税信用状态信息查询</span></a></li>
+		        				<li><a id="FU106" href="/wsbs/ggcx/taxSelect/wfwzInfo/view_wfwzcx_list.do?rsv_idx=FU106" target="_blank"><img src="images/icon_img/wfwz.png"/><span>违法违章信息查询</span></a></li>
+		        				<li><a id="FU101" href="/wsbs/ggcx/taxSelect/historyTax/view_lsbscx.do?rsv_idx=FU101" target="_blank"><img src="images/icon_img/lsbs.png"/><span>历史办税操作查询</span></a></li>
+								<li><a id="FU041" href="/wsbs/zxjs/taxSelect/view_ThreePartyQuery.do?rsv_idx=FU041" target="_blank"><img src="images/icon_img/sfxyxxcx.png"/><span>三方协议信息查询</span></a></li>
+								<li><a id="FU040" href="/wsbs/ggcx/taxSelect/taxpayer/view_identificationquery.do?rsv_idx=FU040" target="_blank"><img src="images/icon_img/lsbs.png"/><span>一般纳税人信息查询</span></a></li>
+								<!--地税查询-->
+								<li><a id="WYCX03" href="/wsbs/hnds/tods?rsv_idx=WYCX03" target="_blank"><img src="images/icon_img/cwbbsbqkcx.png"/><span>财务报表申报情况查询</span></a></li>
+								<li><a id="WYCX06" href="/wsbs/hnds/tods?rsv_idx=WYCX06" target="_blank" class="zrr"><img src="images/icon_img/tdskqc.png"/><span>退抵税款清册</span></a></li>
+								<li class="qt_cx"><a id="" href="javascript:"><img src="/wsbs/images/icon_img/icon-qtfw.png"/><span>其他信息查询</span></a></li>
+
+								<div class="qtcx_tax">
+									<div class="qtcx_zhezhao"></div>
+									<div class="qtcx_tanchuceng">
+										<div class="tax-title">
+											<div class="title-name">其他信息查询</div>
+										</div>
+										<div class="closes">
+											<img src="/wsbs/images/closes.png">
+										</div>
+										<ul class="icon-jbfw2 clearfix">
+											<li><a id="WYCX01" href="/wsbs/hnds/tods?rsv_idx=WYCX01" target="_blank"><img src="images/icon_img/sblscxzrr.png"/><span>申报历史查询(自然人）</span></a></li>
+											<li><a id="WYCX02" href="/wsbs/hnds/tods?rsv_idx=WYCX02" target="_blank" class="zrr"><img src="images/icon_img/gssblscx.png"/><span>个税申报历史查询</span></a></li>
+											<li><a id="WYCX04" href="/wsbs/hnds/tods?rsv_idx=WYCX04" target="_blank"><img src="images/icon_img/sbfsbcx.png"/><span>社保费申报查询</span></a></li>
+											<li><a id="WYCX05" href="/wsbs/hnds/tods?rsv_idx=WYCX05" target="_blank"><img src="images/icon_img/sszgxxcx.png"/><span>涉税资格信息查询</span></a></li>
+											<li><a id="WYCX07" href="/wsbs/hnds/tods?rsv_idx=WYCX07" target="_blank" class="zrr"><img src="images/icon_img/fyxxcjcx.png"/><span>房源信息采集查询</span></a></li>
+											<li><a id="WYCX08" href="/wsbs/hnds/tods?rsv_idx=WYCX08" target="_blank"><img src="images/icon_img/tdsyxxcjcx.png"/><span>土地税源信息采集查询</span></a></li>
+										</ul>
+									</div>
+								</div>
+		        			</ul>
+					    </div>
+					    <div role="tabpanel" class="tab-pane" id="hudong">
+					    	<ul class="icon-jbfw2 clearfix">
+		        				<li><a href="/wsbs/ggcx/taxSelect/view_my_info.do?rsv_idx=HDZX01" target="_blank"><img src="/wsbs/images/icon_img/wdxx.png"/><span>我的消息</span></a></li>
+		        				<li><a href="/wsbs/reserveTaxRefine/view_index.do?rsv_idx=HDZX02" target="_blank"><img src="/wsbs/images/icon_img/yybs.png"/><span>预约办税</span></a></li>
+								<li><a href="/wsbs/ws/taxApplication/view_zxjh.do?rsv_idx=FU168" target="_blank"><img src="/wsbs/images/icon_img/zxjh.png"/><span>在线交互</span></a></li>
+		        				<li><a href="/wsbs/ws/taxApplication/view_nfts.do?rsv_idx=FU163" target="_blank"><img src="/wsbs/images/icon_img/tsjy.png"/><span>纳服投诉</span></a></li>
+		        				
+		        			</ul>
+					    </div>
+					    <div role="tabpanel" class="tab-pane clearfix" id="fuwu">
+					    	<div class="gongzhongfuwu">
+					    		<div class="tax-title-iconcb">
+					    			<div class="icon-txt">
+						    			<img src="images/lan_l.png" class="border-l" />
+						    			<i><img src="/wsbs/images/icon_gongzhongchaxun.png"/></i>
+						    			<span>公众查询</span>
+						    			<img src="/wsbs/images/lan_r.png" class="border-r" />
+					    			</div>
+					    		</div>
+					    		<ul>
+					    			<li><a href="http://fpbw.hunan.chinatax.gov.cn/fpbw/pc/fplxView" target="_blank"><i class="iconfont">&#xe762;</i><span>发票查询</span></a></li>
+									<li><a href="http://hunan.chinatax.gov.cn/zhuanti/qsgg/" target="_blank"><i class="iconfont">&#xe762;</i><span>欠税公告信息查询</span></a></li>
+					    			<li><a href="http://hunan.chinatax.gov.cn/zhuanti/ajpgt/" target="_blank"><i class="iconfont">&#xe762;</i><span>重大税收违法案件查询</span></a></li>
+					    			<li><a href="/wsbs/ggcx/publicService/taxpayment/view_checktaxpayment.do?type=2" target="_blank"><i class="iconfont">&#xe762;</i><span>证明信息查询</span></a></li>
+					    			<li><a href="http://hunan.chinatax.gov.cn/xinyongajichaxun.jsp" target="_blank"><i class="iconfont">&#xe762;</i><span>信用等级A类纳税人查询</span></a></li>
+					    			<li><a href="/wsbs/ggcx/publicService/view_Cywczm.do" target="_blank"><i class="iconfont">&#xe762;</i><span>跨区域涉税事项报告表查询</span></a></li>
+					    			<li><a href="/wsbs/ggcx/publicService/taxpayment/view_checktaxpayment.do?type=1" target="_blank"><i class="iconfont">&#xe762;</i><span>网上开具税收完税证明查验</span></a></li>
+									<li><a href="https://inv-veri.chinatax.gov.cn" target="_blank"><i class="iconfont">&#xe762;</i><span>国家税务总局全国增值税发票查验平台</span></a></li>
+									
+					    		</ul>
+					    	</div>
+					    	<div class="gongzhongfuwu">
+					    		<div class="tax-title-iconcb">
+					    			<div class="icon-txt">
+						    			<img src="images/lv_l.png" class="border-l" />
+						    			<i><img src="images/icon_zixunfudao.png"/></i>
+						    			<span>咨询辅导</span>
+						    			<img src="images/lv_r.png" class="border-r" />
+					    			</div>
+					    		</div>
+					    		<ul>
+									<li><a href="http://school.hunan.chinatax.gov.cn" target="_blank"><i class="iconfont">&#xe762;</i><span>纳税人学堂</span></a></li>
+									<li><i class="iconfont">&#xe762;</i><span>税收政策及解读</span>
+										<div class="popover bottom">
+											<div class="arrow"></div>
+											<h3 class="popover-title">税收政策及解读</h3>
+											<div class="closes">
+												<img src="/wsbs/images/closes.png">
+											</div>
+											<div class="popover-content clearfix">
+												<a href="http://113.240.252.21:8001/hngsww/FullTextSearchBLH_searchMain.do" target="_blank">税收法规库</a>
+												<a href="http://hunan.chinatax.gov.cn/article_list.jsp?smallclassid=20051108000023" target="_blank">政策解读</a>
+											</div>
+										</div>
+									</li>
+									<li><a href="http://hunan.chinatax.gov.cn/notice_list.jsp?smallclassid=20150521245984" target="_blank"><i class="iconfont">&#xe762;</i><span>办税指南</span></a></li>
+									<li><a href="/wsbs/ggcx/publicService/instruction/view_caozuoshuoming.do?pageId=1" target="_blank"><i class="iconfont">&#xe762;</i><span>操作规程</span></a></li>
+									<li><i class="iconfont">&#xe762;</i><span>下载服务</span>
+										<div class="popover bottom">
+											<div class="arrow"></div>
+											<h3 class="popover-title">下载服务</h3>
+											<div class="closes">
+												<img src="/wsbs/images/closes.png">
+											</div>
+											<div class="popover-content clearfix">
+												<a href="http://hunan.chinatax.gov.cn/download_tablelist.jsp" target="_blank">表证单书下载</a>
+												<a href="http://hunan.chinatax.gov.cn/article_list.jsp?smallclassid=20180725214145" target="_blank">软件下载</a>
+											</div>
+										</div>
+									</li>
+					    			<li><a href="http://hunan.chinatax.gov.cn/article_list.jsp?smallclassid=20081205027885" target="_blank"><i class="iconfont">&#xe762;</i><span>热点问题</span></a></li>
+									<li><a href="http://hunan.chinatax.gov.cn/zhuanti_list.jsp" target="_blank"><i class="iconfont">&#xe762;</i><span>重点专题</span></a></li>
+									<li><a href="http://hunan.chinatax.gov.cn/bsdt.jsp" target="_blank"><i class="iconfont">&#xe762;</i><span>办税地图</span></a></li>
+					    			<li><a href="/wsbs/publicService/taxDatePage" target="_blank"><i class="iconfont">&#xe762;</i><span>办税日历</span></a></li>
+									<li><a id="moreServiceId"  href="javascript:"><i class="iconfont">&#xe762;</i><span>更多</span></a></li>
+
+									<div class="tc_tax" id="more_service" style="display: none;">
+										<div class="tc_zhezhao"></div>
+										<div class="tanchuceng" style="width:600px;height:300px;margin:-250px 0 0 -200px;">
+											<div class="tax-title">
+												<div class="title-name">更多（咨询辅导）</div>
+											</div>
+											<div class="closes" id="moreServiceClose">
+												<img src="/wsbs/images/closes.png">
+											</div>
+											<ul>
+												<li class="clearfix" style="float:none;">
+													<div class="zcd_left"><i></i><span>税务咨询</span></div>
+													<div class="zcd_right"><a href="http://hunan.chinatax.gov.cn/zixun.jsp" target="_blank"><i class="iconfont">&#xe762;</i><span>税务咨询</span></a></div>
+												</li>
+												<li class="clearfix" style="float:none;">
+													<div class="zcd_left"><i></i><span>纳税服务投诉</span></div>
+													<div class="zcd_right"><a href="http://hunan.chinatax.gov.cn/hdzx.jsp?smallclassid=20140703006317" target="_blank"><i class="iconfont">&#xe762;</i><span>纳税服务投诉</span></a></div>
+												</li>
+											</ul>
+										</div>
+									</div>
+
+					    		</ul>
+					    	</div>
+					    </div>
+					  </div>
+				</div>
+				<div class="daibantixing" id="dbsx-region" style="display:none; height: 400px;">
+					<ul class="nav nav-tabs" role="tablist">
+					    <li role="presentation" class="active"><a href="#daiban" aria-controls="daiban" role="tab" data-toggle="tab">我的待办</a></li>
+					    <li role="presentation"><a href="#tixing" aria-controls="tixing" role="tab" data-toggle="tab">服务提醒</a></li>
+					  </ul>
+
+					  <!-- Tab panes -->
+					  <div class="tab-content">
+					    <div role="tabpanel" class="tab-pane active clearfix" id="daiban"style="padding-bottom: 10px; padding-right: 10px;">
+					    	<table class="table table-striped">
+								<tr>
+									<th width="30%">申请事项编号</th>
+									<th width="20%">办理业务</th>
+									<th width="20%">填表时间</th>
+									<th width="20%">处理结果</th>
+									<th width="10%">操作</th>
+								</tr>
+								<tbody id="backlog_content" >
+								</tbody>
+							</table>
+
+							<div style=" position:relative;">
+								<nav style="float:right;">
+									
+									<ul id="page" class="pagination"style="margin:0; float:right;">
+
+									</ul>
+								</nav>
+							</div>
+
+						</div>
+					    <div role="tabpanel" class="tab-pane" id="tixing">
+							<div style="padding: 15px;">暂无消息</div>
+						</div>
+					  </div>
+				</div>
+				<div class="tongzhigonggao" id="tzgg-region" style="display:none; height: 400px;">
+					<div class="tax-title">
+						<div class="title-name">通知公告</div>
+						<a href="/wsbs/publicService/notice/more" target="_blank" id="tzgg">更多></a>
+					</div>
+					<table class="table table-striped">
+						<tbody id="notice-index-content">
+						
+
+<script type="text/html" id="noticeIndexList">
+    {{each dataList as data index}}
+    {{if index<7 }}
+    <tr>
+        <td width="50%">
+            <a href="/wsbs/publicService/notice/detail?id={{data.afficheId}}"  target="_blank">{{data.afficheTitle1}}</a>
+            {{if data.thirstyBz =='N'}}
+            <img src="/wsbs/images/ico-new.jpg"/>
+            {{/if}}
+        </td>
+        <td width="38%">{{data.tzggqdbt}}</td>
+        <td width="12%">{{data.afficheFbrq}}</td>
+    </tr>
+    {{/if}}
+    {{/each}}
+</script>
+<script type="text/html" id="noticeList">
+    {{each dataList as data index}}
+        <li title="{{data.afficheTitle}}"><i class="glyphicon glyphicon-menu-right"></i>
+            <span><a href="/wsbs/publicService/notice/detail?id={{data.afficheId}}"  target="_blank">{{data.afficheTitle1}}</span></a>
+            {{if data.thirstyBz =='N'}}
+            <img src="/wsbs/images/ico-new.jpg"/>
+            {{/if}}
+        </li>
+    {{/each}}
+</script>
+						</tbody>
+
+					</table>
+				</div>
+			</div>
+		</div>
+
+		<div class="modal fade" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" id="tzggModal" style="height:484px;top:50%;margin-top:-242px;z-index:99999;">
+			<div class="modal-dialog" role="document" style="z-index:99999; width:900px">
+				<div class="modal-content" style=" margin:0 80px;">
+					<div class="modal-header" style="border: 0;">
+						<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span
+								aria-hidden="true">&times;</span></button>
+						
+					</div>
+					<div class="modal-body">
+						<div style="  width:100%; padding: 0px 4% 10px; line-height: 26px; background:#fff;">
+
+							<div style="text-align:center;font-weight: bold; font-size:18px; height:36px; line-height:36px;">常用功能</div>
+
+							<p style="margin-bottom:2px;">
+							<ul class="icon-jbfw clearfix" style="padding:0;">
+								<li style="width:22%;"><a attrId="312"   target="_blank" class="zrr"><img src="images/icon_img/cygn-zxsb.png"/><span>在线申报</span></a></li>
+								<li style="width:22%;"><a attrId="FU013" target="_blank" class="zrr"><img src="/wsbs/images/icon_img/cygn-fpyj.png"/><span>发票验（交）旧</span></a></li>
+								<li style="width:22%;"><a attrId="FU015" target="_blank"><img src="images/icon_img/cygn-zzszyfpdk.png"/><span>增值税专用发票代开</span></a></li>
+								<li style="width:22%;"><a attrId="FU014" target="_blank" class="zrr"><img src="images/icon_img/cygn-fply.png"/><span>发票领用</span></a></li>
+
+							</ul>
+							<ul class="icon-jbfw clearfix" style="padding:0;">
+								<li style="width:22%;"><a attrId="FU017" target="_blank"><img src="/wsbs/images/icon_img/cygn-sfxyjs.png"/><span>三方协议缴税</span></a></li>
+								<li style="width:22%;"><a attrId="FU019" target="_blank" class="zrr"><img src="images/icon_img/cygn-zxjs.png"/><span>在线缴税</span></a></li>
+								<li style="width:22%;"><a attrId="FU080" target="_blank"><img src="images/icon_img/cygn-kjsswszm.png"/><span>开具税收完税（费）证明</span></a></li>
+								<li style="width:22%;"><a attrId="309"   target="_blank" class="zrr"><img src="images/icon_img/cygn-cwbbbs.png"/><span>财务报表报送</span></a></li>
+							</ul>
+							</p>
+							<p style="text-align: center;"><input type="button" class="btn-zhuce closeTzggBtn" style="width:30%;background:#1a56a8; float:none;" id="closeTzggBtn" onclick="closeTzgg();" value="关闭"></p>
+						</div>
+						<div class="clear"></div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</body>
+	<script type="text/javascript">
+		//查询更多弹框
+		$(function(){
+			$(".qt_cx").click(function(){
+				$(".qtcx_tax").show();
+			});
+			$("#moreServiceId").click(function(){
+				$("#more_service").show();
+			});
+			$('#moreServiceClose').click(function(){
+				$("#more_service").hide();
+			});
+			$(".closes").click(function(){
+				$(".qtcx_tax").hide();
+			});
+
+			var tken = $('#userToken').val();
+			if(tken){
+				initTzggUrl();
+				$('#tzggModal').modal('show');
+			}
+		});
+
+		var ctx = '/wsbs';
+
+		function closeTzgg(){
+			$('#tzggModal').modal('hide');
+		}
+
+		function post(url, params) {
+			var temp = document.createElement("form");
+			temp.action = url;
+			temp.method = "post";
+			temp.style.display = "none";
+			for (var x in params) {
+				var opt = document.createElement("input");
+				opt.name = x;
+				opt.value = params[x];
+				temp.appendChild(opt);
+			}
+			document.body.appendChild(temp);
+			temp.submit();
+			return temp;
+		}
+
+		function get(url, params) {
+			var temp = document.createElement("form");
+			temp.action = url;
+			temp.method = "get";
+			temp.target = "_blank";
+			temp.style.display = "none";
+			for (var x in params) {
+				var opt = document.createElement("input");
+				opt.name = x;
+				opt.value = params[x];
+				temp.appendChild(opt);
+			}
+			document.body.appendChild(temp);
+			temp.submit();
+			return temp;
+		}
+
+		//sid单点登录出口退税预申报错误消息提示
+		var sidCode = '';
+		if(!isEmpty(sidCode)){
+			var  sidLoginMsg= '';
+			var sidUrl = '';
+
+			if(sidCode=='000'){
+				post(sidUrl);
+			}
+			else{
+				layer.msg(sidLoginMsg ,{icon: 2});
+			}
+		}
+
+		var  loginmessages= '';
+		if(!isEmpty(loginmessages)){
+			layer.msg(loginmessages ,{icon: 2});
+		}
+
+		//加载通知公告
+		window.onload = loadJScript;
+		function loadJScript() {
+			ajaxRefreshOsCache();
+			ajaxLoadNotice('index');
+		}
+
+		function forbiddenTips(obj){
+
+			var name = $(obj).attr('id');
+			var url = $(obj).attr('url');
+			url = ctx + url;
+			if(name == 'ds16' || name == 'ds17'){
+				layer.confirm('所属期2019年1月起，经营所得个人所得税申报在自然人税收管理系统（ITS）办理。', {
+					btn: ['确定']
+				}, function () {
+					var params = {};
+					params.rsv_idx = name;
+					get(url, params);
+					layer.closeAll();
+				});
+			}else if(name == 'ds15'){
+				layer.confirm('<a style="color:#2e8ded;cursor:pointer;" href="https://its.hntax.gov.cn" target="_blank">所属期2019及以后的个人所得税生产经营所得申报，请进入自然人办税服务平台网页WEB端办理！</a>', {
+					btn: ['确定']
+				}, function () {
+					var params = {};
+					params.rsv_idx = name;
+					url = "https://its.hunan.chinatax.gov.cn"
+					get(url, params);
+					layer.closeAll();
+				});
+
+			}else if(name == 'FU081'){
+				layer.alert("尊敬的纳税人，由于相关信息系统和软件升级的原因，企业所得税汇算清缴年度纳税申报功能模块将于2019年3月11日正式上线，由此给您带来的不便我们深表歉意！");
+			}else{
+				layer.confirm('电子税务局不支持纳税人进行属期2019年的个人所得税申报，相关业务请进入自然人税收管理系统（ITS）办理。', {
+					btn: ['确定']
+				}, function () {
+					var params = {};
+					params.rsv_idx = name;
+					get(url, params);
+					layer.closeAll();
+				});
+			}
+
+		}
+
+
+
+		$(function () {
+			jQuery.blockUI.defaults.message = '<img src="/wsbs/images/loading/loading.gif"/>';
+			var bindgs = $('#bindgs').val();
+			var nsrztDm = $('#nsrztDm').val();
+			var loginBz = $('#loginBz').val();
+			var roleId = $('#roleId').val();
+
+
+			// 用户退出事件
+            $('#logout_btn').on('click', function (e) {
+                return false;
+				unionIndex.logout('/wsbs');
+			});
+
+			$('#login_btn').on('click', function (e) {
+				unionIndex.login('/wsbs');
+			});
+
+			//申报提醒
+			var sbtx = store.get("sbtx_data");
+			if(sbtx && sbtx.result && sbtx.result.wsbsz){
+				alert(sbtx.result.wsbtx);
+				store.remove("sbtx_data");
+			}
+		});
+
+		function initTzggUrl(){
+			var menuList=store.get('pc_menuList');
+			var nsrztDm = $('#nsrztDm').val();
+			if(!isEmpty(menuList)){
+				$("#tzggModal").find("a").each(function(i,e) {
+					if(menuList=='nobody' || !arrayContainsItem(menuList, $(this).attr("attrId"))){
+						var clazz = $(this).attr("class") || '';
+						if($(this).attr("attrId") != '' && $(this).attr("attrId") != undefined){
+							$(this).removeAttr('href');
+							$(this).removeAttr("onclick");
+							var imageSrc = $(this).find("img").attr("src");
+							var imagesName = imageSrc.substring(imageSrc.lastIndexOf('/'), imageSrc.length);
+							$(this).find("img").attr("src", ctx + "/images/icon_img_hui/" + imagesName);
+							$(this).click(function(){
+								if(nsrztDm == '04'){
+									layerMsg("用户状态为停业，不能进行此操作！",7);
+								}else{
+									layerMsg("您暂时没有权限使用该模块。",7);
+								}
+							});
+						}
+					}else{
+						for(var i = 0;i < menuList.length; i++) {
+							if(menuList[i].yyfwDm==$(this).attr("attrId")){
+								$(this).attr("href",ctx+menuList[i].url);
+								$(this).addClass('c4585eb');
+								$(this).unbind();
+							}
+						}
+					}
+				});
+			}
+		}
+
+
+	</script>
+	<script type="text/html" id="list_backlog">
+		{{if count != '0'}}
+		{{each list as value i}}
+		<tr>
+			<td>{{value.wsid}}</td>
+			<td>{{value.wszlMc}}</td>
+			<td>{{value.sqrq}}</td>
+			<td>{{value.wsztMc}}</td>
+			<td>
+				{{if value.wsid }}
+				<button class="btn btn-primary btn-sm" href="javaScript:void(0)" onclick="goToPage('/wsbs','{{value.wszlDm}}','{{value.wszlMc}}','{{value.wsid}}');">
+					立即处理
+				</button>
+				{{/if}}
+			</td>
+		</tr>
+		{{/each}}
+		{{else}}
+		<tr>
+			<td colspan="7" style="text-align: center;">
+				未查询到相关数据
+			</td>
+		</tr>
+		{{/if}}
+	</script>
+</html>

@@ -1,0 +1,123 @@
+﻿@using Microsoft.AspNetCore.Http;
+
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>视频管理</title>
+    <meta name="renderer" content="webkit">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <link href="/VideoManage/css/VideoIndex.css" rel="stylesheet" />
+    <script type="text/javascript" src="/js/jquery-1.11.3.min.js"></script>
+    <script type="text/javascript" src="/js/json2.js"></script>
+    <script type="text/javascript" src="/js/dump_src.js"></script>
+    <style type="text/css">
+        .colu:hover .png {
+            width: 10px;
+            height: 10px;
+            background-image: url(/VideoManage/image/xzz.png);
+            background-repeat: no-repeat;
+            background-size: 100%;
+            position: relative;
+            left: -37px;
+            top: 20px;
+        }
+
+        .colu:hover {
+            background: #daf4fd;
+        }
+
+        .novideo {
+            display: block;
+            width: 100%;
+            margin: 10% 0;
+            background: #fff;
+            font-size: 48px;
+            text-align: center;
+            /* box-sizing: border-box; */
+        }
+    </style>
+    <script>
+        function checkvideo(Id,VideoID, Model, CourseId) {
+            if (VideoID != "null" && VideoID != "") {
+                window.open("@AppConfigurtaionServices.Configuration["appSettings:Practicepath"]/UIRES/VideoPlay.aspx?VideoID=" + VideoID + "&Id=" + Id + "&CourseId=" + CourseId);
+            }
+            else {
+                    alert('暂无视频');
+            }
+        }
+
+        var VideoManage = '@Html.Raw(Html.ViewContext.HttpContext.Session.GetString("VideoManage"))'
+        $(document).ready(function () {
+            var json = JSON.parse(VideoManage);
+            $("#showGtax").find("li").remove();
+            $("#showDtax").find("li").remove();
+            var gtaxcount = 0;
+            var dtaxcount = 0;
+            $.each(json, function (i, v) {
+                if (v.TaxType == "0") {
+                    Gtax = '<li class="colu"><div class="png"></div>';
+                    Gtax += '<span>' + v.VideoName + '</span>';
+                    Gtax += '<a class="play"  target="_blank" onclick="checkvideo(\'' + v.Id + '\',\'' + v.VideoID + '\',\'0\',\'' + v.CourseId + '\')">播放</a></li>';
+                    $("#showGtax").append(Gtax);
+                    gtaxcount++;
+                }
+                if (v.TaxType == "1") {
+                    Dtax = '<li class="colu"><div class="png"></div>';
+                    Dtax += '<span>' + v.VideoName + '</span>';
+                    Dtax += '<a class="play"  target="_blank" onclick="checkvideo(\'' + v.Id + '\',\'' + v.VideoID + '\',\'1\',\'' + v.CourseId + '\')">播放</a></li>';
+                    $("#showDtax").append(Dtax);
+                    dtaxcount++;
+                }
+            })
+            if (gtaxcount == 0 && dtaxcount == 0) {
+                $("#divcontent").html("<span class='novideo'>暂无视频</span>");
+            }
+            else {
+                if (gtaxcount == 0) {
+                    $("#divgtax").css("display", "none");
+                }
+                if (dtaxcount == 0) {
+                    $("#divdtax").css("display", "none");
+                }
+            }
+        });
+    </script>
+</head>
+
+<body id="body_cool_12">
+    <div class="content" id="divcontent">
+        <div class="wrapper">
+            <div class="repeat" id="divgtax">
+                <div class="tittle">
+                </div>
+                <div class="course">
+
+                    <span id="tot" class="tot">国税申报视频</span>
+                    <br>
+                    <span id="stot" class="stot"></span>
+                    <div class="sect"></div>
+                    <ul class="show" id="showGtax"></ul>
+                </div>
+            </div>
+
+            <div class="repeat" id="divdtax">
+                <div class="tittle">
+                </div>
+                <div class="course">
+
+                    <span id="tot" class="tot">地税申报视频</span>
+                    <br>
+                    <span id="stot" class="stot"></span>
+                    <div class="sect"></div>
+                    <ul class="show" id="showDtax"></ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

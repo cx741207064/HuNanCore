@@ -1,0 +1,274 @@
+@using JlueTaxSystemHuNanBS.Models
+@model YbnsrzzsModel
+
+<html>
+<head>
+    <title>报表填写</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <link rel="stylesheet" type="text/css" href="/web-accept//static/css/main/bootstrap.css" />
+    <link rel="stylesheet" type="text/css" href="/web-accept//static/css/sbb/iconfont.css" />
+    <link rel="stylesheet" type="text/css" href="/web-accept//static/css/sbb/style.css" />
+    <link rel="stylesheet" type="text/css" href="/web-accept//static/css/sbb/leftmenu.css" />
+    <link rel="stylesheet" type="text/css" href="/web-accept//static/css/sbb/sbbview.css" />
+
+
+
+    <script src="/web-accept//wssb/static/js.html?ver=6DB686C88F47E5240B7C1B0121F160C6&p=3&dm=10104"></script>
+    <script src="/web-accept//static/js/layer/layer.js"></script>
+
+    <script>
+        $(function () {
+
+            setYbnsrzzsViewData()
+
+            openSbb('zb');
+
+
+            //$("#printBtn").click(preview);
+            //$("#exportbtn").click(exportExcel);
+        });
+
+        //点击左边列表切换申报表
+        var currSbb = 'blankdiv';
+        function openSbb(sbbname) {
+            if (sbbname == currSbb) {
+                return;
+            }
+            $("#" + sbbname).css('display', 'block');
+            if (currSbb != null) {
+                $("#" + currSbb).css("display", "none");
+            }
+            currSbb = sbbname;
+            return;
+            //提交当前处于编辑状态的单元格
+            submitCurrSbb();
+        }
+
+        //预览
+        function preview() {
+            if (currSbb == null || currSbb == 'blankdiv')
+                return;
+            var strBodyStyle = "";
+            strBodyStyle = "<link rel='stylesheet' type='text/css' href='https://etax.hunan.chinatax.gov.cn/web-accept//static/css/sbb/sbbprint.css'>";
+            var _html = strBodyStyle + "<body>" + document.getElementById(currSbb).innerHTML + "</body>";
+            var LODOP = getLodop('https://etax.hunan.chinatax.gov.cn/web-accept//static/print/');
+            LODOP.PRINT_INIT("");
+            var printparas = [{ "fbjc": "zb", "sbzlDm": "10104", "dyFx": "V", "pdfPercent": "1", "pdfDyFx": "V" }, { "fbjc": "flzl1", "sbzlDm": "10104", "dyFx": "H", "pdfPercent": "0.9", "pdfDyFx": "H" }, { "fbjc": "flzl2", "sbzlDm": "10104", "dyFx": "V", "pdfPercent": "1", "pdfDyFx": "V" }, { "fbjc": "flzl3", "sbzlDm": "10104", "dyFx": "V", "pdfPercent": "0.9", "pdfDyFx": "V" }, { "fbjc": "gdzcjxsedkqkb", "sbzlDm": "10104", "dyFx": "V", "pdfPercent": "1", "pdfDyFx": "V" }, { "fbjc": "cpygxcqkmxb", "sbzlDm": "10104", "dyFx": "H", "pdfPercent": "1", "pdfDyFx": "H" }, { "fbjc": "dlqyxxsehjxsecdd", "sbzlDm": "10104", "dyFx": "V", "pdfPercent": "1", "pdfDyFx": "V" }, { "fbjc": "ncpzzsjxsedkhzb", "sbzlDm": "10104", "dyFx": "V", "pdfPercent": "1", "pdfDyFx": "V" }, { "fbjc": "ncpzzsjxsedktrcc", "sbzlDm": "10104", "dyFx": "V", "pdfPercent": "0.8", "pdfDyFx": "V" }, { "fbjc": "ncpzzsjxsedkcb", "sbzlDm": "10104", "dyFx": "V", "pdfPercent": "1", "pdfDyFx": "V" }, { "fbjc": "zjxshdlcpjsb", "sbzlDm": "10104", "dyFx": "V", "pdfPercent": "1", "pdfDyFx": "V" }, { "fbjc": "bgchwsthdlcpjsb", "sbzlDm": "10104", "dyFx": "V", "pdfPercent": "1", "pdfDyFx": "V" }, { "fbjc": "dkdjsstyjksdkqd", "sbzlDm": "10104", "dyFx": "V", "pdfPercent": "1", "pdfDyFx": "V" }, { "fbjc": "flzl4", "sbzlDm": "10104", "dyFx": "V", "pdfPercent": "0.9", "pdfDyFx": "V" }, { "fbjc": "jmssbmxb", "sbzlDm": "10104", "dyFx": "H", "pdfPercent": "1", "pdfDyFx": "H" }, { "fbjc": "dxqycdd", "sbzlDm": "10104", "dyFx": "V", "pdfPercent": "1", "pdfDyFx": "V" }, { "fbjc": "tlqycdd", "sbzlDm": "10104", "dyFx": "V", "pdfPercent": "1", "pdfDyFx": "V" }, { "fbjc": "hkqycdd", "sbzlDm": "10104", "dyFx": "V", "pdfPercent": "1", "pdfDyFx": "V" }, { "fbjc": "yzqycdd", "sbzlDm": "10104", "dyFx": "V", "pdfPercent": "0.85", "pdfDyFx": "V" }, { "fbjc": "flzl5", "sbzlDm": "10104", "dyFx": "V", "pdfPercent": "0.9", "pdfDyFx": "V" }, { "fbjc": "bqdkjxsejgmxb", "sbzlDm": "10104", "dyFx": "V", "percent": "Width:85%;Height:85%", "pdfPercent": "1", "pdfDyFx": "V" }, { "fbjc": "ygzsffxcsmxb", "sbzlDm": "10104", "dyFx": "H", "pdfPercent": "0.75", "pdfDyFx": "H" }, { "fbjc": "jrysffxdcb", "sbzlDm": "10104", "dyFx": "V", "pdfPercent": "1", "pdfDyFx": "V" }, { "fbjc": "cpygxcslmxb", "sbzlDm": "10104", "dyFx": "H", "pdfPercent": "1", "pdfDyFx": "H" }];
+            var ptobj;
+            for (var i = 0; i < printparas.length; i++) {
+                ptobj = printparas[i];
+                if (ptobj.fbjc == currSbb || (currSbb.indexOf("xxbgb") == 0 && ptobj.fbjc == "xxbgb")) {
+                    var top = 0;
+                    if (ptobj.top) {
+                        top = ptobj.top;
+                    }
+                    var left = 20;
+                    if (ptobj.left) {
+                        left = left + convertNumber(ptobj.left);
+                    }
+                    //计算A4纸宽度与当前表格的宽度比例
+                    LODOP.ADD_PRINT_HTM(top, left, "100%", "100%", _html);
+                    if ('H' == ptobj.dyFx) {
+                        LODOP.SET_PRINT_PAGESIZE(2, 0, 0, "CreateCustomPage");
+                        LODOP.SET_SHOW_MODE("LANDSCAPE_DEFROTATED", 1);//横向时的正向显示
+                    } else {
+                        LODOP.SET_PRINT_PAGESIZE(3, 0, 0, "CreateCustomPage");
+                    }
+                    //按照计算比例缩放
+                    if (ptobj.percent) {
+                        LODOP.SET_PRINT_MODE("PRINT_PAGE_PERCENT", ptobj.percent);
+                    } else {
+                        LODOP.SET_PRINT_MODE("PRINT_PAGE_PERCENT", "Auto-Width");
+                    }
+                    break;;
+                }
+            }
+            LODOP.PREVIEW();
+        }
+
+        function exportExcel() {
+
+            var url = '/web-accept//wssb/excel/export.html';
+            var content = $('#sbbdiv').html();
+
+            try {
+                var iframedoc = document.getElementById("dwonlandfile_iframe").contentDocument || document.frames["dwonlandfile_iframe"].document;
+                var fromhtml = "  <html><head></head><body>\n" +
+                    "<form id='dwonlandfile_from'  method='POST' action='/web-accept//wssb/excel/export.html'>\n" +
+                    "<input type='hidden'  name='sbzldm' value='10104' />\n" +
+                    "<input type='hidden' name='content' value='" + content + "' />\n" +
+                    "<input type='hidden' name='bmc' value='主表;附列资料（一）;附列资料（二）;' />\n" +
+                    "<input type='hidden' name='sssq' value='20190401_20190430' />\n" +
+                    "</form></body></html>";
+                iframedoc.body.innerHTML = fromhtml;
+                iframedoc.getElementById('dwonlandfile_from').submit();
+                setTimeout(checkFileDownloadComplete, 200);
+            } catch (e) {
+                $("#tcontent").val(content);
+                var excelurl = '/web-accept//wssb/excel/iframeexport.html?t=' + (new Date().getTime());
+                $("#dwonlandfile_iframe").attr("src", excelurl);
+            }
+        }
+
+        function checkFileDownloadComplete() {
+            if (document.cookie.toLowerCase().indexOf("filedownload=true") > -1) {
+                closeLoadding();
+                //文件下载成功，删除cookie
+                var cookieData = "fileDownload=; path=/; expires=" + new Date(0).toUTCString() + ";";
+                document.cookie = cookieData;
+                return;
+            }
+            try {
+                var iframedoc = document.getElementById("dwonlandfile_iframe").contentDocument || document.frames["dwonlandfile_iframe"].document;
+                if (iframedoc.body.innerHTML.length == 0 || iframedoc.body.innerHTML.indexOf("dwonlandfile_from") == -1) {
+                    showErrorMsg("导出失败")
+                    closeLoadding();
+                    return;
+                }
+            } catch (err) {
+                showErrorMsg("导出失败")
+                closeLoadding();
+                return;
+            }
+            setTimeout(checkFileDownloadComplete, 200);
+        }
+    </script>
+    <script>
+        var _hmt = _hmt || [];
+        (function () {
+            var hm = document.createElement("script");
+            hm.src = "https://hm.baidu.com/hm.js?31201bd2a4e2880495b0477f39e5f19f";
+            var s = document.getElementsByTagName("script")[0];
+            s.parentNode.insertBefore(hm, s);
+        })();
+    </script>
+    <script>
+        function setYbnsrzzsViewData() {
+            var json=@Html.Raw(Model.reportData)
+            $.each(json,function(index,sbb){
+               $.each(sbb.data,function(i,obj){
+                   var idx=obj.idx
+                   var name=obj.name
+                   var value=obj.value
+                   var $td=$("[name='"+name+"'][index='"+idx+"']")
+                   if($td.html()!=="——"){
+                     $td.html(value)
+                   }
+               })
+            })
+        }
+    </script>
+
+</head>
+<body>
+    <input id="ctx" type="hidden" value="https://etax.hunan.chinatax.gov.cn/web-accept/" />
+    <iframe id="dwonlandfile_iframe" style='display: none' src='about:blank'></iframe>
+
+    <input type='hidden' id='tsbzldm' value='10104' />
+    <input type='hidden' id='tcontent' value='' />
+    <input type='hidden' id='tbmc' value='主表;附列资料（一）;附列资料（二）;' />
+    <input type='hidden' id='tsssq' value='20190401_20190430' />
+
+
+    <div class="side">
+
+        <div id="outLookBarDiv" name="outLookBarDiv">
+            <table style=" width:200px;" valign="middle" cellpadding="0" cellspacing="0"
+                   border="0">
+                <tbody>
+                    <tr>
+                        <td onmouseover="this.className='menutitleover'" onmouseout="this.className='menutitle'"
+                            class="menutitle"
+                            name="outlooktitle0" id="outlooktitle0" onclick="switchoutlookBar(0)" nowrap="nowrap">
+                            <span class="smallFont" style="display:block; width:100%;">申报表</span>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td name="outlookdiv0" id="outlookdiv0" style="width:100%;height:100%;" align="center"
+                            valign="top">
+                            <div class="lefttitle" name="outlookdivin0" id="outlookdivin0" style=" width:100%;height:100%">
+
+                                <span>
+                                    <a href="javascript:void(0)"
+                                       onclick="openSbb('zb')">
+                                        主表
+                                    </a>
+                                </span>
+
+                                <span>
+                                    <a href="javascript:void(0)"
+                                       onclick="openSbb('flzl1')">
+                                        附列资料（一）
+                                    </a>
+                                </span>
+
+                                <span>
+                                    <a href="javascript:void(0)"
+                                       onclick="openSbb('flzl2')">
+                                        附列资料（二）
+                                    </a>
+                                </span>
+
+                            </div>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+    <div class="z-click"><i class="iconfont" style="display:none; font-size:9px;" id="you">&#xe72a;</i><i class="iconfont" style=" font-size: 9px;" id="zuo">&#xe72d;</i></div>
+
+    <script language="javascript">
+        $(".z-click").click(function () {
+            if ($(".side").css("display") == "block") {
+                $(".side").css("display", "none");
+                $("#zuo").css("display", "none");
+                $("#you").css("display", "block");
+                $(".main").css("left", "5px");
+                $(this).css("left", "5px")
+            } else {
+                $(".side").css("display", "block");
+                $("#zuo").css("display", "block");
+                $("#you").css("display", "none");
+                $(".main").css("left", "235px");
+                $(this).css("left", "220px")
+            }
+        });
+    </script>
+
+
+
+    <div class="main" id="sbbdiv">
+        <div id="blankdiv">
+
+        </div>
+        <table>
+            <tr>
+                <td><div style="width:25px;"></div></td>
+                <td>
+
+                    @{Html.RenderPartial("_Partialzb", Model);}
+
+                    @{Html.RenderPartial("_Partialflzl1", Model);}
+
+                    @{Html.RenderPartial("_Partialflzl2", Model);}
+
+                </td>
+    <td><div style="width:25px;"></div></td>
+</tr>
+</table>
+</div>
+
+
+<div class="top">
+    <div class="action">
+        <div class="toolbar" style="text-align:center; padding-top:5px;">
+            <input name="exportbtn" id="exportbtn" type="button" class="btn btn-success" value="导出" title="导出" />
+            <input name="printBtn" id="printBtn" type="button" class="btn btn-info" value="打印" title="打印" />
+        </div>
+    </div>
+</div>
+
+</body>
+</html>

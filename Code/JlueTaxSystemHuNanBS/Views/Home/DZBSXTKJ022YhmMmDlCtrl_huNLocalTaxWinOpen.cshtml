@@ -1,0 +1,130 @@
+﻿
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head lang="en">
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=8,9">
+    <title>国家税务总局湖南省电子税务局</title>
+
+    <link rel="stylesheet" href="/wings/include/font/font-awesome.min.css" />
+    <link rel="stylesheet" href="/wings/core/css/exception_dialog.css" />
+
+    <!-- common component -->
+    <script src="/wings/include/common/json2.js"></script>
+    <script src="/wings/include/jquery/1.10.2/jquery.min.js"></script>
+    <script src="/wings/include/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <link href="/wings/include/bootstrap/3.3.7/css/bootstrap.css" rel="stylesheet">
+
+    <!-- Dialog component -->
+    <link rel="stylesheet" href="/wings/include/plugins/dialog/bootstrap-dialog.css" />
+    <script src="/wings/include/plugins/dialog/bootstrap-dialog.js"></script>
+    <script src="/wings/core/plugins/wingsDialog/wingsDialog.js"></script>
+
+    <!-- swordAdapter 依赖Dialog组件-->
+    <script src="/wings/core/js/SwordAdapter.js"></script>
+    <!-- wings标签 -->
+    <script src="/wings/core/js/wings.min.js"></script>
+
+    <!-- loading fresh -->
+    <script type="text/javascript" src="/wings/include/plugins/progressbar/spin.js"></script>
+    <script type="text/javascript" src="/wings/core/plugins/wingsprogressbar/wingsprogressbar.js"></script>
+
+    <!-- 工具栏 -->
+    <link rel="stylesheet" type="text/css" href="/wings/core/css/wingsToolbars.css">
+    <script type="text/javascript" src="/wings/core/plugins/wingsToolbar/wingsToolbar.js"></script>
+
+    <!-- tab -->
+    <link href="/wings/core/plugins/wingsTab/wingsTab.css" rel="stylesheet">
+    <script type="text/javascript" src="/wings/core/plugins/wingsTab/wingsTab.js"></script>
+
+    <!-- suggest -->
+    <script src="/wings/include/plugins/bootstrapSuggest/bootstrap-suggest-forwings.js"></script>
+    <script type="text/javascript" src="/wings/core/plugins/wingsSuggest/wingsSuggest.js"></script>
+
+
+    <link rel="stylesheet" href="/wings/core/css/exception_dialog.css" />
+
+    <!-- frametab & 手风琴  & tab -->
+    <script src="/wings/core/plugins/wingsFrameTab/wingsFrameTab.js"></script>
+    <link href="/wings/core/plugins/wingsFrameTab/wingsFrameTab.css" rel="stylesheet">
+    <link href="/wings/core/plugins/wingsAccordion/wingsAccordion.css" rel="stylesheet">
+    <script src="/wings/core/plugins/wingsAccordion/wingsAccordion.js"></script>
+
+    <!-- local css style-->
+    <link rel="stylesheet" href="wings/core/css/exception_dialog.css" />
+    <link rel="stylesheet" href="/wsbs/hndsNew/css/menu.css" />
+    <link rel="stylesheet" href="/wsbs/hndsNew/css/hunan_style.css">
+    <link rel="stylesheet" href="/wsbs/hndsNew/css/font-awesome.min.css" />
+
+    <script type="text/javascript" src="/wsbs/hndsNew/index.js"></script>
+    <script type="text/javascript" src="/wsbs/dldsNew/js/cacheindex.js"></script>
+    <script language="javascript" type="text/javascript" src="wsbs/JLcrypt.js"></script>
+
+    <style>
+        li.active {
+            background-color: orange;
+        }
+
+        .nav-tabs > li.active > a, .nav-tabs > li.active > a:hover, .nav-tabs > li.active > a:focus {
+            border-bottom: solid 3px orange;
+            background-color: none !important;
+            background-color: orange;
+        }
+
+        ul.two > li.active {
+            background-color: transparent;
+        }
+
+        .nav1-tabs > .right {
+            position: absolute;
+            right: 30px;
+            bottom: 15px;
+            padding: -2px;
+        }
+
+        .nav1-tabs .right:hover {
+            padding: 18px 20px 0px 20px;
+            background: #F9B759;
+            height: 48px;
+            position: absolute;
+            bottom: -1px;
+        }
+
+        .nav1-tabs > li:hover {
+            padding: 2px 20px 0 20px;
+            margin-bottom: 0;
+            background: #F9B759;
+            height: 49px;
+            margin-top: -2px;
+        }
+
+        .icon-chevron-left {
+            margin: 0 20px 0 0;
+            background: url(/wings/core/plugins/wingsFrameTab/img/R-rarrow.png) no-repeat 7px center;
+            display: inline-block;
+            width: 24px;
+            height: 21px;
+        }
+
+        .nav1-tabs > li:first-child > a {
+            margin: 0px 0px 0px 0px !important;
+        }
+    </style>
+</head>
+<body class="min_width">
+    <div wings='PageInit' onSuccess="initSuccess();"></div>
+    <div id="zcd">
+        <div class="row">
+            <div class="l_col-md-12" id="ycd_begin">
+                <div wings="WingsFrameTab" name="tab1" topHeight="30" iframeWidth="100%" class="relative index_nav_1"
+                     hasScroll="true" maxTabsNum="9999" showTabsNum="1" holdTabsNum="1">
+                </div>
+            </div>
+        </div>
+    </div>
+    <input id="dllx" type="hidden" value="null" />
+</body>
+
+</html>
+
+<div id="SwordPageData" style='display:none' data='{"data":[{"name":"dllx","value":null,"type":""},{"name":"ymmc","value":"湖南省地方税务   网上办税服务厅","type":""},{"name":"yhlx","value":"DW","type":""},{"name":"nsrztDm","value":"03","type":""},{"name":"openfunType","value":"01","type":""},{"name":"openfunUrl","value":"@ViewBag.functionUrl","type":""},{"name":"openfunName","value":"印花税","type":""},{"name":"gwssswjg","value":"14301023800","type":""},{"name":"sessionID","value":"b059aea684144f7ea41a389a9b40e24e","type":""}]}'></div>

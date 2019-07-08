@@ -1,0 +1,113 @@
+@using JlueTaxSystemHuNanBS.Code
+@model List<GDTXUserYSBQC>
+@inject YsbqcSetting set
+
+<div class="tax-title">
+    <div class="title-name">申报作废或更正</div>
+
+    <div class="z-dhcd ">
+        <a href="javascript:void(0)" target="_blank">
+            <div class="z-ico">
+                <div class="z-ico-img"><span class="glyphicon glyphicon-list-alt color-1"></span></div>
+                <div class="z-ico-txt">操作说明</div>
+            </div>
+        </a>
+        <a href="javascript:void(0)" target="_blank">
+            <div class="z-ico">
+                <div class="z-ico-img"><span class="glyphicon glyphicon-book"></span></div>
+                <div class="z-ico-txt">办税指南</div>
+            </div>
+        </a>
+
+        <a href="javascript:void(0)" target="_blank">
+            <div class="z-ico">
+                <div class="z-ico-img"><span class="glyphicon glyphicon-question-sign"></span></div>
+                <div class="z-ico-txt">常见问题</div>
+            </div>
+        </a>
+    </div>
+</div>
+<div class="info-nr">
+    <div class="z-dhnr z-mt">
+        <div class="z-select" style="margin-bottom: 5px">
+            <div class="z-sc" style="margin-right:40px;">
+                <button type="button" class="btn btn-info" onclick="getView('sbzf');">获取申报结果</button>
+            </div>
+            <div class="clear"></div>
+        </div>
+
+        <div class="z-table">
+            <table class="table table-striped z-mt">
+                <thead>
+                    <tr style="border:0;">
+                        <th width="7%">序号</th>
+                        <th width="20%">报表名称</th>
+                        <th width="15%">所属期起</th>
+                        <th width="15%">所属期止</th>
+                        <th width="15%">申报期限</th>
+                        <th width="10%">状态</th>
+                        <th width="18%">操作</th>
+                    </tr>
+                </thead>
+                <tbody>
+
+                    @{int i = 0; }
+                    @foreach (GDTXUserYSBQC qc in Model)
+                    {
+                        <tr>
+                            <td>@{i++;}@i</td>
+                            <td>@qc.TaskName</td>
+                            <td>@qc.SKSSQQ</td>
+                            <td>@qc.SKSSQZ</td>
+                            <td>@qc.SBQX</td>
+                            <td>
+                                原报表
+                            </td>
+                            <td>
+                                @if (qc.BDDM == set.BDDM.Fjs)
+                                {
+                                    <a href="javascript:void(0);"
+                                       onclick="zf('D175734A41B14DD391B85088B1DCFEA9','@qc.BDDM')"><i class="iconfont">&#xe713;</i>作废</a>
+                                    <a href="javascript:void(0);"
+                                       onclick="viewsbb('@qc.BDDM','D175734A41B14DD391B85088B1DCFEA9','v2')"><i class="iconfont c-nephritis">&#xe6cf;</i>查看</a>
+
+                                }
+                                else if (qc.BDDM == set.BDDM.YbnsrZzs)
+                                {
+                                    <a href="javascript:void(0);"
+                                       onclick="zf('D175734A41B14DD391B85088B1DCFEA9','@qc.BDDM')"><i class="iconfont">&#xe713;</i>作废</a>
+                                    <a href="javascript:void(0);"
+                                       onclick="viewsbb('@qc.BDDM','D175734A41B14DD391B85088B1DCFEA9','v4')"><i class="iconfont c-nephritis">&#xe6cf;</i>查看</a>
+
+                                }
+                                else if (qc.BDDM == set.BDDM.Yhs)
+                                {
+                                    <a href="javascript:void(0);"
+                                       onclick="zf('A396DD11D56B93C59976CD0C42CBFBC5','@qc.BDDM','DS','0')"><i class="iconfont">&#xe713;</i>作废</a>
+                                    <a href="javascript:void(0)" onclick="toDsPage('ck',null,null,'A396DD11D56B93C59976CD0C42CBFBC5')"><i class="iconfont c-nephritis">&#xe6cf;</i> 查看</a>
+
+                                }
+                            </td>
+                        </tr>
+
+                                }
+
+
+
+</table>
+        </div>
+
+        <div class="z-tishi">
+            <div class="z-ts-title">
+                <span class="glyphicon glyphicon-info-sign"></span><span>温馨提示：</span>
+            </div>
+            1、此模块只支持通过电子税务局【在线申报】模块申报的当期申报表的更正或者作废，暂不支持通过其他途径申报的报表更正或作废。</br>
+                                2、申报期限内的申报表，如已缴纳税款则只能进行更正操作；如未申报或已申报但未缴纳税款的，可进行申报作废操作，作废后原申报表状态变为“草稿”，只需修改后校验保存，再次申报即可。</br>
+            3、超出申报期限的申报表，不允许作废操作，只能进行更正操作或前往主管税务机关办理。</br>
+            4、申报表缴纳税款后，只允许进行一次申报更正，如您还需要再次更正，请前往主管税务机关办理。</br>
+            5、对已缴纳税款的申报进行更正操作，产生了应缴税（费）的可以在电子税务局通过三方协议或银联缴税方式进行缴纳；产生了多缴税金的可以咨询主管税务机关办理退（抵）税事宜。</br>
+            6、如提交的申报表在税务机关进行了更正或作废操作的，不能在电子税务局进行再次更正或作废操作，如有需要请前往主管税务机关办理。</br>
+        </div>
+    </div>
+</div>
+

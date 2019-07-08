@@ -1,0 +1,87 @@
+
+/* wingsToolbar */
+.wingsToolbar{ width:100%;height:40px;top:0px;background-color:#f7f7f7;}
+
+/* wingsTab */
+.one{background:#479fe6;}
+.nav-tabs > li > a{border-radius: 0 0 0 0;margin-right: 0; border: 0;}
+.one a{color:#fff; font-weight:bold;}
+li.active {background: #fff;}
+.nav-tabs > li.active > a, .nav-tabs > li.active > a:hover, .nav-tabs > li.active > a:focus {background-color: #fff; border:0;}
+nav2{
+  display: block;
+}
+.nav-tabs {border-bottom: 1px solid #c2d4e0;}
+
+.nav2:after {
+  clear: both;
+}
+.nav2:before,
+.nav2:after{
+  display: table;
+  content: " ";
+}
+
+.nav2 {
+  padding-left: 0;
+  margin-bottom: 0;
+  list-style: none;
+  
+}
+.one .nav2 > li>a {
+  position: relative;
+  display: block;
+  border-right:1px solid #58abeb;
+ 
+}
+.nav2 > li > a {
+  position: relative;
+  display: block;
+  padding: 10px 15px;
+}
+.nav2 > li > a:hover,
+.nav2 > li > a:focus {
+  text-decoration: none;
+  /*background-color: #eee;*/
+}
+.nav2 > li.disabled > a {
+  color: #777;
+}
+.nav2 > li.disabled > a:hover,
+.nav2 > li.disabled > a:focus {
+  /*color: #777;*/
+  text-decoration: none;
+  cursor: not-allowed;
+  background-color: transparent;
+}
+.nav2 .open > a,
+.nav2 .open > a:hover,
+.nav2 .open > a:focus {
+  background-color: #eee;
+  border-color: #337ab7;
+}
+.nav2 .nav2-divider {
+  height: 1px;
+  margin: 9px 0;
+  overflow: hidden;
+  /*background-color: #e5e5e5;*/
+}
+.nav2 > li > a > img {
+  max-width: none;
+}
+
+.two{background:#fff; border-bottom:2px solid #e7e5e2;font-family: "微软雅黑"; font-size:16px;}
+.two a{color:#333;}
+.two > li.active > a, .two > li.active > a:hover, .two > li.active > a:focus{color:#33cc99;border-bottom:2px solid #33cc99; }
+.two li{margin-left:5px;margin-right:5px;}
+#.line{border-right:1px solid #ccc;height:12px;margin-top: 15px;}
+
+
+
+
+
+
+
+
+
+

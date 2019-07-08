@@ -1,0 +1,19 @@
+{
+    "data":[
+        {
+            "name":"sbsaveReturnVO",
+            "data":{
+                "returnBz":{
+                    "value":"N"
+                },
+                "pzxh":{
+                    "value":"12345"
+                }
+            }
+        },
+        {
+            "name":"swjgDm",
+            "value":"34"
+        }
+    ]
+}

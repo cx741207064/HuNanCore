@@ -1,0 +1,374 @@
+@CHARSET "UTF-8";
+
+body {
+    font-family: "Microsoft YaHei";
+    background-color: white;
+}
+
+table tbody tr td {
+	background-color: #ffffff!important;
+}
+/* toolbar */
+.tb_mini_box {
+    background: url('');
+    background: rgb(255, 255, 255);
+    font-size: 15px;
+}
+/* toolbar button */
+.tb_mini_hover {
+    border : 1px solid transparent;
+}
+.tb_mini_texthover{
+	background:url('');
+	background-color: #6184ec;
+}
+
+.tb_mini_hover{
+	border-radius: 3px;
+}
+
+.swordfrom_div {
+    border-top: 0px;
+}
+.tab_form {
+    border-top: 1px solid #bcbcbc;
+    border-left: 1px solid #bcbcbc;
+    border-right: 0px;
+    border-bottom: 0px;
+} 
+.tab_form th {
+	background: #FFFFFF;
+	border-bottom: 0px solid #bcbcbc;
+    border-right: 0px solid #bcbcbc;
+}
+.tab_form th, .tab_form td {
+	background-color: #FFFFFF;
+	border-bottom: 1px solid #bcbcbc;
+    border-right: 1px solid #bcbcbc;
+    font-size: 14px;
+}
+
+.swordfrom_div {
+    margin: 1px 5px 1px 5px;
+}
+
+.sGrid_div .swordfrom_div {
+    margin: 0px;
+}
+.sGrid_div .swordfrom_div .tab_form{
+    border-left-width: 0px;
+    margin-right: 0px;
+    margin-bottom: -1px;
+}
+.swordform_item_input {
+    border: 0px solid #ffffff;
+}
+.swordform-panel-box {
+    background: repeat-x 0 0;
+    margin-top: 8px;
+    margin-bottom: 4px;
+}
+.swordform-panel-box .swordform-panel-title {
+    font-size: 18px;
+    font-weight: lighter;
+    font-family: "Microsoft YaHei", sans-serif;
+    text-indent: 0em;
+}
+.tb_mini{
+    background: url('');
+    border-radius: 3px;
+}
+div[enabled=false].tb_mini{
+    border: 1px solid #aaa;
+}
+div[enabled=disable].tb_mini{
+    border: 1px solid #aaa;
+}
+div[enabled=true].tb_mini{
+    border: 1px solid #6184ec;
+}
+.tb_mini_text {
+    background: url();
+}
+
+.mini_tb .text_enabled {
+    color:#6184ec;
+}
+.mini_tb .tb_mini_texthover{
+	color :#ffffff;
+}
+
+.tb_mini_hover {
+    background: url('') left 0;
+    background-color: #6184ec;
+}
+
+div[sword=SwordTree] {
+	border: 1px solid #bcbcbc;
+	overflow:hidden;
+    border-radius: 3px;
+}
+div[sword=SwordTree] .swordform_item_input{
+	height: 22px;
+}
+
+.swordfrom_div table tbody tr{
+	height:30px;
+	color: #3c3c3c;
+}
+
+.tab_form th, .tab_form td {
+	padding-top:0px;
+	padding-bottom:0px;
+}
+.tab_form th{
+	padding-left: 3px;
+	padding-right: 3px;
+}
+.tab_form td{
+	padding-left: 0px;
+	padding-right: 0px;
+}
+.tab_form th, .tab_form td .swordform_item_input{
+	height:30px;
+	line-height:30px;
+}
+
+/* ------------------------- grid -------------------------------------------*/
+.sGrid_div {
+    border: 1px solid #bcbcbc;
+    font-size: 14px;
+}
+.swordgird_panel_header {
+	padding-top: 8px;
+	padding-bottom: 4px;
+    background: url('') repeat-x 0 0;
+    border-bottom: 1px solid #bcbcbc;
+}
+
+.sGrid_header_div {
+    border-bottom: 1px solid #bcbcbc;
+    background: url('') repeat-x 0 0;
+    background-color: #fff;
+}
+
+.sGrid_header_item_div {
+    border-right: 1px solid #bcbcbc;
+}
+
+/* grid console */
+.sGrid_console_div {
+	border-top: 0px solid #bcbcbc;
+    background: url('') repeat-x;
+}
+
+.sGrid_console_target_ok {
+    background: url('');
+    color: #040000;
+}
+
+/* default heji border right color*/
+.sGrid_hj_row_item_div {
+    border-right: 1px solid #bcbcbc;
+}
+/* insert row  border right color*/
+.sGrid_data_div .sGrid_data_row_div .sGrid_data_row_item_div {
+    border-right: 1px solid #bcbcbc;
+}
+
+.sGrid_data_row_div {
+	border-bottom-color: #bcbcbc;
+}
+
+.sGrid_hj_row_div{
+	border-bottom: 1px solid #bcbcbc !important;
+}
+
+/*grid panel title font */
+.swordgird_panel_header_caption {
+    font-weight: normal;
+    font-family: 'Microsoft YaHei';
+    font-size: 18px;
+}
+
+/* grid header font */
+.sGrid_header_text_div {
+    text-align: center;
+    font-size: 14px;
+    color: #3c3c3c;
+    font-weight: bold;
+}
+
+/* sword grid padding left and right*/
+div[sword=SwordGrid]{
+	padding-left:5px;
+	padding-right:5px;
+}
+
+/*------------------------- dialog box -------------------------------*/
+/* box header begin background*/
+.ym-header-text {
+    background: url('');
+}
+/* box header end background*/
+.ym-header-tools {
+    background: url('');
+}
+/* box background color*/
+.ym-tl {
+	background:url('');
+    background-color: #dbf6ff;
+}
+
+.ym-header-text .ym-sp {
+    width: 0px;
+}
+.ymPrompt_titile_iframe {
+    background: url('');
+}
+
+.ym-header-text {
+    color: #3c3c3c;
+}
+
+.ymPrompt_close {
+	background: url(images/ico_close.png) no-repeat;
+}
+
+.ymPrompt_max {
+	background: url(images/icon_expand.png) no-repeat;
+}
+
+.ymPrompt_min {
+	background: url(images/icon_collapse.png) no-repeat;
+}
+
+.ymPrompt_normal {
+	background: url(images/icon_normal.png) no-repeat;
+}
+
+.ymPrompt_titile_alert {
+	background: url('');
+}
+
+.ymPrompt_titile_succeed {
+	background: url('');
+}
+
+.ymPrompt_titile_error {
+	background: url('');
+}
+
+.ymPrompt_titile_confirm {
+	background: url('');
+}
+
+.ymPrompt_titile_prompt {
+	background: url('');
+}
+
+.ymPrompt_titile_iframe {
+	background: url('');
+}
+
+.ym-ml {
+    border-left: 0px solid #4099df;
+}
+.ym-mr {
+    border-right: 0px solid #4099df;
+}
+
+.ym-ml {
+    border-left: 0px solid #4099df;
+}
+.ym-mr {
+    border-left: 0px solid #4099df;
+}
+
+.ym-btn {
+    background: #ffffff;
+}
+
+#ym-window {
+	font-family: 'Microsoft YaHei';
+}
+.ym-header-text {
+    font-weight: normal;
+}
+
+/*--------------- tab ---------------*/
+.tabs_ul_horizontal {
+    background: url('') #eaf3ff;
+}
+
+
+.tabs_li_common_horizontal, .tabs_li_readonly_horizontal {
+    height: 35px;
+    color: #393939;
+    font-size: 14px;
+}
+
+.tabs_li_horizontal {
+    border-right: 1px solid #ffffff;
+}
+
+.tabs {
+    border: 1px solid #ffffff;
+}
+
+
+.submit_btn {
+    background: url('');
+    color: #6184ec;
+    border:1px solid #6184ec;
+    border-radius: 3px;
+}
+
+.submit_btn span {
+    background: url('');
+}
+
+.mousemove_btn {
+    background: url('');
+    color: #6184ec;
+    border:1px solid #6184ec;
+    border-radius: 3px;
+    background-color: #6184ec;
+}
+
+.mousemove_btn span {
+    background: url('');
+    color: #ffffff;
+}
+
+input.btnStyle {
+    background: url('');
+    color: #6184ec;
+    border:1px solid #6184ec;
+    border-radius: 3px;
+}
+input.btnStyle:hover {
+	cursor:pointer;
+    color: #fff;
+    background-color: #6184ec;
+}
+
+/* input[type="button"]{
+	background-color:#fff;
+    color: #6184ec;
+    border:1px solid #6184ec;
+    border-radius: 3px;
+    height: 31px;
+    font-size: 12px;
+    margin: 10px 2px;
+}
+input[type="button"]:hover{
+    color: #fff;
+    background-color: #6184ec;
+} */
+
+/* input[rule="must"]{
+	background-color: #e7eff8 !important;
+	color : #3d74a6;
+}
+ */

@@ -1,0 +1,151 @@
+﻿@model  JlueTaxSystemHuNanBS.Models.Model
+
+<html !DOCTYPE>
+
+
+<html>
+
+<head>
+    <title>国家税务总局湖南省电子税务局</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+    <link type="text/css" rel="stylesheet" href="/web-accept//static/css/main/bootstrap.css"/>
+    <link type="text/css" rel="stylesheet" href="/web-accept//static/css/sbb/iconfont.css"/>
+    <link type="text/css" rel="stylesheet" href="/web-accept//static/css/main/iconfont.css"/>
+    <link type="text/css" rel="stylesheet" href="/web-accept//static/css/main/style.css"/>
+    <link type="text/css" rel="stylesheet" href="/web-accept//static/css/main/style-new.css"/>
+
+    <link type="text/css" rel="stylesheet" href="/web-accept//static/css/main/bootstrap-datetimepicker.min.css"/>
+    <link rel="stylesheet" type="text/css" href="/web-accept//static/css/main/select2.css">
+
+    
+<script src="/web-accept//wssb/static/js.html?ver=7F92E2F20BF97B2007DB73C9534136AA&p=1"></script><script src="/web-accept//static/js/layer/layer.js"></script>
+
+    <script>
+        var _hmt = _hmt || [];
+        (function() {
+            var hm = document.createElement("script");
+            hm.src = "https://hm.baidu.com/hm.js?31201bd2a4e2880495b0477f39e5f19f";
+            var s = document.getElementsByTagName("script")[0];
+            s.parentNode.insertBefore(hm, s);
+        })();
+    </script>
+</head>
+
+<body>
+<input id="ctx" type="hidden" value="/web-accept/"/>
+<input id="nsrsbh_head" type="hidden" value="91430102MA4M7X3J70">
+<input id="isCALogin" type="hidden" value="N">
+<input id="funcId" type="hidden" value="fjsfsb">
+
+<input id="DZSJ_LOGIN_URL" type="hidden" value="http://etax.hunan.chinatax.gov.cn/wsbs"/>
+<input id="DZSJ_NOT_USED" type="hidden" value="false"/>
+
+<div class="modal fade" id="editdiv">
+    <div class="modal-header">
+        <a class="close" href="#" data-dismiss="modal">×</a>
+        <h3> </h3>
+    </div>
+    <div class="inner"></div>
+</div>
+
+
+<div class="index-top2">
+    <div class="top-center">
+        <a href="/wsbs/toMainIndex.do" target="_blank">
+        <div class="top-logo">
+            <img src="/web-accept//static/css/images/taxlogo.png">
+            国家税务总局湖南省电子税务局
+        </div>
+        </a>
+        <div class="top-users">
+            
+                <div class="top-login-users">
+                    <a href="javascript:void(0)" target="_blank" id="infoBtn" title="湖南中航中天科技发展有限公司">
+                        <span>欢迎，@Model.Nsrxx.NSRMC</span>
+                    </a>
+                    <span>|</span>
+                    <a href="javascript:void(0)" onclick="return false;loginout();"  id="logoutBtn" >
+                        <span>退出</span>
+                    </a>
+                </div>
+            
+            <input type="hidden" id="nsrsbh_head" value="">
+        </div>
+    </div>
+</div>
+
+
+<div class="container clearfix">
+    <div class="z-info-l">
+        <div class="z-info-logo">
+            <div class="info-img"><i class="iconfont">&#xe6de;</i></div>
+            <div class="info-txt">在 线 申 报</div>
+        </div>
+
+        <ul>
+            <a href="javascript:void(0)" onclick="view('qyxx')">
+                <li id="mainqyxxli"><i class="iconfont">&#xe6e0;</i>企业信息</li>
+            </a>
+            <a href="javascript:void(0)" onclick="view('nssb')">
+                <li id="mainnssbli"><i class="iconfont">&#xe646;</i>纳税申报</li>
+            </a>
+            <a href="javascript:void(0)" onclick="view('yqsb')">
+                <li id="mainyqsbli"><i class="iconfont">&#xe646;</i>逾期申报</li>
+            </a>
+            <a href="javascript:void(0)" onclick="toDsPage('cwbb');">
+                <li id="maincwbbli"><i class="iconfont" style="font-size:18px; margin-left:1px;">&#xe6f3;</i>财务报表</li>
+            </a>
+            <a href="javascript:void(0)" onclick="view('sbzf')">
+                <li id="mainsbzfli"><i class="iconfont" style="margin-left:1px;">&#xe713;</i>申报作废或更正</li>
+            </a>
+            <a href="javascript:void(0)" onclick="view('bbcx')">
+                <li id="mainbbcxli"><i class="iconfont" style="margin-left:1px;">&#xe618;</i>报表查询</li>
+            </a>
+            <a href="javascript:void(0)"  target="_blank">
+                <li ><i class="iconfont" style="margin-left:1px;">&#xe6cf;</i>三方协议缴税</li>
+            </a>
+            <a href="javascript:void(0)"  target="_blank">
+                <li ><i class="iconfont" style="margin-left:1px;">&#xe6cf;</i>银联在线缴税</li>
+            </a>
+        </ul>
+    </div>
+
+    <!-- 点击收缩左边页面的按钮 -->
+    <div class="z-info-c"><div class="z-click"><i class="iconfont" style="display:none; font-size:9px;" id="you">&#xe72a;</i><i class="iconfont" style=" font-size: 9px;" id="zuo">&#xe72d;</i></div></div>
+
+    <div id="infordiv" class="z-info-r">
+
+    </div>
+</div>
+<div style="display: none" id="yhxxPanel">
+    <h3 style="text-align: center">恭喜您获得减税降费“大红包”!!!</h3>
+    <p class="fs12">您本次申报已享受以下优惠</p>
+    <div id="yhxxxm">
+        [优惠项目1]XX万元
+        [优惠项目2]XX万元
+        …………
+    </div>
+    <p class="fs12">哇，又为公司减免了这么多税，快去告诉老板哦！</p>
+</div>
+
+<script language="javascript">
+    $(".z-info-c").click(function(){
+        if($(".z-info-l").css("display")=="block"){
+            $(".z-info-l").css("display","none");
+            $("#zuo").css("display","none");
+            $("#you").css("display","block");
+            $(".z-info-r").css("padding-left","15px");
+        }else{
+            $(".z-info-l").css("display","block");
+            $("#zuo").css("display","block");
+            $("#you").css("display","none");
+            $(".z-info-r").css("padding-left","345px");
+        }
+    });
+
+
+</script>
+
+</body>
+
+</html>

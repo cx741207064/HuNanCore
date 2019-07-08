@@ -1,0 +1,178 @@
+* {
+	margin: 0;
+	padding: 0;
+	list-style: none;
+}
+a{ text-decoration:none}
+html {
+	height: 100%;
+	overflow: hidden;
+	background: #fff;
+}
+
+body {
+	height: 100%;
+	overflow: hidden;
+	background: #fff;
+}
+
+div {
+
+	/*line-height: 1.6;*/
+}
+
+table {
+	border-collapse: collapse;
+}
+
+.top {
+	position: absolute;
+	left: 220px;
+	top: auto;
+	right: 10px;
+	height: 40px;
+	bottom:10px;
+	color:#000;
+}
+.side {
+	position: absolute;
+	left: 10px;
+	top: 10px;
+	bottom: 10px;
+	width: 215px;
+	overflow: auto;
+	background:#f2f2f2;
+	overflow-x:hidden;
+}
+
+.main {
+	position: absolute;
+	left: 235px;
+	top: 10px;
+	bottom: 50px;
+	right: 10px;
+	overflow: auto;
+
+	/*font-size: 14px;*/
+}
+
+.bottom {
+	position: absolute;
+	left: 10px;
+	bottom: 10px;
+	right: 10px;
+	height: 50px;
+}
+
+/*---ie6 / ie7---*/
+html {
+	*padding: 70px 10px;
+}
+.top {
+	*height: 60px;
+	*margin-top: -70px;
+	*margin-bottom: 10px;
+	*position: relative;
+	*top: 0;
+	*right: 0;
+	*bottom: 0;
+	*left: 0;
+	border:0;
+}
+
+.side {
+	border:0;
+	border-right: 1px #ddd solid;
+
+}
+.side tr td{color:#000;}
+.side tr td a{color:#000;}
+
+.main {
+	*height: 100%;
+	*margin-left: 210px;
+	_margin-left: 207px;
+	*position: relative;
+	*top: 0;
+	*right: 0;
+	*bottom: 0;
+	*left: 0;
+	border: 0;
+	border-bottom:1px solid #ddd;
+}
+
+.bottom {
+	*height: 50px;
+	*margin-top: 10px;
+	*position: relative;
+	*top: 0;
+	*right: 0;
+	*bottom: 0;
+	*left: 0;
+	border: 1px #65c4ea solid;
+}
+
+.wb {
+	border: 1px #65c4ea solid;
+}
+
+.smallFont{ border-bottom:1px dashed #ddd; height:40px; line-height:40px; font-size:18px; font-weight:bold; font-family:'微软雅黑'; margin-bottom:10px;}
+
+.z-click{ cursor:pointer; height:50px; padding-top:17px; font-size:30%; text-align:center; width:9px; top:48%; left:220px; position:absolute; background:#2c3e50; color:#FFF; z-index:999; border-radius:10px;}
+
+.lefttitle span a{display:block; float: left;  line-height:30px; margin:0; padding-left:10px;}
+.lefttitle span a .ii{ float:right; margin-right:5px; font-size: 10px; color: #fff; padding:0; border-radius: 25px; height: 17px; line-height: 17px; width: 27px; text-align: center; margin-top:7px;}
+.glyphicon-plus-sign{ color:#060;}
+.glyphicon-minus-sign{ color:#FF6868;}
+.jiajian img{ width:20px !important; height:20px !important;}
+.btn{
+	margin: 0 10px;}
+
+
+/**登录框样式*/
+#company-login h3,#etax-login h3{
+	font-size: 18px;
+	background-color: #00bcd5;
+	color: #fff;
+	line-height: 42px;
+	text-align: center;
+}
+#company-login .form-box,#etax-login .form-box{
+	width: 100%;
+	/*background-color: #f2f2f2;*/
+	padding: 30px 0;
+	/*border-top:4px solid #1abc9c;*/
+}
+#company-login .form-box .items,#etax-login .form-box .items{
+}
+#company-login .form-box .labels,#etax-login .form-box .labels{
+	width: 32%;
+}
+#company-login .form-box .blocks,#etax-login .form-box .blocks{
+	width: 40%;
+	float: left;
+	margin-left: 0;
+}
+#company-login .form-box .blocks span,#etax-login .form-box .blocks span{
+	line-height: 40px;
+	color: #989898;
+}
+#company-login .form-box .inlines,#etax-login .form-box .inlines{
+	width: 40%;
+}
+#company-login .form-box .inlines .inputs,#etax-login .form-box .inlines .inputs{
+	width: 100%;
+}
+#company-login .form-box .blocks:nth-child(5),#etax-login .form-box .blocks:nth-child(5){
+	float: none;
+}
+#company-login .form-box .noe,#etax-login .form-box .noe{
+	margin-left: 10px;
+}
+#company-login .form-box .mids a,#etax-login .form-box .mids a{
+	color: #989898;
+}
+#company-login .form-box .mids a:hover,#etax-login .form-box .mids a:hover{
+	color: #00bcd5;
+}
+.abc-form-submit,.abc-form-cancel{width: 130px;}

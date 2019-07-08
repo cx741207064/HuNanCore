@@ -1,0 +1,537 @@
+﻿@using JlueTaxSystemHuNanBS.Models
+@model YbnsrzzsModel
+
+<div id="flzl1" name="flzl1_div" style="display: none;">
+
+
+
+    <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+    <html xmlns="http://www.w3.org/1999/xhtml">
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    </head>
+
+    <table class="sbbtable" style="width:0px">
+        <tr>
+            <td><div style="width:181px;"></div></td>
+            <td><div style="width:64px;"></div></td>
+            <td><div style="width:88px;"></div></td>
+            <td><div style="width:203px;"></div></td>
+            <td><div style="width:64px;"></div></td>
+            <td><div style="width:146px;"></div></td>
+            <td><div style="width:110px;"></div></td>
+            <td><div style="width:110px;"></div></td>
+            <td><div style="width:110px;"></div></td>
+            <td><div style="width:110px;"></div></td>
+            <td><div style="width:110px;"></div></td>
+            <td><div style="width:110px;"></div></td>
+            <td><div style="width:110px;"></div></td>
+            <td><div style="width:110px;"></div></td>
+            <td><div style="width:110px;"></div></td>
+            <td><div style="width:110px;"></div></td>
+            <td><div style="width:110px;"></div></td>
+            <td><div style="width:110px;"></div></td>
+            <td><div style="width:110px;"></div></td>
+        </tr>
+        <tr style="height:15px;">
+            <td class=" bg1 br0"></td>
+            <td class=" bg1 br0"></td>
+        </tr>
+        <tr style="height:59px;">
+            <td class=" ft0 fs25 fbd ac vm nw bg1 br0" colspan="19">增值税纳税申报表附列资料（一）</td>
+        </tr>
+        <tr style="height:29px;">
+            <td class=" ft0 fs14 fbd ac vm nw bg1 br0" colspan="19">（本期销售情况明细）</td>
+        </tr>
+        <tr style="height:34px;">
+            <td class=" ft0 fs12 ar vm nw bg1 br0" colspan="5">税款所属时间：&nbsp;&nbsp;</td>
+            <td class=" ft0 fs12 al vm nw bg1 br0" colspan="4">@Model.GDTXDate.skssqq&nbsp;至&nbsp;@Model.GDTXDate.skssqz</td>
+            <td class=" bg1 br0"></td>
+            <td class=" bg1 br0"></td>
+            <td class=" bg1 br0"></td>
+            <td class=" bg1 br0"></td>
+            <td class=" bg1 br0"></td>
+            <td class=" bg1 br0"></td>
+            <td class=" bg1 br0"></td>
+            <td class=" bg1 br0"></td>
+            <td class=" bg1 br0"></td>
+            <td class=" bg1 br0"></td>
+        </tr>
+        <tr style="height:34px;">
+            <td class=" ft0 fs12 ar vm nw bg1 br1" colspan="5">纳税人名称：（公章）&nbsp;&nbsp;&nbsp;</td>
+            <td class=" ft0 fs12 al vm nw bg1 br1" colspan="4">@Model.Nsrxx.NSRMC</td>
+            <td class=" bg1 br1"></td>
+            <td class=" bg1 br1"></td>
+            <td class=" bg1 br1"></td>
+            <td class=" bg1 br1"></td>
+            <td class=" ft0 fs12 ar vm nw bg1 br1" colspan="6">金额单位：元至角分</td>
+        </tr>
+        <tr style="height:34px;">
+            <td class=" ft0 fs12 ac vm nw bg_ne br3" rowspan="3" colspan="5">项目及栏次</td>
+            <td class=" ft0 fs12 ac vm nl bg_ne br2" colspan="2">开具税控增值税专用发票</td>
+            <td class=" ft0 fs12 ac vm nw bg_ne br2" colspan="2">开具其他发票</td>
+            <td class=" ft0 fs12 ac vm nw bg_ne br2" colspan="2">未开具发票</td>
+            <td class=" ft0 fs12 ac vm nw bg_ne br2" colspan="2">纳税检查调整</td>
+            <td class=" ft0 fs12 ac vm nw bg_ne br2" colspan="3">合计</td>
+            <td class=" ft0 fs12 ac vm nl bg_ne br2" rowspan="2">服务、不动产和无形资产扣除项目本期实际扣除金额</td>
+            <td class=" ft0 fs12 ac vm nl bg_ne br2" colspan="2">扣除后</td>
+        </tr>
+        <tr style="height:34px;">
+            <td class=" ft0 fs12 ac vm nw bg_ne br2">销售额</td>
+            <td class=" ft0 fs12 ac vm nl bg_ne br2">销项(应纳)税额</td>
+            <td class=" ft0 fs12 ac vm nw bg_ne br2">销售额</td>
+            <td class=" ft0 fs12 ac vm nl bg_ne br2">销项(应纳)税额</td>
+            <td class=" ft0 fs12 ac vm nw bg_ne br2">销售额</td>
+            <td class=" ft0 fs12 ac vm nl bg_ne br2">销项(应纳)税额</td>
+            <td class=" ft0 fs12 ac vm nw bg_ne br2">销售额</td>
+            <td class=" ft0 fs12 ac vm nl bg_ne br2">销项(应纳)税额</td>
+            <td class=" ft0 fs12 ac vm nw bg_ne br2">销售额</td>
+            <td class=" ft0 fs12 ac vm nl bg_ne br2">销项(应纳)税额</td>
+            <td class=" ft0 fs12 ac vm nl bg_ne br2">价税合计</td>
+            <td class=" ft0 fs12 ac vm nl bg_ne br2">含税(免税)销售额</td>
+            <td class=" ft0 fs12 ac vm nl bg_ne br2">销项(应纳)税额</td>
+        </tr>
+        <tr style="height:58px;">
+            <td class=" ft0 fs12 ac vm nw bg_ne br2">1</td>
+            <td class=" ft0 fs12 ac vm nl bg_ne br2">2</td>
+            <td class=" ft0 fs12 ac vm nw bg_ne br2">3</td>
+            <td class=" ft0 fs12 ac vm nl bg_ne br2">4</td>
+            <td class=" ft0 fs12 ac vm nw bg_ne br2">5</td>
+            <td class=" ft0 fs12 ac vm nl bg_ne br2">6</td>
+            <td class=" ft0 fs12 ac vm nw bg_ne br2">7</td>
+            <td class=" ft0 fs12 ac vm nl bg_ne br2">8</td>
+            <td class=" ft0 fs12 ac vm nl bg_ne br2">9=1+3+5+7</td>
+            <td class=" ft0 fs12 ac vm nl bg_ne br2">10=2+4+6+8</td>
+            <td class=" ft0 fs12 ac vm nw bg_ne br2">11=9+10</td>
+            <td class=" ft0 fs12 ac vm nl bg_ne br2">12</td>
+            <td class=" ft0 fs12 ac vm nl bg_ne br2">13=11-12</td>
+            <td class=" ft0 fs12 ac vm nl bg_ne br2">14=13÷(100%+税率或征收率)×税率或征收率</td>
+        </tr>
+        <tr style="height:23px;">
+            <td class=" ft0 fs12 ac vm nl bg_ne br3" rowspan="7">一、一般计税方法征税</td>
+            <td class=" ft0 fs12 ac vm nl bg_ne br2" rowspan="5">全部征税项目</td>
+            <td class=" ft0 fs12 al vm nl bg_ne br2" colspan="2">13%税率的货物及加工修理修配劳务</td>
+            <td class=" ft0 fs12 ac vm nw bg_ne br2">1</td>
+            <td class=" ft0 fs12 ar vm nw bg0 br2" name="wbsbzzsybnsrflzl1.kjzzszyfpxse" format="l16x2d" index="0" type="input">0.00</td>
+            <td class=" ft0 fs12 ar vm nw bg0 br2" name="wbsbzzsybnsrflzl1.kjzzszyfpxxe" format="l16x2d" index="0" type="input">0.00</td>
+            <td class=" ft0 fs12 ar vm nw bg0 br2" name="wbsbzzsybnsrflzl1.kjptfpxse" format="l16x2d" index="0" type="input">0.00</td>
+            <td class=" ft0 fs12 ar vm nw bg0 br2" name="wbsbzzsybnsrflzl1.kjptfpxxe" format="l16x2d" index="0" type="input">0.00</td>
+            <td class=" ft0 fs12 ar vm nw bg0 br2" name="wbsbzzsybnsrflzl1.wkjfpxse" format="l16x2d" index="0" type="input">0.00</td>
+            <td class=" ft0 fs12 ar vm nw bg0 br2" name="wbsbzzsybnsrflzl1.wkjfpxxe" format="l16x2d" index="0" type="input">0.00</td>
+            <td class=" ft0 fs12 ar vm nw bg0 br2" name="wbsbzzsybnsrflzl1.nsrjctzxse" format="l16x2d" index="0" type="input">0.00</td>
+            <td class=" ft0 fs12 ar vm nw bg0 br2" name="wbsbzzsybnsrflzl1.nsrjctzxxe" format="l16x2d" index="0" type="input">0.00</td>
+            <td class=" ft0 fs12 ar vm nw bg_ne br2" name="wbsbzzsybnsrflzl1.hjxse" format="l16x2d" index="0" type="input" isEditable=false>0.00</td>
+            <td class=" ft0 fs12 ar vm nw bg_ne br2" name="wbsbzzsybnsrflzl1.hjxxe" format="l16x2d" index="0" type="input" isEditable=false>0.00</td>
+            <td class=" ft0 fs12 ac vm nw bg_ne br2" name="wbsbzzsybnsrflzl1.hjjshj" format="l16x2d" index="0" type="input" isEditable=false>——</td>
+            <td class=" ft0 fs12 ac vm nw bg_ne br2" name="wbsbzzsybnsrflzl1.bqsjkcje" format="l16x2d" index="0" type="input" isEditable=false>——</td>
+            <td class=" ft0 fs12 ac vm nw bg_ne br2" name="wbsbzzsybnsrflzl1.kchxse" format="l16x2d" index="0" type="input" isEditable=false>——</td>
+            <td class=" ft0 fs12 ar vm nw bg_ne br2" name="wbsbzzsybnsrflzl1.kchxxe" format="l16x2d" index="0" type="input" isEditable=false>——</td>
+        </tr>
+        <tr style="height:23px;">
+            <td class=" ft0 fs12 al vm nl bg_ne br2" colspan="2">13%税率的服务、不动产和无形资产</td>
+            <td class=" ft0 fs12 ac vm nw bg_ne br2">2</td>
+            <td class=" ft0 fs12 ar vm nw bg0 br2" name="wbsbzzsybnsrflzl1.kjzzszyfpxse" format="l16x2d" index="1" type="input">0.00</td>
+            <td class=" ft0 fs12 ar vm nw bg0 br2" name="wbsbzzsybnsrflzl1.kjzzszyfpxxe" format="l16x2d" index="1" type="input">0.00</td>
+            <td class=" ft0 fs12 ar vm nw bg0 br2" name="wbsbzzsybnsrflzl1.kjptfpxse" format="l16x2d" index="1" type="input">0.00</td>
+            <td class=" ft0 fs12 ar vm nw bg0 br2" name="wbsbzzsybnsrflzl1.kjptfpxxe" format="l16x2d" index="1" type="input">0.00</td>
+            <td class=" ft0 fs12 ar vm nw bg0 br2" name="wbsbzzsybnsrflzl1.wkjfpxse" format="l16x2d" index="1" type="input">0.00</td>
+            <td class=" ft0 fs12 ar vm nw bg0 br2" name="wbsbzzsybnsrflzl1.wkjfpxxe" format="l16x2d" index="1" type="input">0.00</td>
+            <td class=" ft0 fs12 ar vm nw bg0 br2" name="wbsbzzsybnsrflzl1.nsrjctzxse" format="l16x2d" index="1" type="input">0.00</td>
+            <td class=" ft0 fs12 ar vm nw bg0 br2" name="wbsbzzsybnsrflzl1.nsrjctzxxe" format="l16x2d" index="1" type="input">0.00</td>
+            <td class=" ft0 fs12 ar vm nw bg_ne br2" name="wbsbzzsybnsrflzl1.hjxse" format="l16x2d" index="1" type="input" isEditable=false>0.00</td>
+            <td class=" ft0 fs12 ar vm nw bg_ne br2" name="wbsbzzsybnsrflzl1.hjxxe" format="l16x2d" index="1" type="input" isEditable=false>0.00</td>
+            <td class=" ft0 fs12 ar vm nw bg_ne br2" name="wbsbzzsybnsrflzl1.hjjshj" format="l16x2d" index="1" type="input" isEditable=false>0.00</td>
+            <td class=" ft0 fs12 ar vm nw bg_ne br2" name="wbsbzzsybnsrflzl1.bqsjkcje" format="l16x2d" index="1" type="input" isEditable=false>0.00</td>
+            <td class=" ft0 fs12 ar vm nw bg_ne br2" name="wbsbzzsybnsrflzl1.kchxse" format="l16x2d" index="1" type="input" isEditable=false>0.00</td>
+            <td class=" ft0 fs12 ar vm nw bg0 br2" name="wbsbzzsybnsrflzl1.kchxxe" format="l16x2d" index="1" type="input">0.00</td>
+        </tr>
+        <tr style="height:23px;display: none;">
+            <td class=" ft0 fs12 al vm nl bg_ne br2" colspan="2">13%税率</td>
+            <td class=" ft0 fs12 ac vm nw bg_ne br2">3</td>
+            <td class=" ft0 fs12 ac vm nw bg_ne br2" name="wbsbzzsybnsrflzl1.kjzzszyfpxse" format="l16x2d" index="2" type="input" isEditable=false>——</td>
+            <td class=" ft0 fs12 ac vm nw bg_ne br2" name="wbsbzzsybnsrflzl1.kjzzszyfpxxe" format="l16x2d" index="2" type="input" isEditable=false>——</td>
+            <td class=" ft0 fs12 ac vm nw bg_ne br2" name="wbsbzzsybnsrflzl1.kjptfpxse" format="l16x2d" index="2" type="input" isEditable=false>——</td>
+            <td class=" ft0 fs12 ac vm nw bg_ne br2" name="wbsbzzsybnsrflzl1.kjptfpxxe" format="l16x2d" index="2" type="input" isEditable=false>——</td>
+            <td class=" ft0 fs12 ac vm nw bg_ne br2" name="wbsbzzsybnsrflzl1.wkjfpxse" format="l16x2d" index="2" type="input" isEditable=false>——</td>
+            <td class=" ft0 fs12 ac vm nw bg_ne br2" name="wbsbzzsybnsrflzl1.wkjfpxxe" format="l16x2d" index="2" type="input" isEditable=false>——</td>
+            <td class=" ft0 fs12 ac vm nw bg_ne br2" name="wbsbzzsybnsrflzl1.nsrjctzxse" format="l16x2d" index="2" type="input" isEditable=false>——</td>
+            <td class=" ft0 fs12 ac vm nw bg_ne br2" name="wbsbzzsybnsrflzl1.nsrjctzxxe" format="l16x2d" index="2" type="input" isEditable=false>——</td>
+            <td class=" ft0 fs12 ar vm nw bg_ne br2" name="wbsbzzsybnsrflzl1.hjxse" format="l16x2d" index="2" type="input" isEditable=false>0.00</td>
+            <td class=" ft0 fs12 ar vm nw bg_ne br2" name="wbsbzzsybnsrflzl1.hjxxe" format="l16x2d" index="2" type="input" isEditable=false>0.00</td>
+            <td class=" ft0 fs12 ac vm nw bg_ne br2" name="wbsbzzsybnsrflzl1.hjjshj" format="l16x2d" index="2" type="input" isEditable=false>——</td>
+            <td class=" ft0 fs12 ac vm nw bg_ne br2" name="wbsbzzsybnsrflzl1.bqsjkcje" format="l16x2d" index="2" type="input" isEditable=false>——</td>
+            <td class=" ft0 fs12 ac vm nw bg_ne br2" name="wbsbzzsybnsrflzl1.kchxse" format="l16x2d" index="2" type="input" isEditable=false>——</td>
+            <td class=" ft0 fs12 ac vm nw bg_ne br2" name="wbsbzzsybnsrflzl1.kchxxe" format="l16x2d" index="2" type="input" isEditable=false>——</td>
+        </tr>
+        <tr style="height:23px;">
+            <td class=" ft0 fs12 al vm nl bg_ne br2" colspan="2">9%税率的货物及加工修理修配劳务</td>
+            <td class=" ft0 fs12 ac vm nw bg_ne br2">3</td>
+            <td class=" ft0 fs12 ar vm nw bg0 br2" name="wbsbzzsybnsrflzl1.kjzzszyfpxse" format="l16x2d" index="22" type="input">0.00</td>
+            <td class=" ft0 fs12 ar vm nw bg0 br2" name="wbsbzzsybnsrflzl1.kjzzszyfpxxe" format="l16x2d" index="22" type="input">0.00</td>
+            <td class=" ft0 fs12 ar vm nw bg0 br2" name="wbsbzzsybnsrflzl1.kjptfpxse" format="l16x2d" index="22" type="input">0.00</td>
+            <td class=" ft0 fs12 ar vm nw bg0 br2" name="wbsbzzsybnsrflzl1.kjptfpxxe" format="l16x2d" index="22" type="input">0.00</td>
+            <td class=" ft0 fs12 ar vm nw bg0 br2" name="wbsbzzsybnsrflzl1.wkjfpxse" format="l16x2d" index="22" type="input">0.00</td>
+            <td class=" ft0 fs12 ar vm nw bg0 br2" name="wbsbzzsybnsrflzl1.wkjfpxxe" format="l16x2d" index="22" type="input">0.00</td>
+            <td class=" ft0 fs12 ar vm nw bg0 br2" name="wbsbzzsybnsrflzl1.nsrjctzxse" format="l16x2d" index="22" type="input">0.00</td>
+            <td class=" ft0 fs12 ar vm nw bg0 br2" name="wbsbzzsybnsrflzl1.nsrjctzxxe" format="l16x2d" index="22" type="input">0.00</td>
+            <td class=" ft0 fs12 ar vm nw bg_ne br2" name="wbsbzzsybnsrflzl1.hjxse" format="l16x2d" index="22" type="input" isEditable=false>0.00</td>
+            <td class=" ft0 fs12 ar vm nw bg_ne br2" name="wbsbzzsybnsrflzl1.hjxxe" format="l16x2d" index="22" type="input" isEditable=false>0.00</td>
+            <td class=" ft0 fs12 ac vm nw bg_ne br2" name="wbsbzzsybnsrflzl1.hjjshj" format="l16x2d" index="22" type="input" isEditable=false>——</td>
+            <td class=" ft0 fs12 ac vm nw bg_ne br2" name="wbsbzzsybnsrflzl1.bqsjkcje" format="l16x2d" index="22" type="input" isEditable=false>——</td>
+            <td class=" ft0 fs12 ac vm nw bg_ne br2" name="wbsbzzsybnsrflzl1.kchxse" format="l16x2d" index="22" type="input" isEditable=false>——</td>
+            <td class=" ft0 fs12 ac vm nw bg_ne br2" name="wbsbzzsybnsrflzl1.kchxxe" format="l16x2d" index="22" type="input" isEditable=false>——</td>
+        </tr>
+        <tr style="height:23px;">
+            <td class=" ft0 fs12 al vm nl bg_ne br2" colspan="2">9%税率的服务、不动产和无形资产</td>
+            <td class=" ft0 fs12 ac vm nw bg_ne br2">4</td>
+            <td class=" ft0 fs12 ar vm nw bg0 br2" name="wbsbzzsybnsrflzl1.kjzzszyfpxse" format="l16x2d" index="3" type="input">0.00</td>
+            <td class=" ft0 fs12 ar vm nw bg0 br2" name="wbsbzzsybnsrflzl1.kjzzszyfpxxe" format="l16x2d" index="3" type="input">0.00</td>
+            <td class=" ft0 fs12 ar vm nw bg0 br2" name="wbsbzzsybnsrflzl1.kjptfpxse" format="l16x2d" index="3" type="input">0.00</td>
+            <td class=" ft0 fs12 ar vm nw bg0 br2" name="wbsbzzsybnsrflzl1.kjptfpxxe" format="l16x2d" index="3" type="input">0.00</td>
+            <td class=" ft0 fs12 ar vm nw bg0 br2" name="wbsbzzsybnsrflzl1.wkjfpxse" format="l16x2d" index="3" type="input">0.00</td>
+            <td class=" ft0 fs12 ar vm nw bg0 br2" name="wbsbzzsybnsrflzl1.wkjfpxxe" format="l16x2d" index="3" type="input">0.00</td>
+            <td class=" ft0 fs12 ar vm nw bg0 br2" name="wbsbzzsybnsrflzl1.nsrjctzxse" format="l16x2d" index="3" type="input">0.00</td>
+            <td class=" ft0 fs12 ar vm nw bg0 br2" name="wbsbzzsybnsrflzl1.nsrjctzxxe" format="l16x2d" index="3" type="input">0.00</td>
+            <td class=" ft0 fs12 ar vm nw bg_ne br2" name="wbsbzzsybnsrflzl1.hjxse" format="l16x2d" index="3" type="input" isEditable=false>0.00</td>
+            <td class=" ft0 fs12 ar vm nw bg_ne br2" name="wbsbzzsybnsrflzl1.hjxxe" format="l16x2d" index="3" type="input" isEditable=false>0.00</td>
+            <td class=" ft0 fs12 ar vm nw bg_ne br2" name="wbsbzzsybnsrflzl1.hjjshj" format="l16x2d" index="3" type="input" isEditable=false>0.00</td>
+            <td class=" ft0 fs12 ar vm nw bg_ne br2" name="wbsbzzsybnsrflzl1.bqsjkcje" format="l16x2d" index="3" type="input" isEditable=false>0.00</td>
+            <td class=" ft0 fs12 ar vm nw bg_ne br2" name="wbsbzzsybnsrflzl1.kchxse" format="l16x2d" index="3" type="input" isEditable=false>0.00</td>
+            <td class=" ft0 fs12 ar vm nw bg0 br2" name="wbsbzzsybnsrflzl1.kchxxe" format="l16x2d" index="3" type="input">0.00</td>
+        </tr>
+        <tr style="height:23px;">
+            <td class=" ft0 fs12 al vm nl bg_ne br2" colspan="2">6%税率</td>
+            <td class=" ft0 fs12 ac vm nw bg_ne br2">5</td>
+            <td class=" ft0 fs12 ar vm nw bg0 br2" name="wbsbzzsybnsrflzl1.kjzzszyfpxse" format="l16x2d" index="4" type="input">0.00</td>
+            <td class=" ft0 fs12 ar vm nw bg0 br2" name="wbsbzzsybnsrflzl1.kjzzszyfpxxe" format="l16x2d" index="4" type="input">0.00</td>
+            <td class=" ft0 fs12 ar vm nw bg0 br2" name="wbsbzzsybnsrflzl1.kjptfpxse" format="l16x2d" index="4" type="input">0.00</td>
+            <td class=" ft0 fs12 ar vm nw bg0 br2" name="wbsbzzsybnsrflzl1.kjptfpxxe" format="l16x2d" index="4" type="input">0.00</td>
+            <td class=" ft0 fs12 ar vm nw bg0 br2" name="wbsbzzsybnsrflzl1.wkjfpxse" format="l16x2d" index="4" type="input">0.00</td>
+            <td class=" ft0 fs12 ar vm nw bg0 br2" name="wbsbzzsybnsrflzl1.wkjfpxxe" format="l16x2d" index="4" type="input">0.00</td>
+            <td class=" ft0 fs12 ar vm nw bg0 br2" name="wbsbzzsybnsrflzl1.nsrjctzxse" format="l16x2d" index="4" type="input">0.00</td>
+            <td class=" ft0 fs12 ar vm nw bg0 br2" name="wbsbzzsybnsrflzl1.nsrjctzxxe" format="l16x2d" index="4" type="input">0.00</td>
+            <td class=" ft0 fs12 ar vm nw bg_ne br2" name="wbsbzzsybnsrflzl1.hjxse" format="l16x2d" index="4" type="input" isEditable=false>0.00</td>
+            <td class=" ft0 fs12 ar vm nw bg_ne br2" name="wbsbzzsybnsrflzl1.hjxxe" format="l16x2d" index="4" type="input" isEditable=false>0.00</td>
+            <td class=" ft0 fs12 ar vm nw bg_ne br2" name="wbsbzzsybnsrflzl1.hjjshj" format="l16x2d" index="4" type="input" isEditable=false>0.00</td>
+            <td class=" ft0 fs12 ar vm nw bg_ne br2" name="wbsbzzsybnsrflzl1.bqsjkcje" format="l16x2d" index="4" type="input" isEditable=false>0.00</td>
+            <td class=" ft0 fs12 ar vm nw bg_ne br2" name="wbsbzzsybnsrflzl1.kchxse" format="l16x2d" index="4" type="input" isEditable=false>0.00</td>
+            <td class=" ft0 fs12 ar vm nw bg0 br2" name="wbsbzzsybnsrflzl1.kchxxe" format="l16x2d" index="4" type="input">0.00</td>
+        </tr>
+        <tr style="height:23px;">
+            <td class=" ft0 fs12 ac vm nl bg_ne br2" rowspan="2">其中：即征即退项目</td>
+            <td class=" ft0 fs12 al vm nl bg_ne br2" colspan="2">即征即退货物及加工修理修配劳务</td>
+            <td class=" ft0 fs12 ac vm nw bg_ne br2">6</td>
+            <td class=" ft0 fs12 ac vm nw bg_ne br2" name="wbsbzzsybnsrflzl1.kjzzszyfpxse" format="l16x2d" index="5" type="input" isEditable=false>——</td>
+            <td class=" ft0 fs12 ac vm nw bg_ne br2" name="wbsbzzsybnsrflzl1.kjzzszyfpxxe" format="l16x2d" index="5" type="input" isEditable=false>——</td>
+            <td class=" ft0 fs12 ac vm nw bg_ne br2" name="wbsbzzsybnsrflzl1.kjptfpxse" format="l16x2d" index="5" type="input" isEditable=false>——</td>
+            <td class=" ft0 fs12 ac vm nw bg_ne br2" name="wbsbzzsybnsrflzl1.kjptfpxxe" format="l16x2d" index="5" type="input" isEditable=false>——</td>
+            <td class=" ft0 fs12 ac vm nw bg_ne br2" name="wbsbzzsybnsrflzl1.wkjfpxse" format="l16x2d" index="5" type="input" isEditable=false>——</td>
+            <td class=" ft0 fs12 ac vm nw bg_ne br2" name="wbsbzzsybnsrflzl1.wkjfpxxe" format="l16x2d" index="5" type="input" isEditable=false>——</td>
+            <td class=" ft0 fs12 ac vm nw bg_ne br2" name="wbsbzzsybnsrflzl1.nsrjctzxse" format="l16x2d" index="5" type="input" isEditable=false>——</td>
+            <td class=" ft0 fs12 ac vm nw bg_ne br2" name="wbsbzzsybnsrflzl1.nsrjctzxxe" format="l16x2d" index="5" type="input" isEditable=false>——</td>
+            <td class=" ft0 fs12 ar vm nw bg0 br2" name="wbsbzzsybnsrflzl1.hjxse" format="l16x2d" index="5" type="input">0.00</td>
+            <td class=" ft0 fs12 ar vm nw bg0 br2" name="wbsbzzsybnsrflzl1.hjxxe" format="l16x2d" index="5" type="input">0.00</td>
+            <td class=" ft0 fs12 ac vm nw bg_ne br2" name="wbsbzzsybnsrflzl1.hjjshj" format="l16x2d" index="5" type="input" isEditable=false>——</td>
+            <td class=" ft0 fs12 ac vm nw bg_ne br2" name="wbsbzzsybnsrflzl1.bqsjkcje" format="l16x2d" index="5" type="input" isEditable=false>——</td>
+            <td class=" ft0 fs12 ac vm nw bg_ne br2" name="wbsbzzsybnsrflzl1.kchxse" format="l16x2d" index="5" type="input" isEditable=false>——</td>
+            <td class=" ft0 fs12 ac vm nw bg_ne br2" name="wbsbzzsybnsrflzl1.kchxxe" format="l16x2d" index="5" type="input" isEditable=false>——</td>
+        </tr>
+        <tr style="height:23px;">
+            <td class=" ft0 fs12 al vm nl bg_ne br2" colspan="2">即征即退服务、不动产和无形资产</td>
+            <td class=" ft0 fs12 ac vm nw bg_ne br2">7</td>
+            <td class=" ft0 fs12 ac vm nw bg_ne br2" name="wbsbzzsybnsrflzl1.kjzzszyfpxse" format="l16x2d" index="6" type="input" isEditable=false>——</td>
+            <td class=" ft0 fs12 ac vm nw bg_ne br2" name="wbsbzzsybnsrflzl1.kjzzszyfpxxe" format="l16x2d" index="6" type="input" isEditable=false>——</td>
+            <td class=" ft0 fs12 ac vm nw bg_ne br2" name="wbsbzzsybnsrflzl1.kjptfpxse" format="l16x2d" index="6" type="input" isEditable=false>——</td>
+            <td class=" ft0 fs12 ac vm nw bg_ne br2" name="wbsbzzsybnsrflzl1.kjptfpxxe" format="l16x2d" index="6" type="input" isEditable=false>——</td>
+            <td class=" ft0 fs12 ac vm nw bg_ne br2" name="wbsbzzsybnsrflzl1.wkjfpxse" format="l16x2d" index="6" type="input" isEditable=false>——</td>
+            <td class=" ft0 fs12 ac vm nw bg_ne br2" name="wbsbzzsybnsrflzl1.wkjfpxxe" format="l16x2d" index="6" type="input" isEditable=false>——</td>
+            <td class=" ft0 fs12 ac vm nw bg_ne br2" name="wbsbzzsybnsrflzl1.nsrjctzxse" format="l16x2d" index="6" type="input" isEditable=false>——</td>
+            <td class=" ft0 fs12 ac vm nw bg_ne br2" name="wbsbzzsybnsrflzl1.nsrjctzxxe" format="l16x2d" index="6" type="input" isEditable=false>——</td>
+            <td class=" ft0 fs12 ar vm nw bg0 br2" name="wbsbzzsybnsrflzl1.hjxse" format="l16x2d" index="6" type="input">0.00</td>
+            <td class=" ft0 fs12 ar vm nw bg0 br2" name="wbsbzzsybnsrflzl1.hjxxe" format="l16x2d" index="6" type="input">0.00</td>
+            <td class=" ft0 fs12 ar vm nw bg_ne br2" name="wbsbzzsybnsrflzl1.hjjshj" format="l16x2d" index="6" type="input" isEditable=false>0.00</td>
+            <td class=" ft0 fs12 ar vm nw bg0 br2" name="wbsbzzsybnsrflzl1.bqsjkcje" format="l16x2d" index="6" type="input">0.00</td>
+            <td class=" ft0 fs12 ar vm nw bg_ne br2" name="wbsbzzsybnsrflzl1.kchxse" format="l16x2d" index="6" type="input" isEditable=false>0.00</td>
+            <td class=" ft0 fs12 ar vm nw bg0 br2" name="wbsbzzsybnsrflzl1.kchxxe" format="l16x2d" index="6" type="input">0.00</td>
+        </tr>
+        <tr style="height:23px;">
+            <td class=" ft0 fs12 ac vm nl bg_ne br3" rowspan="11">二、简易计税方法征税</td>
+            <td class=" ft0 fs12 ac vm nl bg_ne br2" rowspan="9">全部征税项目</td>
+            <td class=" ft0 fs12 al vm nw bg_ne br2" colspan="2">6%征收率</td>
+            <td class=" ft0 fs12 ac vm nw bg_ne br2">8</td>
+            <td class=" ft0 fs12 ar vm nw bg0 br2" name="wbsbzzsybnsrflzl1.kjzzszyfpxse" format="l16x2d" index="7" type="input">0.00</td>
+            <td class=" ft0 fs12 ar vm nw bg0 br2" name="wbsbzzsybnsrflzl1.kjzzszyfpxxe" format="l16x2d" index="7" type="input">0.00</td>
+            <td class=" ft0 fs12 ar vm nw bg0 br2" name="wbsbzzsybnsrflzl1.kjptfpxse" format="l16x2d" index="7" type="input">0.00</td>
+            <td class=" ft0 fs12 ar vm nw bg0 br2" name="wbsbzzsybnsrflzl1.kjptfpxxe" format="l16x2d" index="7" type="input">0.00</td>
+            <td class=" ft0 fs12 ar vm nw bg0 br2" name="wbsbzzsybnsrflzl1.wkjfpxse" format="l16x2d" index="7" type="input">0.00</td>
+            <td class=" ft0 fs12 ar vm nw bg0 br2" name="wbsbzzsybnsrflzl1.wkjfpxxe" format="l16x2d" index="7" type="input">0.00</td>
+            <td class=" ft0 fs12 ac vm nw bg_ne br2" name="wbsbzzsybnsrflzl1.nsrjctzxse" format="l16x2d" index="7" type="input" isEditable=false>——</td>
+            <td class=" ft0 fs12 ac vm nw bg_ne br2" name="wbsbzzsybnsrflzl1.nsrjctzxxe" format="l16x2d" index="7" type="input" isEditable=false>——</td>
+            <td class=" ft0 fs12 ar vm nw bg_ne br2" name="wbsbzzsybnsrflzl1.hjxse" format="l16x2d" index="7" type="input" isEditable=false>0.00</td>
+            <td class=" ft0 fs12 ar vm nw bg_ne br2" name="wbsbzzsybnsrflzl1.hjxxe" format="l16x2d" index="7" type="input" isEditable=false>0.00</td>
+            <td class=" ft0 fs12 ac vm nw bg_ne br2" name="wbsbzzsybnsrflzl1.hjjshj" format="l16x2d" index="7" type="input" isEditable=false>——</td>
+            <td class=" ft0 fs12 ac vm nw bg_ne br2" name="wbsbzzsybnsrflzl1.bqsjkcje" format="l16x2d" index="7" type="input" isEditable=false>——</td>
+            <td class=" ft0 fs12 ac vm nw bg_ne br2" name="wbsbzzsybnsrflzl1.kchxse" format="l16x2d" index="7" type="input" isEditable=false>——</td>
+            <td class=" ft0 fs12 ac vm nw bg_ne br2" name="wbsbzzsybnsrflzl1.kchxxe" format="l16x2d" index="7" type="input" isEditable=false>——</td>
+        </tr>
+        <tr style="height:23px;">
+            <td class=" ft0 fs12 al vm nl bg_ne br2" colspan="2">5%征收率的货物及加工修理修配劳务</td>
+            <td class=" ft0 fs12 ac vm nw bg_ne br2">9a</td>
+            <td class=" ft0 fs12 ar vm nw bg0 br2" name="wbsbzzsybnsrflzl1.kjzzszyfpxse" format="l16x2d" index="8" type="input">0.00</td>
+            <td class=" ft0 fs12 ar vm nw bg0 br2" name="wbsbzzsybnsrflzl1.kjzzszyfpxxe" format="l16x2d" index="8" type="input">0.00</td>
+            <td class=" ft0 fs12 ar vm nw bg0 br2" name="wbsbzzsybnsrflzl1.kjptfpxse" format="l16x2d" index="8" type="input">0.00</td>
+            <td class=" ft0 fs12 ar vm nw bg0 br2" name="wbsbzzsybnsrflzl1.kjptfpxxe" format="l16x2d" index="8" type="input">0.00</td>
+            <td class=" ft0 fs12 ar vm nw bg0 br2" name="wbsbzzsybnsrflzl1.wkjfpxse" format="l16x2d" index="8" type="input">0.00</td>
+            <td class=" ft0 fs12 ar vm nw bg0 br2" name="wbsbzzsybnsrflzl1.wkjfpxxe" format="l16x2d" index="8" type="input">0.00</td>
+            <td class=" ft0 fs12 ac vm nw bg_ne br2" name="wbsbzzsybnsrflzl1.nsrjctzxse" format="l16x2d" index="8" type="input" isEditable=false>——</td>
+            <td class=" ft0 fs12 ac vm nw bg_ne br2" name="wbsbzzsybnsrflzl1.nsrjctzxxe" format="l16x2d" index="8" type="input" isEditable=false>——</td>
+            <td class=" ft0 fs12 ar vm nw bg_ne br2" name="wbsbzzsybnsrflzl1.hjxse" format="l16x2d" index="8" type="input" isEditable=false>0.00</td>
+            <td class=" ft0 fs12 ar vm nw bg_ne br2" name="wbsbzzsybnsrflzl1.hjxxe" format="l16x2d" index="8" type="input" isEditable=false>0.00</td>
+            <td class=" ft0 fs12 ac vm nw bg_ne br2" name="wbsbzzsybnsrflzl1.hjjshj" format="l16x2d" index="8" type="input" isEditable=false>——</td>
+            <td class=" ft0 fs12 ac vm nw bg_ne br2" name="wbsbzzsybnsrflzl1.bqsjkcje" format="l16x2d" index="8" type="input" isEditable=false>——</td>
+            <td class=" ft0 fs12 ac vm nw bg_ne br2" name="wbsbzzsybnsrflzl1.kchxse" format="l16x2d" index="8" type="input" isEditable=false>——</td>
+            <td class=" ft0 fs12 ac vm nw bg_ne br2" name="wbsbzzsybnsrflzl1.kchxxe" format="l16x2d" index="8" type="input" isEditable=false>——</td>
+        </tr>
+        <tr style="height:23px;">
+            <td class=" ft0 fs12 al vm nl bg_ne br2" colspan="2">5%征收率的服务、不动产和无形资产</td>
+            <td class=" ft0 fs12 ac vm nw bg_ne br2">9b</td>
+            <td class=" ft0 fs12 ar vm nw bg0 br2" name="wbsbzzsybnsrflzl1.kjzzszyfpxse" format="l16x2d" index="9" type="input">0.00</td>
+            <td class=" ft0 fs12 ar vm nw bg0 br2" name="wbsbzzsybnsrflzl1.kjzzszyfpxxe" format="l16x2d" index="9" type="input">0.00</td>
+            <td class=" ft0 fs12 ar vm nw bg0 br2" name="wbsbzzsybnsrflzl1.kjptfpxse" format="l16x2d" index="9" type="input">0.00</td>
+            <td class=" ft0 fs12 ar vm nw bg0 br2" name="wbsbzzsybnsrflzl1.kjptfpxxe" format="l16x2d" index="9" type="input">0.00</td>
+            <td class=" ft0 fs12 ar vm nw bg0 br2" name="wbsbzzsybnsrflzl1.wkjfpxse" format="l16x2d" index="9" type="input">0.00</td>
+            <td class=" ft0 fs12 ar vm nw bg0 br2" name="wbsbzzsybnsrflzl1.wkjfpxxe" format="l16x2d" index="9" type="input">0.00</td>
+            <td class=" ft0 fs12 ac vm nw bg_ne br2" name="wbsbzzsybnsrflzl1.nsrjctzxse" format="l16x2d" index="9" type="input" isEditable=false>——</td>
+            <td class=" ft0 fs12 ac vm nw bg_ne br2" name="wbsbzzsybnsrflzl1.nsrjctzxxe" format="l16x2d" index="9" type="input" isEditable=false>——</td>
+            <td class=" ft0 fs12 ar vm nw bg_ne br2" name="wbsbzzsybnsrflzl1.hjxse" format="l16x2d" index="9" type="input" isEditable=false>0.00</td>
+            <td class=" ft0 fs12 ar vm nw bg_ne br2" name="wbsbzzsybnsrflzl1.hjxxe" format="l16x2d" index="9" type="input" isEditable=false>0.00</td>
+            <td class=" ft0 fs12 ar vm nw bg_ne br2" name="wbsbzzsybnsrflzl1.hjjshj" format="l16x2d" index="9" type="input" isEditable=false>0.00</td>
+            <td class=" ft0 fs12 ar vm nw bg_ne br2" name="wbsbzzsybnsrflzl1.bqsjkcje" format="l16x2d" index="9" type="input" isEditable=false>0.00</td>
+            <td class=" ft0 fs12 ar vm nw bg_ne br2" name="wbsbzzsybnsrflzl1.kchxse" format="l16x2d" index="9" type="input" isEditable=false>0.00</td>
+            <td class=" ft0 fs12 ar vm nw bg0 br2" name="wbsbzzsybnsrflzl1.kchxxe" format="l16x2d" index="9" type="input">0.00</td>
+        </tr>
+        <tr style="height:23px;">
+            <td class=" ft0 fs12 al vm nl bg_ne br2" colspan="2">4%征收率</td>
+            <td class=" ft0 fs12 ac vm nw bg_ne br2">10</td>
+            <td class=" ft0 fs12 ar vm nw bg0 br2" name="wbsbzzsybnsrflzl1.kjzzszyfpxse" format="l16x2d" index="10" type="input">0.00</td>
+            <td class=" ft0 fs12 ar vm nw bg0 br2" name="wbsbzzsybnsrflzl1.kjzzszyfpxxe" format="l16x2d" index="10" type="input">0.00</td>
+            <td class=" ft0 fs12 ar vm nw bg0 br2" name="wbsbzzsybnsrflzl1.kjptfpxse" format="l16x2d" index="10" type="input">0.00</td>
+            <td class=" ft0 fs12 ar vm nw bg0 br2" name="wbsbzzsybnsrflzl1.kjptfpxxe" format="l16x2d" index="10" type="input">0.00</td>
+            <td class=" ft0 fs12 ar vm nw bg0 br2" name="wbsbzzsybnsrflzl1.wkjfpxse" format="l16x2d" index="10" type="input">0.00</td>
+            <td class=" ft0 fs12 ar vm nw bg0 br2" name="wbsbzzsybnsrflzl1.wkjfpxxe" format="l16x2d" index="10" type="input">0.00</td>
+            <td class=" ft0 fs12 ac vm nw bg_ne br2" name="wbsbzzsybnsrflzl1.nsrjctzxse" format="l16x2d" index="10" type="input" isEditable=false>——</td>
+            <td class=" ft0 fs12 ac vm nw bg_ne br2" name="wbsbzzsybnsrflzl1.nsrjctzxxe" format="l16x2d" index="10" type="input" isEditable=false>——</td>
+            <td class=" ft0 fs12 ar vm nw bg_ne br2" name="wbsbzzsybnsrflzl1.hjxse" format="l16x2d" index="10" type="input" isEditable=false>0.00</td>
+            <td class=" ft0 fs12 ar vm nw bg_ne br2" name="wbsbzzsybnsrflzl1.hjxxe" format="l16x2d" index="10" type="input" isEditable=false>0.00</td>
+            <td class=" ft0 fs12 ac vm nw bg_ne br2" name="wbsbzzsybnsrflzl1.hjjshj" format="l16x2d" index="10" type="input" isEditable=false>——</td>
+            <td class=" ft0 fs12 ac vm nw bg_ne br2" name="wbsbzzsybnsrflzl1.bqsjkcje" format="l16x2d" index="10" type="input" isEditable=false>——</td>
+            <td class=" ft0 fs12 ac vm nw bg_ne br2" name="wbsbzzsybnsrflzl1.kchxse" format="l16x2d" index="10" type="input" isEditable=false>——</td>
+            <td class=" ft0 fs12 ac vm nw bg_ne br2" name="wbsbzzsybnsrflzl1.kchxxe" format="l16x2d" index="10" type="input" isEditable=false>——</td>
+        </tr>
+        <tr style="height:23px;">
+            <td class=" ft0 fs12 al vm nl bg_ne br2" colspan="2">3%征收率的货物及加工修理修配劳务</td>
+            <td class=" ft0 fs12 ac vm nw bg_ne br2">11</td>
+            <td class=" ft0 fs12 ar vm nw bg0 br2" name="wbsbzzsybnsrflzl1.kjzzszyfpxse" format="l16x2d" index="11" type="input">0.00</td>
+            <td class=" ft0 fs12 ar vm nw bg0 br2" name="wbsbzzsybnsrflzl1.kjzzszyfpxxe" format="l16x2d" index="11" type="input">0.00</td>
+            <td class=" ft0 fs12 ar vm nw bg0 br2" name="wbsbzzsybnsrflzl1.kjptfpxse" format="l16x2d" index="11" type="input">0.00</td>
+            <td class=" ft0 fs12 ar vm nw bg0 br2" name="wbsbzzsybnsrflzl1.kjptfpxxe" format="l16x2d" index="11" type="input">0.00</td>
+            <td class=" ft0 fs12 ar vm nw bg0 br2" name="wbsbzzsybnsrflzl1.wkjfpxse" format="l16x2d" index="11" type="input">0.00</td>
+            <td class=" ft0 fs12 ar vm nw bg0 br2" name="wbsbzzsybnsrflzl1.wkjfpxxe" format="l16x2d" index="11" type="input">0.00</td>
+            <td class=" ft0 fs12 ac vm nw bg_ne br2" name="wbsbzzsybnsrflzl1.nsrjctzxse" format="l16x2d" index="11" type="input" isEditable=false>——</td>
+            <td class=" ft0 fs12 ac vm nw bg_ne br2" name="wbsbzzsybnsrflzl1.nsrjctzxxe" format="l16x2d" index="11" type="input" isEditable=false>——</td>
+            <td class=" ft0 fs12 ar vm nw bg_ne br2" name="wbsbzzsybnsrflzl1.hjxse" format="l16x2d" index="11" type="input" isEditable=false>0.00</td>
+            <td class=" ft0 fs12 ar vm nw bg_ne br2" name="wbsbzzsybnsrflzl1.hjxxe" format="l16x2d" index="11" type="input" isEditable=false>0.00</td>
+            <td class=" ft0 fs12 ac vm nw bg_ne br2" name="wbsbzzsybnsrflzl1.hjjshj" format="l16x2d" index="11" type="input" isEditable=false>——</td>
+            <td class=" ft0 fs12 ac vm nw bg_ne br2" name="wbsbzzsybnsrflzl1.bqsjkcje" format="l16x2d" index="11" type="input" isEditable=false>——</td>
+            <td class=" ft0 fs12 ac vm nw bg_ne br2" name="wbsbzzsybnsrflzl1.kchxse" format="l16x2d" index="11" type="input" isEditable=false>——</td>
+            <td class=" ft0 fs12 ac vm nw bg_ne br2" name="wbsbzzsybnsrflzl1.kchxxe" format="l16x2d" index="11" type="input" isEditable=false>——</td>
+        </tr>
+        <tr style="height:23px;">
+            <td class=" ft0 fs12 al vm nl bg_ne br2" colspan="2">3%征收率的应税服务</td>
+            <td class=" ft0 fs12 ac vm nw bg_ne br2">12</td>
+            <td class=" ft0 fs12 ar vm nw bg0 br2" name="wbsbzzsybnsrflzl1.kjzzszyfpxse" format="l16x2d" index="12" type="input">0.00</td>
+            <td class=" ft0 fs12 ar vm nw bg0 br2" name="wbsbzzsybnsrflzl1.kjzzszyfpxxe" format="l16x2d" index="12" type="input">0.00</td>
+            <td class=" ft0 fs12 ar vm nw bg0 br2" name="wbsbzzsybnsrflzl1.kjptfpxse" format="l16x2d" index="12" type="input">0.00</td>
+            <td class=" ft0 fs12 ar vm nw bg0 br2" name="wbsbzzsybnsrflzl1.kjptfpxxe" format="l16x2d" index="12" type="input">0.00</td>
+            <td class=" ft0 fs12 ar vm nw bg0 br2" name="wbsbzzsybnsrflzl1.wkjfpxse" format="l16x2d" index="12" type="input">0.00</td>
+            <td class=" ft0 fs12 ar vm nw bg0 br2" name="wbsbzzsybnsrflzl1.wkjfpxxe" format="l16x2d" index="12" type="input">0.00</td>
+            <td class=" ft0 fs12 ac vm nw bg_ne br2" name="wbsbzzsybnsrflzl1.nsrjctzxse" format="l16x2d" index="12" type="input" isEditable=false>——</td>
+            <td class=" ft0 fs12 ac vm nw bg_ne br2" name="wbsbzzsybnsrflzl1.nsrjctzxxe" format="l16x2d" index="12" type="input" isEditable=false>——</td>
+            <td class=" ft0 fs12 ar vm nw bg_ne br2" name="wbsbzzsybnsrflzl1.hjxse" format="l16x2d" index="12" type="input" isEditable=false>0.00</td>
+            <td class=" ft0 fs12 ar vm nw bg_ne br2" name="wbsbzzsybnsrflzl1.hjxxe" format="l16x2d" index="12" type="input" isEditable=false>0.00</td>
+            <td class=" ft0 fs12 ar vm nw bg_ne br2" name="wbsbzzsybnsrflzl1.hjjshj" format="l16x2d" index="12" type="input" isEditable=false>0.00</td>
+            <td class=" ft0 fs12 ar vm nw bg_ne br2" name="wbsbzzsybnsrflzl1.bqsjkcje" format="l16x2d" index="12" type="input" isEditable=false>0.00</td>
+            <td class=" ft0 fs12 ar vm nw bg_ne br2" name="wbsbzzsybnsrflzl1.kchxse" format="l16x2d" index="12" type="input" isEditable=false>0.00</td>
+            <td class=" ft0 fs12 ar vm nw bg0 br2" name="wbsbzzsybnsrflzl1.kchxxe" format="l16x2d" index="12" type="input">0.00</td>
+        </tr>
+        <tr style="height:23px;">
+            <td class=" ft0 fs12 al vm nl bg_ne br2">预征率（%）:</td>
+            <td class=" ft0 fs12 ar vm nw bg_ne br2" name="wbsbzzsybnsrflzl1.yzl" format="l7x4d" index="13" type="input" isEditable=false>0.0000</td>
+            <td class=" ft0 fs12 ac vm nw bg_ne br2">13a</td>
+            <td class=" ft0 fs12 ar vm nw bg0 br2" name="wbsbzzsybnsrflzl1.kjzzszyfpxse" format="l16x2d" index="13" type="input">0.00</td>
+            <td class=" ft0 fs12 ar vm nw bg0 br2" name="wbsbzzsybnsrflzl1.kjzzszyfpxxe" format="l16x2d" index="13" type="input">0.00</td>
+            <td class=" ft0 fs12 ar vm nw bg0 br2" name="wbsbzzsybnsrflzl1.kjptfpxse" format="l16x2d" index="13" type="input">0.00</td>
+            <td class=" ft0 fs12 ar vm nw bg0 br2" name="wbsbzzsybnsrflzl1.kjptfpxxe" format="l16x2d" index="13" type="input">0.00</td>
+            <td class=" ft0 fs12 ar vm nw bg0 br2" name="wbsbzzsybnsrflzl1.wkjfpxse" format="l16x2d" index="13" type="input">0.00</td>
+            <td class=" ft0 fs12 ar vm nw bg0 br2" name="wbsbzzsybnsrflzl1.wkjfpxxe" format="l16x2d" index="13" type="input">0.00</td>
+            <td class=" ft0 fs12 ac vm nw bg_ne br2" name="wbsbzzsybnsrflzl1.nsrjctzxse" format="l16x2d" index="13" type="input" isEditable=false>——</td>
+            <td class=" ft0 fs12 ac vm nw bg_ne br2" name="wbsbzzsybnsrflzl1.nsrjctzxxe" format="l16x2d" index="13" type="input" isEditable=false>——</td>
+            <td class=" ft0 fs12 ar vm nw bg_ne br2" name="wbsbzzsybnsrflzl1.hjxse" format="l16x2d" index="13" type="input" isEditable=false>0.00</td>
+            <td class=" ft0 fs12 ar vm nw bg_ne br2" name="wbsbzzsybnsrflzl1.hjxxe" format="l16x2d" index="13" type="input" isEditable=false>0.00</td>
+            <td class=" ft0 fs12 ar vm nw bg_ne br2" name="wbsbzzsybnsrflzl1.hjjshj" format="l16x2d" index="13" type="input" isEditable=false>0.00</td>
+            <td class=" ft0 fs12 ar vm nw bg0 br2" name="wbsbzzsybnsrflzl1.bqsjkcje" format="l16x2d" index="13" type="input">0.00</td>
+            <td class=" ft0 fs12 ar vm nw bg_ne br2" name="wbsbzzsybnsrflzl1.kchxse" format="l16x2d" index="13" type="input" isEditable=false>0.00</td>
+            <td class=" ft0 fs12 ar vm nw bg0 br2" name="wbsbzzsybnsrflzl1.kchxxe" format="l16x2d" index="13" type="input">0.00</td>
+        </tr>
+        <tr style="height:23px;">
+            <td class=" ft0 fs12 al vm nl bg_ne br2">预征率（%）:</td>
+            <td class=" ft0 fs12 ar vm nw bg_ne br2" name="wbsbzzsybnsrflzl1.yzl" format="l7x4d" index="14" type="input" isEditable=false>0.0000</td>
+            <td class=" ft0 fs12 ac vm nw bg_ne br2">13b</td>
+            <td class=" ft0 fs12 ar vm nw bg0 br2" name="wbsbzzsybnsrflzl1.kjzzszyfpxse" format="l16x2d" index="14" type="input">0.00</td>
+            <td class=" ft0 fs12 ar vm nw bg0 br2" name="wbsbzzsybnsrflzl1.kjzzszyfpxxe" format="l16x2d" index="14" type="input">0.00</td>
+            <td class=" ft0 fs12 ar vm nw bg0 br2" name="wbsbzzsybnsrflzl1.kjptfpxse" format="l16x2d" index="14" type="input">0.00</td>
+            <td class=" ft0 fs12 ar vm nw bg0 br2" name="wbsbzzsybnsrflzl1.kjptfpxxe" format="l16x2d" index="14" type="input">0.00</td>
+            <td class=" ft0 fs12 ar vm nw bg0 br2" name="wbsbzzsybnsrflzl1.wkjfpxse" format="l16x2d" index="14" type="input">0.00</td>
+            <td class=" ft0 fs12 ar vm nw bg0 br2" name="wbsbzzsybnsrflzl1.wkjfpxxe" format="l16x2d" index="14" type="input">0.00</td>
+            <td class=" ft0 fs12 ac vm nw bg_ne br2" name="wbsbzzsybnsrflzl1.nsrjctzxse" format="l16x2d" index="14" type="input" isEditable=false>——</td>
+            <td class=" ft0 fs12 ac vm nw bg_ne br2" name="wbsbzzsybnsrflzl1.nsrjctzxxe" format="l16x2d" index="14" type="input" isEditable=false>——</td>
+            <td class=" ft0 fs12 ar vm nw bg_ne br2" name="wbsbzzsybnsrflzl1.hjxse" format="l16x2d" index="14" type="input" isEditable=false>0.00</td>
+            <td class=" ft0 fs12 ar vm nw bg_ne br2" name="wbsbzzsybnsrflzl1.hjxxe" format="l16x2d" index="14" type="input" isEditable=false>0.00</td>
+            <td class=" ft0 fs12 ar vm nw bg_ne br2" name="wbsbzzsybnsrflzl1.hjjshj" format="l16x2d" index="14" type="input" isEditable=false>0.00</td>
+            <td class=" ft0 fs12 ar vm nw bg0 br2" name="wbsbzzsybnsrflzl1.bqsjkcje" format="l16x2d" index="14" type="input">0.00</td>
+            <td class=" ft0 fs12 ar vm nw bg_ne br2" name="wbsbzzsybnsrflzl1.kchxse" format="l16x2d" index="14" type="input" isEditable=false>0.00</td>
+            <td class=" ft0 fs12 ar vm nw bg0 br2" name="wbsbzzsybnsrflzl1.kchxxe" format="l16x2d" index="14" type="input">0.00</td>
+        </tr>
+        <tr style="height:23px;">
+            <td class=" ft0 fs12 al vm nl bg_ne br2">预征率（%）:</td>
+            <td class=" ft0 fs12 ar vm nw bg_ne br2" name="wbsbzzsybnsrflzl1.yzl" format="l7x4d" index="15" type="input" isEditable=false>0.0000</td>
+            <td class=" ft0 fs12 ac vm nw bg_ne br2">13c</td>
+            <td class=" ft0 fs12 ar vm nw bg0 br2" name="wbsbzzsybnsrflzl1.kjzzszyfpxse" format="l16x2d" index="15" type="input">0.00</td>
+            <td class=" ft0 fs12 ar vm nw bg0 br2" name="wbsbzzsybnsrflzl1.kjzzszyfpxxe" format="l16x2d" index="15" type="input">0.00</td>
+            <td class=" ft0 fs12 ar vm nw bg0 br2" name="wbsbzzsybnsrflzl1.kjptfpxse" format="l16x2d" index="15" type="input">0.00</td>
+            <td class=" ft0 fs12 ar vm nw bg0 br2" name="wbsbzzsybnsrflzl1.kjptfpxxe" format="l16x2d" index="15" type="input">0.00</td>
+            <td class=" ft0 fs12 ar vm nw bg0 br2" name="wbsbzzsybnsrflzl1.wkjfpxse" format="l16x2d" index="15" type="input">0.00</td>
+            <td class=" ft0 fs12 ar vm nw bg0 br2" name="wbsbzzsybnsrflzl1.wkjfpxxe" format="l16x2d" index="15" type="input">0.00</td>
+            <td class=" ft0 fs12 ac vm nw bg_ne br2" name="wbsbzzsybnsrflzl1.nsrjctzxse" format="l16x2d" index="15" type="input" isEditable=false>——</td>
+            <td class=" ft0 fs12 ac vm nw bg_ne br2" name="wbsbzzsybnsrflzl1.nsrjctzxxe" format="l16x2d" index="15" type="input" isEditable=false>——</td>
+            <td class=" ft0 fs12 ar vm nw bg_ne br2" name="wbsbzzsybnsrflzl1.hjxse" format="l16x2d" index="15" type="input" isEditable=false>0.00</td>
+            <td class=" ft0 fs12 ar vm nw bg_ne br2" name="wbsbzzsybnsrflzl1.hjxxe" format="l16x2d" index="15" type="input" isEditable=false>0.00</td>
+            <td class=" ft0 fs12 ar vm nw bg_ne br2" name="wbsbzzsybnsrflzl1.hjjshj" format="l16x2d" index="15" type="input" isEditable=false>0.00</td>
+            <td class=" ft0 fs12 ar vm nw bg0 br2" name="wbsbzzsybnsrflzl1.bqsjkcje" format="l16x2d" index="15" type="input">0.00</td>
+            <td class=" ft0 fs12 ar vm nw bg_ne br2" name="wbsbzzsybnsrflzl1.kchxse" format="l16x2d" index="15" type="input" isEditable=false>0.00</td>
+            <td class=" ft0 fs12 ar vm nw bg0 br2" name="wbsbzzsybnsrflzl1.kchxxe" format="l16x2d" index="15" type="input">0.00</td>
+        </tr>
+        <tr style="height:23px;">
+            <td class=" ft0 fs12 ac vm nl bg_ne br2" rowspan="2">其中：即征即退项目</td>
+            <td class=" ft0 fs12 al vm nl bg_ne br2" colspan="2">即征即退货物及加工修理修配劳务</td>
+            <td class=" ft0 fs12 ac vm nw bg_ne br2">14</td>
+            <td class=" ft0 fs12 ac vm nw bg_ne br2" name="wbsbzzsybnsrflzl1.kjzzszyfpxse" format="l16x2d" index="16" type="input" isEditable=false>——</td>
+            <td class=" ft0 fs12 ac vm nw bg_ne br2" name="wbsbzzsybnsrflzl1.kjzzszyfpxxe" format="l16x2d" index="16" type="input" isEditable=false>——</td>
+            <td class=" ft0 fs12 ac vm nw bg_ne br2" name="wbsbzzsybnsrflzl1.kjptfpxse" format="l16x2d" index="16" type="input" isEditable=false>——</td>
+            <td class=" ft0 fs12 ac vm nw bg_ne br2" name="wbsbzzsybnsrflzl1.kjptfpxxe" format="l16x2d" index="16" type="input" isEditable=false>——</td>
+            <td class=" ft0 fs12 ac vm nw bg_ne br2" name="wbsbzzsybnsrflzl1.wkjfpxse" format="l16x2d" index="16" type="input" isEditable=false>——</td>
+            <td class=" ft0 fs12 ac vm nw bg_ne br2" name="wbsbzzsybnsrflzl1.wkjfpxxe" format="l16x2d" index="16" type="input" isEditable=false>——</td>
+            <td class=" ft0 fs12 ac vm nw bg_ne br2" name="wbsbzzsybnsrflzl1.nsrjctzxse" format="l16x2d" index="16" type="input" isEditable=false>——</td>
+            <td class=" ft0 fs12 ac vm nw bg_ne br2" name="wbsbzzsybnsrflzl1.nsrjctzxxe" format="l16x2d" index="16" type="input" isEditable=false>——</td>
+            <td class=" ft0 fs12 ar vm nw bg0 br2" name="wbsbzzsybnsrflzl1.hjxse" format="l16x2d" index="16" type="input">0.00</td>
+            <td class=" ft0 fs12 ar vm nw bg0 br2" name="wbsbzzsybnsrflzl1.hjxxe" format="l16x2d" index="16" type="input">0.00</td>
+            <td class=" ft0 fs12 ac vm nw bg_ne br2" name="wbsbzzsybnsrflzl1.hjjshj" format="l16x2d" index="16" type="input" isEditable=false>——</td>
+            <td class=" ft0 fs12 ac vm nw bg_ne br2" name="wbsbzzsybnsrflzl1.bqsjkcje" format="l16x2d" index="16" type="input" isEditable=false>——</td>
+            <td class=" ft0 fs12 ac vm nw bg_ne br2" name="wbsbzzsybnsrflzl1.kchxse" format="l16x2d" index="16" type="input" isEditable=false>——</td>
+            <td class=" ft0 fs12 ac vm nw bg_ne br2" name="wbsbzzsybnsrflzl1.kchxxe" format="l16x2d" index="16" type="input" isEditable=false>——</td>
+        </tr>
+        <tr style="height:23px;">
+            <td class=" ft0 fs12 al vm nl bg_ne br2" colspan="2">即征即退服务、不动产和无形资产</td>
+            <td class=" ft0 fs12 ac vm nw bg_ne br2">15</td>
+            <td class=" ft0 fs12 ac vm nw bg_ne br2" name="wbsbzzsybnsrflzl1.kjzzszyfpxse" format="l16x2d" index="17" type="input" isEditable=false>——</td>
+            <td class=" ft0 fs12 ac vm nw bg_ne br2" name="wbsbzzsybnsrflzl1.kjzzszyfpxxe" format="l16x2d" index="17" type="input" isEditable=false>——</td>
+            <td class=" ft0 fs12 ac vm nw bg_ne br2" name="wbsbzzsybnsrflzl1.kjptfpxse" format="l16x2d" index="17" type="input" isEditable=false>——</td>
+            <td class=" ft0 fs12 ac vm nw bg_ne br2" name="wbsbzzsybnsrflzl1.kjptfpxxe" format="l16x2d" index="17" type="input" isEditable=false>——</td>
+            <td class=" ft0 fs12 ac vm nw bg_ne br2" name="wbsbzzsybnsrflzl1.wkjfpxse" format="l16x2d" index="17" type="input" isEditable=false>——</td>
+            <td class=" ft0 fs12 ac vm nw bg_ne br2" name="wbsbzzsybnsrflzl1.wkjfpxxe" format="l16x2d" index="17" type="input" isEditable=false>——</td>
+            <td class=" ft0 fs12 ac vm nw bg_ne br2" name="wbsbzzsybnsrflzl1.nsrjctzxse" format="l16x2d" index="17" type="input" isEditable=false>——</td>
+            <td class=" ft0 fs12 ac vm nw bg_ne br2" name="wbsbzzsybnsrflzl1.nsrjctzxxe" format="l16x2d" index="17" type="input" isEditable=false>——</td>
+            <td class=" ft0 fs12 ar vm nw bg0 br2" name="wbsbzzsybnsrflzl1.hjxse" format="l16x2d" index="17" type="input">0.00</td>
+            <td class=" ft0 fs12 ar vm nw bg0 br2" name="wbsbzzsybnsrflzl1.hjxxe" format="l16x2d" index="17" type="input">0.00</td>
+            <td class=" ft0 fs12 ar vm nw bg_ne br2" name="wbsbzzsybnsrflzl1.hjjshj" format="l16x2d" index="17" type="input" isEditable=false>0.00</td>
+            <td class=" ft0 fs12 ar vm nw bg0 br2" name="wbsbzzsybnsrflzl1.bqsjkcje" format="l16x2d" index="17" type="input">0.00</td>
+            <td class=" ft0 fs12 ar vm nw bg_ne br2" name="wbsbzzsybnsrflzl1.kchxse" format="l16x2d" index="17" type="input" isEditable=false>0.00</td>
+            <td class=" ft0 fs12 ar vm nw bg0 br2" name="wbsbzzsybnsrflzl1.kchxxe" format="l16x2d" index="17" type="input">0.00</td>
+        </tr>
+        <tr style="height:23px;">
+            <td class=" ft0 fs12 ac vm nl bg_ne br3" rowspan="2">三、免抵退税</td>
+            <td class=" ft0 fs12 al vm nl bg_ne br2" colspan="3">货物及加工修理修配劳务</td>
+            <td class=" ft0 fs12 ac vm nw bg_ne br2">16</td>
+            <td class=" ft0 fs12 ac vm nw bg_ne br2" name="wbsbzzsybnsrflzl1.kjzzszyfpxse" format="l16x2d" index="18" type="input" isEditable=false>——</td>
+            <td class=" ft0 fs12 ac vm nw bg_ne br2" name="wbsbzzsybnsrflzl1.kjzzszyfpxxe" format="l16x2d" index="18" type="input" isEditable=false>——</td>
+            <td class=" ft0 fs12 ar vm nw bg0 br2" name="wbsbzzsybnsrflzl1.kjptfpxse" format="l16x2d" index="18" type="input">0.00</td>
+            <td class=" ft0 fs12 ac vm nw bg_ne br2" name="wbsbzzsybnsrflzl1.kjptfpxxe" format="l16x2d" index="18" type="input" isEditable=false>——</td>
+            <td class=" ft0 fs12 ar vm nw bg0 br2" name="wbsbzzsybnsrflzl1.wkjfpxse" format="l16x2d" index="18" type="input">0.00</td>
+            <td class=" ft0 fs12 ac vm nw bg_ne br2" name="wbsbzzsybnsrflzl1.wkjfpxxe" format="l16x2d" index="18" type="input" isEditable=false>——</td>
+            <td class=" ft0 fs12 ac vm nw bg_ne br2" name="wbsbzzsybnsrflzl1.nsrjctzxse" format="l16x2d" index="18" type="input" isEditable=false>——</td>
+            <td class=" ft0 fs12 ac vm nw bg_ne br2" name="wbsbzzsybnsrflzl1.nsrjctzxxe" format="l16x2d" index="18" type="input" isEditable=false>——</td>
+            <td class=" ft0 fs12 ar vm nw bg_ne br2" name="wbsbzzsybnsrflzl1.hjxse" format="l16x2d" index="18" type="input" isEditable=false>0.00</td>
+            <td class=" ft0 fs12 ac vm nw bg_ne br2" name="wbsbzzsybnsrflzl1.hjxxe" format="l16x2d" index="18" type="input" isEditable=false>——</td>
+            <td class=" ft0 fs12 ac vm nw bg_ne br2" name="wbsbzzsybnsrflzl1.hjjshj" format="l16x2d" index="18" type="input" isEditable=false>——</td>
+            <td class=" ft0 fs12 ac vm nw bg_ne br2" name="wbsbzzsybnsrflzl1.bqsjkcje" format="l16x2d" index="18" type="input" isEditable=false>——</td>
+            <td class=" ft0 fs12 ac vm nw bg_ne br2" name="wbsbzzsybnsrflzl1.kchxse" format="l16x2d" index="18" type="input" isEditable=false>——</td>
+            <td class=" ft0 fs12 ac vm nw bg_ne br2" name="wbsbzzsybnsrflzl1.kchxxe" format="l16x2d" index="18" type="input" isEditable=false>——</td>
+        </tr>
+        <tr style="height:23px;">
+            <td class=" ft0 fs12 al vm nl bg_ne br2" colspan="3">服务、不动产和无形资产</td>
+            <td class=" ft0 fs12 ac vm nw bg_ne br2">17</td>
+            <td class=" ft0 fs12 ac vm nw bg_ne br2" name="wbsbzzsybnsrflzl1.kjzzszyfpxse" format="l16x2d" index="19" type="input" isEditable=false>——</td>
+            <td class=" ft0 fs12 ac vm nw bg_ne br2" name="wbsbzzsybnsrflzl1.kjzzszyfpxxe" format="l16x2d" index="19" type="input" isEditable=false>——</td>
+            <td class=" ft0 fs12 ar vm nw bg0 br2" name="wbsbzzsybnsrflzl1.kjptfpxse" format="l16x2d" index="19" type="input">0.00</td>
+            <td class=" ft0 fs12 ac vm nw bg_ne br2" name="wbsbzzsybnsrflzl1.kjptfpxxe" format="l16x2d" index="19" type="input" isEditable=false>——</td>
+            <td class=" ft0 fs12 ar vm nw bg0 br2" name="wbsbzzsybnsrflzl1.wkjfpxse" format="l16x2d" index="19" type="input">0.00</td>
+            <td class=" ft0 fs12 ac vm nw bg_ne br2" name="wbsbzzsybnsrflzl1.wkjfpxxe" format="l16x2d" index="19" type="input" isEditable=false>——</td>
+            <td class=" ft0 fs12 ac vm nw bg_ne br2" name="wbsbzzsybnsrflzl1.nsrjctzxse" format="l16x2d" index="19" type="input" isEditable=false>——</td>
+            <td class=" ft0 fs12 ac vm nw bg_ne br2" name="wbsbzzsybnsrflzl1.nsrjctzxxe" format="l16x2d" index="19" type="input" isEditable=false>——</td>
+            <td class=" ft0 fs12 ar vm nw bg_ne br2" name="wbsbzzsybnsrflzl1.hjxse" format="l16x2d" index="19" type="input" isEditable=false>0.00</td>
+            <td class=" ft0 fs12 ac vm nw bg_ne br2" name="wbsbzzsybnsrflzl1.hjxxe" format="l16x2d" index="19" type="input" isEditable=false>——</td>
+            <td class=" ft0 fs12 ar vm nw bg_ne br2" name="wbsbzzsybnsrflzl1.hjjshj" format="l16x2d" index="19" type="input" isEditable=false>0.00</td>
+            <td class=" ft0 fs12 ar vm nw bg_ne br2" name="wbsbzzsybnsrflzl1.bqsjkcje" format="l16x2d" index="19" type="input" isEditable=false>0.00</td>
+            <td class=" ft0 fs12 ar vm nw bg_ne br2" name="wbsbzzsybnsrflzl1.kchxse" format="l16x2d" index="19" type="input" isEditable=false>0.00</td>
+            <td class=" ft0 fs12 ac vm nw bg_ne br2" name="wbsbzzsybnsrflzl1.kchxxe" format="l16x2d" index="19" type="input" isEditable=false>——</td>
+        </tr>
+        <tr style="height:23px;">
+            <td class=" ft0 fs12 ac vm nl bg_ne br3" rowspan="2">四、免税</td>
+            <td class=" ft0 fs12 al vm nl bg_ne br2" colspan="3">货物及加工修理修配劳务</td>
+            <td class=" ft0 fs12 ac vm nw bg_ne br2">18</td>
+            <td class=" ft0 fs12 ar vm nw bg0 br2" name="wbsbzzsybnsrflzl1.kjzzszyfpxse" format="l16x2d" index="20" type="input">0.00</td>
+            <td class=" ft0 fs12 ar vm nw bg0 br2" name="wbsbzzsybnsrflzl1.kjzzszyfpxxe" format="l16x2d" index="20" type="input">0.00</td>
+            <td class=" ft0 fs12 ar vm nw bg0 br2" name="wbsbzzsybnsrflzl1.kjptfpxse" format="l16x2d" index="20" type="input">0.00</td>
+            <td class=" ft0 fs12 ac vm nw bg_ne br2" name="wbsbzzsybnsrflzl1.kjptfpxxe" format="l16x2d" index="20" type="input" isEditable=false>——</td>
+            <td class=" ft0 fs12 ar vm nw bg0 br2" name="wbsbzzsybnsrflzl1.wkjfpxse" format="l16x2d" index="20" type="input">0.00</td>
+            <td class=" ft0 fs12 ac vm nw bg_ne br2" name="wbsbzzsybnsrflzl1.wkjfpxxe" format="l16x2d" index="20" type="input" isEditable=false>——</td>
+            <td class=" ft0 fs12 ac vm nw bg_ne br2" name="wbsbzzsybnsrflzl1.nsrjctzxse" format="l16x2d" index="20" type="input" isEditable=false>——</td>
+            <td class=" ft0 fs12 ac vm nw bg_ne br2" name="wbsbzzsybnsrflzl1.nsrjctzxxe" format="l16x2d" index="20" type="input" isEditable=false>——</td>
+            <td class=" ft0 fs12 ar vm nw bg_ne br2" name="wbsbzzsybnsrflzl1.hjxse" format="l16x2d" index="20" type="input" isEditable=false>0.00</td>
+            <td class=" ft0 fs12 ac vm nw bg_ne br2" name="wbsbzzsybnsrflzl1.hjxxe" format="l16x2d" index="20" type="input" isEditable=false>——</td>
+            <td class=" ft0 fs12 ac vm nw bg_ne br2" name="wbsbzzsybnsrflzl1.hjjshj" format="l16x2d" index="20" type="input" isEditable=false>——</td>
+            <td class=" ft0 fs12 ac vm nw bg_ne br2" name="wbsbzzsybnsrflzl1.bqsjkcje" format="l16x2d" index="20" type="input" isEditable=false>——</td>
+            <td class=" ft0 fs12 ac vm nw bg_ne br2" name="wbsbzzsybnsrflzl1.kchxse" format="l16x2d" index="20" type="input" isEditable=false>——</td>
+            <td class=" ft0 fs12 ac vm nw bg_ne br2" name="wbsbzzsybnsrflzl1.kchxxe" format="l16x2d" index="20" type="input" isEditable=false>——</td>
+        </tr>
+        <tr style="height:23px;">
+            <td class=" ft0 fs12 al vm nl bg_ne br2" colspan="3">服务、不动产和无形资产</td>
+            <td class=" ft0 fs12 ac vm nw bg_ne br2">19</td>
+            <td class=" ft0 fs12 ac vm nw bg_ne br2" name="wbsbzzsybnsrflzl1.kjzzszyfpxse" format="l16x2d" index="21" type="input" isEditable=false>——</td>
+            <td class=" ft0 fs12 ac vm nw bg_ne br2" name="wbsbzzsybnsrflzl1.kjzzszyfpxxe" format="l16x2d" index="21" type="input" isEditable=false>——</td>
+            <td class=" ft0 fs12 ar vm nw bg0 br2" name="wbsbzzsybnsrflzl1.kjptfpxse" format="l16x2d" index="21" type="input">0.00</td>
+            <td class=" ft0 fs12 ac vm nw bg_ne br2" name="wbsbzzsybnsrflzl1.kjptfpxxe" format="l16x2d" index="21" type="input" isEditable=false>——</td>
+            <td class=" ft0 fs12 ar vm nw bg0 br2" name="wbsbzzsybnsrflzl1.wkjfpxse" format="l16x2d" index="21" type="input">0.00</td>
+            <td class=" ft0 fs12 ac vm nw bg_ne br2" name="wbsbzzsybnsrflzl1.wkjfpxxe" format="l16x2d" index="21" type="input" isEditable=false>——</td>
+            <td class=" ft0 fs12 ac vm nw bg_ne br2" name="wbsbzzsybnsrflzl1.nsrjctzxse" format="l16x2d" index="21" type="input" isEditable=false>——</td>
+            <td class=" ft0 fs12 ac vm nw bg_ne br2" name="wbsbzzsybnsrflzl1.nsrjctzxxe" format="l16x2d" index="21" type="input" isEditable=false>——</td>
+            <td class=" ft0 fs12 ar vm nw bg_ne br2" name="wbsbzzsybnsrflzl1.hjxse" format="l16x2d" index="21" type="input" isEditable=false>0.00</td>
+            <td class=" ft0 fs12 ac vm nw bg_ne br2" name="wbsbzzsybnsrflzl1.hjxxe" format="l16x2d" index="21" type="input" isEditable=false>——</td>
+            <td class=" ft0 fs12 ar vm nw bg_ne br2" name="wbsbzzsybnsrflzl1.hjjshj" format="l16x2d" index="21" type="input" isEditable=false>0.00</td>
+            <td class=" ft0 fs12 ar vm nw bg_ne br2" name="wbsbzzsybnsrflzl1.bqsjkcje" format="l16x2d" index="21" type="input" isEditable=false>0.00</td>
+            <td class=" ft0 fs12 ar vm nw bg_ne br2" name="wbsbzzsybnsrflzl1.kchxse" format="l16x2d" index="21" type="input" isEditable=false>0.00</td>
+            <td class=" ft0 fs12 ac vm nw bg_ne br2" name="wbsbzzsybnsrflzl1.kchxxe" format="l16x2d" index="21" type="input" isEditable=false>——</td>
+        </tr>
+    </table>
+</html>
+</div>

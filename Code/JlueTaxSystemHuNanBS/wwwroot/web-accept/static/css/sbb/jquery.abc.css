@@ -1,0 +1,36 @@
+.inputDiv {
+	position:absolute;
+	margin: 0;
+	padding: 0;
+
+}
+.inputArea {
+	background-color: #FFFFCC;
+	border-style: solid;
+	border-width:1px;
+	border-color: #316ac5;
+	margin: 0;
+	padding: 0;
+	overflow: hidden;
+	font-size: 13pt;
+	word-wrap: normal;
+}
+
+.selectDiv {
+	position:absolute;
+	margin: 0;
+	padding-top: 1px;
+	padding-bottom: 1px;
+	background-color: #FFFFCC;
+}
+.inputSelect {
+	background-color: #FFFFCC;
+	border-style: solid;
+	border-width:1px;
+	border-color: #316ac5;
+	margin: 0;
+	padding: 0;
+	overflow: hidden;
+}
+
+

@@ -1,0 +1,481 @@
+@model JlueTaxSystemHuNanBS.Models.FjsModel
+
+
+
+
+
+
+
+
+
+
+<html>
+<head>
+  <title>报表填写</title>
+  <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+  <link rel="stylesheet" type="text/css" href="/web-accept//static/css/main/bootstrap.css">
+  <link rel="stylesheet" type="text/css" href="/web-accept//static/css/sbb/iconfont.css">
+  <link rel="stylesheet" type="text/css" href="/web-accept//static/css/sbb/style.css">
+  <link rel="stylesheet" type="text/css" href="/web-accept//static/css/sbb/leftmenu.css">
+  <link rel="stylesheet" type="text/css" href="/web-accept//static/css/sbb/sbbview.css">
+
+  
+  
+<script src="/web-accept//wssb/static/js.html?ver=A777EDEA50A347A472A04F68BCC3C16E&p=3&dm=20101"></script><script src="/web-accept//static/js/layer/layer.js"></script>
+
+  <script>
+    $(function(){
+      
+      openSbb('fjs');
+      
+
+      $("#printBtn").click(preview);
+      $("#exportbtn").click(exportExcel);
+    });
+
+    //点击左边列表切换申报表
+    var currSbb = 'blankdiv';
+    function openSbb(sbbname) {
+      if (sbbname == currSbb) {
+        return;
+      }
+      $("#" + sbbname).css('display', 'block');
+      if (currSbb != null) {
+        $("#" + currSbb).css("display", "none");
+      }
+      currSbb = sbbname;
+      return;
+      //提交当前处于编辑状态的单元格
+      submitCurrSbb();
+    }
+
+      //预览
+    function preview(){
+      if(currSbb==null || currSbb == 'blankdiv')
+        return;
+      var strBodyStyle= "";
+      strBodyStyle="<link rel='stylesheet' type='text/css' href='https://etax.hunan.chinatax.gov.cn/web-accept//static/css/sbb/sbbprint.css'>";
+      var _html=strBodyStyle+"<body>"+document.getElementById(currSbb).innerHTML+"</body>";
+      var LODOP=getLodop('https://etax.hunan.chinatax.gov.cn/web-accept//static/print/');
+      LODOP.PRINT_INIT("");
+      var printparas = [{"fbjc":"fjs","sbzlDm":"20101","dyFx":"V","pdfPercent":"0.80","pdfDyFx":"H"}];
+      var ptobj;
+      for(var i = 0; i<printparas.length;i++)
+      {
+        ptobj = printparas[i];
+        if(ptobj.fbjc == currSbb || (currSbb.indexOf("xxbgb") == 0 && ptobj.fbjc == "xxbgb")){
+          var top=0;
+          if(ptobj.top){
+            top=ptobj.top;
+          }
+          var left=20;
+          if(ptobj.left){
+            left=left+convertNumber(ptobj.left);
+          }
+          //计算A4纸宽度与当前表格的宽度比例
+          LODOP.ADD_PRINT_HTM(top,left,"100%","100%",_html);
+          if('H' == ptobj.dyFx){
+            LODOP.SET_PRINT_PAGESIZE(2,0,0,"CreateCustomPage");
+            LODOP.SET_SHOW_MODE("LANDSCAPE_DEFROTATED",1);//横向时的正向显示
+          }else{
+            LODOP.SET_PRINT_PAGESIZE(3,0,0,"CreateCustomPage");
+          }
+          //按照计算比例缩放
+          if(ptobj.percent){
+            LODOP.SET_PRINT_MODE("PRINT_PAGE_PERCENT",ptobj.percent);
+          }else{
+            LODOP.SET_PRINT_MODE("PRINT_PAGE_PERCENT","Auto-Width");
+          }
+          break;;
+        }
+      }
+      LODOP.PREVIEW();
+    }
+
+    function exportExcel(){
+      
+      var url = 'https://etax.hunan.chinatax.gov.cn/web-accept//wssb/excel/export.html';
+      var content = $('#sbbdiv').html();
+
+      try{
+        var iframedoc = document.getElementById("dwonlandfile_iframe").contentDocument || document.frames["dwonlandfile_iframe"].document;
+        var fromhtml = "  <html><head></head><body>\n"+
+                "<form id='dwonlandfile_from'  method='POST' action='https://etax.hunan.chinatax.gov.cn/web-accept//wssb/excel/export.html'>\n"+
+                "<input type='hidden'  name='sbzldm' value='20101' />\n"+
+                "<input type='hidden' name='content' value='"+content+"' />\n"+
+                "<input type='hidden' name='bmc' value='城建税、教育费附加、地方教育附加税（费）申报表;' />\n"+
+                "<input type='hidden' name='sssq' value='20190401_20190430' />\n"+
+                "</form></body></html>";
+        iframedoc.body.innerHTML = fromhtml;
+        iframedoc.getElementById('dwonlandfile_from').submit();
+        setTimeout(checkFileDownloadComplete, 200);
+      }catch(e){
+        $("#tcontent").val(content);
+        var excelurl = 'https://etax.hunan.chinatax.gov.cn/web-accept//wssb/excel/iframeexport.html?t='+(new Date().getTime());
+        $("#dwonlandfile_iframe").attr("src",excelurl);
+      }
+    }
+
+    function checkFileDownloadComplete() {
+      if (document.cookie.toLowerCase().indexOf("filedownload=true") > -1) {
+        closeLoadding();
+        //文件下载成功，删除cookie
+        var cookieData = "fileDownload=; path=/; expires=" + new Date(0).toUTCString() + ";";
+        document.cookie = cookieData;
+        return;
+      }
+      try {
+        var iframedoc = document.getElementById("dwonlandfile_iframe").contentDocument || document.frames["dwonlandfile_iframe"].document;
+        if(iframedoc.body.innerHTML.length==0 || iframedoc.body.innerHTML.indexOf("dwonlandfile_from")==-1){
+          showErrorMsg("导出失败")
+          closeLoadding();
+          return;
+        }
+      } catch (err) {
+        showErrorMsg("导出失败")
+        closeLoadding();
+        return;
+      }
+      setTimeout(checkFileDownloadComplete, 200);
+    }
+  </script>
+  <script>
+    var _hmt = _hmt || [];
+    (function() {
+      var hm = document.createElement("script");
+      hm.src = "https://hm.baidu.com/hm.js?31201bd2a4e2880495b0477f39e5f19f";
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(hm, s);
+    })();
+  </script>
+</head>
+<body>
+<input id="ctx" type="hidden" value="https://etax.hunan.chinatax.gov.cn/web-accept/"/>
+<iframe id="dwonlandfile_iframe" style='display: none' src='about:blank'></iframe>
+
+<input type='hidden'  id='tsbzldm' value='20101' />
+<input type='hidden' id='tcontent' value='' />
+<input type='hidden' id='tbmc' value='城建税、教育费附加、地方教育附加税（费）申报表;' />
+<input type='hidden' id='tsssq' value='20190401_20190430' />
+
+
+<div class="side">
+
+  <div id="outLookBarDiv" name="outLookBarDiv">
+    <table style=" width:200px;" valign="middle" cellpadding="0" cellspacing="0"
+           border="0">
+      <tbody>
+      <tr>
+        <td onmouseover="this.className='menutitleover'" onmouseout="this.className='menutitle'"
+            class="menutitle"
+            name="outlooktitle0" id="outlooktitle0" onclick="switchoutlookBar(0)" nowrap="nowrap"><span
+                class="smallFont" style="display:block; width:100%;">申报表</span></td>
+      </tr>
+      <tr>
+        <td name="outlookdiv0" id="outlookdiv0" style="width:100%;height:100%;" align="center"
+            valign="top">
+          <div class="lefttitle" name="outlookdivin0" id="outlookdivin0" style=" width:100%;height:100%">
+            
+                        <span><a href="javascript:void(0)"
+                                 onclick="openSbb('fjs')">城建税、教育费附加、地方教育附加税（费）申报表
+                        </a></span>
+            
+          </div>
+        </td>
+      </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+
+<div class="z-click"><i class="iconfont" style="display:none; font-size:9px;" id="you">&#xe72a;</i><i class="iconfont" style=" font-size: 9px;" id="zuo">&#xe72d;</i></div>
+
+<script language="javascript">
+  $(".z-click").click(function(){
+    if($(".side").css("display")=="block"){
+      $(".side").css("display","none");
+      $("#zuo").css("display","none");
+      $("#you").css("display","block");
+      $(".main").css("left","5px");
+      $(this).css("left","5px")
+    }else{
+      $(".side").css("display","block");
+      $("#zuo").css("display","block");
+      $("#you").css("display","none");
+      $(".main").css("left","235px");
+      $(this).css("left","220px")
+    }
+  });
+</script>
+
+
+
+<div class="main" id="sbbdiv">
+  <div id="blankdiv">
+
+  </div>
+  <table>
+    <tr>
+      <td><div style="width:25px;"></div></td>
+      <td>
+        
+        <div id="fjs" style="display: none;">
+          
+
+
+
+<table class="sbbtable" style="width:0px">
+    <tr>
+        <td><div style="width:19px;"></div></td>
+        <td><div style="width:46px;"></div></td>
+        <td><div style="width:61px;"></div></td>
+        <td><div style="width:48px;"></div></td>
+        <td><div style="width:46px;"></div></td>
+        <td><div style="width:53px;"></div></td>
+        <td><div style="width:47px;"></div></td>
+        <td><div style="width:46px;"></div></td>
+        <td><div style="width:44px;"></div></td>
+        <td><div style="width:49px;"></div></td>
+        <td><div style="width:36px;"></div></td>
+        <td><div style="width:28px;"></div></td>
+        <td><div style="width:61px;"></div></td>
+        <td><div style="width:61px;"></div></td>
+        <td><div style="width:31px;"></div></td>
+        <td><div style="width:33px;"></div></td>
+        <td><div style="width:31px;"></div></td>
+        <td><div style="width:39px;"></div></td>
+        <td><div style="width:61px;"></div></td>
+        <td><div style="width:61px;"></div></td>
+        <td><div style="width:61px;"></div></td>
+        <td><div style="width:61px;"></div></td>
+        <td><div style="width:61px;"></div></td>
+        <td><div style="width:61px;"></div></td>
+        <td><div style="width:95px;"></div></td>
+        <td><div style="width:61px;"></div></td>
+        <td><div style="width:61px;"></div></td>
+        <td><div style="width:61px;"></div></td>
+        <td><div style="width:61px;"></div></td>
+    </tr>
+    <tr style="height:18px;" >
+        <td    class=" bg1 br0"  ></td>
+        <td    class=" bg1 br0"  ></td>
+        <td    class=" bg1 br0"  ></td>
+    </tr>
+    <tr style="height:21px;" >
+        <td    class=" bg1 br0"  ></td>
+        <td    class=" bg1 br0"  ></td>
+        <td    class=" bg1 br0"  ></td>
+        <td    class=" bg1 br0"  ></td>
+        <td    class=" bg1 br0"  ></td>
+        <td    class=" bg1 br0"  ></td>
+        <td    class=" bg1 br0"  ></td>
+        <td    class=" bg1 br0"  ></td>
+        <td    class=" bg1 br0"  ></td>
+        <td    class=" bg1 br0"  ></td>
+        <td    class=" bg1 br0"  ></td>
+        <td    class=" bg1 br0"  ></td>
+        <td    class=" bg1 br0"  ></td>
+        <td    class=" bg1 br0"  ></td>
+        <td    class=" bg1 br0"  ></td>
+        <td    class=" bg1 br0"  ></td>
+        <td    class=" bg1 br0"  ></td>
+        <td    class=" bg1 br0"  ></td>
+        <td    class=" bg1 br0"  ></td>
+        <td    class=" bg1 br0"  ></td>
+        <td    class=" bg1 br0"  ></td>
+        <td    class=" bg1 br0"  ></td>
+        <td    class=" bg1 br0"  ></td>
+        <td    class=" bg1 br0"  ></td>
+        <td    class=" bg1 br0"  ></td>
+        <td    class=" bg1 br0"  ></td>
+        <td    class=" bg1 br0"  ></td>
+        <td    class=" ft0 fs12 ac vm nw bg1 br1"   rowspan="5"   colspan="2"  ></td>
+    </tr>
+    <tr style="height:39px;" >
+        <td    class=" bg1 br0"  ></td>
+        <td    class=" bg1 br0"  ></td>
+        <td    class=" bg1 br0"  ></td>
+        <td    class=" bg1 br0"  ></td>
+        <td    class=" bg1 br0"  ></td>
+        <td    class=" ft0 fs14 fbd ac vm nw bg1 br0"   colspan="19"  >城市维护建设税&nbsp;教育费附加&nbsp;地方教育附加申报表</td>
+        <td    class=" bg1 br0"  ></td>
+        <td    class=" bg1 br0"  ></td>
+        <td    class=" bg1 br0"  ></td>
+    </tr>
+    <tr style="height:14px;" >
+        <td    class=" bg1 br0"  ></td>
+        <td    class=" bg1 br0"  ></td>
+        <td    class=" bg1 br0"  ></td>
+        <td    class=" bg1 br0"  ></td>
+        <td    class=" bg1 br0"  ></td>
+        <td    class=" bg1 br0"  ></td>
+        <td    class=" bg1 br0"  ></td>
+        <td    class=" bg1 br0"  ></td>
+        <td    class=" bg1 br0"  ></td>
+        <td    class=" bg1 br0"  ></td>
+        <td    class=" bg1 br0"  ></td>
+        <td    class=" bg1 br0"  ></td>
+        <td    class=" bg1 br0"  ></td>
+        <td    class=" bg1 br0"  ></td>
+        <td    class=" bg1 br0"  ></td>
+        <td    class=" bg1 br0"  ></td>
+        <td    class=" bg1 br0"  ></td>
+        <td    class=" bg1 br0"  ></td>
+        <td    class=" bg1 br0"  ></td>
+        <td    class=" bg1 br0"  ></td>
+        <td    class=" bg1 br0"  ></td>
+        <td    class=" bg1 br0"  ></td>
+        <td    class=" bg1 br0"  ></td>
+        <td    class=" bg1 br0"  ></td>
+        <td    class=" bg1 br0"  ></td>
+        <td    class=" bg1 br0"  ></td>
+        <td    class=" bg1 br0"  ></td>
+    </tr>
+    <tr style="height:29px;" >
+        <td    class=" bg1 br0"  ></td>
+        <td    class=" ft0 fs12 ar vm nw bg1 br0"   colspan="2"  >税款所属期限：</td>
+        <td    class=" ft0 fs12 al vm nw bg1 br0"  >2019-04-01</td>
+        <td    class=" ft0 fs12 ac vm nw bg1 br0"   colspan="2"  >至</td>
+        <td    class=" ft0 fs12 al vm nw bg1 br0"  >2019-04-30</td>
+        <td    class=" ft0 fs12 al vm nw bg1 br0"   colspan="2"  >填表日期：</td>
+        <td    class=" ft0 fs12 al vm nw bg1 br0"   colspan="3"   name="common.tbrq" >2019-05-15</td>
+        <td    class=" bg1 br0"  ></td>
+        <td    class=" bg1 br0"  ></td>
+        <td    class=" bg1 br0"  ></td>
+        <td    class=" bg1 br0"  ></td>
+        <td    class=" bg1 br0"  ></td>
+        <td    class=" bg1 br0"  ></td>
+        <td    class=" bg1 br0"  ></td>
+        <td    class=" bg1 br0"  ></td>
+        <td    class=" bg1 br0"  ></td>
+        <td    class=" bg1 br0"  ></td>
+        <td    class=" bg1 br0"  ></td>
+        <td    class=" bg1 br0"   colspan="4"  ></td>
+    </tr>
+    <tr style="height:29px;" >
+        <td    class=" bg1 br0"  ></td>
+        <td    class=" ft0 fs12 ar vm nw bg1 br1"   colspan="2"  >纳税人识别号：</td>
+        <td    class=" ft0 fs12 al vm nw bg1 br1"   colspan="4"  >91430105MA4L4UB74U</td>
+        <td    class=" ft0 fs12 al vm nw bg1 br1"   colspan="2"  >纳税人名称：&nbsp;</td>
+        <td    class=" ft0 fs12 al vm nw bg1 br1"   colspan="9"  >湖南威信文化传媒有限公司</td>
+        <td    class=" bg1 br1"   colspan="2"  ></td>
+        <td    class=" bg1 br1"  ></td>
+        <td    class=" bg1 br1"  ></td>
+        <td    class=" bg1 br1"  ></td>
+        <td    class=" ft0 fs12 ar vm nw bg1 br1"   colspan="4"  >金额单位：人民币元(列至角分)</td>
+    </tr>
+    <tr style="height:29px;" >
+        <td    class=" bg1 br4"  ></td>
+        <td    class=" ft0 fs12 ac vm nl bg_ne br2"   rowspan="3"   colspan="13"  >本期是否适用增值税小规模纳税人减征政策<br>(减免性质代码__城市维护建设税：07049901，减免性质代码__教育费附加：61049901，减免性质代码__地方教育附加：99049901）<br></td>
+        <td    class=" ft0 fs12 ac vm nw bg0 br1"   rowspan="3"   name="wbdssbfjsfjsnsrxx.bqsfsyxgmyhzcs"  type="chk,Y,N"  value='N'>☐</td>
+        <td    class=" ft0 fs12 ac vm nw bg_ne br1"   rowspan="3"  >是</td>
+        <td    class=" ft0 fs12 ac vm nw bg0 br1"   rowspan="3"   name="wbdssbfjsfjsnsrxx.bqsfsyxgmyhzcf"  type="chk,Y,N"  value='Y'>☑</td>
+        <td    class=" ft0 fs12 ac vm nw bg_ne br2"   rowspan="3"  >否</td>
+        <td    class=" ft0 fs12 ac vm nw bg_ne br2"   colspan="7"  >减征比例_城市维护建设税（%）</td>
+        <td    class=" ft0 fs12 ar vm nw bg_ne br2"   colspan="4"   name="wbdssbfjsfjssbb.phjzbl"  format="l7x2b" index="0"  type="input"  isEditable=false >0%</td>
+    </tr>
+    <tr style="height:29px;" >
+        <td    class=" bg1 br4"  ></td>
+        <td    class=" ft0 fs12 ac vm nw bg_ne br2"   colspan="7"  >减征比例_教育费附加（%）</td>
+        <td    class=" ft0 fs12 ar vm nw bg_ne br2"   colspan="4"   name="wbdssbfjsfjssbb.phjzbl"  format="l7x2b" index="1"  type="input"  isEditable=false >0%</td>
+    </tr>
+    <tr style="height:29px;" >
+        <td    class=" bg1 br4"  ></td>
+        <td    class=" ft0 fs12 ac vm nw bg_ne br2"   colspan="7"  >减征比例_地方教育附加（%）</td>
+        <td    class=" ft0 fs12 ar vm nw bg_ne br2"   colspan="4"   name="wbdssbfjsfjssbb.phjzbl"  format="l7x2b" index="2"  type="input"  isEditable=false >0%</td>
+    </tr>
+    <tr style="height:29px;" >
+        <td    class=" bg1 br4"  ></td>
+        <td    class=" ft0 fs12 ac vm nw bg_ne br2"   rowspan="3"   colspan="2"  >税（费）种</td>
+        <td    class=" ft0 fs12 ac vm nw bg_ne br2"   colspan="11"  >计税（费）依据</td>
+        <td    class=" ft0 fs12 ac vm nl bg_ne br2"   rowspan="3"   colspan="4"  >税率&nbsp;&nbsp;<br>（征收率）</td>
+        <td    class=" ft0 fs12 ac vm nl bg_ne br2"   rowspan="3"   colspan="2"  >本期应纳税<br>（费）额</td>
+        <td    class=" ft0 fs12 ac vm nw bg_ne br2"   rowspan="2"   colspan="4"  >本期减免税（费）额</td>
+        <td    class=" ft0 fs12 ac vm nl bg_ne br2"   rowspan="3"  >本期增值<br>税小规模<br>纳税人减<br>征额</td>
+        <td    class=" ft0 fs12 ac vm nl bg_ne br2"   rowspan="3"   colspan="2"  >本期已缴税<br>（费）额</td>
+        <td    class=" ft0 fs12 ac vm nl bg_ne br2"   rowspan="3"   colspan="2"  >本期应补<br>（退）税（费）额</td>
+    </tr>
+    <tr style="height:29px;" >
+        <td    class=" bg1 br4"  ></td>
+        <td    class=" ft0 fs12 ac vm nw bg_ne br2"   colspan="4"  >增值税</td>
+        <td    class=" ft0 fs12 ac vm nw bg_ne br2"   rowspan="2"   colspan="2"  >消费税</td>
+        <td    class=" ft0 fs12 ac vm nw bg_ne br2"   rowspan="2"   colspan="2"  >营业税</td>
+        <td    class=" ft0 fs12 ac vm nw bg_ne br2"   rowspan="2"   colspan="3"  >合计</td>
+    </tr>
+    <tr style="height:29px;" >
+        <td    class=" bg1 br4"  ></td>
+        <td    class=" ft0 fs12 ac vm nw bg_ne br2"   colspan="2"  >一般增值税</td>
+        <td    class=" ft0 fs12 ac vm nw bg_ne br2"   colspan="2"  >免抵税额</td>
+        <td    class=" ft0 fs12 ac vm nw bg_ne br2"   colspan="2"  >减免性质代码</td>
+        <td    class=" ft0 fs12 ac vm nw bg_ne br2"   colspan="2"  >减免额（费）额</td>
+    </tr>
+    <tr style="height:29px;" >
+        <td    class=" bg1 br4"  ></td>
+        <td    class=" bg_ne br2"   colspan="2"  ></td>
+        <td    class=" ft0 fs12 ac vm nw bg_ne br2"   colspan="2"  >1</td>
+        <td    class=" ft0 fs12 ac vm nw bg_ne br2"   colspan="2"  >2</td>
+        <td    class=" ft0 fs12 ac vm nw bg_ne br2"   colspan="2"  >3</td>
+        <td    class=" ft0 fs12 ac vm nw bg_ne br2"   colspan="2"  >4</td>
+        <td    class=" ft0 fs12 ac vm nw bg_ne br2"   colspan="3"  >5=1+2+3+4</td>
+        <td    class=" ft0 fs12 ac vm nw bg_ne br2"   colspan="4"  >6</td>
+        <td    class=" ft0 fs12 ac vm nw bg_ne br2"   colspan="2"  >7=5*6</td>
+        <td    class=" ft0 fs12 ac vm nw bg_ne br2"   colspan="2"  >8</td>
+        <td    class=" ft0 fs12 ac vm nw bg_ne br2"   colspan="2"  >9</td>
+        <td    class=" ft0 fs12 ac vm nw bg_ne br2"  >10</td>
+        <td    class=" ft0 fs12 ac vm nw bg_ne br2"   colspan="2"  >11</td>
+        <td    class=" ft0 fs12 ac vm nw bg_ne br2"   colspan="2"  >12=7-9-10-11</td>
+    </tr>
+    
+    
+    @await Html.PartialAsync("_PartialFjs",Model.FjsData)
+
+    <tr style="height:29px;" >
+        <td    class=" bg1 br4"  ></td>
+        <td    class=" ft0 fs12 ac vm nw bg_ne br2"   colspan="2"  >合计</td>
+        <td    class=" ft0 fs12 ac vm nw bg_ne br2"   colspan="11"  >--</td>
+        <td    class=" ft0 fs12 ac vm nw bg_ne br2"   colspan="4"  >--</td>
+        <td    class=" ft0 fs12 ar vm nw bg_ne br2"   colspan="2"   name="common.bqynsfehj"  format="l16x2d" type="input"  isEditable=false >0.00</td>
+        <td    class=" ft0 fs12 ac vm nw bg_ne br2"   colspan="2"  >--</td>
+        <td    class=" ft0 fs12 ar vm nw bg_ne br2"   colspan="2"   name="common.jmehj"  format="l16x2d" type="input"  isEditable=false >0.00</td>
+        <td    class=" ft0 fs12 ar vm nw bg_ne br2"   name="common.phjmsehj"  format="l16x2d" type="input"  isEditable=false >0.00</td>
+        <td    class=" ft0 fs12 ar vm nw bg_ne br2"   colspan="2"   name="common.bqyjsehj"  format="l16x2d" type="input"  isEditable=false >0.00</td>
+        <td    class=" ft0 fs12 ar vm nw bg_ne br2"   colspan="2"   name="common.bqybtsehj"  format="l16x2d" type="input"  isEditable=false >0.00</td>
+    </tr>
+    <tr style="height:87px;" >
+        <td    class=" bg1 br4"  ></td>
+        <td    class=" ft0 fs12 al vm nl bg_ne br2"   colspan="28"  ><br>谨声明：本纳税申报表是根据国家税收法律法规及相关规定填报的，是真实的、可靠的、完整的。<br><br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;纳税人（签章）：&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;年&nbsp;&nbsp;月&nbsp;&nbsp;日<br></td>
+    </tr>
+    <tr style="height:117px;" >
+        <td    class=" bg1 br4"  ></td>
+        <td    class=" ft0 fs12 al vm nl bg_ne br2"   colspan="17"  >经办人：<br>经办人身份证号：<br>代理机构签章：<br>代理机构统一社会信用代码：<br></td>
+        <td    class=" ft0 fs12 al vm nl bg_ne br1"   colspan="10"  >受理人：<br>受理税务机关（章）：<br>受理日期：&nbsp;&nbsp;&nbsp;&nbsp;年&nbsp;&nbsp;月&nbsp;&nbsp;日<br></td>
+        <td    class=" bg_ne br2"  ></td>
+    </tr>
+</table>
+<div id='wbdssbfjsfjssbb.zsxmdm.list' style='display: none;'>null</div>
+<div id='wbdssbfjsfjssbb.jmxzdm.list' style='display: none;'>null</div>
+<div id='wbdssbfjsfjssbb.zspmdm.list' style='display: none;'>
+    <input type="hidden" id="wbdssbfjsfjssbbzspmdm0" value="">
+    <input type="hidden" id="wbdssbfjsfjssbbzspmdm1" value="">
+    <input type="hidden" id="wbdssbfjsfjssbbzspmdm2" value="">
+</div>
+        </div>
+        
+      </td>
+      <td><div style="width:25px;"></div></td>
+    </tr>
+  </table>
+</div>
+
+
+<div class="top">
+  <div class="action" >
+    <div class="toolbar" style="text-align:center; padding-top:5px;">
+      <input name="exportbtn" id="exportbtn" type="button" class="btn btn-success" value="导出" title="导出" disabled="disabled" >
+      <input name="printBtn" id="printBtn" type="button" class="btn btn-info" value="打印" title="打印" disabled="disabled" >
+    </div>
+  </div>
+</div>
+
+</body>
+</html>

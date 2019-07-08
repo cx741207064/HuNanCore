@@ -1,0 +1,279 @@
+@using JlueTaxSystemHuNanBS.Code
+@model List<GDTXUserYSBQC>
+@inject YsbqcSetting set
+
+<script>
+  $(function(){
+    try {
+      var dsMsg = 'null';
+      var fjsMsg = 'null';
+      if (checkObjIsNotNull(dsMsg)) {
+        $("#dsnssbMsg").html(dsMsg);
+      }else if (checkObjIsNotNull(fjsMsg)) {
+        $("#dsnssbMsg").html(fjsMsg);
+      }
+    }catch(e){
+
+    }
+  })
+</script>
+
+<input id="zzsfjssbuuid" type="hidden" value="F2FFD0CAB4994AFC9056B51EB43F00CC"/>
+<input id="xfsfjssbuuid" type="hidden" value=""/>
+<div class="tax-title">
+  <div class="title-name">纳税申报</div>
+
+  <div class="z-dhcd ">
+    <a href="javascript:void(0)" target="_blank">
+      <div class="z-ico">
+        <div class="z-ico-img"><span class="glyphicon glyphicon-list-alt color-1"></span></div>
+        <div class="z-ico-txt">操作说明</div>
+      </div>
+    </a>
+    <a href="javascript:void(0)" target="_blank">
+      <div class="z-ico" >
+        <div class="z-ico-img"><span class="glyphicon glyphicon-book"></span></div>
+        <div class="z-ico-txt">办税指南</div>
+      </div>
+    </a>
+
+    <a href="javascript:void(0)" target="_blank">
+      <div class="z-ico">
+        <div class="z-ico-img"><span class="glyphicon glyphicon-question-sign"></span></div>
+        <div class="z-ico-txt">常见问题</div>
+      </div>
+    </a>
+  </div>
+</div>
+<div class="info-nr">
+  <div class="z-dhnr">
+    <div class="z-select" style="position: absolute; right: 0;">
+      <div class="z-sc" style="margin-right:40px;">
+        <button type="button" class="btn btn-info" onclick="getView('nssb');">获取申报结果</button>
+      </div>
+      <div class="z-sc" style="margin-right:60px;">
+        <button type="button" class="btn btn-info" onclick="getSzxx('nssb')">获取应申报信息</button>
+      </div>
+      
+      <div class="clear"></div>
+    </div>
+    <ul class="nav nav-tabs" role="tablist" style="overflow:hidden">
+      <li role="presentation" class="active" id="myInfo"><a href="#jdsb" aria-controls="jdsb" role="tab" data-toggle="tab">本月应申报</a></li>
+      <li role="presentation" id="doTax"><a href="#qtsb" aria-controls="qtsb" role="tab" data-toggle="tab">其他报表</a></li>
+    </ul>
+    <div class="tab-content">
+      <div role="tabpanel" class="tab-pane active" id="jdsb">
+        <div class="z-table">
+          <table class="table table-striped z-mt">
+            <thead>
+            <tr style="border:0;">
+              <th width="7%">序号</th>
+              <th width="20%">报表名称</th>
+              <th width="15%">所属期起</th>
+              <th width="15%">所属期止</th>
+              <th width="15%">申报期限</th>
+              <th width="10%">状态</th>
+              <th width="18%">操作</th>
+            </tr>
+            </thead>
+            <tbody>
+
+@{int i = 0; }            
+@foreach (GDTXUserYSBQC qc in Model)
+{
+    <tr>
+                    <td>@{i++;}@i</td>
+                    <td>@qc.TaskName</td>
+                    <td>@qc.SKSSQQ</td>
+                    <td>@qc.SKSSQZ</td>
+                    <td>@qc.SBQX</td>
+                    <td>
+
+                        @if (qc.SBZT == set.SBZT.YSB)
+                        {
+                            <span style="color:#078324;">@qc.SBZT</span>
+                        }
+                        else if (qc.SBZT == set.SBZT.DSB)
+                        {
+                            <span style="color:#1874CD;">@qc.SBZT</span>
+                        }
+                        else if (qc.SBZT == set.SBZT.WTX)
+                        {
+                            @qc.SBZT
+                        }
+
+                    </td>
+                    <td>
+
+                        @if (qc.BDDM == set.BDDM.Fjs)
+                        {
+                            @if (qc.SBZT == set.SBZT.WTX)
+                            {
+                                <a href="javascript:void(0)" onclick="editsbb('@qc.BDDM','4530AC05336C499392C971212D7C6BDF')"><i class="iconfont c-nephritis">&#xe72e;</i> 填写</a>
+                            }
+                            else if (qc.SBZT == set.SBZT.DSB)
+                            {
+                                <table class="table-pl0">
+                                    <tr>
+
+                                        <td rowspan="2" style="white-space: nowrap;">
+                                            <a href="javascript:void(0)" onclick="sbbSb('@qc.BDDM','4530AC05336C499392C971212D7C6BDF');"><i class="iconfont c-belizehole">&#xe72b;</i><b style="font-weight: bold;color: #FF0000;font-size: 14px;"> 申报</b></a>
+                                        </td>
+
+                                        <td style="white-space: nowrap;">
+                                            <a href="javascript:void(0)" onclick="editsbb('@qc.BDDM','4530AC05336C499392C971212D7C6BDF')"><i class="iconfont c-nephritis">&#xe72e;</i> 填写</a>
+                                        </td>
+
+                                    </tr>
+                                    <tr>
+
+                                        <td style="white-space: nowrap;">
+                                            <a href="javascript:void(0)" onclick="resetsbb('@qc.BDDM','4530AC05336C499392C971212D7C6BDF')"><i class="iconfont c-pumpkin">&#xe72c;</i> 重置</a>
+                                        </td>
+                                    </tr>
+                                </table>
+                            }
+                            else if (qc.SBZT == set.SBZT.YSB)
+                            {
+                                <a href="javascript:void(0)" onclick="viewsbb('@qc.BDDM','D175734A41B14DD391B85088B1DCFEA9','v2')"><i class="iconfont c-nephritis"></i> 查看</a>
+                            }
+
+                        }
+                        else if (qc.BDDM == set.BDDM.YbnsrZzs)
+                        {
+                            @if (qc.SBZT == set.SBZT.WTX)
+                            {
+                                <a href="javascript:void(0)" onclick="editsbb('@qc.BDDM','4530AC05336C499392C971212D7C6BDF')"><i class="iconfont c-nephritis">&#xe72e;</i> 填写</a>
+                            }
+                            else if (qc.SBZT == set.SBZT.DSB)
+                            {
+                                <table class="table-pl0">
+                                    <tr>
+
+                                        <td rowspan="2" style="white-space: nowrap;">
+                                            <a href="javascript:void(0)" onclick="sbbSb('@qc.BDDM','4530AC05336C499392C971212D7C6BDF');"><i class="iconfont c-belizehole">&#xe72b;</i><b style="font-weight: bold;color: #FF0000;font-size: 14px;"> 申报</b></a>
+                                        </td>
+
+                                        <td colspan="2" style="white-space: nowrap;">
+                                            <a href="javascript:void(0)" onclick="ybjc(10104,'2019/04/01','2019/04/30')"><i class="iconfont c-nephritis">&#xe72e;</i> 一表集成</a>&nbsp;&nbsp;
+                                        </td>
+
+                                    </tr>
+                                    <tr>
+
+                                        <td style="white-space: nowrap;">
+                                            <a href="javascript:void(0)" onclick="editsbb('@qc.BDDM','4530AC05336C499392C971212D7C6BDF')"><i class="iconfont c-nephritis">&#xe72e;</i> 填写</a>
+                                        </td>
+
+                                        <td style="white-space: nowrap;">
+                                            <a href="javascript:void(0)" onclick="resetsbb('@qc.BDDM','4530AC05336C499392C971212D7C6BDF')"><i class="iconfont c-pumpkin">&#xe72c;</i> 重置</a>
+                                        </td>
+                                    </tr>
+                                </table>
+                            }
+                            else if (qc.SBZT == set.SBZT.YSB)
+                            {
+                                <a href="javascript:void(0)" onclick="viewsbb('@qc.BDDM','D175734A41B14DD391B85088B1DCFEA9','v4')"><i class="iconfont c-nephritis"></i> 查看</a>
+                            }
+
+                        }
+                        else if (qc.BDDM == set.BDDM.Yhs)
+                        {
+                            @if (qc.SBZT == set.SBZT.WTX)
+                            {
+                                <a href="javascript:void(0)" onclick="toDsPage('sb','10111','101110101',null,null,'2019-04-01','2019-04-30','0')"><i class="iconfont c-nephritis">&#xe72e;</i> 填写</a>
+                            }
+                            else if (qc.SBZT == set.SBZT.DSB)
+                            {
+                                
+                            }
+                            else if (qc.SBZT == set.SBZT.YSB)
+                            {
+                                <a href="javascript:void(0)" onclick="toDsPage('ck',null,null,'A396DD11D56B93C59976CD0C42CBFBC5')"><i class="iconfont c-nephritis"></i> 查看</a>
+                            }
+
+                        }
+
+                    </td>
+                  </tr>
+
+}
+                        
+
+            </tbody>
+          </table>
+
+        </div>
+      </div>
+      <div role="tabpanel" class="tab-pane clearfix" id="qtsb">
+        <div class="z-table">
+          <table class="table table-striped z-mt">
+            <thead>
+            <tr style="border:0;">
+              <th width="7%">序号</th>
+              <th width="35%">报表名称</th>
+              <th width="15%">所属期起</th>
+              <th width="15%">所属期止</th>
+              <th width="10%">状态</th>
+              <th width="18%">操作</th>
+            </tr>
+            </thead>
+            <tbody>
+
+
+
+
+              <tr>
+                <td>1</td>
+                <td>印花税纳税申报（报告）表</td>
+                <td style="text-align: center"> --</td>
+                <td style="text-align: center">--</td>
+                <td style="text-align: center">--</td>
+                <td>
+                  <a href="javascript:void(0)" onclick="yqsbqtbb('BDA0610794')"><i class="iconfont c-nephritis" >&#xe72e;</i> 填写</a>
+                </td>
+              </tr>
+            
+
+            </tbody>
+          </table>
+
+        </div>
+      </div>
+
+
+      <div class="z-tishi">
+        <div class="z-ts-title"><span class="glyphicon glyphicon-info-sign"></span><span>温馨提示：</span>
+        </div>
+        <div>
+      　&nbsp;&nbsp;&nbsp;&nbsp;根据国家税务总局工作要求和安排部署，我省停用了电子税务局扣缴个人所得税申报功能，全省统一使用自然人税收管理系统扣缴客户端（以下简称“扣缴客户端”）进行个人所得税扣缴申报。如您需要进行个人所得税代扣代缴申报，请通过扣缴客户端进行申报。</br>
+      </div>
+        <div id="dsnssbMsg" style="color: red">
+        </div>
+      </div>
+
+
+    </div>
+  </div>
+</div>
+
+
+  <form method="post"  id="ybjcForm" target="ybjcIframe" style="display: none;">
+  </form>
+
+  <form method="post"  id="todsForm" style="display: none;">
+  </form>
+
+
+  <div id="chooseDiv" style="display: none;padding: 10px;">
+    <table cellpadding="0" border="1px" bordercolor="#CCCCCC" style="width: 100%;">
+      <thead>
+        <th style="text-align: center;width: 10%">序号</th>
+        <th style="width: 80%">申报表名称</th>
+      </thead>
+      <tbody id="choose_tbody">
+
+      </tbody>
+    </table>
+  </div>
+

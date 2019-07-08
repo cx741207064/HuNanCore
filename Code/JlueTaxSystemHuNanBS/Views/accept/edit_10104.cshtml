@@ -1,0 +1,907 @@
+@using JlueTaxSystemHuNanBS.Models
+@model YbnsrzzsModel
+
+<html>
+<head>
+    <title>报表填写</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <link rel="stylesheet" type="text/css" href="/web-accept//static/css/main/bootstrap.css" />
+    <link rel="stylesheet" type="text/css" href="/web-accept//static/css/sbb/iconfont.css" />
+    <link rel="stylesheet" type="text/css" href="/web-accept//static/css/sbb/select2custom.css" />
+    <link rel="stylesheet" type="text/css" href="/web-accept//static/css/sbb/style.css" />
+    <link rel="stylesheet" type="text/css" href="/web-accept//static/css/sbb/leftmenu.css" />
+    <link rel="stylesheet" type="text/css" href="/web-accept//static/css/sbb/sbbedit.css" />
+    <link rel="stylesheet" type="text/css" href="/web-accept//static/css/sbb/jquery.abc.css" />
+    <link rel="stylesheet" type="text/css" href="/web-accept//static/css/icheck/green.css" />
+    <link type="text/css" rel="stylesheet" href="/web-accept//static/css/main/bootstrap-datetimepicker.min.css" />
+
+
+
+    <script src="/web-accept//wssb/static/js.html?ver=A6131D762C05F6F1520968050A451122&p=2&dm=10104&fs=emIsZmx6bDEsZmx6bDIsZmx6bDQsam1zc2JteGIsY3B5Z3hjcWtteGIsY3B5Z3hjc2xteGIsZGtk
+anNzdHlqa3Nka3FkLA=="></script>
+    <script src="/web-accept//static/js/layer/layer.js"></script>
+
+    <script>
+        var cwbbsqsinitfinish = "0";// 0、初始状态 1、方法开始执行 2、获取完成
+        $(function () {
+            showLoadding();
+            setTimeout(sbbPageInit, 1000);
+            $("#exportbtn").click(exportExcel);
+
+        });
+        /**
+         * 页面初始化方法
+         */
+        function sbbPageInit() {
+            try {
+                //加载上期数
+                if ('10104' == '19804') {
+                    setXqyBnlj('');
+                }
+
+                var hdxxvojsons = { "abcNsrHdxxSbzlList": [{ "hdxxid": "20190505162620114118", "sbzlcode": "10104", "sbzlmc": "增值税纳税申报表（一般纳税人适用）", "zsxmbm": "10101", "zsxmmc": "增值税", "sbqx": "2019-05-20", "hdfs": "0" }], "abcNsrHdxxLsxxList": [{ "code": "HKJKZZSJKS_GDZCJXSELJ", "hdxxid": "20190505162620114118", "sbzlcode": "10104", "name": "上期申报固定资产进项税额累计（海关进口增值税专用缴款书）", "value": "0", "qdsybz": "Y" }, { "code": "JZJTLJS_LC_1", "hdxxid": "20190505162620114118", "sbzlcode": "10104", "name": "即征即退累计数栏次1", "value": "0.00", "qdsybz": "Y" }, { "code": "JZJTLJS_LC_10", "hdxxid": "20190505162620114118", "sbzlcode": "10104", "name": "即征即退累计数栏次10", "value": "0.00", "qdsybz": "Y" }, { "code": "JZJTLJS_LC_11", "hdxxid": "20190505162620114118", "sbzlcode": "10104", "name": "即征即退累计数栏次11", "value": "0.00", "qdsybz": "Y" }, { "code": "JZJTLJS_LC_12", "hdxxid": "20190505162620114118", "sbzlcode": "10104", "name": "即征即退累计数栏次12", "value": "0.00", "qdsybz": "Y" }, { "code": "JZJTLJS_LC_13", "hdxxid": "20190505162620114118", "sbzlcode": "10104", "name": "即征即退累计数栏次13", "value": "0.00", "qdsybz": "Y" }, { "code": "JZJTLJS_LC_14", "hdxxid": "20190505162620114118", "sbzlcode": "10104", "name": "即征即退累计数栏次14", "value": "0.00", "qdsybz": "Y" }, { "code": "JZJTLJS_LC_15", "hdxxid": "20190505162620114118", "sbzlcode": "10104", "name": "即征即退累计数栏次15", "value": "0.00", "qdsybz": "Y" }, { "code": "JZJTLJS_LC_16", "hdxxid": "20190505162620114118", "sbzlcode": "10104", "name": "即征即退累计数栏次16", "value": "0.00", "qdsybz": "Y" }, { "code": "JZJTLJS_LC_17", "hdxxid": "20190505162620114118", "sbzlcode": "10104", "name": "即征即退累计数栏次17", "value": "0", "qdsybz": "Y" }, { "code": "JZJTLJS_LC_18", "hdxxid": "20190505162620114118", "sbzlcode": "10104", "name": "即征即退累计数栏次18", "value": "0.00", "qdsybz": "Y" }, { "code": "JZJTLJS_LC_19", "hdxxid": "20190505162620114118", "sbzlcode": "10104", "name": "即征即退累计数栏次19", "value": "0.00", "qdsybz": "Y" }, { "code": "JZJTLJS_LC_2", "hdxxid": "20190505162620114118", "sbzlcode": "10104", "name": "即征即退累计数栏次2", "value": "0.00", "qdsybz": "Y" }, { "code": "JZJTLJS_LC_20", "hdxxid": "20190505162620114118", "sbzlcode": "10104", "name": "即征即退累计数栏次20", "value": "0.00", "qdsybz": "Y" }, { "code": "JZJTLJS_LC_21", "hdxxid": "20190505162620114118", "sbzlcode": "10104", "name": "即征即退累计数栏次21", "value": "0.00", "qdsybz": "Y" }, { "code": "JZJTLJS_LC_22", "hdxxid": "20190505162620114118", "sbzlcode": "10104", "name": "即征即退累计数栏次22", "value": "0.00", "qdsybz": "Y" }, { "code": "JZJTLJS_LC_23", "hdxxid": "20190505162620114118", "sbzlcode": "10104", "name": "即征即退累计数栏次23", "value": "0.00", "qdsybz": "Y" }, { "code": "JZJTLJS_LC_24", "hdxxid": "20190505162620114118", "sbzlcode": "10104", "name": "即征即退累计数栏次24", "value": "0.00", "qdsybz": "Y" }, { "code": "JZJTLJS_LC_25", "hdxxid": "20190505162620114118", "sbzlcode": "10104", "name": "即征即退累计数栏次25", "value": "0.00", "qdsybz": "Y" }, { "code": "JZJTLJS_LC_26", "hdxxid": "20190505162620114118", "sbzlcode": "10104", "name": "即征即退累计数栏次26", "value": "0.00", "qdsybz": "Y" }, { "code": "JZJTLJS_LC_27", "hdxxid": "20190505162620114118", "sbzlcode": "10104", "name": "即征即退累计数栏次27", "value": "0.00", "qdsybz": "Y" }, { "code": "JZJTLJS_LC_28", "hdxxid": "20190505162620114118", "sbzlcode": "10104", "name": "即征即退累计数栏次28", "value": "0.00", "qdsybz": "Y" }, { "code": "JZJTLJS_LC_29", "hdxxid": "20190505162620114118", "sbzlcode": "10104", "name": "即征即退累计数栏次29", "value": "0.00", "qdsybz": "Y" }, { "code": "JZJTLJS_LC_3", "hdxxid": "20190505162620114118", "sbzlcode": "10104", "name": "即征即退累计数栏次3", "value": "0.00", "qdsybz": "Y" }, { "code": "JZJTLJS_LC_30", "hdxxid": "20190505162620114118", "sbzlcode": "10104", "name": "即征即退累计数栏次30", "value": "0.00", "qdsybz": "Y" }, { "code": "JZJTLJS_LC_31", "hdxxid": "20190505162620114118", "sbzlcode": "10104", "name": "即征即退累计数栏次31", "value": "0.00", "qdsybz": "Y" }, { "code": "JZJTLJS_LC_32", "hdxxid": "20190505162620114118", "sbzlcode": "10104", "name": "即征即退累计数栏次32", "value": "0.00", "qdsybz": "Y" }, { "code": "JZJTLJS_LC_33", "hdxxid": "20190505162620114118", "sbzlcode": "10104", "name": "即征即退累计数栏次33", "value": "0.00", "qdsybz": "Y" }, { "code": "JZJTLJS_LC_34", "hdxxid": "20190505162620114118", "sbzlcode": "10104", "name": "即征即退累计数栏次34", "value": "0.00", "qdsybz": "Y" }, { "code": "JZJTLJS_LC_35", "hdxxid": "20190505162620114118", "sbzlcode": "10104", "name": "即征即退累计数栏次35", "value": "0.00", "qdsybz": "Y" }, { "code": "JZJTLJS_LC_36", "hdxxid": "20190505162620114118", "sbzlcode": "10104", "name": "即征即退累计数栏次36", "value": "0.00", "qdsybz": "Y" }, { "code": "JZJTLJS_LC_37", "hdxxid": "20190505162620114118", "sbzlcode": "10104", "name": "即征即退累计数栏次37", "value": "0.00", "qdsybz": "Y" }, { "code": "JZJTLJS_LC_38", "hdxxid": "20190505162620114118", "sbzlcode": "10104", "name": "即征即退累计数栏次38", "value": "0.00", "qdsybz": "Y" }, { "code": "JZJTLJS_LC_4", "hdxxid": "20190505162620114118", "sbzlcode": "10104", "name": "即征即退累计数栏次4", "value": "0.00", "qdsybz": "Y" }, { "code": "JZJTLJS_LC_5", "hdxxid": "20190505162620114118", "sbzlcode": "10104", "name": "即征即退累计数栏次5", "value": "0.00", "qdsybz": "Y" }, { "code": "JZJTLJS_LC_6", "hdxxid": "20190505162620114118", "sbzlcode": "10104", "name": "即征即退累计数栏次6", "value": "0.00", "qdsybz": "Y" }, { "code": "JZJTLJS_LC_7", "hdxxid": "20190505162620114118", "sbzlcode": "10104", "name": "即征即退累计数栏次7", "value": "0.00", "qdsybz": "Y" }, { "code": "JZJTLJS_LC_8", "hdxxid": "20190505162620114118", "sbzlcode": "10104", "name": "即征即退累计数栏次8", "value": "0.00", "qdsybz": "Y" }, { "code": "JZJTLJS_LC_9", "hdxxid": "20190505162620114118", "sbzlcode": "10104", "name": "即征即退累计数栏次9", "value": "0.00", "qdsybz": "Y" }, { "code": "YBLJS_LC_1", "hdxxid": "20190505162620114118", "sbzlcode": "10104", "name": "一般累计数栏次1", "value": "0.00", "qdsybz": "Y" }, { "code": "YBLJS_LC_10", "hdxxid": "20190505162620114118", "sbzlcode": "10104", "name": "一般累计数栏次10", "value": "0.00", "qdsybz": "Y" }, { "code": "YBLJS_LC_11", "hdxxid": "20190505162620114118", "sbzlcode": "10104", "name": "一般累计数栏次11", "value": "0.00", "qdsybz": "Y" }, { "code": "YBLJS_LC_12", "hdxxid": "20190505162620114118", "sbzlcode": "10104", "name": "一般累计数栏次12", "value": "0.00", "qdsybz": "Y" }, { "code": "YBLJS_LC_13", "hdxxid": "20190505162620114118", "sbzlcode": "10104", "name": "一般累计数栏次13", "value": "0.00", "qdsybz": "Y" }, { "code": "YBLJS_LC_14", "hdxxid": "20190505162620114118", "sbzlcode": "10104", "name": "一般累计数栏次14", "value": "0.00", "qdsybz": "Y" }, { "code": "YBLJS_LC_15", "hdxxid": "20190505162620114118", "sbzlcode": "10104", "name": "一般累计数栏次15", "value": "0.00", "qdsybz": "Y" }, { "code": "YBLJS_LC_16", "hdxxid": "20190505162620114118", "sbzlcode": "10104", "name": "一般累计数栏次16", "value": "0.00", "qdsybz": "Y" }, { "code": "YBLJS_LC_17", "hdxxid": "20190505162620114118", "sbzlcode": "10104", "name": "一般累计数栏次17", "value": "0", "qdsybz": "Y" }, { "code": "YBLJS_LC_18", "hdxxid": "20190505162620114118", "sbzlcode": "10104", "name": "一般累计数栏次18", "value": "0.00", "qdsybz": "Y" }, { "code": "YBLJS_LC_19", "hdxxid": "20190505162620114118", "sbzlcode": "10104", "name": "一般累计数栏次19", "value": "0.00", "qdsybz": "Y" }, { "code": "YBLJS_LC_2", "hdxxid": "20190505162620114118", "sbzlcode": "10104", "name": "一般累计数栏次2", "value": "0.00", "qdsybz": "Y" }, { "code": "YBLJS_LC_20", "hdxxid": "20190505162620114118", "sbzlcode": "10104", "name": "一般累计数栏次20", "value": "0.00", "qdsybz": "Y" }, { "code": "YBLJS_LC_21", "hdxxid": "20190505162620114118", "sbzlcode": "10104", "name": "一般累计数栏次21", "value": "0.00", "qdsybz": "Y" }, { "code": "YBLJS_LC_22", "hdxxid": "20190505162620114118", "sbzlcode": "10104", "name": "一般累计数栏次22", "value": "0.00", "qdsybz": "Y" }, { "code": "YBLJS_LC_23", "hdxxid": "20190505162620114118", "sbzlcode": "10104", "name": "一般累计数栏次23", "value": "0.00", "qdsybz": "Y" }, { "code": "YBLJS_LC_24", "hdxxid": "20190505162620114118", "sbzlcode": "10104", "name": "一般累计数栏次24", "value": "0.00", "qdsybz": "Y" }, { "code": "YBLJS_LC_25", "hdxxid": "20190505162620114118", "sbzlcode": "10104", "name": "一般累计数栏次25", "value": "0.00", "qdsybz": "Y" }, { "code": "YBLJS_LC_26", "hdxxid": "20190505162620114118", "sbzlcode": "10104", "name": "一般累计数栏次26", "value": "0.00", "qdsybz": "Y" }, { "code": "YBLJS_LC_27", "hdxxid": "20190505162620114118", "sbzlcode": "10104", "name": "一般累计数栏次27", "value": "0.00", "qdsybz": "Y" }, { "code": "YBLJS_LC_28", "hdxxid": "20190505162620114118", "sbzlcode": "10104", "name": "一般累计数栏次28", "value": "0.00", "qdsybz": "Y" }, { "code": "YBLJS_LC_29", "hdxxid": "20190505162620114118", "sbzlcode": "10104", "name": "一般累计数栏次29", "value": "0.00", "qdsybz": "Y" }, { "code": "YBLJS_LC_3", "hdxxid": "20190505162620114118", "sbzlcode": "10104", "name": "一般累计数栏次3", "value": "0.00", "qdsybz": "Y" }, { "code": "YBLJS_LC_30", "hdxxid": "20190505162620114118", "sbzlcode": "10104", "name": "一般累计数栏次30", "value": "0.00", "qdsybz": "Y" }, { "code": "YBLJS_LC_31", "hdxxid": "20190505162620114118", "sbzlcode": "10104", "name": "一般累计数栏次31", "value": "0.00", "qdsybz": "Y" }, { "code": "YBLJS_LC_32", "hdxxid": "20190505162620114118", "sbzlcode": "10104", "name": "一般累计数栏次32", "value": "0.00", "qdsybz": "Y" }, { "code": "YBLJS_LC_33", "hdxxid": "20190505162620114118", "sbzlcode": "10104", "name": "一般累计数栏次33", "value": "0.00", "qdsybz": "Y" }, { "code": "YBLJS_LC_34", "hdxxid": "20190505162620114118", "sbzlcode": "10104", "name": "一般累计数栏次34", "value": "0", "qdsybz": "Y" }, { "code": "YBLJS_LC_35", "hdxxid": "20190505162620114118", "sbzlcode": "10104", "name": "一般累计数栏次35", "value": "0.00", "qdsybz": "Y" }, { "code": "YBLJS_LC_36", "hdxxid": "20190505162620114118", "sbzlcode": "10104", "name": "一般累计数栏次36", "value": "0.00", "qdsybz": "Y" }, { "code": "YBLJS_LC_37", "hdxxid": "20190505162620114118", "sbzlcode": "10104", "name": "一般累计数栏次37", "value": "0.00", "qdsybz": "Y" }, { "code": "YBLJS_LC_38", "hdxxid": "20190505162620114118", "sbzlcode": "10104", "name": "一般累计数栏次38", "value": "0.00", "qdsybz": "Y" }, { "code": "YBLJS_LC_4", "hdxxid": "20190505162620114118", "sbzlcode": "10104", "name": "一般累计数栏次4", "value": "0.00", "qdsybz": "Y" }, { "code": "YBLJS_LC_5", "hdxxid": "20190505162620114118", "sbzlcode": "10104", "name": "一般累计数栏次5", "value": "0.00", "qdsybz": "Y" }, { "code": "YBLJS_LC_6", "hdxxid": "20190505162620114118", "sbzlcode": "10104", "name": "一般累计数栏次6", "value": "0.00", "qdsybz": "Y" }, { "code": "YBLJS_LC_7", "hdxxid": "20190505162620114118", "sbzlcode": "10104", "name": "一般累计数栏次7", "value": "0.00", "qdsybz": "Y" }, { "code": "YBLJS_LC_8", "hdxxid": "20190505162620114118", "sbzlcode": "10104", "name": "一般累计数栏次8", "value": "0.00", "qdsybz": "Y" }, { "code": "YBLJS_LC_9", "hdxxid": "20190505162620114118", "sbzlcode": "10104", "name": "一般累计数栏次9", "value": "0.00", "qdsybz": "Y" }, { "code": "ZZSZYFP_GDZCJXSELJ", "hdxxid": "20190505162620114118", "sbzlcode": "10104", "name": "上期申报固定资产进项税额累计（增值税专用发票）", "value": "0", "qdsybz": "Y" }], "abcNsrHdxxWsxxList": [{ "code": "BQJNSQYNSE", "hdxxid": "20190505162620114118", "sbzlcode": "10104", "name": "本期缴税上期应纳税额", "value": "0.00", "qdsybz": "Y" }, { "code": "CDDBZ", "hdxxid": "20190505162620114118", "sbzlcode": "10104", "name": "传递单标志", "value": "0", "qdsybz": "Y" }, { "code": "CKTSQYBZ", "hdxxid": "20190505162620114118", "sbzlcode": "10104", "name": "出口退税企业标志,Y-是,N-不是", "value": "N", "qdsybz": "Y" }, { "code": "CKTS_DQYTSE", "hdxxid": "20190505162620114118", "sbzlcode": "10104", "name": "出口退税当期应退税额", "value": "0", "qdsybz": "Y" }, { "code": "DJRQ", "hdxxid": "20190505162620114118", "sbzlcode": "10104", "name": "登记日期", "value": "2017-10-31", "qdsybz": "Y" }, { "code": "DLCYQYBZ", "hdxxid": "20190505162620114118", "sbzlcode": "10104", "name": "电力成员企业标志,Y-是,N-不是", "value": "N", "qdsybz": "Y" }, { "code": "DLQYLX", "hdxxid": "20190505162620114118", "sbzlcode": "10104", "name": "电力企业类型", "qdsybz": "Y" }, { "code": "FB43HTXBZ", "hdxxid": "20190505162620114118", "sbzlcode": "10104", "name": "附表四三行填写标志", "value": "Y", "qdsybz": "Y" }, { "code": "FB43QCYE", "hdxxid": "20190505162620114118", "sbzlcode": "10104", "name": "附表四三行期初余额", "value": "0", "qdsybz": "Y" }, { "code": "FB44HTXBZ", "hdxxid": "20190505162620114118", "sbzlcode": "10104", "name": "附表四四行填写标志", "value": "Y", "qdsybz": "Y" }, { "code": "FB44QCYE", "hdxxid": "20190505162620114118", "sbzlcode": "10104", "name": "附表四四行期初余额", "value": "0", "qdsybz": "Y" }, { "code": "FB45HTXBZ", "hdxxid": "20190505162620114118", "sbzlcode": "10104", "name": "附表四五行填写标志", "value": "Y", "qdsybz": "Y" }, { "code": "FB45QCYE", "hdxxid": "20190505162620114118", "sbzlcode": "10104", "name": "附表四五行期初余额", "value": "0", "qdsybz": "Y" }, { "code": "FB4EHTXBZ", "hdxxid": "20190505162620114118", "sbzlcode": "10104", "name": "附表四二行填写标志", "value": "N", "qdsybz": "Y" }, { "code": "FB4FZJGYJQCYE", "hdxxid": "20190505162620114118", "sbzlcode": "10104", "name": "附表四二行期初余额", "value": "0", "qdsybz": "Y" }, { "code": "FB4JZEQCYE", "hdxxid": "20190505162620114118", "sbzlcode": "10104", "name": "附表四一行期初余额", "value": "0", "qdsybz": "Y" }, { "code": "FB5QCYE", "hdxxid": "20190505162620114118", "sbzlcode": "10104", "name": "附表五期初余额", "value": "0", "qdsybz": "Y" }, { "code": "FCYJ", "hdxxid": "20190505162620114118", "sbzlcode": "10104", "name": "分次预缴", "value": "0.00", "qdsybz": "Y" }, { "code": "FDQYBNSRBZ", "hdxxid": "20190505162620114118", "sbzlcode": "10104", "name": "辅导期一般纳税人标志", "value": "N", "qdsybz": "Y" }, { "code": "FDQZSDQ", "hdxxid": "20190505162620114118", "sbzlcode": "10104", "name": "辅导期转正当期", "value": "N", "qdsybz": "Y" }, { "code": "FZJGCDDYJ", "hdxxid": "20190505162620114118", "sbzlcode": "10104", "name": "分支机构传递单预缴", "value": "0.00", "qdsybz": "Y" }, { "code": "HDXXZTBZ", "hdxxid": "20190505162620114118", "sbzlcode": "10104", "name": "状态标志", "value": "0", "qdsybz": "Y" }, { "code": "HDXXZTXX", "hdxxid": "20190505162620114118", "sbzlcode": "10104", "name": "状态信息", "value": "正常", "qdsybz": "Y" }, { "code": "HGWSSJCJBZ", "hdxxid": "20190505162620114118", "sbzlcode": "10104", "name": "海关完税数据采集标志", "value": "N", "qdsybz": "Y" }, { "code": "HYMXDM", "hdxxid": "20190505162620114118", "sbzlcode": "10104", "name": "行业明细代码", "value": "5165", "qdsybz": "Y" }, { "code": "HYMXMC", "hdxxid": "20190505162620114118", "sbzlcode": "10104", "name": "行业明细名称", "value": "建材批发", "qdsybz": "Y" }, { "code": "HZNSTYCDDBZ", "hdxxid": "20190505162620114118", "sbzlcode": "10104", "name": "汇总纳税通用传递单标志", "value": "N", "qdsybz": "Y" }, { "code": "HZQYBZ", "hdxxid": "20190505162620114118", "sbzlcode": "10104", "name": "汇总企业标志", "value": "N", "qdsybz": "Y" }, { "code": "ISBMD", "hdxxid": "20190505162620114118", "sbzlcode": "10104", "name": "白名单标志", "value": "N", "qdsybz": "Y" }, { "code": "JDCXSQYBZ", "hdxxid": "20190505162620114118", "sbzlcode": "10104", "name": "机动车销售企业标志", "value": "N", "qdsybz": "Y" }, { "code": "JRYSFFXDCBBZ", "hdxxid": "20190505162620114118", "sbzlcode": "10104", "name": "金融业税负分析表填表标志", "value": "N", "qdsybz": "Y" }, { "code": "JTYSYBZ", "hdxxid": "20190505162620114118", "sbzlcode": "10104", "name": "交通运输业标志", "value": "N", "qdsybz": "Y" }, { "code": "JYZSBZ", "hdxxid": "20190505162620114118", "sbzlcode": "10104", "name": "简易征收标志", "value": "N", "qdsybz": "Y" }, { "code": "JZJTBYS_LC_13", "hdxxid": "20190505162620114118", "sbzlcode": "10104", "name": "即征即退本月数栏次13", "value": "0.00", "qdsybz": "Y" }, { "code": "JZJTBYS_LC_25", "hdxxid": "20190505162620114118", "sbzlcode": "10104", "name": "即征即退本月数栏次25", "value": "0.00", "qdsybz": "Y" }, { "code": "JZJTFWTXBZ", "hdxxid": "20190505162620114118", "sbzlcode": "10104", "name": "即征即退服务填写标志", "value": "N", "qdsybz": "Y" }, { "code": "JZJTLWTXBZ", "hdxxid": "20190505162620114118", "sbzlcode": "10104", "name": "即征即退劳务填写标志", "value": "N", "qdsybz": "Y" }, { "code": "KHYHDM", "hdxxid": "20190505162620114118", "sbzlcode": "10104", "name": "开户银行代码", "value": "313551082507", "qdsybz": "Y" }, { "code": "KHYHMC", "hdxxid": "20190505162620114118", "sbzlcode": "10104", "name": "开户银行名称", "value": "长沙银行股份有限公司德宇支行", "qdsybz": "Y" }, { "code": "KHYHZH", "hdxxid": "20190505162620114118", "sbzlcode": "10104", "name": "开户银行帐号", "value": "800273272302019", "qdsybz": "Y" }, { "code": "KHYHZLDM", "hdxxid": "20190505162620114118", "sbzlcode": "10104", "name": "开户银行种类代码", "value": "城市商业银行", "qdsybz": "Y" }, { "code": "NCPHDKCBZ", "hdxxid": "20190505162620114118", "sbzlcode": "10104", "name": "农产品核定扣除标志", "value": "N", "qdsybz": "Y" }, { "code": "NSRLX", "hdxxid": "20190505162620114118", "sbzlcode": "10104", "name": "纳税人类型", "value": "01", "qdsybz": "Y" }, { "code": "NSRZG", "hdxxid": "20190505162620114118", "sbzlcode": "10104", "name": "纳税人资格", "value": "201", "qdsybz": "Y" }, { "code": "SMBZ", "hdxxid": "20190505162620114118", "sbzlcode": "10104", "name": "增值税加计抵减政策声明标志", "value": "N", "qdsybz": "Y" }, { "code": "YBBYS_LC_13", "hdxxid": "20190505162620114118", "sbzlcode": "10104", "name": "一般本月数栏次13", "value": "0.00", "qdsybz": "Y" }, { "code": "YBBYS_LC_25", "hdxxid": "20190505162620114118", "sbzlcode": "10104", "name": "一般本月数栏次25", "value": "0.00", "qdsybz": "Y" }, { "code": "YBBYS_LC_36", "hdxxid": "20190505162620114118", "sbzlcode": "10104", "name": "一般本月数栏次36", "value": "0.00", "qdsybz": "Y" }, { "code": "YBHWFWQCLDDQSE", "hdxxid": "20190505162620114118", "sbzlcode": "10104", "name": "一般货物服务期初留抵抵欠税额", "value": "0.00", "qdsybz": "Y" }, { "code": "YGZFB3QCYE_LC_1", "hdxxid": "20190505162620114118", "sbzlcode": "10104", "name": "营改增附表3期初余额栏次_1", "value": "0", "qdsybz": "Y" }, { "code": "YGZFB3QCYE_LC_2", "hdxxid": "20190505162620114118", "sbzlcode": "10104", "name": "营改增附表3期初余额栏次_2", "value": "0", "qdsybz": "Y" }, { "code": "YGZFB3QCYE_LC_3", "hdxxid": "20190505162620114118", "sbzlcode": "10104", "name": "营改增附表3期初余额栏次_3", "value": "0", "qdsybz": "Y" }, { "code": "YGZFB3QCYE_LC_4", "hdxxid": "20190505162620114118", "sbzlcode": "10104", "name": "营改增附表3期初余额栏次_4", "value": "0", "qdsybz": "Y" }, { "code": "YGZFB3QCYE_LC_5", "hdxxid": "20190505162620114118", "sbzlcode": "10104", "name": "营改增附表3期初余额栏次_5", "value": "0", "qdsybz": "Y" }, { "code": "YGZFB3QCYE_LC_6", "hdxxid": "20190505162620114118", "sbzlcode": "10104", "name": "营改增附表3期初余额栏次_6", "value": "0", "qdsybz": "Y" }, { "code": "YGZFB3QCYE_LC_7", "hdxxid": "20190505162620114118", "sbzlcode": "10104", "name": "营改增附表3期初余额栏次_7", "value": "0", "qdsybz": "Y" }, { "code": "YGZFB3QCYE_LC_8", "hdxxid": "20190505162620114118", "sbzlcode": "10104", "name": "营改增附表3期初余额栏次_8", "value": "0", "qdsybz": "Y" }, { "code": "YGZSFFXMXBBZ", "hdxxid": "20190505162620114118", "sbzlcode": "10104", "name": "试点纳税人营改增税负分析信息登记标志", "value": "N", "qdsybz": "Y" }, { "code": "YSFWYKCXMNSR", "hdxxid": "20190505162620114118", "sbzlcode": "10104", "name": "应税服务有扣除项目纳税人", "value": "N", "qdsybz": "Y" }, { "code": "YZL", "hdxxid": "20190505162620114118", "sbzlcode": "10104", "name": "预征率", "value": "0", "qdsybz": "Y" }, { "code": "YZL13B", "hdxxid": "20190505162620114118", "sbzlcode": "10104", "name": "预征率13B", "value": "0", "qdsybz": "Y" }, { "code": "YZL13BTXBZ", "hdxxid": "20190505162620114118", "sbzlcode": "10104", "name": "预征率13B填写标志", "value": "N", "qdsybz": "Y" }, { "code": "YZL13C", "hdxxid": "20190505162620114118", "sbzlcode": "10104", "name": "预征率13C", "value": "0", "qdsybz": "Y" }, { "code": "YZL13CTXBZ", "hdxxid": "20190505162620114118", "sbzlcode": "10104", "name": "预征率13C填写标志", "value": "N", "qdsybz": "Y" }, { "code": "YZLTXBZ", "hdxxid": "20190505162620114118", "sbzlcode": "10104", "name": "预征率填写标志", "value": "N", "qdsybz": "Y" }, { "code": "ZHYDM", "hdxxid": "20190505162620114118", "sbzlcode": "10104", "name": "金融业税负分析表主行业代码", "qdsybz": "Y" }, { "code": "ZHYMC", "hdxxid": "20190505162620114118", "sbzlcode": "10104", "name": "金融业税负分析表主行业名称", "qdsybz": "Y" }], "abcNsrHdxxSbzlZspmsList": [{ "hdxxid": "20190505162620114118", "pmbm": "101014001", "sbzlcode": "10104", "xh": 1, "pmmc": "商业(17%、16%、13%)", "sl": 0.13, "zsl": 0.03, "ljs": 0, "yjlj": 0, "ljyj": 0, "wjlj": 0, "desl": "0", "swjgDm": "14301023800", "qdsybz": "Y" }], "code": "00", "msg": "成功" };
+                setHdxxObj(hdxxvojsons);
+                setBbzt('3', '作废成功');
+                var tbl = null;
+
+                tbl = $("#zb");
+                if (tbl.get(0) != undefined) {
+                    var sbbcheckjs;
+                    try {
+                        sbbcheckjs = null;//火狐存在bug
+                        if (zbcheck) {
+                            sbbcheckjs = zbcheck;
+                        }
+                    } catch (e) {
+                    }
+                    var $sheet = tbl.sheet(sbbcheckjs, {
+                        tableName: '主表',
+
+
+                        enterNav: "V"
+
+                    });
+                }
+
+
+                tbl = $("#flzl1");
+                if (tbl.get(0) != undefined) {
+                    var sbbcheckjs;
+                    try {
+                        sbbcheckjs = null;//火狐存在bug
+                        if (flzl1check) {
+                            sbbcheckjs = flzl1check;
+                        }
+                    } catch (e) {
+                    }
+                    var $sheet = tbl.sheet(sbbcheckjs, {
+                        tableName: '附列资料（一）',
+
+
+                        enterNav: "H"
+
+                    });
+                }
+
+
+                tbl = $("#flzl2");
+                if (tbl.get(0) != undefined) {
+                    var sbbcheckjs;
+                    try {
+                        sbbcheckjs = null;//火狐存在bug
+                        if (flzl2check) {
+                            sbbcheckjs = flzl2check;
+                        }
+                    } catch (e) {
+                    }
+                    var $sheet = tbl.sheet(sbbcheckjs, {
+                        tableName: '附列资料（二）',
+
+
+                        enterNav: "H"
+
+                    });
+                }
+
+
+                tbl = $("#flzl4");
+                if (tbl.get(0) != undefined) {
+                    var sbbcheckjs;
+                    try {
+                        sbbcheckjs = null;//火狐存在bug
+                        if (flzl4check) {
+                            sbbcheckjs = flzl4check;
+                        }
+                    } catch (e) {
+                    }
+                    var $sheet = tbl.sheet(sbbcheckjs, {
+                        tableName: '附列资料（四）',
+
+
+                        enterNav: "H"
+
+                    });
+                }
+
+
+                tbl = $("#jmssbmxb");
+                if (tbl.get(0) != undefined) {
+                    var sbbcheckjs;
+                    try {
+                        sbbcheckjs = null;//火狐存在bug
+                        if (jmssbmxbcheck) {
+                            sbbcheckjs = jmssbmxbcheck;
+                        }
+                    } catch (e) {
+                    }
+                    var $sheet = tbl.sheet(sbbcheckjs, {
+                        tableName: '减免税申报明细表',
+
+
+                        enterNav: "H"
+
+                    });
+                }
+
+
+                tbl = $("#cpygxcqkmxb");
+                if (tbl.get(0) != undefined) {
+                    var sbbcheckjs;
+                    try {
+                        sbbcheckjs = null;//火狐存在bug
+                        if (cpygxcqkmxbcheck) {
+                            sbbcheckjs = cpygxcqkmxbcheck;
+                        }
+                    } catch (e) {
+                    }
+                    var $sheet = tbl.sheet(sbbcheckjs, {
+                        tableName: '成品油购销存情况明细表',
+
+
+                        enterNav: "H"
+
+                    });
+                }
+
+
+                tbl = $("#cpygxcslmxb");
+                if (tbl.get(0) != undefined) {
+                    var sbbcheckjs;
+                    try {
+                        sbbcheckjs = null;//火狐存在bug
+                        if (cpygxcslmxbcheck) {
+                            sbbcheckjs = cpygxcslmxbcheck;
+                        }
+                    } catch (e) {
+                    }
+                    var $sheet = tbl.sheet(sbbcheckjs, {
+                        tableName: '成品油购销存数量明细表',
+
+
+                        enterNav: "H"
+
+                    });
+                }
+
+
+                tbl = $("#dkdjsstyjksdkqd");
+                if (tbl.get(0) != undefined) {
+                    var sbbcheckjs;
+                    try {
+                        sbbcheckjs = null;//火狐存在bug
+                        if (dkdjsstyjksdkqdcheck) {
+                            sbbcheckjs = dkdjsstyjksdkqdcheck;
+                        }
+                    } catch (e) {
+                    }
+                    var $sheet = tbl.sheet(sbbcheckjs, {
+                        tableName: '代扣代缴税收通用缴款书抵扣清单',
+
+
+                        enterNav: "H"
+
+                    });
+                }
+
+
+
+                //初始化表数据
+                for (var i = 0; i < $.sheet.tables.length; i++) {
+                    $.sheet.tables[i].initTable();
+                }
+                setTimeout(checkPageFinish, 100);
+            } catch (e) {
+                closeLoadding();
+                showErrorMsg("系统异常，初始化申报表失败，请联系系统管理员");
+            }
+        }
+
+        function exportExcel() {
+
+            var url = 'https://etax.hunan.chinatax.gov.cn/web-accept//wssb/excel/export.html';
+            var content = $('#sbbdiv').html();
+
+            try {
+                var iframedoc = document.getElementById("dwonlandfile_iframe").contentDocument || document.frames["dwonlandfile_iframe"].document;
+                var fromhtml = "  <html><head></head><body>\n" +
+                    "<form id='dwonlandfile_from'  method='POST' action='https://etax.hunan.chinatax.gov.cn/web-accept//wssb/excel/export.html'>\n" +
+                    "<input type='hidden'  name='sbzldm' value='10104' />\n" +
+                    "<input type='hidden' name='content' value='" + content + "' />\n" +
+                    "<input type='hidden' name='bmc' value='主表;附列资料（一）;附列资料（二）;' />\n" +
+                    "<input type='hidden' name='sssq' value='20190401_20190430' />\n" +
+                    "</form></body></html>";
+                iframedoc.body.innerHTML = fromhtml;
+                iframedoc.getElementById('dwonlandfile_from').submit();
+                setTimeout(checkFileDownloadComplete, 200);
+            } catch (e) {
+                $("#tcontent").val(content);
+                var excelurl = 'https://etax.hunan.chinatax.gov.cn/web-accept//wssb/excel/iframeexport.html?t=' + (new Date().getTime());
+                $("#dwonlandfile_iframe").attr("src", excelurl);
+            }
+        }
+
+        /**
+         * 页面初始化方法
+         */
+        function checkPageFinish() {
+            //判断初始化表数据是否存在错误
+            for (var i = 0; i < $.sheet.tables.length; i++) {
+                if ($.sheet.tables[i].isExitsError()) {
+                    closeLoadding();
+                    showErrorMsg("申报表公式执行失败，请联系系统管理员");
+                    return;
+                }
+            }
+
+            //判断初始化表数据是否完成
+            for (var i = 0; i < $.sheet.tables.length; i++) {
+                if (!$.sheet.tables[i].isInitFinsh()) {
+                    setTimeout(checkPageFinish, 200);
+                    return;
+                }
+            }
+
+            //加载上期数
+            if (('10104' == '19804' || '10104' == '19805' || '10104' == '19810') && '3' == '1') {
+                if (cwbbsqsinitfinish == "0") {
+                    //报表打开 加载上期数
+                    huoqusqs('https://etax.hunan.chinatax.gov.cn/web-accept/', '10104', '4530AC05336C499392C971212D7C6BDF')
+                    setTimeout(checkPageFinish, 1000);
+                    return;
+                }
+                if (cwbbsqsinitfinish == "1") {
+                    setTimeout(checkPageFinish, 1000);
+                    return;
+                }
+            }
+
+            addSafeClick("savebtn", function () {
+                save("2", "1")
+            });
+            addSafeClick("verifyBtn", verify);
+
+            addSafeClick("ybjcBtn", ybjc.ybjcData);
+
+            addSafeClick("zszxxBtn", function () {
+                getZszxx('10104');
+            });
+
+            $("#outlookdivin0 a").click(openSbb);
+            openSbb('zb');
+
+            setYbnsrzzsData()
+
+            closeLoadding();
+        }
+
+        //点击左边列表切换申报表
+        var currSbb = 'blankdiv';
+        function openSbb(bn) {
+            var sbbname = null;
+            try {
+                sbbname = $(this).attr("fbbc");
+            } catch (e) { }
+            if (!sbbname) {
+                sbbname = bn;
+            }
+            if (sbbname == currSbb) {
+                return;
+            }
+            $("#sbbdiv").scrollTop(0);
+            $("#" + sbbname).css('display', 'block');
+            if (currSbb != null) {
+                $("#" + currSbb).css("display", "none");
+            }
+            currSbb = sbbname;
+            //提交当前处于编辑状态的单元格
+            submitCurrSbb();
+
+            //检测是否需要提示用户
+            try {
+                var checkobj = eval(sbbname + "check");
+                if (checkobj && checkobj.noticeFun) {
+                    checkobj.noticeFun(sbbname);
+                }
+            } catch (e) {
+                console.info(e)
+            }
+            return;
+        }
+
+        var ybjc = {
+            autoaddTableArrays: "",
+            ybjcData: function () {
+                return false;
+                showLoadding();
+                var sbzldm = $("#sbzldm").val();
+                var skssqq = $("#skssqq").val();
+                var skssqz = $("#skssqz").val();
+                skssqq = skssqq || "";
+                skssqz = skssqz || "";
+                sbzldm = sbzldm || "10104";
+                var ybjcAjax = $.ajax({
+                    type: "POST",
+                    url: '/web-accept//wssb/main/getYbjcData.html',
+                    timeout: 50000,
+                    async: true,
+                    data: { "sbzldm": sbzldm, "skssqq": skssqq, "skssqz": skssqz },
+                    dataType: 'html',
+                    complete: function (XMLHttpRequest, status) { //请求完成后最终执行参数
+                        if (status == 'timeout') {//超时,status还有success,error等值的情况
+                            ybjcAjax.abort();
+                            showErrorMsg('请求服务超时，请稍后重试！');
+                        }
+                    },
+                    success: function (data) {
+                        closeLoadding();
+                        data = JSON.parse(data);
+
+                        if (data.code == '200') {
+                            autoaddTableArrays = "";
+                            try {
+                                showLoadding();
+                                var keyArray = ybjc.returnKeyArray(data.map);
+                                data.idx_x = 0;
+                                data.idx_y = 0;
+                                setTimeout(function () { ybjc.ybjcSetValue(keyArray, data) }, 0);
+                            } catch (e) {
+                                showErrorMsg('数据填充失败，请稍后重试！');
+                            }
+                        } else if (data.code == '700') {
+                            showErrorMsg('没有查询到归集完成的发票数据！');
+                        } else {
+                            showErrorMsg('数据获取失败，请稍后重试！');
+                        }
+
+                    }, error: function (request, error, status) {
+                        showErrorMsg('数据获取异常，请稍后重试！');
+                        closeLoadding();
+                    }
+                });
+            },
+            ybjcSetValue: function (keyArray, data) {
+                try {
+                    var datamap = data.map;
+                    var idx_x = data.idx_x;
+                    var tablename = keyArray[idx_x];//表名
+                    var datas = datamap[tablename];//数据
+                    var datalen = datas.length;
+                    if (datalen === 0) {
+                        data.idx_x = data.idx_x + 1;
+                        ybjc.ybjcSetValue(keyArray, data)
+                        return;
+                    }
+                    var sidx = data.idx_y;//开始索引
+                    var eidx = data.idx_y + 20;//结束索引
+                    if (eidx >= datalen) {
+                        eidx = datalen;
+                        //移动到下一个表
+                        data.idx_x = data.idx_x + 1;
+                        data.idx_y = 0;
+                    } else {
+                        //移动数据索引
+                        data.idx_y = data.idx_y + 20;
+                    }
+                    ybjc.setVal(tablename, datas, sidx, eidx);
+
+                    if (keyArray.length > data.idx_x) {
+                        setTimeout(function () { ybjc.ybjcSetValue(keyArray, data); }, 1);
+                    } else {
+                        closeLoadding();
+                        showMsg("获取数据成功，请核对报表数据！");
+                    }
+                } catch (e) {
+                    closeLoadding();
+                    showMsg("填充数据失败！");
+                }
+
+            },
+            returnKeyArray: function (jsonObj) {
+                var jsonArray = new Array();
+                for (var key in jsonObj) {
+                    jsonArray.push(key);
+                }
+                return jsonArray;
+            },
+
+            setVal: function (tablename, lsxxs, sidx, eidx) {
+                var self = this;
+                var tableobj = getTableObj(tablename);
+                if (!tableobj) return;
+                if (lsxxs) {
+                    for (var i = sidx; i < eidx; i++) {
+                        var col = lsxxs[i];
+                        var tdindex = col.rowindex;
+                        var tdvalue = col.val;
+                        if (!tdvalue) continue;
+                        var name = col.colname;
+                        var autorownum = col.autoRowNum;
+                        var addid = col.addid;
+                        if (autorownum && addid) {
+                            if (this.autoaddTableArrays.indexOf(addid) < 0) {
+                                this.autoaddTableArrays = this.autoaddTableArrays + "|" + addid;
+                                for (var addrowi = 0; addrowi < autorownum; addrowi++) {
+                                    $("#" + addid).click();
+                                }
+                            }
+                        }
+                        var isText = col.isText;
+                        var td = getTdObj(tableobj, name, tdindex);
+                        if (td && td.isEditable && td.isEditable != "false") {
+                            if (!isText) { setTdNumberValue(td, convertNumber(tdvalue)) }
+                            else {
+                                if (isText == "list") {
+                                    var text = col.listText;
+                                    var value = col.listValue;
+                                    if (value) {
+                                        if (tablename == "ygzsffxcsmxb" || tablename == "jmssbmxb") {
+                                            setTdNumberValue(td, value);
+                                            td.obj.text(text);
+                                        } else {
+                                            setTdNumberValue(td, value);
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        };
+
+        //校验按钮的执行方法
+        function verify() {
+            showLoadding();
+            try {
+                warnTables = {};
+                if (!submitCurrSbb()) {
+                    return;
+                }
+                var isverifyallsheet = $.sheet.FCT.verifyAllSheet();
+                if (isverifyallsheet) {
+                    save("3", "0");
+                } else {
+                    showErrorMsg($.sheet.FCT.getVerifyMsg());
+                    closeLoadding();
+                }
+            } catch (e) {
+                showErrorMsg("系统异常，校验存在错误，请联系系统管理员");
+                closeLoadding();
+            }
+        }
+
+
+        //保存
+        function save(bbzt, type, yqsbbz) {
+            if (!submitCurrSbb()) {
+                return;
+            }
+
+            //判断页面是否要保存
+            var editTables = getEditTable();
+            if (type == "1") {
+                if (editTables.length == 0 && !deleteFbs) {
+                    showMsg("没有表格被更新不需要保存");
+                    return;
+                }
+            }
+
+            try {
+                showLoadding();
+                var table;
+                var tablejsons = "[";
+                var sbuuid = "4530AC05336C499392C971212D7C6BDF";
+                var sbzl = "10104";
+                if (editTables.length == 0) {
+                    var jsonArray = [];
+                    tablejsons += '{"sbbname":"' + "" + '","bbzt":"' + bbzt + '","sbuuid":"' + sbuuid + '","isUserEditable":' + "false" + ',"data":' + $.toJSON(jsonArray) + '}';
+                } else {
+                    for (var i = 0; i < editTables.length; i++) {
+                        table = editTables[i];
+                        tablejsons += '{"sbbname":"' + table.name + '","bbzt":"' + bbzt + '","sbuuid":"' + sbuuid + '","isUserEditable":' + table.isUserEditable() + ',"data":' +
+                            table.getJson() + '}';
+                        if (i != editTables.length - 1) {
+                            tablejsons += ",";
+                        }
+                    }
+                }
+                tablejsons += "]";
+                var casignstr = "";
+                if ($("#isCALogin").val() == "Y") {
+                    casignstr = caSign(tablejsons, function () {
+                        save(bbzt, type);
+                    });
+                    if (casignstr == "errorkey") {
+                        return;
+                    }
+                }
+                $.ajax({
+                    type: "POST",
+                    url: '/web-accept//wssb/10104e/saveSbb.html',
+                    data: { 'tablejsons': tablejsons, 'casignstr': casignstr, 'deleteFbs': deleteFbs, 'gz': '' },
+                    async: true,
+                    dataType: 'json',
+                    success: function (data) {
+                        var result = eval(data);
+                        if (result.code == '00') {
+                            //设置表格的编辑状态为false
+                            for (var i = 0; i < editTables.length; i++) {
+                                table = editTables[i];
+                                table.isEdited = false;
+                                table.isUserEdited = false;
+
+                                var ytwtdiv = $("#" + table.name + 'ytwtdiv');
+                                ytwtdiv.css('background', '#078324');
+                                ytwtdiv.html("已填");
+                            }
+                            $("[name='common.tbrq']").html(result.tbrq);
+                            //              showMsg("保存成功！");
+                            if (bbzt == "3") {
+                                var qtTsxx = "";
+                                try {
+                                    if ("10435" == '10104' && result.msg == '012') {
+                                        qtTsxx = A200000check.tip_xwjm();
+                                    } else if ("10435" == '10104' && result.msg == '010') {
+                                        qtTsxx = A200000check.tip_010_xwjm();
+                                    }
+                                    else if ("10436" == '10104' && result.msg == '010') {
+                                        qtTsxx = B100000check.tip_010_xwjm();
+                                    }
+                                    else if ("10436" == '10104' && result.msg == '012') {
+                                        qtTsxx = B100000check.tip_xwjm();
+                                    }
+                                } catch (e) { }
+
+                                if ($.isEmptyObject(warnTables)) {
+                                    if ("10435" == '10104' && result.msg == '010') {
+                                        checkAndCloseMsgForSdsXw(qtTsxx + "校验成功，请及时提交申报", sbzl, true, '', 'undefined', "4530AC05336C499392C971212D7C6BDF");
+                                    } else if ("10436" == '10104' && result.msg == '010') {
+                                        checkAndCloseMsgForSdsXw(qtTsxx + "校验成功，请及时提交申报", sbzl, true, '', 'undefined', "4530AC05336C499392C971212D7C6BDF");
+                                    }
+                                    else {
+                                        validateAndCloseMsg(qtTsxx + "校验成功，请及时提交申报", sbzl, true, '', 'undefined');
+                                    }
+                                } else {
+                                    var warnMsg = "以下申报表存在警告信息,请核实：<br>";
+                                    for (var i in warnTables) {
+                                        warnMsg += warnTables[i] + "<br>"
+                                    }
+                                    checkAndCloseMsg(qtTsxx + warnMsg, sbzl, true, '', 'undefined');
+                                }
+                            } else {
+                                showMsg("保存成功！");
+                            }
+                        } else {
+                            showErrorMsg('保存失败：' + result.msg);
+                        }
+                        deleteFbs = "";
+                        closeLoadding();
+                    }, error: function (request, error, status) {
+                        showErrorMsg('保存失败：' + error);
+                        closeLoadding();
+                    }
+                });
+            }
+            catch (err) {
+                showErrorMsg('保存失败：系统异常');
+                closeLoadding();
+            }
+
+        }
+
+        //获取税种信息
+        function getZszxx(sbzldm) {
+            var ctx = $("#ctx").val();
+            var rquesturl = ctx + "/wssb/main/getzszsbxx.html";
+            showLoadding();
+            $.ajax({
+                type: "GET",
+                url: rquesturl,
+                data: { sbzldm: sbzldm },
+                dataType: "html",
+                cache: false,
+                complete: function (XMLHttpRequest, textStatus) {
+                    closeLoadding();
+                    var sessionstatus = XMLHttpRequest.getResponseHeader("sessionstatus"); // 通过XMLHttpRequest取得响应头sessionstatus，
+                    if (sessionstatus == "timeout") {
+                        //如果超时就处理 ，指定要跳转的页面
+                        showMsg('您还未登录或登录超时，请重新登录系统！');
+                        setTimeout("window.location.href = '" + ctx + "/timeout.jsp'", 2000);
+                    }
+                },
+                success: function (data) {
+                    var index = layer.open({
+                        type: 1,
+                        shade: 0.3,
+                        title: "附加税主税种信息", //不显示标题
+                        content: data,
+                        area: ['950px', '400px'],
+                        cancel: function (index) {
+                            layer.close(index);
+                        }
+                    });
+                },
+                error: function (request, error, status) {
+                    showMsg('系统异常：连接到服务器失败');
+                }
+            })
+        }
+
+
+
+    </script>
+    <script>
+        var _hmt = _hmt || [];
+        (function () {
+            var hm = document.createElement("script");
+            hm.src = "https://hm.baidu.com/hm.js?31201bd2a4e2880495b0477f39e5f19f";
+            var s = document.getElementsByTagName("script")[0];
+            s.parentNode.insertBefore(hm, s);
+        })();
+    </script>
+    <script>
+        function setYbnsrzzsData() {
+            var json=@Html.Raw(Model.reportData)
+            $.each(json,function(index,sbb){
+               $.each(sbb.data,function(i,obj){
+                   var idx=obj.idx
+                   var name=obj.name
+                   var value=obj.value
+                       if(name=="wbsbzzsybnsrjmbjsxm.jsxzdm"&&idx>1){
+                           $("#jmbjsxmjiajian").click()
+                       }
+                       else if(name=="wbsbzzsybnsrjmbmsxm.msxzdm"&&idx>2){
+                           $("#jmbmsxmjiajian").click()
+                       }
+                       else if(name=="wbsbzzsybnsrcpygxcb.ypxh"&&idx>4){
+                           $("#cpygxcqkmxb a.jiajian:first").click()
+                       }
+                       else if(name=="wbsbzzsybnsrcpygxcslmxb.ylxh"&&idx>4){
+                           $("#cpygxcslmxb a.jiajian:first").click()
+                       }
+                       else if(name=="wbsbzzsybnsrdkdjdkqd.kjnsrsbh"&&idx>4){
+                           $("#dkdjsstyjksdkqd a.jiajian:first").click()
+                       }
+
+                   var td=$.sheet.FCT.getSheet(sbb.sbbname).getTd(name,idx)
+                   if(td==null)
+                   {
+                       console.log("name:"+name+",index:"+idx)
+                   }
+                   else if(value!==undefined)
+                   {
+                       if(td.type=="list"){
+                           td.list.val(value)
+                           td.setValue(value)
+                       }
+                       else{
+                           td.setValue(value)
+                       }
+                   }
+               })
+            })
+        }
+    </script>
+</head>
+<body>
+    <input id="ctx" type="hidden" value="/web-accept/" />
+    <iframe id="dwonlandfile_iframe" style='display: none' src='about:blank'></iframe>
+    <input type='hidden' id='tsbzldm' value='10104' />
+    <input type='hidden' id='tcontent' value='' />
+    <input type='hidden' id='tbmc' value='主表;附列资料（一）;附列资料（二）;' />
+    <input type='hidden' id='tsssq' value='20190401_20190430' />
+
+    <input id="nsrsbh_head" type="hidden" value="91430102MA4M7X3J70" />
+    <input id="isCALogin" type="hidden" value="N" />
+    <input id="sbzldm" type="hidden" value="10104" />
+    <input id="skssqq" type="hidden" value="2019-04-01" />
+    <input id="skssqz" type="hidden" value="2019-04-30" />
+
+    <div class="side">
+
+        <div id="outLookBarDiv" name="outLookBarDiv">
+            <table style=" width:200px;" valign="middle" cellpadding="0" cellspacing="0"
+                   border="0">
+                <tbody>
+                    <tr>
+                        <td onmouseover="this.className='menutitleover'" onmouseout="this.className='menutitle'"
+                            class="menutitle"
+                            name="outlooktitle0" id="outlooktitle0" nowrap="nowrap">
+                            <span class="smallFont" style="display:block; width:100%;">申报表</span>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td name="outlookdiv0" id="outlookdiv0" style="width:100%;height:100%;" align="center"
+                            valign="top">
+                            <div class="lefttitle" name="outlookdivin0" id="outlookdivin0" style=" width:100%;height:100%">
+
+                                <span id="zbspan">
+                                    <a href="javascript:void(0)" fbbc="zb">
+                                        主表
+
+                                        <div id="zbytwtdiv" style="background: #BB2106;" class="ii">未填</div>
+                                    </a>
+                                </span>
+
+                                <span id="flzl1span">
+                                    <a href="javascript:void(0)" fbbc="flzl1">
+                                        附列资料（一）
+
+                                        <div id="flzl1ytwtdiv" style="background: #BB2106;" class="ii">未填</div>
+                                    </a>
+                                </span>
+
+                                <span id="flzl2span">
+                                    <a href="javascript:void(0)" fbbc="flzl2">
+                                        附列资料（二）
+
+                                        <div id="flzl2ytwtdiv" style="background: #BB2106;" class="ii">未填</div>
+                                    </a>
+                                </span>
+
+                                <span id="flzl4span">
+                                    <a href="javascript:void(0)" fbbc="flzl4">
+                                        附列资料（四）
+
+                                        <div id="flzl4ytwtdiv" style="background:#BB2106;" class="ii">未填</div>
+                                    </a>
+                                </span>
+
+                                <span id="jmssbmxbspan">
+                                    <a href="javascript:void(0)" fbbc="jmssbmxb">
+                                        减免税申报明细表
+
+                                        <div id="jmssbmxbytwtdiv" style="background:#BB2106;" class="ii">未填</div>
+                                    </a>
+                                </span>
+
+                                <span id="cpygxcqkmxbspan">
+                                    <a href="javascript:void(0)" fbbc="cpygxcqkmxb">
+                                        成品油购销存情况明细表
+
+                                        <div id="cpygxcqkmxbytwtdiv" style="background:#BB2106;" class="ii">未填</div>
+                                    </a>
+                                </span>
+
+                                <span id="cpygxcslmxbspan">
+                                    <a href="javascript:void(0)" fbbc="cpygxcslmxb">
+                                        成品油购销存数量明细表
+
+                                        <div id="cpygxcslmxbytwtdiv" style="background:#BB2106;" class="ii">未填</div>
+                                    </a>
+                                </span>
+
+                                <span id="dkdjsstyjksdkqdspan">
+                                    <a href="javascript:void(0)" fbbc="dkdjsstyjksdkqd">
+                                        代扣代缴税收通用缴款书抵扣清单
+
+                                        <div id="dkdjsstyjksdkqdytwtdiv" style="background:#BB2106;" class="ii">未填</div>
+                                    </a>
+                                </span>
+
+
+                                <div style="text-align:left">
+                                    <span style="color:red;font-size: 14px; margin-top: 20px">
+                                        1、享受即征即退优惠政策的数据应填写申报表主表的“即征即退项目”栏。</br>
+                                        2、“纳入购进农产品抵扣增值税进项税额试点范围的增值税一般纳税人，销售产品适用 16%税率的，在《增值税纳税申报表附表二（本期进项税额明细表）》8a栏次‘加计扣除农产品进项税额’进行税额加计扣除。”。
+                                    </span>
+                                </div>
+
+                            </div>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+
+    <div class="z-click"><i class="iconfont" style="display:none; font-size:9px;" id="you">&#xe72a;</i><i class="iconfont" style=" font-size: 9px;" id="zuo">&#xe72d;</i></div>
+
+    <script language="javascript">
+        $(".z-click").click(function () {
+            if ($(".side").css("display") == "block") {
+                $(".side").css("display", "none");
+                $("#zuo").css("display", "none");
+                $("#you").css("display", "block");
+                $(".main").css("left", "5px");
+                $(this).css("left", "5px")
+            } else {
+                $(".side").css("display", "block");
+                $("#zuo").css("display", "block");
+                $("#you").css("display", "none");
+                $(".main").css("left", "235px");
+                $(this).css("left", "220px")
+            }
+            setBbztDialogOffset();
+        });
+    </script>
+
+
+
+    <div class="main" id="sbbdiv">
+        <div id="blankdiv">
+
+        </div>
+
+        <table>
+            <tr>
+                <td><div style="width:25px;"></div></td>
+                <td>
+
+                    @{await Html.RenderPartialAsync("_Partialzb", Model);}
+
+                    @{await Html.RenderPartialAsync("_Partialflzl1", Model);}
+
+                    @{await Html.RenderPartialAsync("_Partialflzl2", Model);}
+
+                    @{await Html.RenderPartialAsync("_Partialflzl4", Model);}
+
+                    @{await Html.RenderPartialAsync("_Partialjmssbmxb", Model);}
+
+                    @{await Html.RenderPartialAsync("_Partialcpygxcqkmxb", Model);}
+
+                    @{await Html.RenderPartialAsync("_Partialcpygxcslmxb", Model);}
+
+                    @{await Html.RenderPartialAsync("_Partialdkdjsstyjksdkqd", Model);}
+
+
+                </td>
+<td><div style="width:25px;"></div></td>
+</tr>
+</table>
+
+</div>
+
+
+<div style="display: none;">
+
+
+</div>
+
+
+<div class="top">
+    <div class="action">
+        <div class="toolbar" style="text-align:center; padding-top:5px;">
+            <input name="savebtn" id="savebtn" type="button" class="btn btn-success" value="保存草稿" title="保存草稿" />
+            <input name="verifyBtn" id="verifyBtn" type="button" class="btn btn-info" value="校验并保存" title="校验并保存" />
+
+
+
+
+            <input name="ybjcBtn" id="ybjcBtn" type="button" class="btn btn-info" value="获取一表集成数据" title="获取一表集成数据" />
+
+
+
+
+
+
+
+
+        </div>
+    </div>
+</div>
+
+</body>
+
+</html>

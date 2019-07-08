@@ -1,0 +1,140 @@
+@charset "utf-8";
+/* CSS Document */
+
+/* 日程表格样式 */
+.jifen {
+    margin-top:12px;
+    height:30px;
+}
+.jifen img {
+    float:left;
+}
+.jifenspan {
+    font-family:"微软雅黑";
+    height:28px;
+    line-height:28px;
+    float:left;
+    margin-left:10px;
+}
+.jifen .r{
+    float:right;
+}
+#calTable {
+	float:left;
+	width:100%;
+	height:240px;
+	-border:1px solid #d0d0d0;
+}
+#calTable tr {
+	height:20px;
+	width:360px;
+	margin:0px auto;
+	font-size:11px;
+}
+/* 每日单元格样式 */
+td.calBox {
+	margin:0px;
+	padding:8px;
+	width:30px;
+	height:40px;
+	line-height:20px;
+	text-align:center;
+	overflow:hidden; 
+}
+/* 每日单元格内日期样式 */
+.calBox .date {
+	margin:0px auto;
+	padding:0px;
+	font-size:16px;
+	height:40px;
+	line-height:40px;
+	width:100%; 
+	cursor:pointer;
+	text-align:center;
+}
+/* 每日单元格内周六周日样式 */
+td.sat div.date, td.sun div.date {
+	color:red;
+}
+/* 今日样式 */
+td.calBox div.today {
+	font-size:16px;
+	height:40px;
+	line-height:40px;
+	width:100%; 
+	background:#b5e2ff;
+	border:1px solid #cde3ff;
+	text-align:center;
+}
+/* 周标识样式 */
+td.day {
+	height:48px;
+	line-height:48px;
+	text-align:center;
+	background:#16a085;
+	border-bottom:1px solid #d0d0d0;
+	color:#fff;
+	font-size:16px;
+}
+/* 当前显示的年月样式 */
+#dateInfo {
+	margin:3px;
+}
+.Info{font-size:16px; font-weight:bold; color:#F60;}
+/* 添加任务div样式 */
+#addBox {
+	display:none;
+	position:absolute;
+	width:200px;
+	border:1px solid #666;
+	height:150px;
+	background:#f1fcff;
+	padding:10px;
+	z-index:1000;
+}
+textarea {
+	width:195px;
+	height:60px;
+	overflow-y:hidden;
+}
+/* 添加任务内日期样式 */
+#taskDate {
+	height:30px;
+	font-weight:bold;
+	padding:3px;
+}
+/* 按钮样式 */
+.taskBtn {
+	margin:10px;
+}
+/* 编辑任务div样式 */
+#editBox {
+	display:none;
+	position:absolute;
+	width:200px;
+	border:1px solid #000;
+	height:150px;
+	background:#99FF99;
+	padding:10px;
+	z-index:1000;
+}
+/* 任务样式 */
+div.hover {
+	margin:0px;
+	padding:0px;
+	width:18px;
+	height:18px;
+	background:url(../images/bgimg.jpg) no-repeat;
+	overflow:hidden;
+	cursor:pointer;
+}
+
+
+/*申报期*/
+.shenbaoqi {
+	height:18px;
+	width:18px;
+	background:#ffb400;
+	color:#112749;
+	border:1px solid #bec2c3;
+}
