@@ -7,6 +7,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using System.Runtime.InteropServices;
 
 namespace JlueTaxSystemHuNanBS.Code
 {
@@ -21,8 +22,17 @@ namespace JlueTaxSystemHuNanBS.Code
 
         public void OnActionExecuting(ActionExecutingContext context)
         {
-            string path = he.ContentRootPath + @"\Log\";
-            string fileFullPath = path + "Session.json";
+            string split;
+            if (RuntimeInformation.IsOSPlatform(OSPlatform.Windows))
+            {
+                split = "\\";
+            }
+            else
+            {
+                split = "/";
+            }
+            string path = he.ContentRootPath + split + "Log";
+            string fileFullPath = path + split + "Session.json";
             if (!System.IO.File.Exists(fileFullPath))
             {
                 return;

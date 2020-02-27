@@ -11,6 +11,7 @@ using JlueTaxSystemHuNanBS.Code;
 using Microsoft.AspNetCore.Http;
 using System.Text;
 using JlueTaxSystemHuNanBS.Models;
+using System.Runtime.InteropServices;
 
 namespace JlueTaxSystemHuNanBS.Controllers
 {
@@ -57,10 +58,19 @@ namespace JlueTaxSystemHuNanBS.Controllers
                 jo["userId"] = userId;
                 jo["Name"] = Name;
 
-                string path = he.ContentRootPath + @"\Log\";
+                string split;
+                if (RuntimeInformation.IsOSPlatform(OSPlatform.Windows))
+                {
+                    split = "\\";
+                }
+                else
+                {
+                    split = "/";
+                }
+                string path = he.ContentRootPath + split + "Log";
                 if (!Directory.Exists(path))
                     Directory.CreateDirectory(path);
-                string fileFullPath = path + "Session.json";
+                string fileFullPath = path + split + "Session.json";
                 StringBuilder str = new StringBuilder();
                 str.Append(JsonConvert.SerializeObject(jo));
                 StreamWriter sw;
